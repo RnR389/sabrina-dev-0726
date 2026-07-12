@@ -252,6 +252,22 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V3.11 — „Korrekturen + Bianka verbatim"  📍 Feedback ausstehend
+
+- **Dateien:** alle 16 Seiten in `current/`
+- **Status:** live auf GitHub Pages (https://rnr389.github.io/sabrina-dev-0726/)
+- **Geändert gegenüber V3.10:**
+  - **„Onkologische Kosmetik" gestrichen** (wird nicht mehr angeboten): aus der Trust-Bar der Startseite (jetzt 3 statt 4 Säulen) und aus den Credentials auf „Über uns". *(Hinweis: In Biankas Vita bleibt „Onkologen" stehen — das sind Ärzte, mit denen sie zusammenarbeitet, Teil ihres 1:1-Textes.)*
+  - **Logo im Header ist jetzt überall ein Link zur Startseite** — auch auf Startseite, Über uns und Ästhetische Konzepte (waren `<div>`, jetzt `<a href="index.html">`).
+  - **Bianka-Seite komplett 1:1 aus `Bianka Wittulski.docx`** neu aufgebaut. Frühere erfinderische Struktur (Meilenstein-Zeitleiste, Spezialgebiete-Karten, eigene Zwischenüberschriften) entfernt. Jetzt: Name + Lead-Satz + die 10 Original-Absätze + Schlusszeile — Verbatim-Check: 0/13 Abweichungen.
+  - **Verbatim-Kontrolle aller Sabrina-Texte:** Behandlungsseiten, Zahlungsoptionen, EMS Shape = verbatim (einzige „Abweichung" ist jeweils die Titelzeile, bewusst in H1 + Unterzeile aufgeteilt, sowie die `•`-Zeichen der als HTML-Liste gesetzten Aufzählungen).
+  - **Footer-Zuschläge entfernt:** „Ab 19:30 Uhr: +50%" und „Sonn- & Feiertag: +80%" auf allen Seiten raus (auf Wunsch René).
+- **Footer-Version:** alle Seiten → **3.11**.
+- **Offen:** Homepage-Text (`startseite_homepage.docx`, „Du"-Form) weiterhin nicht übernommen (Du/Sie-Konflikt, wartet auf Entscheidung); Google-Rezensionen für die Startseite; finaler Taupe-Ton.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
