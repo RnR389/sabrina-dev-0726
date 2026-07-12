@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../assets/logo-original.png">
+<title>Über uns — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
+<meta name="description" content="Über uns — Sabrina Herosé und Bianka Wittulski. Das Team des Kosmetikinstituts Hautnah in Wehr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =============================================================
+     KOSMETIKINSTITUT HAUTNAH — V3 „Sabrina im Zentrum"
+     Markenfarben siehe BRAND.md
+     ============================================================= */
+  :root {
+    --paper:        #FAF6EF;
+    --creme:        #E9E3DA;
+    --sand:         #DFD7CD;
+    --taupe:        #8A7F77;
+    --taupe-dark:   #6F655D;
+    --silver:       #C9C9CE;
+    --accent:       #6F655D;
+    --ink:          #3A322C;
+    --ink-soft:     #3E382F;
+    --stein:        #95928E;
+    --green-soft:   #6B7A5F;
+    --line:         rgba(58,50,44,0.12);
+    --line-strong:  rgba(58,50,44,0.5);
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top: 86px; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+  .serif { font-family: 'Outfit', sans-serif; font-weight: 300; }
+  a { color: inherit; text-decoration: none; }
+  img { display:block; max-width:100%; }
+  
+  /* ============ TOPBAR ============ */
+  .topbar {
+    background: var(--ink);
+    color: var(--creme);
+    padding: 11px 60px;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 0.75fr;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .topbar .left { display:flex; align-items:center; gap:10px; }
+  .topbar .right { text-align:right; }
+  .topbar .center { text-align:center; }
+  .topbar .dot { width:5px; height:5px; border-radius:50%; background:var(--silver); }
+  
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead-top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 28px 60px 12px;
+    gap: 40px;
+  }
+  .masthead-left {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .masthead-right {
+    text-align: right;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .masthead-right a { display: inline-block; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); padding: 14px 26px; transition: all 0.3s ease; }
+  .masthead-right a:hover { background: var(--taupe-dark); border-color: var(--taupe-dark); color: var(--paper); }
+  .masthead-right .arrow { font-family: 'Outfit', sans-serif; font-style: normal; font-weight: 400; margin-left: 6px; }
+  
+  .masthead-brand {
+    text-align: center;
+    padding: 4px 0;
+  }
+  .masthead-brand .institut {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: var(--taupe-dark);
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+  }
+  .masthead-brand .wordmark {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 64px;
+    letter-spacing: 16px;
+    color: var(--ink);
+    padding-left: 16px;
+    line-height: 1;
+  }
+  .masthead-brand .signature {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .masthead-brand .signature .line {
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .masthead-brand .signature .name {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  
+  .navbar { position: sticky; top: 0; z-index: 100; background: rgba(250,246,239,0.85); -webkit-backdrop-filter: saturate(140%) blur(12px); backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 30px -20px rgba(58,50,44,0.5); }
+  .masthead-nav {
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+    padding: 18px 60px 22px;
+    list-style: none;
+  }
+  .masthead-nav li {
+    position: relative;
+    font-size: 11.5px;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+  }
+  .masthead-nav li:hover { color: var(--accent); }
+  .masthead-nav li.has-down::after { content: ''; display: inline-block; width: 5px; height: 5px; margin-left: 9px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); opacity: 0.5; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .masthead-nav li.has-down:hover::after { opacity: 1; transform: translateY(0) rotate(225deg); }
+  .masthead-nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    margin-top: 16px;
+    min-width: 280px;
+    padding: 10px 0;
+    box-shadow: 0 12px 32px rgba(58,50,44,0.06);
+  }
+  .masthead-nav li:hover .dropdown { display: block; }
+  /* Unsichtbare Brücke über die 16px-Lücke, damit der Hover beim Weg zum Dropdown nicht abreißt */
+  .masthead-nav .dropdown::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+  .masthead-nav .dropdown a {
+    display: block;
+    padding: 12px 28px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+    font-weight: 500;
+  }
+  .masthead-nav .dropdown a:hover {
+    background: var(--creme);
+    border-left-color: var(--accent);
+    color: var(--accent);
+    padding-left: 32px;
+  }
+  
+  /* ============ HERO ============ */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: stretch;
+    min-height: 720px;
+    background: var(--paper);
+  }
+  .hero-text {
+    padding: 100px 70px 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 10.5px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 36px;
+  }
+  .hero-eyebrow .bar { width: 32px; height: 1.5px; background: var(--accent); }
+  
+  .hero-text h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(44px, 4.5vw, 68px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -1.5px;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+  .hero-text h1 em {
+    font-style: normal;
+    color: var(--taupe-dark);
+    font-weight: 300;
+  }
+  
+  .hero-text .lead {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-cta-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 36px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn-primary .arrow { font-family: 'Outfit', sans-serif; font-style: normal; font-weight: 400; font-size: 14px; }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent);  }
+  
+  .btn-ghost {
+    color: var(--ink);
+    padding: 16px 0;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--ink);
+    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
+  
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-meta .item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .hero-meta .num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .hero-meta .num em { font-style: normal; color: var(--accent); }
+  .hero-meta .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  
+  .hero-image {
+    position: relative;
+    background: var(--creme);
+    overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+  }
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--paper) 0%, transparent 25%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-tag {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 3;
+    text-align: right;
+    color: var(--ink);
+  }
+  .hero-tag .signature-name {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .hero-tag .role {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  
+  /* ============ TRUST-BAR ============ */
+  .trust {
+    background: var(--creme);
+    padding: 50px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .trust .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    padding: 0 20px;
+    border-left: 1px solid var(--line);
+  }
+  .trust .item:first-child { border-left: none; }
+  .trust .item .num {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .trust .item .text {
+    font-size: 11.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  
+  /* ============ VALUES ============ */
+  .values {
+    padding: 130px 60px;
+    background: var(--paper);
+  }
+  .values-inner { max-width: 1300px; margin: 0 auto; }
+  .values-head {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    margin-bottom: 90px;
+    align-items: end;
+  }
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 10.5px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .section-eyebrow .bar { width: 32px; height: 1.5px; background: var(--accent); }
+  .values-head h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+  .values-head h2 em {
+    font-style: normal;
+    color: var(--taupe-dark);
+    font-weight: 300;
+  }
+  .values-head .intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    max-width: 540px;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  .value {
+    border-top: 2px solid var(--ink);
+    padding-top: 26px;
+    position: relative;
+  }
+  .value .vnum {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .value h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  .value h3 em { font-style: normal; color: var(--taupe-dark); }
+  .value p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+  
+  /* ============ BEHANDLUNGEN ============ */
+  .treatments {
+    background: var(--creme);
+    padding: 130px 60px 110px;
+    position: relative;
+  }
+  .treatments-head {
+    max-width: 1300px;
+    margin: 0 auto 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .treatments-head h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+  .treatments-head h2 em {
+    font-style: normal;
+    color: var(--taupe-dark);
+    font-weight: 300;
+  }
+  .treatments-head .intro { padding-bottom: 6px; }
+  .treatments-head .intro p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .treatments-head .intro p em {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    color: var(--taupe-dark);
+  }
+  
+  .treatments-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .treatment {
+    background: var(--paper);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .treatment:hover { transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(58,50,44,0.4); }
+  .treatment-img {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--taupe) 0%, var(--ink) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .treatment-img::after {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(201,201,206,0.25);
+    pointer-events: none;
+    transition: border-color 0.4s ease;
+  }
+  .treatment:hover .treatment-img::after { border-color: rgba(201,201,206,0.6); }
+  .treatment-img-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(242,237,228,0.35);
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  .treatment-body { padding: 30px 32px 36px; position: relative; }
+  .treatment-body .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .treatment-body .num {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--accent);
+  }
+  .treatment-body .tag {
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    font-weight: 500;
+  }
+  .treatment-body h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .treatment-body p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+    min-height: 70px;
+  }
+  .treatment-body .more {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+  .treatment-body .more .arrow { font-family: 'Outfit', sans-serif; font-style: normal; font-weight: 400; font-size: 13px; }
+  .treatment:hover .treatment-body .more {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .treatment:hover .treatment-body .more .arrow { transform: translateX(4px); }
+  
+  /* ============ STORY ============ */
+  .story {
+    background: var(--paper);
+    padding: 130px 60px;
+    overflow: hidden;
+  }
+  .story-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .story-img {
+    aspect-ratio: 4/5;
+    background: var(--creme);
+    position: relative;
+    overflow: hidden;
+  }
+  .story-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .story-img-tag {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: var(--paper);
+    padding: 14px 22px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .story-img-tag em {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    color: var(--accent);
+    text-transform: none;
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-right: 6px;
+  }
+  .story-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    margin-bottom: 30px;
+  }
+  .story-content h2 em {
+    font-style: normal;
+    color: var(--taupe-dark);
+    font-weight: 300;
+  }
+  .story-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .story-content p strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 30px;
+    margin: 32px 0;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .credentials li {
+    list-style: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .credentials li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  
+  /* ============ BIANCA (Platzhalter) ============ */
+  .bianca {
+    background: var(--creme);
+    padding: 120px 60px;
+    border-top: 1px solid var(--line);
+  }
+  .bianca-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .bianca-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    margin-bottom: 30px;
+  }
+  .bianca-content h2 em { font-style: normal; color: var(--taupe-dark); }
+  .bianca-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .bianca-content .placeholder-note {
+    background: rgba(138,127,119,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 14px 20px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    font-style: normal;
+  }
+  .bianca-img {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--sand) 0%, var(--taupe) 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bianca-img::after {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(201,201,206,0.3);
+  }
+  .bianca-img .ph {
+    text-align: center;
+    color: var(--paper);
+    z-index: 2;
+    padding: 30px;
+  }
+  .bianca-img .ph .ph-icon {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 80px;
+    line-height: 1;
+    color: rgba(242,237,228,0.4);
+    margin-bottom: 16px;
+  }
+  .bianca-img .ph .ph-text {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(242,237,228,0.7);
+    font-weight: 500;
+  }
+  
+  /* ============ CHECK & START ============ */
+  .checkstart {
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-image {
+    background: var(--taupe-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .cs-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 60%, var(--ink) 100%);
+  }
+  .cs-content {
+    padding: 100px 80px 100px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+  }
+  .cs-content .section-eyebrow { color: var(--silver); }
+  .cs-content .section-eyebrow .bar { background: var(--silver); }
+  .cs-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--paper);
+    margin-bottom: 28px;
+  }
+  .cs-content h2 em {
+    font-style: normal;
+    color: var(--silver);
+    font-weight: 300;
+  }
+  .cs-content > p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(242,237,228,0.85);
+    margin-bottom: 24px;
+  }
+  .cs-content > p strong { color: var(--paper); font-weight: 600; }
+  .cs-features {
+    list-style: none;
+    margin: 32px 0 40px;
+    padding: 26px 0;
+    border-top: 1px solid rgba(242,237,228,0.18);
+    border-bottom: 1px solid rgba(242,237,228,0.18);
+  }
+  .cs-features li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--paper);
+    padding: 8px 0;
+    font-weight: 500;
+  }
+  .cs-features li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--silver);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .cs-cta {
+    background: var(--silver);
+    color: var(--ink);
+    padding: 20px 40px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid var(--silver);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: inherit;
+  }
+  .cs-cta .arrow { font-family: 'Outfit', sans-serif; font-style: normal; font-weight: 400; font-size: 14px; }
+  .cs-cta:hover { background: transparent; color: var(--silver); }
+  
+  /* ============ ZITAT ============ */
+  .qbreak {
+    background: var(--paper);
+    padding: 130px 60px;
+    text-align: center;
+    position: relative;
+  }
+  .qbreak::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .qbreak blockquote {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(30px, 3.5vw, 46px);
+    line-height: 1.3;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--ink);
+    max-width: 1000px;
+    margin: 0 auto 32px;
+    letter-spacing: -0.3px;
+  }
+  .qbreak cite {
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .qbreak cite::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: 4px;
+    margin-right: 12px;
+  }
+  
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 60px 40px;
+  }
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1fr;
+    gap: 70px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(242,237,228,0.15);
+  }
+  .footer-brand .word {
+    font-family: 'Outfit', sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .footer-brand .sub {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    color: var(--silver);
+    margin-bottom: 26px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .footer-brand p {
+    font-size: 13.5px;
+    line-height: 1.95;
+    opacity: 0.85;
+    max-width: 320px;
+  }
+  footer h4 {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-size: 17px;
+    margin-bottom: 24px;
+    color: var(--silver);
+    font-weight: 400;
+  }
+  footer ul { list-style: none; }
+  footer ul li {
+    font-size: 12.5px;
+    letter-spacing: 1.5px;
+    margin-bottom: 11px;
+    opacity: 0.85;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  footer ul li:hover { opacity: 1; color: var(--silver); padding-left: 4px; }
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 36px auto 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+  
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1100px) {
+    .topbar { grid-template-columns: 1fr 1fr; padding: 11px 30px; font-size: 9px; letter-spacing: 2px; }
+    .topbar .center { display: none; }
+    .masthead-top { grid-template-columns: 1fr; text-align: center; padding: 20px 30px 10px; gap: 20px; }
+    .masthead-left { display: none; }
+    .masthead-right { text-align: center; }
+    .masthead-brand .wordmark { font-size: 40px; letter-spacing: 10px; }
+    .masthead-nav { flex-wrap: wrap; gap: 20px; padding: 14px 20px; }
+    .masthead-nav li { font-size: 10px; letter-spacing: 2px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 60px 30px; }
+    .hero-image { height: 500px; order: -1; }
+    .hero-image::before { display: none; }
+    .trust { grid-template-columns: repeat(2, 1fr); gap: 30px; padding: 40px 30px; }
+    .trust .item { border-left: none; }
+    .values, .treatments, .story, .bianca, .qbreak { padding: 80px 30px; }
+    .values-head, .treatments-head, .story-inner, .bianca-inner { grid-template-columns: 1fr; gap: 40px; }
+    .values-grid { grid-template-columns: 1fr; gap: 30px; }
+    .treatments-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .checkstart { grid-template-columns: 1fr; }
+    .cs-image { min-height: 350px; }
+    .cs-image::after { display: none; }
+    .cs-content { padding: 60px 30px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 30px 40px; }
+    footer { padding: 60px 0 30px; }
+  }
+  @media (max-width: 640px) {
+    .treatments-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-meta { flex-wrap: wrap; gap: 24px; }
+  }
+
+  .treatment-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+  /* ============================================================
+     MOBILE-NAVIGATION (V3.4) — Hamburger, CSS-only (kein JS)
+     ============================================================ */
+  .nav-toggle, .nav-burger, .nav-brand, .nav-cta { display: none; }
+  @media (max-width: 1100px) {
+    .masthead-right { display: none; }                 /* Header-CTA auf Mobil entfernt */
+    .navbar { display: flex; align-items: center; justify-content: center; padding: 0 22px; }
+    .nav-brand { display: none; }
+    .nav-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+    .nav-burger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 50px; cursor: pointer; }
+    .nav-burger span { display: block; width: 26px; height: 2px; background: var(--ink); transition: transform .3s ease, opacity .2s ease; }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+    .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .masthead-nav { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; gap: 0; padding: 0 22px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 20px 34px -22px rgba(58,50,44,0.55); max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
+    .nav-toggle:checked ~ .masthead-nav { max-height: calc(100vh - 56px); overflow-y: auto; padding: 8px 22px 26px; }
+    .masthead-nav li { width: 100%; padding: 15px 2px; border-bottom: 1px solid var(--line); font-size: 13px; letter-spacing: 2.5px; }
+    .masthead-nav li:hover { color: var(--ink); }
+    .masthead-nav li.has-down::after { display: none; }
+    .masthead-nav .dropdown { position: static; display: block; transform: none; min-width: 0; margin: 12px 0 2px; padding: 0; background: transparent; border: none; box-shadow: none; }
+    .masthead-nav .dropdown::before { display: none; }
+    .masthead-nav .dropdown a { padding: 11px 14px; font-size: 11px; border-left: 2px solid var(--line); color: var(--taupe-dark); letter-spacing: 2px; }
+    .masthead-nav .dropdown a:hover { padding-left: 18px; }
+    .nav-cta { display: block; border-bottom: none; padding-top: 22px; }
+    .nav-cta .btn-primary { width: 100%; justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .topbar { font-size: 8px; letter-spacing: 1.5px; padding: 9px 22px; }
+    .masthead-top { padding: 18px 22px 8px; }
+    .masthead-brand .wordmark { font-size: 34px; letter-spacing: 7px; }
+    .masthead-brand .institut { font-size: 13px; letter-spacing: 3px; }
+  }
+
+  /* Mobile: einklappbare Untermenüs (Shop / Ästhetische Konzepte) */
+  .sub-toggle { display: none; }
+  @media (max-width: 1100px) {
+    .masthead-nav li.has-down { display: flex; flex-direction: column; padding: 0; }
+    .sub-head { display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer; padding: 15px 2px; }
+    .sub-head::after { content: '+'; font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 300; color: var(--accent); line-height: 1; transition: transform .3s ease; }
+    .sub-toggle:checked + .sub-head::after { transform: rotate(45deg); }
+    .masthead-nav li.has-down .dropdown { max-height: 0; overflow: hidden; margin: 0; transition: max-height .4s ease, margin .4s ease; }
+    .masthead-nav li.has-down .sub-toggle:checked ~ .dropdown { max-height: 660px; margin: 2px 0 14px; }
+  }
+
+  .masthead-brand .logo-img { height: clamp(56px, 9vw, 108px); width: auto; display: block; margin: 0 auto; }
+
+  .footer-brand .footer-logo { height: 60px; width: auto; display: block; margin-bottom: 24px; }
+
+  /* ============================================================
+     V3.9 — Meisterbetrieb-Siegel, CTA-Kästchen, 5★-Badge,
+     ruhigere Hover, keine Eyebrow-Balken
+     ============================================================ */
+  .section-eyebrow .bar { display: none; }
+  .hero-eyebrow .bar { display: none; }
+  /* Meisterbetrieb: Siegel-Optik mit Doppelrahmen */
+  .seal { display: inline-block; border: 1.5px solid var(--taupe); outline: 1px solid var(--taupe); outline-offset: 3px; padding: 10px 20px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--ink); background: transparent; }
+  /* 5-Sterne-Badge im Hero (Startseite) */
+  .hero-badge { display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; border: 1px solid var(--line-strong); background: var(--creme); padding: 13px 22px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); margin-bottom: 36px; }
+  .hero-badge .stars { color: var(--taupe); letter-spacing: 3px; font-size: 12px; }
+  @media (max-width: 1100px) {
+    .hero-badge { margin-top: 34px; letter-spacing: 1.5px; }
+  }
+
+  .masthead-nav li > a { display: block; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="left"><span class="dot"></span> Erstes 5-Sterne-Fachinstitut · Landkreis Waldshut</div>
+  <div class="center">Hauptstraße 3 · 79664 Wehr · +49 (0) 7762 / 80 56 69</div>
+  <div class="right">Mo · Di · Mi · Fr · 10 – 18 Uhr</div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-left"><span class="seal">Meisterbetrieb</span></div>
+    <div class="masthead-brand">
+      <img class="logo-img" src="../assets/logo-original.png" alt="Kosmetikinstitut Hautnah — Sabrina Herosé">
+    </div>
+    <div class="masthead-right"><a href="#">Zusammenarbeit anfragen</a></div>
+  </div>
+</header>
+
+<nav class="navbar">
+  <a class="nav-brand" href="index.html">Hautnah</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü umschalten">
+  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+  <ul class="masthead-nav">
+    <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
+    <li>Haarkonzept</li>
+    <li class="is-active"><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="gutscheine.html">Gutscheine</a></li>
+    <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
+    <li>Aktuelles</li>
+    <li>Kontakt</li>
+    <li class="nav-cta"><a href="index.html#kontakt" class="btn-primary">Zusammenarbeit anfragen</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-img">
+      <img src="../assets/story.jpg" alt="Sabrina Herosé — Kosmetikmeisterin">
+      <div class="story-img-tag"><em>—</em> Sabrina Herosé</div>
+    </div>
+    <div class="story-content">
+      <div class="section-eyebrow"><span class="bar"></span>Über mich</div>
+      <h2>Seit über zwei Jahrzehnten — <em>auf das Wesentliche fokussiert.</em></h2>
+      <p>Mein Name ist <strong>Sabrina Herosé</strong>. Ich bin Kosmetikmeisterin, Bachelor Professional, Buchautorin, pharmazeutisch-technische Assistentin und Fitnesstrainerin.</p>
+      <p>Das Kosmetikinstitut Hautnah ist ein <strong>Premium Medical Aesthetic Institute</strong> und das erste Fachinstitut für Dermakosmetik im Landkreis Waldshut — gegründet und geführt von mir.</p>
+      <p>Seit vielen Jahren bin ich erfolgreich auf das Lösen von Hautirritationen und ‑problemen spezialisiert. Ich verstehe mich als fachkompetente Branchenkennerin und arbeite ganzheitlich — pharmazeutisch fundiert und individuell abgestimmt.</p>
+      <ul class="credentials">
+        <li>Kosmetikmeisterin</li>
+        <li>Bachelor Professional</li>
+        <li>Onkologische Kosmetik</li>
+        <li>Dermatologische Kosmetik</li>
+        <li>Hautpflegeexpertin</li>
+        <li>PTA · Visagistin</li>
+      </ul>
+          </div>
+  </div>
+</section>
+
+<!-- BIANKA -->
+<section class="bianca">
+  <div class="bianca-inner">
+    <div class="bianca-content">
+      <div class="section-eyebrow"><span class="bar"></span>Im Team · Permanent Make-up</div>
+      <h2>Bianka Wittulski — <em>Präzision auf höchstem Niveau.</em></h2>
+      <p>An meiner Seite arbeitet <strong>Bianka Wittulski</strong> — zertifizierte Linergistin und als eine der wenigen Spezialistinnen Deutschlands <strong>Top Elitepartner von Long-Time-Liner®</strong>. Mit jahrzehntelanger internationaler Erfahrung steht sie für Premium Permanent Make-up — von der Fashion Week in Paris bis zur größten Tattoo-Show der Welt.</p>
+      <p>Von hochpräziser Augenbrauenschattierung bis zur mehrfarbigen Lippenschattierung perfektioniert Bianka Schönheit mit künstlerischem Gespür und kompromisslosem Qualitätsanspruch.</p>
+      <a href="bianka-wittulski.html" class="btn-ghost">Mehr über Bianka</a>
+    </div>
+    <div class="bianca-img">
+      <div class="ph">
+        <div class="ph-icon">B.W.</div>
+        <div class="ph-text">Foto Bianka · folgt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="../assets/logo-footer.png" alt="Kosmetikinstitut Hautnah — Sabrina Herosé">
+      <p>Kosmetikinstitut Hautnah<br>Hauptstraße 3 · 79664 Wehr<br><br>Telefon &amp; WhatsApp<br>+49 (0) 7762 / 80 56 69<br><br>www.hautnah-wehr.de</p>
+    </div>
+    <div>
+      <h4>Verzeichnis</h4>
+      <ul>
+        <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="gutscheine.html">Gutscheine</a></li>
+        <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
+        <li>Haarkonzept</li>
+        <li>Aktuelles</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Geschäftszeiten</h4>
+      <ul>
+        <li>Mo · Di · Mi · Fr</li>
+        <li>10 – 18 Uhr</li>
+        <li style="opacity:0.5; margin-top:14px;">Termine nur nach<br>telefonischer Vereinbarung</li>
+        <li style="opacity:0.5;">Ab 19:30 Uhr: +50%</li>
+        <li style="opacity:0.5;">Sonn- &amp; Feiertag: +80%</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li>Impressum</li>
+        <li>AGB</li>
+        <li>Datenschutz</li>
+        <li>Cookies</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 · Sabrina Herosé · Wehr</span>
+    <span>Version 3.10</span>
+    <span>Instagram · Facebook · YouTube</span>
+  </div>
+</footer>
+
+</body>
+</html>

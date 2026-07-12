@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosmetikinstitut Hautnah — Mockup v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Markenfarben — extrahiert aus Logo + alter Seite */
+    --creme:          #E9E3DA;
+    --sand:           #DFD7CD;
+    --taupe:          #88807B;
+    --taupe-dark:     #6B5F58;
+    --gold:           #DCBD80;
+    --gold-dark:      #B89860;
+    --anthrazit:      #1C1C1C;
+    --stein:          #95928E;
+    --weiss:          #FFFFFF;
+    --line:           rgba(28,28,28,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--creme);
+    color: var(--anthrazit);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  .display { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+  .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    font-weight: 500;
+  }
+  a { color: inherit; text-decoration: none; }
+  
+  /* ============ NAVIGATION ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(233, 227, 218, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 22px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .nav-logo .brand {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    color: var(--anthrazit);
+  }
+  .nav-logo .brand-large {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    letter-spacing: 6px;
+    font-weight: 400;
+    color: var(--anthrazit);
+    margin-top: 2px;
+  }
+  .nav-logo .brand-sub {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--taupe);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-menu li {
+    position: relative;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--anthrazit);
+    transition: color 0.3s ease;
+  }
+  .nav-menu li:hover { color: var(--gold-dark); }
+  .nav-menu li.has-dropdown::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    margin-left: 6px;
+    vertical-align: 2px;
+    opacity: 0.5;
+  }
+  .nav-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--creme);
+    border: 1px solid var(--line);
+    padding: 16px 0;
+    min-width: 240px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+  .nav-menu li:hover .dropdown { display: block; }
+  .nav-menu .dropdown a {
+    display: block;
+    padding: 10px 24px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--anthrazit);
+    transition: all 0.2s ease;
+    text-transform: none;
+    font-weight: 400;
+  }
+  .nav-menu .dropdown a:hover {
+    background: var(--sand);
+    color: var(--gold-dark);
+    padding-left: 30px;
+  }
+  .nav-cta {
+    background: var(--anthrazit);
+    color: var(--creme);
+    padding: 14px 26px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--anthrazit);
+  }
+  .nav-cta:hover {
+    background: transparent;
+    color: var(--anthrazit);
+  }
+  
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: linear-gradient(135deg, var(--creme) 0%, var(--sand) 100%);
+    overflow: hidden;
+  }
+  .hero-bg-deco {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220,189,128,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-text {
+    padding: 80px 60px 80px 100px;
+    z-index: 2;
+    position: relative;
+  }
+  .hero-text .eyebrow { margin-bottom: 24px; }
+  .hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 5vw, 72px);
+    line-height: 1.05;
+    font-weight: 300;
+    color: var(--anthrazit);
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+  }
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--taupe-dark);
+    font-weight: 400;
+  }
+  .hero-text .lead {
+    font-size: 17px;
+    color: var(--anthrazit);
+    opacity: 0.85;
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .hero-cta-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--anthrazit);
+    color: var(--creme);
+    padding: 18px 36px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid var(--anthrazit);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--anthrazit);
+  }
+  .btn-link {
+    color: var(--anthrazit);
+    padding: 18px 0;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--gold-dark);
+    transition: all 0.3s ease;
+  }
+  .btn-link:hover {
+    color: var(--gold-dark);
+  }
+  .hero-image {
+    position: relative;
+    height: 90vh;
+    background: linear-gradient(135deg, var(--taupe) 0%, var(--taupe-dark) 100%);
+    overflow: hidden;
+  }
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    background: 
+      linear-gradient(180deg, transparent 50%, rgba(28,28,28,0.4) 100%),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 8px);
+    border: 1px solid rgba(220,189,128,0.3);
+  }
+  .hero-image-placeholder {
+    position: absolute;
+    inset: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(233,227,218,0.4);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .hero-image-tag {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: var(--creme);
+    z-index: 3;
+  }
+  .hero-image-tag .signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .hero-image-tag .role {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 10px;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--taupe);
+    text-transform: uppercase;
+    z-index: 3;
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  
+  /* ============ ZITAT ============ */
+  .quote-section {
+    padding: 140px 60px;
+    text-align: center;
+    background: var(--creme);
+    position: relative;
+  }
+  .quote-section::before,
+  .quote-section::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .quote-section::before { top: 60px; }
+  .quote-section::after { bottom: 60px; }
+  .quote-section blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--anthrazit);
+    max-width: 900px;
+    margin: 0 auto 30px;
+    letter-spacing: -0.3px;
+  }
+  .quote-section cite {
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    font-weight: 500;
+  }
+  
+  /* ============ STORY ============ */
+  .story {
+    background: var(--sand);
+    padding: 120px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .story-img {
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, var(--taupe) 0%, var(--anthrazit) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .story-img::after {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(220,189,128,0.3);
+  }
+  .story-img-label {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(233,227,218,0.5);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .story-content .eyebrow { margin-bottom: 24px; }
+  .story-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+  .story-content h2 em {
+    font-style: italic;
+    color: var(--taupe-dark);
+  }
+  .story-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--anthrazit);
+    opacity: 0.9;
+    margin-bottom: 24px;
+    max-width: 580px;
+  }
+  .story-content p strong {
+    font-weight: 600;
+    color: var(--anthrazit);
+    opacity: 1;
+  }
+  .story-content .btn-link { margin-top: 20px; }
+  
+  /* ============ BEHANDLUNGEN ============ */
+  .treatments {
+    background: var(--creme);
+    padding: 140px 60px 100px;
+  }
+  .treatments-header {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  .treatments-header .eyebrow { margin-bottom: 20px; }
+  .treatments-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 4vw, 60px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .treatments-header p {
+    font-size: 17px;
+    color: var(--anthrazit);
+    opacity: 0.8;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .treatments-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .treatment {
+    background: var(--weiss);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .treatment:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(28,28,28,0.08);
+  }
+  .treatment-img {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--taupe) 0%, var(--anthrazit) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .treatment-img::after {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(220,189,128,0.2);
+  }
+  .treatment-img-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(233,227,218,0.3);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .treatment-body {
+    padding: 28px 28px 32px;
+    border-top: 3px solid var(--anthrazit);
+    transition: border-color 0.3s ease;
+    position: relative;
+  }
+  .treatment:hover .treatment-body { border-color: var(--gold-dark); }
+  .treatment-body .number {
+    position: absolute;
+    top: -3px;
+    right: 28px;
+    background: var(--anthrazit);
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    padding: 4px 10px;
+    transition: all 0.3s ease;
+  }
+  .treatment:hover .treatment-body .number {
+    background: var(--gold-dark);
+    color: var(--anthrazit);
+  }
+  .treatment-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+    color: var(--anthrazit);
+  }
+  .treatment-body p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--anthrazit);
+    opacity: 0.7;
+    margin-bottom: 16px;
+  }
+  .treatment-body .more {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    font-weight: 500;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  .treatment:hover .treatment-body .more {
+    color: var(--gold-dark);
+    border-color: var(--gold-dark);
+  }
+  
+  /* ============ CHECK & START ============ */
+  .checkstart {
+    background: var(--anthrazit);
+    color: var(--creme);
+    padding: 140px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .checkstart::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220,189,128,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .checkstart-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .checkstart .eyebrow { color: var(--gold); margin-bottom: 24px; }
+  .checkstart h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    color: var(--creme);
+    letter-spacing: -0.5px;
+  }
+  .checkstart h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .checkstart p {
+    font-size: 17px;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 48px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-primary-light {
+    background: var(--gold);
+    color: var(--anthrazit);
+    padding: 20px 44px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .btn-primary-light:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+  
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--stein);
+    color: var(--creme);
+    padding: 80px 60px 30px;
+  }
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-brand h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+  }
+  .footer-brand .sub {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 24px;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 320px;
+  }
+  footer h4 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--gold);
+  }
+  footer ul { list-style: none; }
+  footer ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+  }
+  footer ul li:hover { opacity: 1; }
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(233,227,218,0.2);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+  }
+  
+  /* ============ RESPONSIVE NOTE ============ */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 60px 40px; }
+    .hero-image { height: 500px; }
+    .story { grid-template-columns: 1fr; gap: 60px; padding: 80px 40px; }
+    .treatments-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-menu { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .treatments-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="brand">KOSMETIKINSTITUT</span>
+      <span class="brand-large">HAUTNAH</span>
+      <span class="brand-sub">— Sabrina Herosé</span>
+    </div>
+    <ul class="nav-menu">
+      <li>Startseite</li>
+      <li class="has-dropdown">
+        Shop
+        <div class="dropdown">
+          <a href="#">Produkte</a>
+          <a href="#">Gutscheine</a>
+          <a href="#">Bücher</a>
+        </div>
+      </li>
+      <li class="has-dropdown">
+        Ästhetische Konzepte
+        <div class="dropdown">
+          <a href="#">Crystal Peel</a>
+          <a href="#">Pharma</a>
+          <a href="#">Chemical Peeling</a>
+          <a href="#">Shape Beckenboden</a>
+          <a href="#">Hydra Facial</a>
+          <a href="#">Hydra Lift</a>
+          <a href="#">EMS Shape</a>
+          <a href="#">One Take</a>
+          <a href="#">FORMA</a>
+          <a href="#">Skin Needling</a>
+        </div>
+      </li>
+      <li>H-Konzept</li>
+      <li>Über uns</li>
+      <li>Aktuelles</li>
+      <li>Kontakt</li>
+    </ul>
+    <button class="nav-cta">Zusammenarbeit anfragen</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-deco"></div>
+  <div class="hero-text">
+    <div class="eyebrow">Premium Medical Aesthetic Institute</div>
+    <h1>Hautnah <br><em>sichtbare</em> Hautveränderung <br>auf höchstem Niveau.</h1>
+    <p class="lead">Wenn Ihre Haut empfindlicher, röter, unreiner und schlaffer wird — obwohl Sie schon alles ausprobiert haben — begleite ich Sie mit pharmazeutisch-ganzheitlicher Expertise zurück zu klarer, gestraffter Haut, in der Sie sich wieder wohlfühlen.</p>
+    <div class="hero-cta-group">
+      <a href="#" class="btn-primary">Zusammenarbeit anfragen</a>
+      <a href="#" class="btn-link">Mehr über mich</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">Foto Sabrina</div>
+    <div class="hero-image-tag">
+      <div class="signature">Sabrina Herosé</div>
+      <div class="role">Kosmetikmeisterin · Bachelor Professional</div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </div>
+</section>
+
+<!-- ZITAT -->
+<section class="quote-section">
+  <blockquote>„Die Natur gibt dir das Gesicht, das du mit 20 hast. Es liegt an dir das Gesicht zu bestimmen, das du mit 50 oder älter hast."</blockquote>
+  <cite>— Coco Chanel</cite>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-img">
+    <div class="story-img-label">Foto Studio</div>
+  </div>
+  <div class="story-content">
+    <div class="eyebrow">Über mich</div>
+    <h2>Sie buchen nicht nur einen Termin. <em>Sie buchen eine Hautpflege-Expertin.</em></h2>
+    <p>Das Kosmetikinstitut Hautnah ist ein <strong>Premium Medical Aesthetic Institute</strong> und das erste Fachinstitut für Dermakosmetik im Landkreis Waldshut.</p>
+    <p>Seit über 20 Jahren bin ich auf das Lösen von Hautirritationen und ‑problemen spezialisiert — als Kosmetikmeisterin, Bachelor Professional, Buchautorin, pharmazeutisch‑technische Assistentin und Fitnesstrainerin.</p>
+    <p>Meine Behandlungen sind keine kurzfristigen Lösungen, sondern <strong>individuelle, kurbasierte Konzepte</strong>. Denn Hautverbesserung entsteht nicht durch einzelne Termine, sondern nur im gemeinsamen Weg — Hand in Hand.</p>
+    <a href="#" class="btn-link">Vollständige Vita ansehen</a>
+  </div>
+</section>
+
+<!-- BEHANDLUNGEN -->
+<section class="treatments">
+  <div class="treatments-header">
+    <div class="eyebrow">Ästhetische Konzepte</div>
+    <h2>Behandlungen, die wirklich verändern.</h2>
+    <p>Jede Behandlung ist Teil eines maßgeschneiderten Konzepts — abgestimmt auf Ihre Haut, Ihre Bedürfnisse und Ihr Ziel.</p>
+  </div>
+  <div class="treatments-grid">
+    
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Crystal Peel</div></div>
+      <div class="treatment-body">
+        <span class="number">01</span>
+        <h3>Crystal Peel</h3>
+        <p>Mikrodermabrasion mit feinsten Kristallen — sanftes Abtragen abgestorbener Hautzellen für ein ebenmäßiges, strahlendes Hautbild.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Pharma</div></div>
+      <div class="treatment-body">
+        <span class="number">02</span>
+        <h3>Pharma</h3>
+        <p>Pharmazeutisch fundierte Hautbehandlung für anspruchsvolle Indikationen — wirkungsvoll, fachlich präzise, ergebnisorientiert.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Chemical Peeling</div></div>
+      <div class="treatment-body">
+        <span class="number">03</span>
+        <h3>Chemical Peeling</h3>
+        <p>Tiefgreifende Hauterneuerung gegen Pigmentflecken, Unreinheiten und Anzeichen der Hautalterung. Individuell auf Hauttyp und Ziel abgestimmt.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Shape Beckenboden</div></div>
+      <div class="treatment-body">
+        <span class="number">04</span>
+        <h3>Shape Beckenboden</h3>
+        <p>Gezielte EMShape‑X‑Anwendung für eine starke, vitale Beckenbodenmuskulatur. Effektiv, diskret, ohne Trainingsaufwand.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Hydra Facial</div></div>
+      <div class="treatment-body">
+        <span class="number">05</span>
+        <h3>Hydra Facial</h3>
+        <p>Tiefenreinigung, Peeling, Hydratation und Pflege in einer Behandlung. Sofort sichtbares, strahlendes Ergebnis ohne Ausfallzeit.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Hydra Lift</div></div>
+      <div class="treatment-body">
+        <span class="number">06</span>
+        <h3>Hydra Lift</h3>
+        <p>Apparativefreie Feuchtigkeitsbehandlung — für eine sichtbar straffere, hydratisierte und frische Haut. Schmerzfrei und für jeden Hauttyp.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto EMS Shape</div></div>
+      <div class="treatment-body">
+        <span class="number">07</span>
+        <h3>EMS Shape</h3>
+        <p>Hochintensive Muskelstimulation für definierte Konturen an Bauch, Beinen und Po — Tiefenwirkung in nur 30 Minuten pro Sitzung.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto One Take (ONETEC)</div></div>
+      <div class="treatment-body">
+        <span class="number">08</span>
+        <h3>One Take</h3>
+        <p>Hochfrequenz‑Behandlung gegen Pigmentflecken, Couperose und Fibrome — präzise, schonend, mit sofort sichtbarem Ergebnis.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto FORMA</div></div>
+      <div class="treatment-body">
+        <span class="number">09</span>
+        <h3>FORMA</h3>
+        <p>Radiofrequenz‑Lifting mit Wärme — strafft die Haut, stimuliert die Kollagenbildung und definiert die Gesichtskonturen sichtbar neu.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+    <div class="treatment">
+      <div class="treatment-img"><div class="treatment-img-label">Foto Skin Needling</div></div>
+      <div class="treatment-body">
+        <span class="number">10</span>
+        <h3>Skin Needling</h3>
+        <p>Medical Beauty Spezial — Mikroverletzungen aktivieren die Selbstheilung der Haut. Wirksam gegen Narben, Falten und große Poren.</p>
+        <span class="more">Mehr erfahren →</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHECK & START -->
+<section class="checkstart">
+  <div class="checkstart-content">
+    <div class="eyebrow">Check &amp; Start</div>
+    <h2>Der erste Schritt einer <em>echten Zusammenarbeit.</em></h2>
+    <p>Bevor wir starten, ist ein erster Checkup unerlässlich: umfassende Hautanalyse, persönliche Anamnese und eine auf Ihre Haut abgestimmte Pflegebehandlung. Daraus erstelle ich Ihren maßgeschneiderten Plan — die Grundlage unserer gemeinsamen Reise.</p>
+    <a href="#" class="btn-primary-light">Zusammenarbeit anfragen</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>HAUTNAH</h3>
+      <div class="sub">Premium Medical Aesthetic Institute</div>
+      <p>Kosmetikinstitut Hautnah<br>Hauptstraße 3, 79664 Wehr<br>Telefon &amp; WhatsApp: +49 (0) 7762 / 80 56 69<br>www.hautnah-wehr.de</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li>Startseite</li>
+        <li>Ästhetische Konzepte</li>
+        <li>H-Konzept</li>
+        <li>Über uns</li>
+        <li>Aktuelles</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Geschäftszeiten</h4>
+      <ul>
+        <li>Mo · Di · Mi · Fr</li>
+        <li>10 – 18 Uhr</li>
+        <li style="opacity:0.6; margin-top:14px;">Termine nur nach<br>telefonischer Vereinbarung</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li>Impressum</li>
+        <li>AGB</li>
+        <li>Datenschutz</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kosmetikinstitut Hautnah · Sabrina Herosé</span>
+    <span>Instagram · Facebook · YouTube</span>
+  </div>
+</footer>
+
+</body>
+</html>

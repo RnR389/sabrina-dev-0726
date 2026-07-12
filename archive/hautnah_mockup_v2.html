@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosmetikinstitut Hautnah — Mockup v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --creme:          #E9E3DA;
+    --creme-deep:     #DDD4C7;
+    --sand:           #DFD7CD;
+    --paper:          #F4EFE6;
+    --taupe:          #88807B;
+    --taupe-dark:     #5A524C;
+    --gold:           #DCBD80;
+    --gold-deep:      #A8884E;
+    --ink:            #1C1C1C;
+    --ink-soft:       #2E2A26;
+    --stein:          #95928E;
+    --line-ink:       rgba(28,28,28,0.15);
+    --line-strong:    rgba(28,28,28,0.65);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.55;
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+  .serif { font-family: 'Bodoni Moda', serif; }
+  a { color: inherit; text-decoration: none; }
+  
+  /* ========================================
+     TOP-BAR — DATELINE / MAGAZIN-KOPF
+  ======================================== */
+  .topbar {
+    background: var(--ink);
+    color: var(--creme);
+    padding: 10px 50px;
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+  .topbar span { display: inline-flex; align-items: center; gap: 8px; }
+  .topbar .dot { width:4px; height:4px; border-radius:50%; background: var(--gold); display:inline-block; }
+  
+  /* ========================================
+     NAVIGATION — Magazin Masthead
+  ======================================== */
+  .masthead {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line-strong);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .masthead-top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 26px 50px 18px;
+    border-bottom: 1px solid var(--line-ink);
+  }
+  .masthead-left, .masthead-right {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    font-weight: 500;
+  }
+  .masthead-right { text-align: right; }
+  .masthead-right a {
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+  }
+  .masthead-right a:hover { color: var(--gold-deep); border-color: var(--gold-deep); }
+  .masthead-brand {
+    text-align: center;
+    line-height: 1;
+  }
+  .masthead-brand .institut {
+    font-size: 10px;
+    letter-spacing: 8px;
+    color: var(--taupe-dark);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .masthead-brand .wordmark {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 500;
+    font-size: 52px;
+    letter-spacing: 14px;
+    color: var(--ink);
+    padding-left: 14px;
+  }
+  .masthead-brand .signature {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--taupe-dark);
+    margin-top: 4px;
+    letter-spacing: 2px;
+  }
+  .masthead-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 16px 50px;
+    list-style: none;
+  }
+  .masthead-nav li {
+    position: relative;
+    font-size: 11px;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+  }
+  .masthead-nav li::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+  }
+  .masthead-nav li:hover::after { transform: scaleX(1); }
+  .masthead-nav li.has-down::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg);
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: 4px;
+    opacity: 0.6;
+  }
+  .masthead-nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    margin-top: 16px;
+    min-width: 260px;
+    padding: 8px 0;
+  }
+  .masthead-nav li:hover .dropdown { display: block; }
+  .masthead-nav .dropdown a {
+    display: block;
+    padding: 12px 28px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+  }
+  .masthead-nav .dropdown a:hover {
+    background: var(--creme);
+    border-left-color: var(--gold-deep);
+    color: var(--gold-deep);
+  }
+  
+  /* ========================================
+     COVER — Hero im Magazin-Cover-Stil
+  ======================================== */
+  .cover {
+    position: relative;
+    padding: 60px 50px 80px;
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .cover-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+    min-height: 720px;
+  }
+  
+  /* Linke Spalte — Magazine Marginalien */
+  .cover-left {
+    padding-top: 80px;
+    border-right: 1px solid var(--line-ink);
+    padding-right: 40px;
+  }
+  .cover-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cover-tag::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold-deep);
+  }
+  .cover-left h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    font-style: italic;
+  }
+  .cover-left p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .index-list {
+    list-style: none;
+    border-top: 1px solid var(--line-ink);
+    padding-top: 20px;
+  }
+  .index-list li {
+    display: flex;
+    align-items: baseline;
+    padding: 7px 0;
+    border-bottom: 1px dotted var(--line-ink);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .index-list .num {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    color: var(--gold-deep);
+    margin-right: 12px;
+    font-size: 13px;
+  }
+  .index-list .name { flex: 1; color: var(--ink); font-weight: 500; }
+  .index-list .pg { color: var(--taupe); font-size: 10px; }
+  
+  /* Mittlere Spalte — Headline-Bühne */
+  .cover-center {
+    text-align: center;
+    position: relative;
+    padding: 0 10px;
+  }
+  .issue-line {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold-deep);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .cover-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(70px, 9vw, 130px);
+    line-height: 0.88;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0;
+    letter-spacing: -2px;
+  }
+  .cover-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--taupe-dark);
+    display: block;
+  }
+  .cover-title .ampersand {
+    font-style: italic;
+    color: var(--gold-deep);
+    font-size: 1.4em;
+    line-height: 0.4;
+    display: block;
+    margin: 6px 0;
+  }
+  .cover-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--ink);
+    margin: 36px auto;
+  }
+  .cover-strap {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .cover-sub {
+    font-size: 13px;
+    color: var(--ink-soft);
+    max-width: 340px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Rechte Spalte — Portrait */
+  .cover-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--line-ink);
+    padding-left: 40px;
+    padding-top: 80px;
+  }
+  .portrait {
+    flex: 1;
+    background: linear-gradient(165deg, var(--taupe) 0%, var(--ink) 100%);
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+  .portrait::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(220,189,128,0.25);
+    pointer-events: none;
+  }
+  .portrait::after {
+    content: '01';
+    position: absolute;
+    bottom: 24px;
+    right: 28px;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1;
+  }
+  .portrait-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(233,227,218,0.35);
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .portrait-caption {
+    margin-top: 16px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    line-height: 1.6;
+  }
+  .portrait-caption strong { color: var(--ink); font-weight: 600; }
+  
+  /* Footer-Streifen unter Cover */
+  .cover-footer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-strong);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .cover-footer .center { text-align: center; }
+  .cover-footer .right { text-align: right; }
+  .cta-pill {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 32px;
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .cta-pill:hover {
+    background: transparent;
+    color: var(--ink);
+  }
+  .cta-pill .arrow {
+    margin-left: 10px;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+  }
+  
+  /* ========================================
+     EDITORIAL OPENER — Erste Story
+  ======================================== */
+  .editorial {
+    padding: 140px 50px 120px;
+    background: var(--paper);
+    position: relative;
+  }
+  .editorial-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 80px;
+  }
+  .editorial-marker {
+    border-top: 2px solid var(--ink);
+    padding-top: 20px;
+  }
+  .editorial-marker .chapter {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold-deep);
+    margin-bottom: 6px;
+  }
+  .editorial-marker .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .editorial-body h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.05;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+  }
+  .editorial-body h2 em {
+    font-style: italic;
+    color: var(--taupe-dark);
+  }
+  .editorial-columns {
+    column-count: 2;
+    column-gap: 50px;
+    column-rule: 1px solid var(--line-ink);
+  }
+  .editorial-columns p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .dropcap::first-letter {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 72px;
+    font-weight: 500;
+    float: left;
+    line-height: 0.85;
+    margin: 6px 12px 0 0;
+    color: var(--gold-deep);
+    font-style: italic;
+  }
+  .editorial-byline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-ink);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+  }
+  .editorial-byline strong { color: var(--ink); font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 500; letter-spacing: 1px; text-transform: none; font-size: 14px; }
+  
+  /* ========================================
+     QUOTE BREAK
+  ======================================== */
+  .quote-break {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 130px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-break .marker {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 140px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+  .quote-break blockquote {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(28px, 3.5vw, 48px);
+    line-height: 1.3;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--paper);
+    text-align: center;
+    max-width: 1100px;
+    margin: 60px auto 30px;
+    position: relative;
+    z-index: 2;
+  }
+  .quote-break blockquote::before,
+  .quote-break blockquote::after {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .quote-break cite {
+    display: block;
+    text-align: center;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+  .quote-break cite::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    vertical-align: 4px;
+    margin-right: 14px;
+  }
+  
+  /* ========================================
+     VERZEICHNIS — Behandlungen als Magazine-Index
+  ======================================== */
+  .verzeichnis {
+    background: var(--paper);
+    padding: 130px 50px 100px;
+  }
+  .verzeichnis-head {
+    max-width: 1300px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .verzeichnis-head .chapter {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+  }
+  .verzeichnis-head h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.95;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -2px;
+  }
+  .verzeichnis-head h2 em { font-style: italic; color: var(--taupe-dark); }
+  .verzeichnis-intro {
+    padding-bottom: 12px;
+  }
+  .verzeichnis-intro p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .verzeichnis-intro .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-bottom: 6px;
+  }
+  
+  .verzeichnis-list {
+    max-width: 1300px;
+    margin: 0 auto;
+    list-style: none;
+  }
+  .v-item {
+    display: grid;
+    grid-template-columns: 90px 1fr 200px 320px 24px;
+    gap: 30px;
+    align-items: center;
+    padding: 28px 12px;
+    border-bottom: 1px solid var(--line-ink);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+  }
+  .v-item:first-child { border-top: 1px solid var(--line-ink); }
+  .v-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--ink);
+    transition: width 0.5s ease;
+    z-index: 0;
+  }
+  .v-item > * { position: relative; z-index: 1; transition: color 0.4s ease 0.1s; }
+  .v-item:hover { padding-left: 32px; }
+  .v-item:hover::before { width: 6px; background: var(--gold-deep); }
+  .v-item .v-num {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold-deep);
+    font-weight: 400;
+  }
+  .v-item .v-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .v-item .v-tag {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    font-weight: 500;
+  }
+  .v-item .v-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .v-item .v-arrow {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--ink);
+    transition: transform 0.4s ease;
+  }
+  .v-item:hover .v-arrow {
+    transform: translateX(8px);
+    color: var(--gold-deep);
+  }
+  
+  /* ========================================
+     CHECK & START — Editorial Spread mit Foto
+  ======================================== */
+  .checkstart {
+    background: var(--creme-deep);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 700px;
+  }
+  .cs-image {
+    background: linear-gradient(160deg, var(--taupe-dark) 0%, var(--ink) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-image::after {
+    content: '';
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(220,189,128,0.2);
+  }
+  .cs-image::before {
+    content: '★';
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    color: var(--gold);
+    font-size: 18px;
+    opacity: 0.7;
+  }
+  .cs-image-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(233,227,218,0.3);
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 18px;
+  }
+  .cs-content {
+    padding: 90px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cs-content .chapter {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+  .cs-content .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  .cs-content h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.05;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 32px;
+    letter-spacing: -0.8px;
+  }
+  .cs-content h2 em {
+    font-style: italic;
+    color: var(--taupe-dark);
+  }
+  .cs-content p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    max-width: 460px;
+  }
+  .cs-content p strong { color: var(--ink); font-weight: 600; }
+  .cs-features {
+    margin: 0 0 40px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line-ink);
+    border-bottom: 1px solid var(--line-ink);
+    list-style: none;
+  }
+  .cs-features li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 6px 0;
+    font-weight: 500;
+  }
+  .cs-features li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold-deep);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .cs-cta {
+    align-self: flex-start;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 36px;
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .cs-cta:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+  
+  /* ========================================
+     KOLOPHON — Footer im Magazin-Stil
+  ======================================== */
+  .kolophon {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 50px 40px;
+  }
+  .kolophon-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 80px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(233,227,218,0.15);
+  }
+  .kolophon-brand .word {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    margin-bottom: 2px;
+    line-height: 1;
+  }
+  .kolophon-brand .sub {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  .kolophon-brand p {
+    font-size: 13px;
+    line-height: 1.9;
+    opacity: 0.8;
+    max-width: 320px;
+  }
+  .kolophon h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 24px;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .kolophon ul { list-style: none; }
+  .kolophon ul li {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+  }
+  .kolophon ul li:hover { opacity: 1; color: var(--gold); }
+  .kolophon-bottom {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+  
+  /* ========================================
+     RESPONSIVE
+  ======================================== */
+  @media (max-width: 1200px) {
+    .cover-grid { grid-template-columns: 1fr 1.2fr; }
+    .cover-left { display: none; }
+    .v-item { grid-template-columns: 60px 1fr 200px 24px; }
+    .v-item .v-desc { display: none; }
+  }
+  @media (max-width: 900px) {
+    .topbar { font-size: 8px; padding: 10px 20px; letter-spacing: 2px; }
+    .masthead-top { padding: 20px; }
+    .masthead-brand .wordmark { font-size: 32px; letter-spacing: 8px; }
+    .masthead-nav { gap: 18px; padding: 12px 20px; flex-wrap: wrap; }
+    .masthead-nav li { font-size: 9px; letter-spacing: 1.5px; }
+    .cover { padding: 40px 24px; }
+    .cover-grid { grid-template-columns: 1fr; gap: 60px; min-height: auto; }
+    .cover-right { border-left: none; padding-left: 0; padding-top: 0; }
+    .cover-footer { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+    .cover-footer .right { text-align: center; }
+    .editorial { padding: 80px 24px; }
+    .editorial-inner { grid-template-columns: 1fr; gap: 40px; }
+    .editorial-columns { column-count: 1; }
+    .verzeichnis { padding: 80px 24px; }
+    .verzeichnis-head { grid-template-columns: 1fr; gap: 30px; }
+    .v-item { grid-template-columns: 50px 1fr 24px; padding: 22px 8px; }
+    .v-item .v-tag, .v-item .v-desc { display: none; }
+    .v-item .v-name { font-size: 22px; }
+    .checkstart { grid-template-columns: 1fr; }
+    .cs-image { min-height: 400px; }
+    .cs-content { padding: 60px 30px; }
+    .kolophon { padding: 60px 24px 30px; }
+    .kolophon-grid { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span><span class="dot"></span> Premium Medical Aesthetic Institute</span>
+  <span>Hauptstraße 3 · 79664 Wehr · +49 (0) 7762 / 80 56 69</span>
+  <span>Mo · Di · Mi · Fr · 10–18 Uhr</span>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-left">Erstes 5★ Fachinstitut · Landkreis Waldshut</div>
+    <div class="masthead-brand">
+      <div class="institut">Kosmetikinstitut</div>
+      <div class="wordmark">HAUTNAH</div>
+      <div class="signature">— Sabrina Herosé</div>
+    </div>
+    <div class="masthead-right"><a href="#">Zusammenarbeit anfragen →</a></div>
+  </div>
+  <ul class="masthead-nav">
+    <li class="has-down">Shop
+      <div class="dropdown">
+        <a>Produkte</a>
+        <a>Gutscheine</a>
+        <a>Bücher</a>
+      </div>
+    </li>
+    <li class="has-down">Ästhetische Konzepte
+      <div class="dropdown">
+        <a>Crystal Peel</a>
+        <a>Pharma</a>
+        <a>Chemical Peeling</a>
+        <a>Shape Beckenboden</a>
+        <a>Hydra Facial</a>
+        <a>Hydra Lift</a>
+        <a>EMS Shape</a>
+        <a>One Take</a>
+        <a>FORMA</a>
+        <a>Skin Needling</a>
+      </div>
+    </li>
+    <li>Haarkonzept</li>
+    <li>Über uns</li>
+    <li>Aktuelles</li>
+    <li>Kontakt</li>
+  </ul>
+</header>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-grid">
+    
+    <!-- Linke Spalte: Marginalien-Index -->
+    <aside class="cover-left">
+      <div class="cover-tag">In dieser Ausgabe</div>
+      <h4>„Nur wer die Ursache kennt, kann die Symptome behandeln."</h4>
+      <p>Pharmazeutisch fundierte Hauttherapie, individuelle Konzepte, sichtbare Veränderung — kein einmaliges Verwöhnprogramm.</p>
+      <ul class="index-list">
+        <li><span class="num">I</span><span class="name">Über das Institut</span><span class="pg">S. 02</span></li>
+        <li><span class="num">II</span><span class="name">Verzeichnis</span><span class="pg">S. 04</span></li>
+        <li><span class="num">III</span><span class="name">Check &amp; Start</span><span class="pg">S. 10</span></li>
+        <li><span class="num">IV</span><span class="name">Kontakt</span><span class="pg">S. 12</span></li>
+      </ul>
+    </aside>
+    
+    <!-- Mittlere Spalte: Hauptbühne -->
+    <div class="cover-center">
+      <div class="issue-line">— Edition · 2026 · Vol. 01 —</div>
+      <h1 class="cover-title">
+        Sicht<span style="font-style:italic;color:var(--taupe-dark)">bare</span>
+        <span class="ampersand">&amp;</span>
+        Haut<em>veränderung</em>
+      </h1>
+      <div class="cover-divider"></div>
+      <div class="cover-strap">Hautnah · auf höchstem Niveau</div>
+      <p class="cover-sub">Premium Medical Aesthetic Institute. Erstes Fachinstitut für Dermakosmetik im Landkreis Waldshut. Gegründet und geführt von Sabrina Herosé.</p>
+    </div>
+    
+    <!-- Rechte Spalte: Portrait -->
+    <aside class="cover-right">
+      <div class="portrait">
+        <div class="portrait-label">Portrait Sabrina</div>
+      </div>
+      <div class="portrait-caption">
+        <strong>Sabrina Herosé</strong> · Kosmetikmeisterin<br>
+        Bachelor Professional · Buchautorin · PTA<br>
+        — Seit über 20 Jahren in der Branche
+      </div>
+    </aside>
+    
+  </div>
+  
+  <!-- Cover Footer -->
+  <div class="cover-footer">
+    <div>Ausgabe 01 · Hautnah Magazin</div>
+    <div class="center"><a class="cta-pill">Zusammenarbeit anfragen <span class="arrow">↗</span></a></div>
+    <div class="right">Folgen Sie uns · Instagram · Facebook · YouTube</div>
+  </div>
+</section>
+
+<!-- EDITORIAL OPENER -->
+<section class="editorial">
+  <div class="editorial-inner">
+    <div class="editorial-marker">
+      <div class="chapter">Kapitel I.</div>
+      <div class="label">Über das Institut</div>
+    </div>
+    <div class="editorial-body">
+      <h2>Sie buchen nicht nur einen Termin. <em>Sie buchen eine Hautpflege-Expertin.</em></h2>
+      <div class="editorial-columns">
+        <p class="dropcap">Wenn Ihre Haut empfindlicher, röter, unreiner und schlaffer wird — obwohl Sie schon alles ausprobiert haben — begleite ich Sie mit pharmazeutisch-ganzheitlicher Expertise zurück zu klarer, gestraffter Haut. Seit über zwei Jahrzehnten bin ich auf das Lösen von Hautirritationen und ‑problemen spezialisiert.</p>
+        <p>Meine Behandlungen sind keine kurzfristigen Lösungen, sondern <strong>individuelle, kurbasierte Konzepte</strong>. Denn Hautverbesserung entsteht nicht durch einzelne Termine, sondern nur im gemeinsamen Weg — Hand in Hand. Das bedeutet: regelmäßige Behandlungen im Institut und konsequente Heimpflege mit meinen abgestimmten Produkten.</p>
+        <p>Ich arbeite mit Frauen und Männern, die verstanden haben, dass echte Hauttransformation Zeit, Geduld, Mitarbeit und ein entsprechendes Investment erfordert. Ergebnisse entstehen nicht zufällig — sondern durch klare Systeme und konsequente Zusammenarbeit.</p>
+      </div>
+      <div class="editorial-byline">
+        <span>Von</span> <strong>Sabrina Herosé</strong> <span>· Kosmetikmeisterin · Wehr, Baden-Württemberg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BREAK -->
+<section class="quote-break">
+  <div class="marker">"</div>
+  <blockquote>Die Natur gibt dir das Gesicht, das du mit 20 hast. Es liegt an dir das Gesicht zu bestimmen, das du mit 50 oder älter hast.</blockquote>
+  <cite>Coco Chanel</cite>
+</section>
+
+<!-- VERZEICHNIS -->
+<section class="verzeichnis">
+  <div class="verzeichnis-head">
+    <div>
+      <div class="chapter">Kapitel II.</div>
+      <h2>Das <em>Verzeichnis</em> der Behandlungen</h2>
+    </div>
+    <div class="verzeichnis-intro">
+      <div class="label">— Ästhetische Konzepte</div>
+      <p>Zehn präzise abgestimmte Konzepte — von Pharma‑Tiefenwirkung bis zur Mikrodermabrasion. Jede Behandlung ist Teil eines maßgeschneiderten Plans, abgestimmt auf Ihre Haut, Ihre Bedürfnisse und Ihr Ziel.</p>
+      <p style="font-style:italic; color: var(--taupe-dark);">— Klicken Sie auf eine Behandlung, um zur Detailseite zu gelangen.</p>
+    </div>
+  </div>
+  
+  <ul class="verzeichnis-list">
+    
+    <li class="v-item">
+      <span class="v-num">I.</span>
+      <span class="v-name">Crystal Peel</span>
+      <span class="v-tag">Mikrodermabrasion</span>
+      <span class="v-desc">Sanftes Abtragen abgestorbener Hautzellen mit feinsten Kristallen — für ein ebenmäßiges, strahlendes Hautbild.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">II.</span>
+      <span class="v-name">Pharma</span>
+      <span class="v-tag">Wirkstofftherapie</span>
+      <span class="v-desc">Pharmazeutisch fundierte Hautbehandlung für anspruchsvolle Indikationen. Wirkungsvoll, fachlich präzise, ergebnisorientiert.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">III.</span>
+      <span class="v-name">Chemical Peeling</span>
+      <span class="v-tag">Hauterneuerung</span>
+      <span class="v-desc">Tiefgreifende Erneuerung gegen Pigmentflecken, Unreinheiten und Anzeichen der Hautalterung — auf Hauttyp und Ziel abgestimmt.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">IV.</span>
+      <span class="v-name">Shape Beckenboden</span>
+      <span class="v-tag">EMShape X · Beckenboden</span>
+      <span class="v-desc">Gezielte Anwendung für eine starke, vitale Beckenbodenmuskulatur. Effektiv, diskret, ohne Trainingsaufwand.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">V.</span>
+      <span class="v-name">Hydra Facial</span>
+      <span class="v-tag">Tiefenpflege</span>
+      <span class="v-desc">Tiefenreinigung, Peeling, Hydratation und Pflege in einer Behandlung. Sofort sichtbares Ergebnis ohne Ausfallzeit.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">VI.</span>
+      <span class="v-name">Hydra Lift</span>
+      <span class="v-tag">Feuchtigkeitslift</span>
+      <span class="v-desc">Apparativefreie Feuchtigkeitsbehandlung für eine sichtbar straffere, hydratisierte Haut. Schmerzfrei, für jeden Hauttyp.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">VII.</span>
+      <span class="v-name">EMS Shape</span>
+      <span class="v-tag">Körperkonturierung</span>
+      <span class="v-desc">Hochintensive Muskelstimulation für definierte Konturen an Bauch, Beinen und Po — Tiefenwirkung in 30 Minuten.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">VIII.</span>
+      <span class="v-name">One Take</span>
+      <span class="v-tag">Hochfrequenz · ONETEC</span>
+      <span class="v-desc">Präzise Behandlung gegen Pigmentflecken, Couperose und Fibrome — schonend, mit sofort sichtbarem Ergebnis.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">IX.</span>
+      <span class="v-name">FORMA</span>
+      <span class="v-tag">Radiofrequenz-Lifting</span>
+      <span class="v-desc">Radiofrequenz mit Wärme — strafft die Haut, stimuliert die Kollagenbildung, definiert die Konturen sichtbar neu.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+    <li class="v-item">
+      <span class="v-num">X.</span>
+      <span class="v-name">Skin Needling</span>
+      <span class="v-tag">Medical Beauty Spezial</span>
+      <span class="v-desc">Mikroverletzungen aktivieren die Selbstheilung der Haut. Wirksam gegen Narben, Falten und große Poren.</span>
+      <span class="v-arrow">→</span>
+    </li>
+    
+  </ul>
+</section>
+
+<!-- CHECK & START -->
+<section class="checkstart">
+  <div class="cs-image">
+    <div class="cs-image-label">Foto Studio · Check &amp; Start</div>
+  </div>
+  <div class="cs-content">
+    <div class="chapter">Kapitel III.</div>
+    <div class="label">Der erste Schritt</div>
+    <h2>Check &amp; <em>Start.</em></h2>
+    <p>Bevor wir starten, ist ein erster Checkup <strong>unerlässlich</strong>. Ihre Kennenlern-Behandlung beinhaltet eine umfassende Hautanalyse, eine Anamnese und eine auf Ihre Haut abgestimmte Pflegebehandlung.</p>
+    <p>Auf Grundlage dieser Analyse stelle ich Ihnen Ihren maßgeschneiderten Pflege- und Behandlungsplan zusammen. Der erste und wichtigste Schritt für unsere Zusammenarbeit.</p>
+    <ul class="cs-features">
+      <li>Umfassende Hautanalyse</li>
+      <li>Persönliche Anamnese</li>
+      <li>Abgestimmte Pflegebehandlung</li>
+      <li>Individueller Behandlungsplan</li>
+    </ul>
+    <a class="cs-cta">Zusammenarbeit anfragen →</a>
+  </div>
+</section>
+
+<!-- KOLOPHON / FOOTER -->
+<footer class="kolophon">
+  <div class="kolophon-grid">
+    <div class="kolophon-brand">
+      <div class="word">HAUTNAH</div>
+      <div class="sub">— Premium Medical Aesthetic Institute</div>
+      <p>Hauptstraße 3<br>79664 Wehr<br><br>Telefon &amp; WhatsApp<br>+49 (0) 7762 / 80 56 69<br><br>www.hautnah-wehr.de</p>
+    </div>
+    <div>
+      <h4>Verzeichnis</h4>
+      <ul>
+        <li>Ästhetische Konzepte</li>
+        <li>Haarkonzept</li>
+        <li>Über uns</li>
+        <li>Aktuelles</li>
+        <li>Shop</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Geschäftszeiten</h4>
+      <ul>
+        <li>Mo · Di · Mi · Fr</li>
+        <li>10 – 18 Uhr</li>
+        <li style="opacity:0.5; margin-top:14px;">Termine nur nach<br>telefonischer Vereinbarung</li>
+        <li style="opacity:0.5;">Ab 19:30 Uhr: +50%</li>
+        <li style="opacity:0.5;">Sonn-/Feiertag: +80%</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li>Impressum</li>
+        <li>AGB</li>
+        <li>Datenschutz</li>
+        <li>Cookies</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kolophon-bottom">
+    <span>© MMXXVI · Sabrina Herosé · Wehr</span>
+    <span>Instagram · Facebook · YouTube</span>
+  </div>
+</footer>
+
+</body>
+</html>
