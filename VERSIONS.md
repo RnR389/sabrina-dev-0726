@@ -268,6 +268,23 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V3.12 — „Behandlungs-Reihenfolge, Schreibweisen, ®, finaler Taupe"  📍 Feedback ausstehend
+
+- **Dateien:** alle Seiten in `current/` (jetzt 17 — neu: `haut-haarcheck.html`)
+- **Status:** lokal fertig (Deploy auf Wunsch)
+- **Geändert gegenüber V3.11:**
+  - **Finaler Taupe-Ton von Sabrina:** `--taupe` von `#8A7F77` (provisorisch) auf **`#C2B4A9`** — auf allen Seiten.
+  - **Behandlungen neu sortiert + Schreibweisen korrigiert** auf der Übersicht (`aesthetische-konzepte.html`) und in Titel/Breadcrumb/H1 der Detailseiten. Neue Reihenfolge: Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden · Pharma.
+  - **®-Zeichen (Markenschutz)** ergänzt bei: **Forma®, Hydrafacial®, Onetec®, EMShape X®** und **EMShape X® Beckenboden** (auf Renés Bestätigung auch dort). Umgesetzt als `&reg;` in Übersichts-Kacheln, H1, Breadcrumb, `<title>` und den „Weitere Konzepte"-Karten aller Detailseiten.
+  - **Umbenennungen:** Hydra Facial → Hydrafacial®, Hydra Lift → Hydralift, Chemical Peeling → Chemische Peelings, EMS Shape → EMShape X®, Shape Beckenboden → EMShape X® Beckenboden, One Take → Onetec®, FORMA → Forma®, Skin Needling → Medical Beauty Spezial Skin Needling. Crystal Peel und Pharma unverändert.
+  - **Neue Seite `haut-haarcheck.html`** als Platzhalter (Diagnostik & Analyse), Struktur wie Pharma-Platzhalter, Bild = „Bildmaterial folgt".
+  - **Kachelzahl-Text** „Zehn" → „Elf" (11 Kacheln, da Pharma zusätzlich bestehen bleibt) — anschließend auf Renés Wunsch der komplette **Kopfbereich über den Kacheln entfernt** (Eyebrow „Ästhetische Konzepte" + Überschrift „…Behandlungskonzepte." + Intro-Absatz). Kacheln starten jetzt direkt unter der Navigation.
+- **Footer-Version:** alle Seiten → **3.12**.
+- **Offen / mit Sabrina klären:** Verhältnis **Pharma ↔ Haut & Haarcheck** (aktuell bewusst BEIDE vorhanden — auf Renés Wunsch als To-do markiert); Homepage-Text (Du/Sie); Google-Rezensionen; echte Fotos (u.a. Haut & Haarcheck).
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
