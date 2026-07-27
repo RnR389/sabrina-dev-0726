@@ -1092,6 +1092,26 @@
   }
 
   .masthead-nav li > a { display: block; }
+
+  /* ============ KUNDENSTIMMEN (V3.12) ============
+     Echte Google-Rezensionen (alle 5★). Bewusst ohne Kursiv/Serifen
+     gesetzt — nur Outfit, Sterne im Taupe-Ton als einziger Schmuck. */
+  .voices { background: var(--paper); padding: 110px 60px; border-top: 1px solid var(--line); }
+  .voices-inner { max-width: 1300px; margin: 0 auto; }
+  .voices-head { text-align: center; margin-bottom: 10px; }
+  .voices-head .section-eyebrow { justify-content: center; }
+  .voices-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; font-weight: 300; letter-spacing: -1px; color: var(--ink); margin-bottom: 24px; }
+  .voices-head h2 em { font-style: normal; color: var(--taupe-dark); font-weight: 300; }
+  .voices-rating { display: inline-flex; align-items: center; gap: 14px; border: 1px solid var(--line-strong); background: var(--creme); padding: 13px 24px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voices-rating .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; }
+  .voices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 56px; }
+  .voice { background: var(--creme); border: 1px solid var(--line); padding: 32px 30px 26px; display: flex; flex-direction: column; }
+  .voice .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; margin-bottom: 18px; }
+  .voice blockquote { font-style: normal; font-size: 15px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 24px; flex: 1; }
+  .voice .who { border-top: 1px solid var(--line); padding-top: 16px; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voice .who .src { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 2px; font-weight: 500; color: var(--taupe-dark); }
+  @media (max-width: 1100px) { .voices { padding: 80px 30px; } .voices-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 40px; } }
+  @media (max-width: 640px)  { .voices-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1172,8 +1192,55 @@
   <div class="item"><div class="text">Erstes 5★ Fachinstitut<br>Landkreis Waldshut</div></div>
 </div>
 
+<!-- KUNDENSTIMMEN — echte Google-Rezensionen, wortgetreu zitiert (Kürzungen mit …) -->
+<section class="voices">
+  <div class="voices-inner">
+    <div class="voices-head">
+      <div class="section-eyebrow"><span class="bar"></span>Kundenstimmen</div>
+      <h2>Was Kundinnen und Kunden <em>über die Zusammenarbeit sagen.</em></h2>
+      <div class="voices-rating"><span class="stars">★★★★★</span> 4,8 von 5 · 65 Google-Rezensionen</div>
+    </div>
+    <div class="voices-grid">
 
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich bewundere die Fachkompetenz, mit der sie jede Gesichtsbehandlung ausführlich erklärt, ihr umfassendes Wissen, das über das einer Kosmetikerin weit hinausreicht, ihre freundliche, zuvorkommende Art. … Ich empfehle sie gerne auch meinen Patienten und Patientinnen mit Hautproblemen im Gesicht weiter."</blockquote>
+        <div class="who">Gudrun F.<span class="src">Google-Rezension</span></div>
+      </div>
 
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich hatte eine ausführliche Hautanalyse mit anschließender Beratung und passenden Treatments – alles war perfekt auf meine Haut abgestimmt. Man merkt sofort, dass hier fundiertes Fachwissen und echte Leidenschaft für die Hautpflege zusammentreffen."</blockquote>
+        <div class="who">Lea M.<span class="src">Google-Rezension</span></div>
+      </div>
+
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Sie hat sich viel Zeit genommen, um mir alles verständlich und sehr kompetent zu erklären. Die Analyse war super aufschlussreich und ihre Produktempfehlungen passen perfekt zu meinem Hauttyp."</blockquote>
+        <div class="who">Mark K.<span class="src">Google-Rezension</span></div>
+      </div>
+
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Die Inhaberin Sabrina war total freundlich, kompetent und hat mir auch die «Scheu» genommen. Das Ergebnis nach ein paar Sitzungen ist wirklich unglaublich!"</blockquote>
+        <div class="who">Amadeus B.<span class="src">Google-Rezension</span></div>
+      </div>
+
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Man kommt rein und man wird mit einem freundlichen Lächeln begrüßt. … Bei Sabrina bekommt man eine kompetente und personalisierte Beratung. Top Studio. Sehr zu empfehlen"</blockquote>
+        <div class="who">Gordana G.<span class="src">Google-Rezension</span></div>
+      </div>
+
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Die Atmosphäre ist entspannt und professionell, die Behandlung war sehr angenehm und meine Haut fühlt sich danach unglaublich frisch und gepflegt an. Man merkt, dass hier mit viel Erfahrung und Leidenschaft gearbeitet wird."</blockquote>
+        <div class="who">Elke S.<span class="src">Google-Rezension</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ZITAT -->
 <section class="qbreak">
@@ -1221,7 +1288,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 3.12</span>
+    <span>Version 3.14</span>
     <span>Instagram · Facebook · YouTube</span>
   </div>
 </footer>

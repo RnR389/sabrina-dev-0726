@@ -330,9 +330,68 @@
   }
 
   .masthead-nav li > a { display: block; }
+
+  /* ============ KUNDENSTIMMEN (V3.12) ============
+     Echte Google-Rezensionen (alle 5★), thematisch zur Seite passend.
+     Bewusst ohne Kursiv/Serifen — nur Outfit, Sterne im Taupe-Ton. */
+  .voices { background: var(--paper); padding: 100px 60px; border-top: 1px solid var(--line); }
+  .voices-inner { max-width: 1300px; margin: 0 auto; }
+  .voices-head { text-align: center; margin-bottom: 10px; }
+  .voices-head .section-eyebrow { justify-content: center; }
+  .voices-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; font-weight: 300; letter-spacing: -1px; color: var(--ink); margin-bottom: 22px; }
+  .voices-head h2 em { font-style: normal; color: var(--taupe-dark); font-weight: 300; }
+  .voices-rating { display: inline-flex; align-items: center; gap: 14px; border: 1px solid var(--line-strong); background: var(--creme); padding: 13px 24px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voices-rating .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; }
+  .voices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+  .voice { background: var(--creme); border: 1px solid var(--line); padding: 30px 28px 24px; display: flex; flex-direction: column; }
+  .voice .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; margin-bottom: 16px; }
+  .voice blockquote { font-style: normal; font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 22px; flex: 1; }
+  .voice .who { border-top: 1px solid var(--line); padding-top: 15px; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voice .who .src { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 2px; font-weight: 500; color: var(--taupe-dark); }
+  @media (max-width: 1100px) { .voices { padding: 70px 30px; } .voices-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 36px; } }
+  @media (max-width: 640px)  { .voices-grid { grid-template-columns: 1fr; } }
+
+  /* ============ BILDSPRACHE STATT TEXTWUESTE (V3.13) ============
+     Zwei Bausteine ersetzen das alte "Ueberschrift / zwei Zeilen"-Muster:
+     .icon-grid  = kurze Aufzaehlungen als Icon-Kacheln
+     .facts      = kurze Frage/Antwort-Bloecke als kompakte Karten
+     Texte sind unveraendert 1:1 von Sabrina — nur die Optik ist neu. */
+  .ico { width: 30px; height: 30px; color: var(--taupe-dark); flex-shrink: 0; }
+
+  .icon-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 4px 0 0; padding: 0; }
+  .icon-grid li { background: var(--paper); border: 1px solid var(--line); padding: 26px 16px 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; transition: border-color .35s ease, background .35s ease; }
+  .icon-grid li:hover { border-color: var(--taupe); background: var(--creme); }
+  .icon-grid li span { font-size: 13px; line-height: 1.5; letter-spacing: .3px; color: var(--ink); font-weight: 500; }
+
+  /* Laengere Punkte: Icon links, Text rechts — bleibt lesbar */
+  .icon-rows { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin: 4px 0 0; padding: 0; }
+  .icon-rows li { background: var(--paper); border: 1px solid var(--line); padding: 20px 22px; display: flex; align-items: flex-start; gap: 16px; transition: border-color .35s ease; }
+  .icon-rows li:hover { border-color: var(--taupe); }
+  .icon-rows li span { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; padding: 46px 0; border-top: 1px solid var(--line); }
+  .fact { background: var(--creme); border: 1px solid var(--line); padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color .35s ease; }
+  .fact:hover { border-color: var(--taupe); }
+  .fact .ico { width: 26px; height: 26px; }
+  .fact h3 { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.35; letter-spacing: .2px; color: var(--ink); margin: 0; }
+  .fact p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin: 0 0 10px; }
+  .fact p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 640px) {
+    .icon-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .icon-grid li { padding: 20px 10px 18px; }
+    .facts { grid-template-columns: 1fr; }
+  }
+
+  /* Ruhige Liste: wenn Icons keinen echten Mehrwert haetten (zu viele oder
+     zu abstrakte Punkte) — zweispaltig, luftig, kleine Rauten-Marke. */
+  .clean-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px 34px; margin: 6px 0 0; padding: 0; }
+  .clean-list li { position: relative; padding: 11px 0 11px 22px; font-size: 15px; line-height: 1.6; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+  .clean-list li::before { content: ''; position: absolute; left: 2px; top: 19px; width: 5px; height: 5px; background: var(--taupe); transform: rotate(45deg); }
 </style>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><defs><symbol id="i-face" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M9.1 10.4h.02M14.9 10.4h.02" stroke-width="2"/><path d="M9.3 15.1a4.2 4.2 0 0 0 5.4 0"/></symbol><symbol id="i-neck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.4 3.2c.9 1.7 2.1 2.5 3.6 2.5s2.7-.8 3.6-2.5"/><path d="M10 5.9v3c0 1-.6 1.6-1.6 2L5.1 12.2C3.9 12.7 3 13.9 3 15.2V21M14 5.9v3c0 1 .6 1.6 1.6 2l3.3 1.3c1.2.5 2.1 1.7 2.1 3V21"/></symbol><symbol id="i-decollete" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-5.1c0-2 1.2-3.8 3.1-4.6l3.1-1.3M20 21v-5.1c0-2-1.2-3.8-3.1-4.6l-3.1-1.3"/><path d="m10.2 10 1.8 3.8L13.8 10"/><path d="M9.6 4.2c.7 1.4 1.5 2.1 2.4 2.1s1.7-.7 2.4-2.1"/></symbol><symbol id="i-body" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.6" r="2.3"/><path d="M12 6.9v7M12 13.9 8.6 21M12 13.9 15.4 21M7 9.8l5 1.1 5-1.1"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/></symbol><symbol id="i-water" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c0 0 5.6 6 5.6 9.6a5.6 5.6 0 1 1-11.2 0C6.4 9.2 12 3.2 12 3.2z"/></symbol><symbol id="i-serum" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 2.6h3.6v2.8h-3.6z"/><path d="M9.2 5.4h5.6l1.1 3v11.1a2 2 0 0 1-2 2h-3.8a2 2 0 0 1-2-2V8.4z"/><path d="M9.8 12.4h4.4"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.8 2.6 20.2h18.8z"/><path d="M12 9.8v4.1M12 17.3h.02" stroke-width="2"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.2s-7.2-4.5-7.2-9.5A3.95 3.95 0 0 1 12 8.1a3.95 3.95 0 0 1 7.2 2.6c0 5-7.2 9.5-7.2 9.5z"/></symbol><symbol id="i-pump" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4.4" y="3.6" width="9.6" height="16.8" rx="2"/><path d="M7.2 7.8h4M7.2 11h4"/><path d="M18 10c1.2 1.5 2 2.7 2 3.6a2 2 0 0 1-4 0c0-.9.8-2.1 2-3.6z"/></symbol><symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3.2v3.8M14 3.2v3.8M10 17v3.8M14 17v3.8M3.2 10H7M3.2 14H7M17 10h3.8M17 14h3.8"/></symbol><symbol id="i-pregnant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="3.9" r="2.1"/><path d="M10.6 6.2c-1.7 0-2.6 1.3-2.8 2.9L7.3 13"/><path d="M7.6 12.9c3 0 5.4 1.5 5.4 4.1S10.6 21 7.6 21"/><path d="M7.9 13.1 7.4 21"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 12h4.1l2.5-6.4 4.2 12.8 2.5-6.4h5.1"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 6.8v5.4l3.3 2"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="5.2" width="17.2" height="15.4" rx="2"/><path d="M3.4 9.8h17.2M8.2 3.2v4M15.8 3.2v4"/><path d="M7.8 13.6h.02M12 13.6h.02M16.2 13.6h.02M7.8 17h.02M12 17h.02" stroke-width="1.9"/></symbol><symbol id="i-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 3.8c0 8.4-5.6 11.4-9.2 11.4H6.8c0-6.2 4.6-11.4 13.4-11.4z"/><path d="m3.8 20.2 7.2-7.2"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 5 6.1v5.6c0 4.4 3 7.8 7 9.7 4-1.9 7-5.3 7-9.7V6.1z"/><path d="m9.2 12 2 2.1 3.6-3.9"/></symbol><symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.02" stroke-width="2.4"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.4 13.9 9.3 19.8 11.2 13.9 13.1 12 19 10.1 13.1 4.2 11.2 10.1 9.3z"/><path d="M18.6 16.4l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-skin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="4.6" width="17.2" height="14.8" rx="2.4"/><path d="M3.4 10.1h17.2M3.4 14.6h17.2"/></symbol><symbol id="i-nogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M5.8 18.2 18.2 5.8"/></symbol><symbol id="i-spot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9.4" r="2.7"/><circle cx="15.4" cy="14.8" r="3.4"/><circle cx="16.2" cy="7.4" r="1.4"/></symbol><symbol id="i-vein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.8 19.4c3-1.6 4.6-4.2 5.6-7.2s2.6-5.2 5.6-6.4"/><path d="M9.4 12.2c1.7.5 3.2.2 4.6-.7M12.1 8.2c1.2.8 2.6 1.1 4.1.9"/><path d="M17.4 4.4c1.2 1 2.2 1.4 3.4 1.4"/></symbol><symbol id="i-hair" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.6 20.4c0-6.4 1.4-10.8 3.2-13.6M11 20.4c0-6.4 1.4-10.8 3.2-13.6M16.4 20.4c0-5.4 1.2-9.2 2.6-11.6"/></symbol><symbol id="i-bump" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.2h6.2M14.4 17.2h6.2"/><path d="M9.6 17.2c0-3.4 1-6.6 2.4-6.6s2.4 3.2 2.4 6.6"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.8 12.4 5 5 9.4-10"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 3.6C10 4.6 5 9.8 5 16.3V20.4"/><path d="M20.4 3.6c0 9.4-5.6 13-11.2 13H5"/></symbol><symbol id="i-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.4 18.6 12 12 18.6 5.4 12z"/></symbol><symbol id="i-drop2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 4.2c0 0 3.6 3.8 3.6 6.1a3.6 3.6 0 1 1-7.2 0c0-2.3 3.6-6.1 3.6-6.1z"/><path d="M16.6 12c0 0 2.6 2.8 2.6 4.4a2.6 2.6 0 1 1-5.2 0c0-1.6 2.6-4.4 2.6-4.4z"/></symbol><symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.4 8.6 4.4L12 12.2 3.4 7.8z"/><path d="m3.4 12.4 8.6 4.4 8.6-4.4M3.4 16.8l8.6 4.4 8.6-4.4"/></symbol></defs></svg>
 
 <!-- TOPBAR -->
 <div class="topbar">
@@ -394,9 +453,38 @@
 <!-- CONTENT -->
 <div class="t-body">
   <div class="t-prose">
-    <div class="t-block"><div class="section-eyebrow"><span class="bar"></span>Die Methode</div><h2>Feuchtigkeit, die <em>bleibt.</em></h2><p>Die apparativefreie Feuchtigkeitsbehandlung eignet sich für jeden Hauttyp und jedes Alter. Sie ist angenehm, schmerzfrei und lässt sich ideal mit anderen Behandlungen kombinieren — und verstärkt deren Wirkung.</p><p>Bereits sofort nach der ersten Behandlung wirkt die Haut frischer und hydratisierter. Sie sind unmittelbar wieder gesellschaftsfähig.</p></div><div class="t-block"><div class="section-eyebrow"><span class="bar"></span>Anwendungsbereiche</div><h2>Von Kopf bis <em>Körper.</em></h2><ul class="feat-grid"><li>Gesicht</li><li>Hals</li><li>Dekolleté</li><li>Gesamter Körper</li></ul></div><div class="t-highlight"><div class="lab">Empfehlung · Kur</div><p>Wir empfehlen mindestens <strong>4 Behandlungen</strong>, in der Regel einmal pro Woche. Je nach Hautsituation können weitere Sitzungen sinnvoll sein — für ein <em>nachhaltig hydratisiertes Hautbild.</em></p></div>
+    <div class="t-block"><div class="section-eyebrow"><span class="bar"></span>Die Methode</div><h2>Feuchtigkeit, die <em>bleibt.</em></h2><p>Die apparativefreie Feuchtigkeitsbehandlung eignet sich für jeden Hauttyp und jedes Alter. Sie ist angenehm, schmerzfrei und lässt sich ideal mit anderen Behandlungen kombinieren — und verstärkt deren Wirkung.</p><p>Bereits sofort nach der ersten Behandlung wirkt die Haut frischer und hydratisierter. Sie sind unmittelbar wieder gesellschaftsfähig.</p></div><div class="t-block"><div class="section-eyebrow"><span class="bar"></span>Anwendungsbereiche</div><h2>Von Kopf bis <em>Körper.</em></h2><ul class="icon-grid"><li><svg class="ico" aria-hidden="true"><use href="#i-face"/></svg><span>Gesicht</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-neck"/></svg><span>Hals</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-decollete"/></svg><span>Dekolleté</span></li><li><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span>Gesamter Körper</span></li></ul></div><div class="t-highlight"><div class="lab">Empfehlung · Kur</div><p>Wir empfehlen mindestens <strong>4 Behandlungen</strong>, in der Regel einmal pro Woche. Je nach Hautsituation können weitere Sitzungen sinnvoll sein — für ein <em>nachhaltig hydratisiertes Hautbild.</em></p></div>
   </div>
 </div>
+
+
+<!-- KUNDENSTIMMEN — echte Google-Rezensionen, wortgetreu (Kürzungen mit …) -->
+<section class="voices">
+  <div class="voices-inner">
+    <div class="voices-head">
+      <div class="section-eyebrow"><span class="bar"></span>Kundenstimmen</div>
+      <h2>Was Kundinnen und Kunden <em>sagen.</em></h2>
+      <div class="voices-rating"><span class="stars">★★★★★</span> 4,8 von 5 · 65 Google-Rezensionen</div>
+    </div>
+    <div class="voices-grid">
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Die letzte Behandlung mit dem Thermolift war sehr effektiv … Bei Sabrina bekommt man eine kompetente und personalisierte Beratung. Top Studio. Sehr zu empfehlen"</blockquote>
+        <div class="who">Gordana G.<span class="src">Google-Rezension</span></div>
+      </div>
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Die Atmosphäre ist entspannt und professionell, die Behandlung war sehr angenehm und meine Haut fühlt sich danach unglaublich frisch und gepflegt an. Man merkt, dass hier mit viel Erfahrung und Leidenschaft gearbeitet wird."</blockquote>
+        <div class="who">Elke S.<span class="src">Google-Rezension</span></div>
+      </div>
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich bewundere die Fachkompetenz, mit der sie jede Gesichtsbehandlung ausführlich erklärt, ihr umfassendes Wissen, das über das einer Kosmetikerin weit hinausreicht, ihre freundliche, zuvorkommende Art. … Ich empfehle sie gerne auch meinen Patienten und Patientinnen mit Hautproblemen im Gesicht weiter."</blockquote>
+        <div class="who">Gudrun F.<span class="src">Google-Rezension</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA BAND -->
 <section class="cta-band" id="kontakt">
@@ -524,7 +612,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 3.12</span>
+    <span>Version 3.14</span>
     <span>Instagram · Facebook · YouTube</span>
   </div>
 </footer>

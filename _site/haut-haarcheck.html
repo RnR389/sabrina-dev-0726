@@ -330,6 +330,26 @@
   }
 
   .masthead-nav li > a { display: block; }
+
+  /* ============ KUNDENSTIMMEN (V3.12) ============
+     Echte Google-Rezensionen (alle 5★), thematisch zur Seite passend.
+     Bewusst ohne Kursiv/Serifen — nur Outfit, Sterne im Taupe-Ton. */
+  .voices { background: var(--paper); padding: 100px 60px; border-top: 1px solid var(--line); }
+  .voices-inner { max-width: 1300px; margin: 0 auto; }
+  .voices-head { text-align: center; margin-bottom: 10px; }
+  .voices-head .section-eyebrow { justify-content: center; }
+  .voices-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; font-weight: 300; letter-spacing: -1px; color: var(--ink); margin-bottom: 22px; }
+  .voices-head h2 em { font-style: normal; color: var(--taupe-dark); font-weight: 300; }
+  .voices-rating { display: inline-flex; align-items: center; gap: 14px; border: 1px solid var(--line-strong); background: var(--creme); padding: 13px 24px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voices-rating .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; }
+  .voices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+  .voice { background: var(--creme); border: 1px solid var(--line); padding: 30px 28px 24px; display: flex; flex-direction: column; }
+  .voice .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; margin-bottom: 16px; }
+  .voice blockquote { font-style: normal; font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 22px; flex: 1; }
+  .voice .who { border-top: 1px solid var(--line); padding-top: 15px; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voice .who .src { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 2px; font-weight: 500; color: var(--taupe-dark); }
+  @media (max-width: 1100px) { .voices { padding: 70px 30px; } .voices-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 36px; } }
+  @media (max-width: 640px)  { .voices-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -397,6 +417,35 @@
     <div class="t-block"><div class="placeholder-note" style="max-width:none;margin:0;">Platzhalter — der Behandlungstext zu dieser Behandlung wird von Sabrina nachgereicht und hier wortwörtlich eingesetzt.</div></div>
   </div>
 </div>
+
+
+<!-- KUNDENSTIMMEN — echte Google-Rezensionen, wortgetreu (Kürzungen mit …) -->
+<section class="voices">
+  <div class="voices-inner">
+    <div class="voices-head">
+      <div class="section-eyebrow"><span class="bar"></span>Kundenstimmen</div>
+      <h2>Was Kundinnen und Kunden <em>sagen.</em></h2>
+      <div class="voices-rating"><span class="stars">★★★★★</span> 4,8 von 5 · 65 Google-Rezensionen</div>
+    </div>
+    <div class="voices-grid">
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich hatte eine ausführliche Hautanalyse mit anschließender Beratung und passenden Treatments – alles war perfekt auf meine Haut abgestimmt. Man merkt sofort, dass hier fundiertes Fachwissen und echte Leidenschaft für die Hautpflege zusammentreffen."</blockquote>
+        <div class="who">Lea M.<span class="src">Google-Rezension</span></div>
+      </div>
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Sie hat sich viel Zeit genommen, um mir alles verständlich und sehr kompetent zu erklären. Die Analyse war super aufschlussreich und ihre Produktempfehlungen passen perfekt zu meinem Hauttyp."</blockquote>
+        <div class="who">Mark K.<span class="src">Google-Rezension</span></div>
+      </div>
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Meine Haut wurde sehr professionell und gründlich analysiert. Besonders toll fand ich, dass man sich direkt um meinen Ausschlag am Kinn gekümmert hat. Die Behandlung war nicht nur angenehm, sondern auch extrem wirksam – der Ausschlag ist deutlich besser geworden."</blockquote>
+        <div class="who">Lea H.<span class="src">Google-Rezension</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA BAND -->
 <section class="cta-band" id="kontakt">
@@ -485,7 +534,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 3.12</span>
+    <span>Version 3.14</span>
     <span>Instagram · Facebook · YouTube</span>
   </div>
 </footer>
