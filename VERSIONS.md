@@ -403,6 +403,29 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.17 — „Engere Abstände + Reihenfolge Ihre Expertinnen"  📍 Feedback ausstehend
+
+- **Dateien:** `assets/hautnah.css` (alle Seiten) + `current/ihre-expertinnen.html`
+- **Anlass (René):** „Zwischen den Blöcken ist ein relativ großer Abstand. Auf ‚Ihre Expertinnen' erst Sabrina, darunter Bianka, und dann erst die Google-Bewertung. Diese Abstände sind auf jeder Seite so groß — mach sie kleiner, harmonischer fürs Auge."
+- **Geändert:**
+  - **Reihenfolge auf `ihre-expertinnen.html`:** war Sabrina → Google-Bewertungen → Bianka. Jetzt **Sabrina → Bianka → Google-Bewertungen**. Inhaltlich sinnvoller: erst das Team vollständig vorstellen, dann der Vertrauensbeleg.
+  - **Abstände site-weit verkleinert** (gemessen, nicht geschätzt):
+
+    | | vorher | nachher |
+    |---|---|---|
+    | Abschnitt (Polster je Seite) | 129,6 px | 74,9 px |
+    | sichtbare Lücke zwischen Abschnitten | **259–285 px** | ~150 px |
+    | Textblock innerhalb einer Seite | 52 px | 38 px |
+    | Abstand unter Abschnitts-Köpfen | 54 px | 40 px |
+    | Footer-Abstand | 90 px | 64 px |
+
+  - Mobil bleiben 46 px je Seite — dort war der Abstand nie das Problem.
+- **Geprüft:** Ihre Expertinnen (176/150 px), Forma (Abschnittslücken durchgehend ~150 px), mobil kein Überlauf. *Hinweis: eine Zwischenmessung zeigte „−3 px" zwischen FAQ und Verwandtem — das war ein Messartefakt der noch nicht eingeblendeten Sektion; die Boxen liegen korrekt bündig.*
+- **Footer-Version:** alle Seiten → **4.17**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
