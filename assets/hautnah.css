@@ -290,7 +290,18 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
 .t-hero-img .ph .ico,.t-hero-img .ph .txt{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
 
 .t-body,.p-body{max-width:var(--maxw);margin-inline:auto}
-.t-prose,.p-prose{max-width:900px}
+/* Die Lesespalte steht mittig in der Seite — sonst klebt der ganze Inhalt
+   links und rechts bleibt ein totes Feld. Breite auf angenehme Zeilenlänge
+   begrenzt (~80 Zeichen), damit das Auge die Zeile nicht verliert. */
+.t-prose,.p-prose{max-width:730px;margin-inline:auto}
+/* Bild- und Kartenbausteine dürfen über die Lesespalte hinaus atmen —
+   Text bleibt gut lesbar, die Seite wirkt trotzdem großzügig. */
+@media (min-width:1080px){
+  .t-prose .zones,.t-prose .stats,.t-prose .facts,.t-prose .icon-grid,
+  .t-prose .icon-rows,.t-prose .clean-list,.t-prose .yt{
+    width:calc(100% + 180px);margin-left:-90px
+  }
+}
 .t-block,.p-block{padding-block:clamp(30px,4vw,52px);border-top:1px solid var(--line)}
 .t-block:first-child,.p-block:first-child{border-top:none;padding-top:0}
 .t-block h2,.p-block h2{margin-bottom:22px}
