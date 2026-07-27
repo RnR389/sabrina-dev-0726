@@ -494,6 +494,29 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.23 — „Footer gestapelt, Menü lesbar, Buttonschrift weiß"  📍 Feedback ausstehend
+
+- **Datei:** `assets/hautnah.css` (wirkt auf alle 22 Seiten)
+- **Anlass (René):** „Mach im Footer Impressum, AGB, Datenschutz wieder untereinander" · „Im Menüband hast du zwischen Logo und Menüpunkten noch Platz, schieb die Menüpunkte nach links und mach sie etwas größer" · „Die Schrift des Buttons muss weiß sein".
+- **Geändert:**
+  1. **Footer-Listen wieder untereinander.** Ursache war der Hover-Fix aus V4.18: `footer ul li:has(a){display:inline-block}` hat das **`<li>` selbst** inline gemacht — dadurch standen nicht nur Impressum/AGB/Datenschutz, sondern auch die **ganze Verzeichnis-Spalte** nebeneinander. Jetzt bleibt das `<li>` `block`, nur der `<a>` ist `inline-block` (das braucht die Hover-Verschiebung). **Der V4.18-Fix bleibt erhalten:** auf den Geschäftszeiten liegt weiterhin kein Zeigefinger.
+  2. **Menü nach links.** `.site-nav` war per `margin-left:auto` ganz nach rechts geschoben — daher die Lücke hinter dem Logo. Jetzt `flex:1` mit `ul{margin-right:auto}`: die Punkte stehen direkt neben dem Logo (Abstand 19–27 px statt ~90 px), der Button bleibt rechts.
+  3. **Menüschrift von 9,2 px auf 11–12 px**, Laufweite von .08em auf .055em — deutlich besser lesbar.
+  4. **Buttonschrift weiß.** `.site-nav a{color:var(--ink)}` hatte die Farbe von `.btn-primary` überschrieben → Espresso auf Taupe, schlechter Kontrast. Jetzt explizit `--paper`, auch im Hover.
+  5. **Hamburger-Breakpoint 1240 → 1320 px.** Die größere Schrift passt darunter nicht ohne Überlauf. Bewusste Abwägung: lieber ein sauberes Menü ab 1320 px und darunter der Hamburger als eine gequetschte 9-px-Leiste.
+
+     | Breite | Rest |
+     |---|---|
+     | 1330 px | +35 |
+     | 1400 px | +55 |
+     | 1440 px | +88 |
+     | 1920 px | +34 |
+- **Geprüft:** alle vier Footer-Spalten stapeln (Verzeichnis 8, Geschäftszeiten 3, Rechtliches 3), Zeigefinger nur auf Links · Buttonfarbe `rgb(250,246,239)` · mobil (900 px) Hamburger rechts, Panel öffnet, kein Querüberlauf.
+- **Footer-Version:** alle 22 Seiten → **4.23**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
