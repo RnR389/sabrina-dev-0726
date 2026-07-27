@@ -53,10 +53,13 @@ button{font-family:inherit}
 .serif{font-family:'Outfit',sans-serif;font-weight:300}
 
 /* ---------- Typografie: Kontrast über Größe und Gewicht ---------- */
-h1,h2,h3,h4{font-family:'Outfit',sans-serif;letter-spacing:-.03em;line-height:1.04;font-weight:300;color:var(--ink)}
-h1{font-size:clamp(42px,6.4vw,88px)}
-h2{font-size:clamp(30px,4.2vw,58px);line-height:1.07}
-h3{font-size:clamp(19px,1.6vw,25px);line-height:1.2;letter-spacing:-.02em;font-weight:400}
+/* Ruhige Größenstaffel (Faktor ~1,3). Vorher war h1 das 5,3-fache des
+   Fließtexts — die Überschriften haben den Inhalt erschlagen. Jetzt tragen
+   sie die Gliederung, ohne zu dominieren. */
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;letter-spacing:-.025em;line-height:1.1;font-weight:300;color:var(--ink)}
+h1{font-size:clamp(32px,3.2vw,46px);line-height:1.06}   /* ~2,8× Text */
+h2{font-size:clamp(24px,2.1vw,31px);line-height:1.15}   /* ~1,9× Text */
+h3{font-size:clamp(17px,1.35vw,20px);line-height:1.35;letter-spacing:-.01em;font-weight:500} /* ~1,2× Text */
 em{font-style:normal;color:var(--taupe-dark)}
 strong{font-weight:600;color:var(--ink)}
 p{color:var(--ink-soft)}
@@ -173,7 +176,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
   will-change:transform}
 .hero-text{position:relative;z-index:3;padding:clamp(30px,5vw,74px);max-width:min(660px,58%);color:var(--paper)}
 .hero-text h1{color:var(--paper);font-weight:200;text-wrap:balance;
-  font-size:clamp(36px,4.4vw,62px);letter-spacing:-.035em;
+  font-size:clamp(29px,3.3vw,48px);letter-spacing:-.03em;
   text-shadow:0 2px 30px rgba(58,50,44,.4)}
 .hero-text h1 em{color:var(--sand)}
 .hero-text .lead{font-size:clamp(16px,1.5vw,19px);line-height:1.75;color:rgba(250,246,239,.9);
@@ -194,11 +197,11 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
 }
 .hero-badge .stars{color:var(--sand);letter-spacing:.14em}
 .hero-tag{position:absolute;right:clamp(24px,4vw,58px);bottom:clamp(24px,4vw,52px);z-index:3;text-align:right}
-.hero-tag .signature-name{font-size:clamp(20px,2vw,28px);font-weight:300;color:var(--paper);line-height:1.1}
+.hero-tag .signature-name{font-size:clamp(18px,1.6vw,23px);font-weight:300;color:var(--paper);line-height:1.1}
 .hero-tag .role{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.72);margin-top:7px;font-weight:500}
 .hero-meta{display:flex;gap:clamp(22px,4vw,54px);flex-wrap:wrap;margin-top:36px;
   padding-top:28px;border-top:1px solid rgba(250,246,239,.22)}
-.hero-meta .num{font-size:clamp(28px,3vw,40px);font-weight:200;color:var(--paper);line-height:1}
+.hero-meta .num{font-size:clamp(22px,2.2vw,30px);font-weight:200;color:var(--paper);line-height:1}
 .hero-meta .label{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.7);margin-top:8px;font-weight:500}
 
 /* ---------- Trust: schwebende Pillen ---------- */
@@ -275,12 +278,12 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
 .t-hero .kicker .no{display:none}
 .t-hero .kicker .tag{color:var(--taupe-dark)}
 .t-hero h1{font-weight:200;margin-bottom:20px;text-wrap:balance}
-.t-hero .sub{font-size:clamp(19px,2vw,27px);font-weight:300;color:var(--taupe-dark);line-height:1.3;margin-bottom:26px}
+.t-hero .sub{font-size:clamp(17px,1.4vw,20px);font-weight:300;color:var(--taupe-dark);line-height:1.3;margin-bottom:26px}
 .t-hero .lead{font-size:16.5px;line-height:1.8;max-width:520px;margin-bottom:34px}
 .t-hero-cta{display:flex;gap:16px 26px;align-items:center;flex-wrap:wrap}
 .t-hero-media{position:relative}
 .t-hero-img{
-  position:relative;aspect-ratio:4/5;border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-l);
+  position:relative;aspect-ratio:6/5.5;border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-l);
   background:linear-gradient(150deg,var(--taupe),var(--taupe-dark))}
 /* Überstand oben/unten, damit die Parallaxe keine Kante freilegt */
 .t-hero-img img{position:absolute;top:-7%;left:0;width:100%;height:114%;
@@ -339,7 +342,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .fact:hover{transform:translateY(-5px);box-shadow:var(--sh)}
 .fact .ico{width:27px;height:27px}
-.fact h3{font-size:15.5px;font-weight:600;letter-spacing:0;margin:0}
+.fact h3{font-size:17px;font-weight:600;letter-spacing:0;margin:0}
 .fact p{font-size:14.5px;line-height:1.72;margin:0 0 10px}
 .fact p:last-child{margin-bottom:0}
 .clean-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 36px;margin-top:8px}
@@ -352,7 +355,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .zone:hover{transform:translateY(-5px);box-shadow:var(--sh)}
 .zone .ico{width:40px;height:40px;margin-bottom:16px}
-.zone h3{font-size:17px;font-weight:600;letter-spacing:.02em;margin-bottom:16px}
+.zone h3{font-size:17.5px;font-weight:600;letter-spacing:.02em;margin-bottom:16px}
 .zone ul{list-style:none;columns:2;column-gap:26px}
 .zone li{position:relative;padding:7px 0 7px 18px;font-size:14.5px;color:var(--ink-soft);break-inside:avoid}
 .zone li::before{content:'';position:absolute;left:1px;top:15px;width:4px;height:4px;background:var(--taupe);transform:rotate(45deg)}
@@ -360,10 +363,10 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
 .stat{background:var(--creme);border-radius:var(--r-l);padding:34px 26px;text-align:center;
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .stat:hover{transform:translateY(-5px);box-shadow:var(--sh)}
-.stat .num{display:block;font-size:clamp(40px,4.4vw,58px);font-weight:200;line-height:1;
+.stat .num{display:block;font-size:clamp(30px,2.8vw,40px);font-weight:200;line-height:1;
   letter-spacing:-.04em;color:var(--taupe-dark);margin-bottom:14px}
 .stat .txt{display:block;font-size:14px;line-height:1.6;color:var(--ink-soft)}
-.hf-lead{font-size:18.5px;line-height:1.72;color:var(--taupe-dark);margin-bottom:22px}
+.hf-lead{font-size:17.5px;line-height:1.72;color:var(--taupe-dark);margin-bottom:22px}
 
 /* ---------- Medien ---------- */
 .ba{background:var(--creme);border-radius:var(--r-xl);margin:0 var(--pad);padding-inline:clamp(22px,4vw,58px)}
@@ -434,7 +437,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
 
 /* ---------- Zitat ---------- */
 .qbreak{text-align:center}
-.qbreak blockquote{font-size:clamp(24px,3.4vw,46px);font-weight:200;line-height:1.32;letter-spacing:-.03em;
+.qbreak blockquote{font-size:clamp(20px,2.2vw,32px);font-weight:200;line-height:1.32;letter-spacing:-.03em;
   color:var(--ink);max-width:1000px;margin:0 auto 28px;text-wrap:balance}
 .qbreak cite{font-style:normal;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
   font-weight:600;color:var(--taupe-dark)}
