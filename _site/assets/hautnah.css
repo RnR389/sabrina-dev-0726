@@ -96,7 +96,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .site-head.compact{padding:6px var(--pad)}
 .head-inner{
   max-width:var(--maxw);margin-inline:auto;height:var(--head-h);
-  display:flex;align-items:center;gap:clamp(16px,3vw,44px);
+  display:flex;align-items:center;gap:clamp(14px,2vw,44px);
   padding:0 clamp(16px,2.4vw,30px);
   background:var(--glass);
   -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);
@@ -106,12 +106,12 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 }
 .site-head.compact .head-inner{height:62px;box-shadow:var(--sh)}
 .brand{flex:none;display:flex;align-items:center;transition:transform .45s var(--ease)}
-.brand img{height:clamp(52px,5.4vw,74px);width:auto;transition:height .45s var(--ease)}
+.brand img{height:clamp(46px,4.4vw,74px);width:auto;transition:height .45s var(--ease)}
 .site-head.compact .brand img{height:clamp(44px,4.2vw,54px)}
-.site-nav{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,1.5vw,22px)}
-.site-nav ul{list-style:none;display:flex;align-items:center;gap:clamp(9px,1.15vw,18px)}
+.site-nav{margin-left:auto;display:flex;align-items:center;gap:clamp(10px,1.15vw,22px)}
+.site-nav ul{list-style:none;display:flex;align-items:center;gap:clamp(8px,.85vw,18px)}
 .site-nav a,.site-nav li{
-  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  font-size:clamp(9.2px,.72vw,10.5px);letter-spacing:.08em;text-transform:uppercase;font-weight:600;
   color:var(--ink);white-space:nowrap
 }
 .site-nav ul li{position:relative;padding:8px 0;cursor:pointer;transition:color .3s var(--ease)}
@@ -154,7 +154,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
   border-bottom:1.5px solid var(--taupe);transition:color .35s var(--ease),border-color .35s var(--ease)
 }
 .btn-ghost:hover{color:var(--taupe-dark);border-color:var(--taupe-dark)}
-.nav-cta{padding:12px 20px !important;font-size:9.5px !important;letter-spacing:.12em !important}
+.nav-cta{padding:12px clamp(13px,1.25vw,20px) !important;font-size:clamp(8.6px,.66vw,9.5px) !important;letter-spacing:.1em !important}
 
 /* ==========================================================================
    HERO (Startseite) — vollflächiges Bild mit Parallaxe, Text darüber
@@ -519,7 +519,7 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 /* ==========================================================================
    RESPONSIV
    ========================================================================== */
-@media (max-width:1180px){
+@media (max-width:1240px){
   :root{--head-h:66px}
   .t-hero,.story-inner,.bianca-inner,.p-hero{grid-template-columns:1fr;gap:32px}
   .t-hero-media,.p-portrait{order:-1;max-width:460px}
