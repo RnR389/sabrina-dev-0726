@@ -7,6 +7,14 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ## Versions-Konvention
 
+> **Neue Regel ab 27.07.2026 (René):**
+> - **Layout-Änderung → vordere Zahl hoch:** 3.14 → **4.14**
+> - **Inhalts-Änderung → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
+>
+> **Rückfall-Punkte:** `git tag v3.14` = letzter Stand im alten Layout (zusätzlich physisch in `archive/v3.14-layout/`), `git tag v4.14` = erstes modernes Layout.
+> Zurückspringen: `git checkout v3.14 -- current/`, danach `_site/` neu bauen.
+
+*Historisch (bis V3.14):*
 - **V1, V2, V3 …** = komplette Neuausrichtung der Designsprache
 - **V3.1, V3.2 …** = Anpassungen innerhalb derselben Designrichtung
 - Jede Version bekommt einen Codenamen
@@ -334,6 +342,26 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
   - **`one-take.html` → `onetec.html` umbenannt** (Renés Wunsch: Dateiname soll zur Schreibweise passen). Alle Links angepasst, dazu Bilddatei `treatment-one-take.jpg` → `treatment-onetec.jpg`, Alt-Text und Meta-Description nachgezogen. Keine Reste von „one-take"/„One Take" mehr.
 - **Footer-Version:** alle Seiten → **3.14**.
 - **Offen:** Weitere Dateinamen weichen noch vom Behandlungsnamen ab (`hydra-facial`, `hydra-lift`, `ems-shape`, `shape-beckenboden`, `chemical-peeling`, `skin-needling`) — auf Renés Entscheidung, ob analog umbenannt wird. Außerdem: Icon-Optik aus V3.13 gefällt René „noch nicht ganz" (parkiert).
+- **Feedback:** ausstehend
+
+---
+
+## V4.14 — „Modern Institute"  📍 Feedback ausstehend — ERSTES V4-LAYOUT
+
+- **Dateien:** alle 17 Seiten + NEU `assets/hautnah.css`, `assets/hautnah.js`
+- **Status:** lokal fertig · **Rückfall auf das alte Layout: `git tag v3.14` bzw. `archive/v3.14-layout/`**
+- **Anlass (René):** „Sieht insgesamt noch nach New York Times aus, also Zeitungsdesign. […] Ich möchte ein wirklich modernes, responsives Design, gerne mit Parallax-Effekt, dezente Hover-Effekte, clean und sauber, aber modern und nicht altbacken." Farben und Inhalte sollten unverändert bleiben.
+- **Warum es nach Zeitung aussah** (Analyse vor dem Umbau): zentrierter Masthead mit Wortmarke, überall 1px-Rahmen und rechteckige Kästen, gesperrte Versal-Label über jedem Block, flache Fläche ohne Tiefe, keinerlei Bewegung, Abschnitt für Abschnitt in gleicher Breite.
+- **Geändert gegenüber V3.14:**
+  - **Ein gemeinsames Stylesheet** `assets/hautnah.css` ersetzt das bisher **17× dupliziert eingebettete CSS**. Bewusste Abkehr von „alles inline": ein Redesign über 17 Dateien wäre sonst nicht wartbar. Klassennamen wurden beibehalten → das HTML musste nicht neu geschrieben werden, nur der Kopfbereich.
+  - **Kopfbereich neu:** schmale Infozeile + **schwebende Glasleiste** (Pillenform, Blur, weicher Schatten), die beim Scrollen kompakter wird. Ersetzt Topbar + Masthead + Navigationsleiste. Logo deutlich größer und links.
+  - **Hero neu:** vollflächiges Bild mit **Parallaxe**, Text darüber. Zwei Verläufe sorgen dafür, dass die Schrift auf ruhigem Grund steht und **Sabrinas Gesicht frei bleibt** (erster Entwurf lief über ihr Gesicht — korrigiert).
+  - **Tiefe statt Striche:** Rundungen bis 44px, weiche warme Schatten, Hintergrund-Verläufe und ein feines Korn — nimmt der Fläche das Flache/Digitale.
+  - **Bewegung, dosiert:** Inhalte blenden beim Hereinscrollen sanft ein; Kacheln heben sich beim Überfahren, Bilder zoomen leicht; Buttons füllen sich von unten; Navigationslinien wachsen von links. `prefers-reduced-motion` wird respektiert.
+  - **Responsiv überarbeitet:** Burger-Menü ab 1180px (die 8 Menüpunkte + CTA passen darunter nicht mehr), mobiles Menü als fast deckendes Panel, Hero mobil Bild-über-Text und deutlich kompakter.
+- **Beim Testen gefunden und behoben:** CTA ragte 86px aus der Kopfleiste · Inhalte oberhalb der Falz blendeten beim Laden ein (Seite wirkte kurz leer) · Parallaxe legte am Detailbild eine Kante frei · mobiles Menü war zu durchsichtig · Hero mobil 1842px hoch · Hero-Bild stand mobil unter dem Text.
+- **Unverändert:** alle Farben (Taupe #C2B4A9 usw.), sämtliche Texte, Seitenstruktur, Icon-Bausteine aus V3.13/V3.14.
+- **Footer-Version:** alle Seiten → **4.14**.
 - **Feedback:** ausstehend
 
 ---
