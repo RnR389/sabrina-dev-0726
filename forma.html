@@ -143,6 +143,26 @@
   .t-block p:last-child { margin-bottom: 0; }
   .t-block p strong { color: var(--ink); font-weight: 600; }
 
+  /* ============ VORHER / NACHHER (V3.12) ============
+     Herstellerbilder (InMode) — deshalb klar gekennzeichnet mit
+     Quellenangabe. Bewusst nüchtern gerahmt, kein reisserischer Look. */
+  .ba { background: var(--creme); padding: 90px 60px; border-top: 1px solid var(--line); }
+  .ba-inner { max-width: 1300px; margin: 0 auto; }
+  .ba-head { text-align: center; margin-bottom: 46px; }
+  .ba-head .section-eyebrow { justify-content: center; }
+  .ba-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; font-weight: 300; letter-spacing: -1px; color: var(--ink); margin-bottom: 18px; }
+  .ba-head h2 em { font-style: normal; color: var(--taupe-dark); font-weight: 300; }
+  .ba-head p { font-size: 15px; line-height: 1.75; color: var(--ink-soft); max-width: 620px; margin: 0 auto; }
+  .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; align-items: start; }
+  .ba-item { background: var(--paper); border: 1px solid var(--line); }
+  .ba-item figure { margin: 0; }
+  .ba-item img { width: 100%; height: auto; display: block; }
+  .ba-item figcaption { padding: 16px 20px 18px; font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); font-weight: 600; border-top: 1px solid var(--line); }
+  .ba-item figcaption .credit { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 1.5px; font-weight: 500; color: var(--taupe-dark); text-transform: none; }
+  .ba-note { margin-top: 34px; border-left: 3px solid var(--taupe); background: var(--paper); padding: 16px 22px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); }
+  @media (max-width: 1100px) { .ba { padding: 70px 30px; } .ba-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+  @media (max-width: 640px)  { .ba-grid { grid-template-columns: 1fr; } }
+
   /* result chips */
   .chips { display:flex; flex-wrap:wrap; gap: 10px; margin: 26px 0 4px; }
   .chips span { font-family: 'Outfit', sans-serif; font-style: normal; font-size: 16px; color: var(--taupe-dark); padding: 8px 20px; border:1px solid var(--line); border-radius: 40px; background: var(--paper); }
@@ -330,9 +350,99 @@
   }
 
   .masthead-nav li > a { display: block; }
+
+  /* ============ KUNDENSTIMMEN (V3.12) ============
+     Echte Google-Rezensionen (alle 5★), thematisch zur Seite passend.
+     Bewusst ohne Kursiv/Serifen — nur Outfit, Sterne im Taupe-Ton. */
+  .voices { background: var(--paper); padding: 100px 60px; border-top: 1px solid var(--line); }
+  .voices-inner { max-width: 1300px; margin: 0 auto; }
+  .voices-head { text-align: center; margin-bottom: 10px; }
+  .voices-head .section-eyebrow { justify-content: center; }
+  .voices-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; font-weight: 300; letter-spacing: -1px; color: var(--ink); margin-bottom: 22px; }
+  .voices-head h2 em { font-style: normal; color: var(--taupe-dark); font-weight: 300; }
+  .voices-rating { display: inline-flex; align-items: center; gap: 14px; border: 1px solid var(--line-strong); background: var(--creme); padding: 13px 24px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voices-rating .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; }
+  .voices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; }
+  .voice { background: var(--creme); border: 1px solid var(--line); padding: 30px 28px 24px; display: flex; flex-direction: column; }
+  .voice .stars { color: var(--taupe-dark); font-size: 13px; letter-spacing: 3px; margin-bottom: 16px; }
+  .voice blockquote { font-style: normal; font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 22px; flex: 1; }
+  .voice .who { border-top: 1px solid var(--line); padding-top: 15px; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .voice .who .src { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 2px; font-weight: 500; color: var(--taupe-dark); }
+  @media (max-width: 1100px) { .voices { padding: 70px 30px; } .voices-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 36px; } }
+  @media (max-width: 640px)  { .voices-grid { grid-template-columns: 1fr; } }
+
+  /* ============ BILDSPRACHE STATT TEXTWUESTE (V3.13) ============
+     Zwei Bausteine ersetzen das alte "Ueberschrift / zwei Zeilen"-Muster:
+     .icon-grid  = kurze Aufzaehlungen als Icon-Kacheln
+     .facts      = kurze Frage/Antwort-Bloecke als kompakte Karten
+     Texte sind unveraendert 1:1 von Sabrina — nur die Optik ist neu. */
+  .ico { width: 30px; height: 30px; color: var(--taupe-dark); flex-shrink: 0; }
+
+  .icon-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 4px 0 0; padding: 0; }
+  .icon-grid li { background: var(--paper); border: 1px solid var(--line); padding: 26px 16px 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; transition: border-color .35s ease, background .35s ease; }
+  .icon-grid li:hover { border-color: var(--taupe); background: var(--creme); }
+  .icon-grid li span { font-size: 13px; line-height: 1.5; letter-spacing: .3px; color: var(--ink); font-weight: 500; }
+
+  /* Laengere Punkte: Icon links, Text rechts — bleibt lesbar */
+  .icon-rows { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin: 4px 0 0; padding: 0; }
+  .icon-rows li { background: var(--paper); border: 1px solid var(--line); padding: 20px 22px; display: flex; align-items: flex-start; gap: 16px; transition: border-color .35s ease; }
+  .icon-rows li:hover { border-color: var(--taupe); }
+  .icon-rows li span { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; padding: 46px 0; border-top: 1px solid var(--line); }
+  .fact { background: var(--creme); border: 1px solid var(--line); padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color .35s ease; }
+  .fact:hover { border-color: var(--taupe); }
+  .fact .ico { width: 26px; height: 26px; }
+  .fact h3 { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.35; letter-spacing: .2px; color: var(--ink); margin: 0; }
+  .fact p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin: 0 0 10px; }
+  .fact p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 640px) {
+    .icon-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .icon-grid li { padding: 20px 10px 18px; }
+    .facts { grid-template-columns: 1fr; }
+  }
+
+  /* Ruhige Liste: wenn Icons keinen echten Mehrwert haetten (zu viele oder
+     zu abstrakte Punkte) — zweispaltig, luftig, kleine Rauten-Marke. */
+  .clean-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px 34px; margin: 6px 0 0; padding: 0; }
+  .clean-list li { position: relative; padding: 11px 0 11px 22px; font-size: 15px; line-height: 1.6; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+  .clean-list li::before { content: ''; position: absolute; left: 2px; top: 19px; width: 5px; height: 5px; background: var(--taupe); transform: rotate(45deg); }
+
+  /* ============ V3.14 — Bausteine fuer die neuen Texte ============ */
+  /* Zonen: eine grosse Ikone je Gruppe statt vieler gleicher Mini-Icons */
+  .zones { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 30px; }
+  .zone { background: var(--creme); border: 1px solid var(--line); padding: 30px 30px 26px; }
+  .zone .ico { width: 40px; height: 40px; margin-bottom: 16px; }
+  .zone h3 { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: .4px; color: var(--ink); margin: 0 0 16px; }
+  .zone ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 26px; }
+  .zone li { position: relative; padding: 7px 0 7px 18px; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); break-inside: avoid; }
+  .zone li::before { content: ''; position: absolute; left: 1px; top: 15px; width: 4px; height: 4px; background: var(--taupe); transform: rotate(45deg); }
+
+  /* Studienzahlen — Sabrinas Zielkundin reagiert auf Zahlen und Fakten */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+  .stat { background: var(--creme); border: 1px solid var(--line); padding: 30px 26px; text-align: center; }
+  .stat .num { display: block; font-family: 'Outfit', sans-serif; font-size: 46px; font-weight: 300; line-height: 1; letter-spacing: -1.5px; color: var(--taupe-dark); margin-bottom: 14px; }
+  .stat .txt { display: block; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+
+  .hf-lead { font-size: 18px; line-height: 1.7; color: var(--taupe-dark); margin-bottom: 22px; }
+
+  /* YouTube — Zwei-Klick-Loesung: Google wird erst beim Klick kontaktiert (DSGVO) */
+  .yt { margin: 6px 0 0; }
+  .yt-start { display: block; position: relative; width: 100%; padding: 0; border: 1px solid var(--line); background: var(--ink); cursor: pointer; line-height: 0; font-family: inherit; }
+  .yt-start img { width: 100%; height: auto; display: block; opacity: .82; transition: opacity .4s ease; }
+  .yt-start:hover img { opacity: 1; }
+  .yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 78px; height: 78px; border: 1.5px solid var(--paper); border-radius: 50%; background: rgba(58,50,44,.35); transition: background .35s ease; }
+  .yt-play::after { content: ''; position: absolute; top: 50%; left: 54%; transform: translate(-50%,-50%); border-left: 20px solid var(--paper); border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+  .yt-start:hover .yt-play { background: rgba(58,50,44,.6); }
+  .yt-label { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--paper); }
+  .yt-hint { font-size: 11.5px; line-height: 1.6; color: var(--taupe-dark); margin-top: 12px; }
+  .yt-frame { position: relative; width: 100%; aspect-ratio: 16/9; border: 1px solid var(--line); }
+  .yt-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 </style>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><defs><symbol id="i-face" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M9.1 10.4h.02M14.9 10.4h.02" stroke-width="2"/><path d="M9.3 15.1a4.2 4.2 0 0 0 5.4 0"/></symbol><symbol id="i-neck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.4 3.2c.9 1.7 2.1 2.5 3.6 2.5s2.7-.8 3.6-2.5"/><path d="M10 5.9v3c0 1-.6 1.6-1.6 2L5.1 12.2C3.9 12.7 3 13.9 3 15.2V21M14 5.9v3c0 1 .6 1.6 1.6 2l3.3 1.3c1.2.5 2.1 1.7 2.1 3V21"/></symbol><symbol id="i-decollete" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-5.1c0-2 1.2-3.8 3.1-4.6l3.1-1.3M20 21v-5.1c0-2-1.2-3.8-3.1-4.6l-3.1-1.3"/><path d="m10.2 10 1.8 3.8L13.8 10"/><path d="M9.6 4.2c.7 1.4 1.5 2.1 2.4 2.1s1.7-.7 2.4-2.1"/></symbol><symbol id="i-body" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.6" r="2.3"/><path d="M12 6.9v7M12 13.9 8.6 21M12 13.9 15.4 21M7 9.8l5 1.1 5-1.1"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/></symbol><symbol id="i-water" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c0 0 5.6 6 5.6 9.6a5.6 5.6 0 1 1-11.2 0C6.4 9.2 12 3.2 12 3.2z"/></symbol><symbol id="i-serum" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.2 2.6h3.6v2.8h-3.6z"/><path d="M9.2 5.4h5.6l1.1 3v11.1a2 2 0 0 1-2 2h-3.8a2 2 0 0 1-2-2V8.4z"/><path d="M9.8 12.4h4.4"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.8 2.6 20.2h18.8z"/><path d="M12 9.8v4.1M12 17.3h.02" stroke-width="2"/></symbol><symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.2s-7.2-4.5-7.2-9.5A3.95 3.95 0 0 1 12 8.1a3.95 3.95 0 0 1 7.2 2.6c0 5-7.2 9.5-7.2 9.5z"/></symbol><symbol id="i-pump" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4.4" y="3.6" width="9.6" height="16.8" rx="2"/><path d="M7.2 7.8h4M7.2 11h4"/><path d="M18 10c1.2 1.5 2 2.7 2 3.6a2 2 0 0 1-4 0c0-.9.8-2.1 2-3.6z"/></symbol><symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3.2v3.8M14 3.2v3.8M10 17v3.8M14 17v3.8M3.2 10H7M3.2 14H7M17 10h3.8M17 14h3.8"/></symbol><symbol id="i-pregnant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="3.9" r="2.1"/><path d="M10.6 6.2c-1.7 0-2.6 1.3-2.8 2.9L7.3 13"/><path d="M7.6 12.9c3 0 5.4 1.5 5.4 4.1S10.6 21 7.6 21"/><path d="M7.9 13.1 7.4 21"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 12h4.1l2.5-6.4 4.2 12.8 2.5-6.4h5.1"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 6.8v5.4l3.3 2"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="5.2" width="17.2" height="15.4" rx="2"/><path d="M3.4 9.8h17.2M8.2 3.2v4M15.8 3.2v4"/><path d="M7.8 13.6h.02M12 13.6h.02M16.2 13.6h.02M7.8 17h.02M12 17h.02" stroke-width="1.9"/></symbol><symbol id="i-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 3.8c0 8.4-5.6 11.4-9.2 11.4H6.8c0-6.2 4.6-11.4 13.4-11.4z"/><path d="m3.8 20.2 7.2-7.2"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 5 6.1v5.6c0 4.4 3 7.8 7 9.7 4-1.9 7-5.3 7-9.7V6.1z"/><path d="m9.2 12 2 2.1 3.6-3.9"/></symbol><symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.02" stroke-width="2.4"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.4 13.9 9.3 19.8 11.2 13.9 13.1 12 19 10.1 13.1 4.2 11.2 10.1 9.3z"/><path d="M18.6 16.4l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-skin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="4.6" width="17.2" height="14.8" rx="2.4"/><path d="M3.4 10.1h17.2M3.4 14.6h17.2"/></symbol><symbol id="i-nogo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M5.8 18.2 18.2 5.8"/></symbol><symbol id="i-spot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9.4" r="2.7"/><circle cx="15.4" cy="14.8" r="3.4"/><circle cx="16.2" cy="7.4" r="1.4"/></symbol><symbol id="i-vein" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.8 19.4c3-1.6 4.6-4.2 5.6-7.2s2.6-5.2 5.6-6.4"/><path d="M9.4 12.2c1.7.5 3.2.2 4.6-.7M12.1 8.2c1.2.8 2.6 1.1 4.1.9"/><path d="M17.4 4.4c1.2 1 2.2 1.4 3.4 1.4"/></symbol><symbol id="i-hair" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.6 20.4c0-6.4 1.4-10.8 3.2-13.6M11 20.4c0-6.4 1.4-10.8 3.2-13.6M16.4 20.4c0-5.4 1.2-9.2 2.6-11.6"/></symbol><symbol id="i-bump" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.2h6.2M14.4 17.2h6.2"/><path d="M9.6 17.2c0-3.4 1-6.6 2.4-6.6s2.4 3.2 2.4 6.6"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.8 12.4 5 5 9.4-10"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 3.6C10 4.6 5 9.8 5 16.3V20.4"/><path d="M20.4 3.6c0 9.4-5.6 13-11.2 13H5"/></symbol><symbol id="i-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.4 18.6 12 12 18.6 5.4 12z"/></symbol><symbol id="i-drop2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 4.2c0 0 3.6 3.8 3.6 6.1a3.6 3.6 0 1 1-7.2 0c0-2.3 3.6-6.1 3.6-6.1z"/><path d="M16.6 12c0 0 2.6 2.8 2.6 4.4a2.6 2.6 0 1 1-5.2 0c0-1.6 2.6-4.4 2.6-4.4z"/></symbol><symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.4 8.6 4.4L12 12.2 3.4 7.8z"/><path d="m3.4 12.4 8.6 4.4 8.6-4.4M3.4 16.8l8.6 4.4 8.6-4.4"/></symbol></defs></svg>
 
 <!-- TOPBAR -->
 <div class="topbar">
@@ -377,9 +487,9 @@
 <!-- DETAIL HERO -->
 <section class="t-hero">
   <div class="t-hero-text">
-    <div class="kicker"><span class="tag">Radiofrequenz-Lifting</span></div>
+    <div class="kicker"><span class="tag">Transformation &amp; Contouring</span></div>
     <h1>Forma&reg;</h1>
-    <div class="sub">Straffe Haut durch Radiofrequenz</div>
+    <div class="sub">Exklusives High-End-Lifting zur Neuformung und Straffung der Gesichtskonturen – ganz ohne Skalpell</div>
     <div class="t-hero-cta">
       <a href="index.html#kontakt" class="btn-primary">Zusammenarbeit anfragen</a>
       <a href="#faq" class="btn-ghost">Häufige Fragen</a>
@@ -395,20 +505,85 @@
 <!-- CONTENT -->
 <div class="t-body">
   <div class="t-prose">
-    <div class="t-block"><h2>Was ist FORMA?</h2><p>FORMA ist eine sanfte Radiofrequenz-Behandlung zur Hautstraffung und Hautverjüngung.Sie eignet sich sowohl zur Vorbeugung als auch zur Behandlung erster Hautalterungsanzeichen.</p></div>
-    <div class="t-block"><h2>Anwendungsbereiche der FORMA Behandlung</h2><ul class="feat-grid"><li>Gesicht</li><li>Hals</li><li>Dekolleté</li><li>Körper</li></ul></div>
-    <div class="t-block"><h2>Wie viele Sitzungen sind empfehlenswert?</h2><p>Für optimale Ergebnisse empfehlen wir mindestens 8 Sitzungen im Rahmen einer Kur.</p><p>Behandlungsabstand:In der Regel alle 7 Tage.</p></div>
-    <div class="t-block"><h2>Ist die FORMA Behandlung schmerzhaft?</h2><p>Nein, die Behandlung ist angenehm und schmerzfrei.</p></div>
-    <div class="t-block"><h2>Gesellschaftsfähigkeit nach der FORMA Behandlung</h2><p>Sie sind sofort wieder gesellschaftsfähig.</p><p>Es können leichte Rötungen auftreten, die in der Regel nach 1–2 Stunden abklingen und problemlos überschminkt werden können.</p></div>
-    <div class="t-block"><h2>Was ist nach der FORMA Behandlung zu beachten?</h2><ul class="feat-grid"><li>Täglicher Sonnenschutz</li><li>Ausreichend Wasser trinken</li><li>Empfehlung: Vitamin-C-Serum zur Unterstützung der Haut (bei uns erhältlich)</li></ul></div>
-    <div class="t-block"><h2>Nebenwirkungen</h2><p>FORMA ist sehr gut verträglich.Gelegentlich können leichte Rötungen auftreten.</p></div>
-    <div class="t-block"><h2>Bei Mini-FX :</h2><ul class="feat-grid"><li>leichte Schwellungen</li><li>Rötungen</li><li>vereinzelt blaue Flecken</li></ul></div>
-    <div class="t-block"><h2>Ist FORMA für empfindliche Haut geeignet?</h2><p>Ja, die Behandlung kann individuell angepasst werden und ist auch für empfindliche Haut geeignet.</p></div>
-    <div class="t-block"><h2>Ist FORMA für mich geeignet, wenn ich Angst vor Nadeln habe?</h2><p>Ja – die FORMA Behandlung ist komplett nadelfrei.</p></div>
-    <div class="t-block"><h2>Kann ich FORMA zur Vorbeugung nutzen?</h2><p>Ja, FORMA eignet sich ideal zur Prävention und ist für jedes Alter geeignet.</p></div>
-    <div class="t-block"><h2>Kontraindikationen – Wann sollte FORMA nicht durchgeführt werden?</h2><ul class="feat-grid"><li>Herzschrittmacher</li><li>Insulinpumpe</li><li>neurostimulierende Implantate</li><li>Schwangerschaft</li></ul></div>
+    <div class="t-block"><p>Forma by InMode ist eine innovative, nicht-invasive Radiofrequenzbehandlung für Gesicht und Körper und zählt zu den modernsten Technologien im Bereich der Hautstraffung und des natürlichen Anti-Agings.</p><p>Mithilfe der patentierten A.C.E.-Technologie (Acquire, Control, Extend) wird die Radiofrequenzenergie gleichmäßig und kontrolliert in die tiefen Hautschichten geleitet. Die Haut wird dabei kontinuierlich auf die optimale therapeutische Temperatur erwärmt. Dadurch werden die natürliche Kollagen- und Elastinbildung intensiv angeregt, die Hautelastizität verbessert und das Gewebe von innen heraus nachhaltig gefestigt.</p><p>Das Ergebnis ist eine sichtbare Straffung der Haut, definiertere Gesichtskonturen und eine harmonische, jugendliche V-Form. Gleichzeitig wirkt das Gewebe sanft aufgepolstert, die Haut gewinnt an Spannkraft und Ausstrahlung – ganz ohne Operation, Nadeln oder Ausfallzeit.</p><p>Forma eignet sich für alle Hauttypen und ist ideal für alle, die sich eine natürliche Hautverjüngung und Hautstraffung ohne chirurgischen Eingriff wünschen. Die Behandlung verbessert die Hautqualität, verfeinert die Hautstruktur, reduziert feine Linien und Fältchen und sorgt für ein glatteres, strafferes und sichtbar frischeres Hautbild.</p><p>Die klinisch untersuchte Radiofrequenztechnologie stimuliert nachweislich die Kollagenneubildung und sorgt für eine nachhaltige Verbesserung der Hautfestigkeit und Hautelastizität.</p></div>
+    <div class="t-block">
+      <div class="yt" data-yt="ULCg_HxZMEY">
+        <button class="yt-start" type="button" aria-label="Video laden und abspielen">
+          <img src="assets/forma-video-poster.jpg" alt="Forma Animation von InMode — Vorschaubild" loading="lazy">
+          <span class="yt-play" aria-hidden="true"></span>
+          <span class="yt-label">Video abspielen</span>
+        </button>
+        <p class="yt-hint">Mit dem Klick wird das Video von YouTube geladen. Dabei werden Daten an Google &uuml;bertragen. &middot; Forma Animation by InMode</p>
+      </div>
+    </div>
+    <div class="t-block"><h2>Welche Bereiche können behandelt werden?</h2><p>Forma eignet sich sowohl für das Gesicht als auch für nahezu alle Körperregionen, bei denen eine Straffung und Gewebefestigung gewünscht ist.</p><div class="zones"><div class="zone"><svg class="ico" aria-hidden="true"><use href="#i-face"/></svg><h3>Gesichtsbereiche</h3><ul><li>Stirn</li><li>Zornesfalte</li><li>Krähenfüße</li><li>Ober- und Unterlider</li><li>Wangen</li><li>Nasolabialfalten</li><li>Lachfalten</li><li>Kieferlinie (Jawline)</li><li>Doppelkinn</li><li>Hals</li></ul></div><div class="zone"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><h3>Körperbereiche</h3><ul><li>Oberarme</li><li>Bauch</li><li>Dekolleté</li><li>Knie</li><li>Oberschenkel</li><li>Gesäß</li><li>Rücken</li><li>sowie weitere Körperregionen mit erschlafftem Gewebe.</li></ul></div></div></div>
+    <div class="t-block"><h2>Behandlungsempfehlung</h2><p>Für eine sichtbare Transformation und eine nachhaltige Festigung des Gewebes empfehlen wir eine Behandlungskur von acht bis zehn Behandlungen, die im Abstand von jeweils einer Woche durchgeführt wird.</p><p>Je nach Hautzustand und individuellem Behandlungsziel können auch weniger Sitzungen ausreichend sein. Nach einer ausführlichen Hautanalyse erstellen wir einen persönlichen Behandlungsplan, der optimal auf Ihre Bedürfnisse abgestimmt ist.</p><p>Für optimale und nachhaltige Ergebnisse empfehlen wir eine individuell auf Ihre Haut abgestimmte Heimpflege. Die passenden hochwertigen Medical-Beauty-Pflegeprodukte erhalten Sie direkt bei uns im Institut.</p></div>
+    <div class="t-block"><h2>Perfekt kombinierbar für maximale Ergebnisse</h2><p>Forma lässt sich hervorragend mit weiteren Medical-Beauty-Behandlungen kombinieren und dadurch in seiner Wirkung zusätzlich verstärken.</p><div class="facts"><div class="fact"><svg class="ico" aria-hidden="true"><use href="#i-water"/></svg><p>Die Kombination mit HydraFacial ist ideal, um die Haut optimal auf die Radiofrequenzbehandlung vorzubereiten. Während HydraFacial die Haut intensiv reinigt, sanft exfoliert und mit wertvollen Wirkstoffen versorgt, sorgt Forma anschließend für eine intensive Straffung und Festigung der tieferen Hautschichten. Das Ergebnis ist ein sichtbar glatteres, strahlenderes und jugendlicheres Hautbild.</p></div><div class="fact"><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg><p>Ebenso erzielt die Kombination mit unserem Medical Spezial Skin Needling hervorragende Ergebnisse. Das Needling stimuliert die Hautregeneration und die Kollagenbildung zusätzlich und eignet sich besonders zur Behandlung von Hauterschlaffung, Falten, Aknenarben, vergrößerten Poren sowie einem ungleichmäßigen Hautbild. Gemeinsam entsteht ein nachhaltiges Behandlungskonzept für eine langfristige Hautverbesserung.</p></div><div class="fact"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg><p>Auch in Kombination mit chemischen Peelings oder unserem Crystal Peel entfaltet Forma seine volle Wirkung. Während die Peelings die Hautoberfläche verfeinern, abgestorbene Hautzellen entfernen und die natürliche Zellerneuerung anregen, stärkt Forma die tieferen Hautschichten und verbessert dort nachhaltig die Hautstruktur und Spannkraft. Diese Behandlungen ergänzen sich ideal und sorgen für ein sichtbar glatteres, ebenmäßigeres und strafferes Hautbild.</p></div></div><p style="margin-top:26px">Je nach Hautbild, Hautzustand und persönlichem Behandlungsziel erstellen wir ein individuelles Behandlungskonzept und kombinieren die passenden Therapien für ein optimales und langfristiges Ergebnis.</p></div>
+    <div class="t-block"><h2>Ihre Vorteile auf einen Blick</h2><ul class="clean-list"><li>Exklusives High-End-Lifting ohne Skalpell</li><li>Sichtbare Neuformung und Straffung der Gesichtskonturen</li><li>Förderung einer jugendlichen, definierten V-Form</li><li>Straffung und Festigung von Gesicht und Körper</li><li>Gewebeaufpolsterung durch modernste Radiofrequenztechnologie</li><li>Anregung der natürlichen Kollagen- und Elastinbildung</li><li>Verbesserung der Hautfestigkeit, Hautelastizität und Hautstruktur</li><li>Reduzierung feiner Linien und Fältchen</li><li>Natürlich wirkende Ergebnisse ohne Ausfallzeit</li><li>Für alle Hauttypen geeignet</li><li>Individuell auf Ihre Haut und Ihre persönlichen Behandlungsziele abgestimmt</li><li>Ideal kombinierbar mit HydraFacial, Medical Spezial Skin Needling, chemischen Peelings und Crystal Peel</li></ul></div>
+    <div class="t-block"><h2>Individuelle Beratung</h2><p>Jede Haut ist einzigartig und verdient eine individuell abgestimmte Behandlung. Deshalb nehmen wir uns Zeit für eine ausführliche Beratung und Hautanalyse. Gemeinsam entwickeln wir ein persönliches Behandlungskonzept, das optimal auf Ihre Haut, Ihre Wünsche und Ihre Behandlungsziele abgestimmt ist.</p><p>Wir freuen uns darauf, Sie persönlich zu beraten und Sie auf Ihrem Weg zu einer strafferen, gesünderen und natürlich strahlenden Haut zu begleiten.</p></div>
   </div>
 </div>
+
+
+<!-- VORHER / NACHHER — Herstellerbilder InMode, klar gekennzeichnet (keine Aufnahmen aus dem Institut) -->
+<section class="ba">
+  <div class="ba-inner">
+    <div class="ba-head">
+      <div class="section-eyebrow"><span class="bar"></span>Behandlungsergebnisse</div>
+      <h2>Was Radiofrequenz <em>bewirken kann.</em></h2>
+      <p>Beispielergebnisse aus klinischen Anwendungen des Geräteherstellers. Jede Haut reagiert individuell — welches Ergebnis in Ihrem Fall realistisch ist, klären wir persönlich.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <figure>
+          <img src="assets/forma-vorher-nachher-1.jpg" alt="Forma Vorher-Nachher: Wangen- und Mundpartie, sichtbar geglättete Haut" loading="lazy">
+          <figcaption>Wangen- &amp; Mundpartie<span class="credit">Forma: Dr. S. Mulholland</span></figcaption>
+        </figure>
+      </div>
+      <div class="ba-item">
+        <figure>
+          <img src="assets/forma-vorher-nachher-2.jpg" alt="Forma Vorher-Nachher: Halspartie, straffere Kontur" loading="lazy">
+          <figcaption>Halspartie<span class="credit">Forma: J. Campbell, APRN FNP-C</span></figcaption>
+        </figure>
+      </div>
+      <div class="ba-item">
+        <figure>
+          <img src="assets/forma-vorher-nachher-3.jpg" alt="Forma Vorher-Nachher: Gesamtes Gesicht, definierte Konturen" loading="lazy">
+          <figcaption>Gesicht gesamt<span class="credit">Forma: Dr. S. Bittar / J. Sisto</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="ba-note"><strong>Hinweis:</strong> Die gezeigten Vorher-Nachher-Aufnahmen stammen aus dem klinischen Bildmaterial des Geräteherstellers und sind keine Aufnahmen aus dem Kosmetikinstitut Hautnah. Sie dienen der Veranschaulichung der Behandlungsmethode. Ergebnisse sind individuell und nicht garantierbar.</p>
+  </div>
+</section>
+
+<!-- KUNDENSTIMMEN — echte Google-Rezensionen, wortgetreu (Kürzungen mit …) -->
+<section class="voices">
+  <div class="voices-inner">
+    <div class="voices-head">
+      <div class="section-eyebrow"><span class="bar"></span>Kundenstimmen</div>
+      <h2>Was Kundinnen und Kunden <em>sagen.</em></h2>
+      <div class="voices-rating"><span class="stars">★★★★★</span> 4,8 von 5 · 65 Google-Rezensionen</div>
+    </div>
+    <div class="voices-grid">
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Die letzte Behandlung mit dem Thermolift war sehr effektiv … Bei Sabrina bekommt man eine kompetente und personalisierte Beratung. Top Studio. Sehr zu empfehlen"</blockquote>
+        <div class="who">Gordana G.<span class="src">Google-Rezension</span></div>
+      </div>
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich bewundere die Fachkompetenz, mit der sie jede Gesichtsbehandlung ausführlich erklärt, ihr umfassendes Wissen, das über das einer Kosmetikerin weit hinausreicht, ihre freundliche, zuvorkommende Art. … Ich empfehle sie gerne auch meinen Patienten und Patientinnen mit Hautproblemen im Gesicht weiter."</blockquote>
+        <div class="who">Gudrun F.<span class="src">Google-Rezension</span></div>
+      </div>
+      <div class="voice">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Die Atmosphäre ist entspannt und professionell, die Behandlung war sehr angenehm und meine Haut fühlt sich danach unglaublich frisch und gepflegt an. Man merkt, dass hier mit viel Erfahrung und Leidenschaft gearbeitet wird."</blockquote>
+        <div class="who">Elke S.<span class="src">Google-Rezension</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA BAND -->
 <section class="cta-band" id="kontakt">
@@ -528,10 +703,30 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 3.12</span>
+    <span>Version 3.14</span>
     <span>Instagram · Facebook · YouTube</span>
   </div>
 </footer>
 
+
+<script>
+/* Zwei-Klick-Video: erst auf Klick wird YouTube (nocookie) geladen. */
+document.querySelectorAll('.yt').forEach(function (box) {
+  var btn = box.querySelector('.yt-start');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var id = box.getAttribute('data-yt');
+    var wrap = document.createElement('div');
+    wrap.className = 'yt-frame';
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    f.title = 'Forma Animation by InMode';
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    f.setAttribute('allowfullscreen', '');
+    wrap.appendChild(f);
+    btn.replaceWith(wrap);
+  });
+});
+</script>
 </body>
 </html>
