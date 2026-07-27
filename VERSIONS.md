@@ -381,6 +381,28 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.16 — „Ruhige Größenstaffel"  📍 Feedback ausstehend
+
+- **Dateien:** `assets/hautnah.css` (wirkt auf alle Seiten)
+- **Anlass (René):** „Die ganzen Überschriften sind zu groß. Mach sie harmonischer zum Inhalt, sodass sie nicht so dominant überstrahlen."
+- **Messung vor dem Eingriff** (Verhältnis zum Fließtext 16,5 px):
+
+  | | vorher | nachher |
+  |---|---|---|
+  | h1 Seitentitel | 88 px (**×5,33**) | 46 px (×2,79) |
+  | h2 Abschnitt | 58 px (×3,52) | 30 px (×1,83) |
+  | Unterzeile | 27 px (×1,64) | 20 px (×1,21) |
+  | Studienzahl | 58 px (×3,52) | 40 px (×2,42) |
+  | **h3 Kartentitel** | 15,5 px (**×0,94**) | 17 px (×1,03) |
+
+- **Zwei Befunde:** (1) h1 war mehr als das Fünffache des Fließtexts — die Überschriften haben den Inhalt erschlagen. (2) Der **Kartentitel war kleiner als der Fließtext** — die Hierarchie war an dieser Stelle sogar verkehrt herum.
+- **Geändert:** durchgehende Staffel mit Faktor ~1,3 statt willkürlicher Sprünge. Zusätzlich Hero-Headline, Coco-Zitat, Kennzahlen und Signatur angeglichen; Zeilenabstände der Überschriften leicht erhöht (kleinere Schrift braucht etwas mehr Luft).
+- **Folgekorrektur:** Durch die kleineren Überschriften war das Hero-Bild der Detailseiten plötzlich **439 px höher als der Textblock** — Bildformat von 4:5 auf 6:5,5 geändert, Überhang jetzt 263 px.
+- **Footer-Version:** alle Seiten → **4.16**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
