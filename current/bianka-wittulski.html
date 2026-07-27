@@ -9,289 +9,41 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  /* =============================================================
-     KOSMETIKINSTITUT HAUTNAH — V3 „Sabrina im Zentrum"
-     Team-/Profilseite: Bianka Wittulski (Permanent Make-up)
-     Basis-Stile identisch zur index.html — eigenständige Datei.
-     Hinweis: Die Datei trägt den Namen aus der Vorlage
-     „Bianka Wittulski.docx". Im Briefing war von „Bianca" als
-     zweiter Mitarbeiterin die Rede — vor Live-Gang mit René/Sabrina
-     abgleichen, ob Schreibweise/Name final korrekt ist.
-     ============================================================= */
-  :root {
-    --paper:        #FAF6EF;
-    --creme:        #E9E3DA;
-    --sand:         #DFD7CD;
-    --taupe:        #C2B4A9;
-    --taupe-dark:   #6F655D;
-    --silver:       #C9C9CE;
-    --accent:       #6F655D;
-    --ink:          #3A322C;
-    --ink-soft:     #3E382F;
-    --stein:        #95928E;
-    --green-soft:   #6B7A5F;
-    --line:         rgba(58,50,44,0.12);
-    --line-strong:  rgba(58,50,44,0.5);
-  }
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; scroll-padding-top: 86px; }
-  body { font-family: 'Outfit', sans-serif; background: var(--paper); color: var(--ink); font-weight: 400; line-height: 1.6; font-size: 15px; overflow-x: hidden; }
-  a { color: inherit; text-decoration: none; }
-  img { display:block; max-width:100%; }
-
-  .topbar { background: var(--taupe-dark); color: var(--creme); padding: 11px 60px; display: grid; grid-template-columns: 1.25fr 1fr 0.75fr; font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-  .topbar .left { display:flex; align-items:center; gap:10px; }
-  .topbar .right { text-align:right; }
-  .topbar .center { text-align:center; }
-  .topbar .dot { width:5px; height:5px; border-radius:50%; background:var(--silver); }
-
-  .masthead { background: var(--paper); border-bottom: 1px solid var(--line); }
-  .masthead-top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 12px 60px 6px; gap: 40px; }
-  .masthead-left { font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; }
-  .masthead-right { text-align: right; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
-  .masthead-right a { display: inline-block; background: var(--taupe-dark); color: var(--paper); border: 1px solid var(--taupe-dark); padding: 14px 26px; transition: all 0.3s ease; }
-  .masthead-right a:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-  .masthead-right .arrow { font-family: 'Outfit', sans-serif; font-style: normal; font-weight: 400; margin-left: 6px; }
-  .masthead-brand { text-align: center; padding: 0; }
-  .masthead-brand .institut { font-family: 'Outfit', sans-serif; font-weight: 400; font-style: normal; font-size: 16px; color: var(--taupe-dark); letter-spacing: 4px; margin-bottom: 6px; }
-  .masthead-brand .wordmark { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 64px; letter-spacing: 16px; color: var(--ink); padding-left: 16px; line-height: 1; }
-  .masthead-brand .signature { margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 12px; }
-  .masthead-brand .signature .line { width: 36px; height: 1px; background: var(--accent); }
-  .masthead-brand .signature .name { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; }
-  .navbar { position: sticky; top: 0; z-index: 100; background: rgba(250,246,239,0.85); -webkit-backdrop-filter: saturate(140%) blur(12px); backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 30px -20px rgba(58,50,44,0.5); }
-  .masthead-nav { display: flex; justify-content: center; gap: 38px; padding: 18px 60px 22px; list-style: none; }
-  .masthead-nav li { position: relative; font-size: 11.5px; letter-spacing: 2.8px; text-transform: uppercase; font-weight: 500; cursor: pointer; padding: 6px 0; transition: color 0.3s ease; }
-  .masthead-nav li:hover { color: var(--accent); }
-  .masthead-nav li.is-active { color: var(--accent); }
-  .masthead-nav li.has-down::after { content: ''; display: inline-block; width: 5px; height: 5px; margin-left: 9px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); opacity: 0.5; transition: transform 0.3s ease, opacity 0.3s ease; }
-  .masthead-nav li.has-down:hover::after { opacity: 1; transform: translateY(0) rotate(225deg); }
-  .masthead-nav .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--paper); border: 1px solid var(--line-strong); margin-top: 16px; min-width: 280px; padding: 10px 0; box-shadow: 0 12px 32px rgba(58,50,44,0.06); }
-  .masthead-nav li:hover .dropdown { display: block; }
-  .masthead-nav .dropdown::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
-  .masthead-nav .dropdown a { display: block; padding: 12px 28px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink); transition: all 0.2s ease; border-left: 2px solid transparent; font-weight: 500; }
-  .masthead-nav .dropdown a:hover { background: var(--creme); border-left-color: var(--accent); color: var(--accent); padding-left: 32px; }
-
-  .btn-primary { background: var(--taupe-dark); color: var(--paper); padding: 18px 36px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; border: 1px solid var(--taupe-dark); cursor: pointer; transition: all 0.3s ease; font-family: inherit; display: inline-flex; align-items: center; gap: 12px; }
-  .btn-primary .arrow { font-family: 'Outfit', sans-serif; font-style: normal; font-weight: 400; font-size: 14px; }
-  .btn-primary:hover { background: var(--ink); border-color: var(--ink);  }
-  .btn-ghost { color: var(--ink); padding: 16px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; border-bottom: 1.5px solid var(--ink); transition: all 0.3s ease; display:inline-block; }
-  .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
-
-  .section-eyebrow { display: flex; align-items: center; gap: 14px; font-size: 10.5px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
-  .section-eyebrow .bar { width: 32px; height: 1.5px; background: var(--accent); }
-
-  .breadcrumb { max-width: 1300px; margin: 0 auto; padding: 26px 60px 0; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--taupe); font-weight: 500; }
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb .sep { margin: 0 10px; color: var(--line-strong); }
-  .breadcrumb .here { color: var(--ink); }
-
-  /* ============ PROFILE HERO ============ */
-  .p-hero { max-width: 1300px; margin: 0 auto; padding: 50px 60px 100px; display: grid; grid-template-columns: 0.85fr 1.05fr; gap: 80px; align-items: center; }
-  .p-portrait { aspect-ratio: 4/5; background: linear-gradient(150deg, var(--sand) 0%, var(--taupe) 60%, var(--ink) 100%); position: relative; overflow: hidden; }
-  .p-portrait::after { content:''; position:absolute; inset:18px; border:1px solid rgba(201,201,206,0.3); }
-  .p-portrait .ph { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; z-index:2; }
-  .p-portrait .ph .mono { font-family: 'Outfit', sans-serif; font-style: normal; font-size: 92px; line-height:1; color: rgba(242,237,228,0.45); }
-  .p-portrait .ph .txt { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(242,237,228,0.7); font-weight: 500; }
-  .p-hero .kicker { font-size: 10.5px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 22px; display:flex; align-items:center; gap:14px; }
-  .p-hero .kicker .bar { width: 32px; height:1.5px; background: var(--accent); }
-  .p-hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(44px, 5vw, 72px); line-height: 1; font-weight: 300; letter-spacing: -1.8px; color: var(--ink); margin-bottom: 18px; }
-  .p-hero .role { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--taupe-dark); font-weight: 600; margin-bottom: 28px; }
-  .p-hero .lead { font-family: 'Outfit', sans-serif; font-style: normal; font-size: clamp(20px, 2.3vw, 27px); font-weight: 300; line-height: 1.4; color: var(--taupe-dark); max-width: 560px; }
-
-  /* ============ VITA / NARRATIVE ============ */
-  .p-body { background: var(--paper); padding: 10px 60px 30px; }
-  .p-prose { max-width: 820px; margin: 0 auto; }
-  .p-block { padding: 54px 0; border-top: 1px solid var(--line); }
-  .p-block:first-child { border-top:none; }
-  .p-block h2 { font-family: 'Outfit', sans-serif; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; font-weight: 300; letter-spacing: -0.5px; color: var(--ink); margin-bottom: 22px; }
-  .p-block h2 em { font-style: normal; color: var(--taupe-dark); }
-  .p-block p { font-size: 16px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 20px; }
-  .p-block p:last-child { margin-bottom: 0; }
-  .p-block p strong { color: var(--ink); font-weight: 600; }
-
-  /* ============ MILESTONES ============ */
-  .milestones { background: var(--creme); padding: 110px 60px; border-top:1px solid var(--line); }
-  .ms-inner { max-width: 1000px; margin: 0 auto; }
-  .ms-head { margin-bottom: 56px; }
-  .ms-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(30px,3.4vw,46px); font-weight:300; letter-spacing:-0.8px; color:var(--ink); }
-  .ms-head h2 em { font-style: normal; color: var(--taupe-dark); }
-  .ms-list { display:grid; gap: 0; }
-  .ms { display:grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 30px 0; border-top: 1px solid var(--line); align-items:start; }
-  .ms:last-child { border-bottom: 1px solid var(--line); }
-  .ms .when { font-family: 'Outfit', sans-serif; font-style: normal; font-size: 17px; color: var(--accent); }
-  .ms .what h3 { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 8px; letter-spacing:-0.3px; }
-  .ms .what p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); margin:0; }
-
-  /* ============ QUOTE BAND ============ */
-  .p-quote { background: var(--taupe-dark); color: var(--paper); padding: 120px 60px; text-align:center; position:relative; }
-  .p-quote::before { content:''; position:absolute; top:64px; left:50%; transform:translateX(-50%); width:50px; height:1px; background: var(--silver); }
-  .p-quote blockquote { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.32; font-weight: 300; font-style: normal; color: var(--paper); max-width: 1000px; margin: 0 auto 30px; letter-spacing: -0.3px; }
-  .p-quote blockquote em { color: var(--silver); font-style: normal; }
-  .p-quote cite { font-style: normal; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--silver); font-weight: 600; }
-
-  /* ============ SPEZIALGEBIETE ============ */
-  .skills { background: var(--paper); padding: 110px 60px; }
-  .skills-inner { max-width: 1100px; margin: 0 auto; }
-  .skills-head { text-align:center; margin-bottom: 56px; }
-  .skills-head .section-eyebrow { justify-content:center; }
-  .skills-head h2 { font-family: 'Outfit', sans-serif; font-size: clamp(30px,3.4vw,46px); font-weight:300; letter-spacing:-0.8px; color:var(--ink); }
-  .skills-head h2 em { font-style: normal; color:var(--taupe-dark); }
-  .skills-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .skill { border-top: 2px solid var(--ink); padding-top: 24px; }
-  .skill .sn { font-family: 'Outfit', sans-serif; font-style: normal; font-size: 14px; color: var(--accent); margin-bottom: 12px; display:block; }
-  .skill h3 { font-family: 'Outfit', sans-serif; font-size: 23px; font-weight: 400; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.3px; }
-  .skill p { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); }
-  .creds { max-width: 1100px; margin: 60px auto 0; display:flex; flex-wrap:wrap; gap: 10px; justify-content:center; }
-  .creds span { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); font-weight: 600; padding: 11px 22px; border: 1px solid var(--line); background: var(--paper); }
-
-  /* ============ CTA BAND ============ */
-  .cta-band { background: var(--creme); padding: 110px 60px; text-align: center; border-top:1px solid var(--line); }
-  .cta-band .section-eyebrow { justify-content: center; }
-  .cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; font-weight: 300; letter-spacing: -1px; color: var(--ink); max-width: 760px; margin: 0 auto 24px; }
-  .cta-band h2 em { font-style: normal; color: var(--taupe-dark); }
-  .cta-band p { font-size: 16px; line-height: 1.8; color: var(--ink-soft); max-width: 560px; margin: 0 auto 40px; }
-
-  /* ============ FOOTER ============ */
-  footer { background: var(--taupe-dark); color: var(--paper); padding: 100px 60px 40px; }
-  .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 70px; padding-bottom: 60px; border-bottom: 1px solid rgba(242,237,228,0.15); }
-  .footer-brand .word { font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 300; letter-spacing: 8px; margin-bottom: 4px; line-height: 1; }
-  .footer-brand .sub { font-size: 10px; letter-spacing: 3.5px; color: var(--silver); margin-bottom: 26px; text-transform: uppercase; font-weight: 500; }
-  .footer-brand p { font-size: 13.5px; line-height: 1.95; opacity: 0.85; max-width: 320px; }
-  footer h4 { font-family: 'Outfit', sans-serif; font-style: normal; font-size: 17px; margin-bottom: 24px; color: var(--silver); font-weight: 400; }
-  footer ul { list-style: none; }
-  footer ul li { font-size: 12.5px; letter-spacing: 1.5px; margin-bottom: 11px; opacity: 0.85; transition: all 0.2s ease; cursor: pointer; }
-  footer ul li:hover { opacity: 1; color: var(--silver); padding-left: 4px; }
-  .footer-bottom { max-width: 1400px; margin: 36px auto 0; display: flex; justify-content: space-between; font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.5; }
-
-  @media (max-width: 1100px) {
-    .topbar { grid-template-columns: 1fr 1fr; padding: 11px 30px; font-size: 9px; letter-spacing: 2px; }
-    .topbar .center { display: none; }
-    .masthead-top { grid-template-columns: 1fr; text-align: center; padding: 20px 30px 10px; gap: 20px; }
-    .masthead-left { display: none; }
-    .masthead-right { text-align: center; }
-    .masthead-brand .wordmark { font-size: 40px; letter-spacing: 10px; }
-    .masthead-nav { flex-wrap: wrap; gap: 20px; padding: 14px 20px; }
-    .masthead-nav li { font-size: 10px; letter-spacing: 2px; }
-    .breadcrumb { padding: 22px 30px 0; }
-    .p-hero { grid-template-columns: 1fr; gap: 44px; padding: 40px 30px 70px; }
-    .p-portrait { order: -1; max-width: 420px; }
-    .p-body, .milestones, .p-quote, .skills, .cta-band { padding-left: 30px; padding-right: 30px; }
-    .ms { grid-template-columns: 1fr; gap: 8px; }
-    .ms .when { font-size: 15px; }
-    .skills-grid { grid-template-columns: 1fr; gap: 0; }
-    .skill { border-top:1px solid var(--line); padding: 24px 0; }
-    .skill:first-child { border-top: 2px solid var(--ink); }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 30px 40px; }
-    footer { padding: 60px 0 30px; }
-    .footer-bottom { flex-direction: column; gap: 12px; padding: 0 30px; }
-  }
-  @media (max-width: 560px) {
-    .footer-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ============================================================
-     MOBILE-NAVIGATION (V3.4) — Hamburger, CSS-only (kein JS)
-     ============================================================ */
-  .nav-toggle, .nav-burger, .nav-brand, .nav-cta { display: none; }
-  @media (max-width: 1100px) {
-    .masthead-right { display: none; }                 /* Header-CTA auf Mobil entfernt */
-    .navbar { display: flex; align-items: center; justify-content: center; padding: 0 22px; }
-    .nav-brand { display: none; }
-    .nav-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-    .nav-burger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 50px; cursor: pointer; }
-    .nav-burger span { display: block; width: 26px; height: 2px; background: var(--ink); transition: transform .3s ease, opacity .2s ease; }
-    .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
-    .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .masthead-nav { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; gap: 0; padding: 0 22px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 20px 34px -22px rgba(58,50,44,0.55); max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
-    .nav-toggle:checked ~ .masthead-nav { max-height: calc(100vh - 56px); overflow-y: auto; padding: 8px 22px 26px; }
-    .masthead-nav li { width: 100%; padding: 15px 2px; border-bottom: 1px solid var(--line); font-size: 13px; letter-spacing: 2.5px; }
-    .masthead-nav li:hover { color: var(--ink); }
-    .masthead-nav li.has-down::after { display: none; }
-    .masthead-nav .dropdown { position: static; display: block; transform: none; min-width: 0; margin: 12px 0 2px; padding: 0; background: transparent; border: none; box-shadow: none; }
-    .masthead-nav .dropdown::before { display: none; }
-    .masthead-nav .dropdown a { padding: 11px 14px; font-size: 11px; border-left: 2px solid var(--line); color: var(--taupe-dark); letter-spacing: 2px; }
-    .masthead-nav .dropdown a:hover { padding-left: 18px; }
-    .nav-cta { display: block; border-bottom: none; padding-top: 22px; }
-    .nav-cta .btn-primary { width: 100%; justify-content: center; }
-  }
-  @media (max-width: 480px) {
-    .topbar { font-size: 8px; letter-spacing: 1.5px; padding: 9px 22px; }
-    .masthead-top { padding: 18px 22px 8px; }
-    .masthead-brand .wordmark { font-size: 34px; letter-spacing: 7px; }
-    .masthead-brand .institut { font-size: 13px; letter-spacing: 3px; }
-  }
-
-  /* Mobile: einklappbare Untermenüs (Shop / Ästhetische Konzepte) */
-  .sub-toggle { display: none; }
-  @media (max-width: 1100px) {
-    .masthead-nav li.has-down { display: flex; flex-direction: column; padding: 0; }
-    .sub-head { display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer; padding: 15px 2px; }
-    .sub-head::after { content: '+'; font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 300; color: var(--accent); line-height: 1; transition: transform .3s ease; }
-    .sub-toggle:checked + .sub-head::after { transform: rotate(45deg); }
-    .masthead-nav li.has-down .dropdown { max-height: 0; overflow: hidden; margin: 0; transition: max-height .4s ease, margin .4s ease; }
-    .masthead-nav li.has-down .sub-toggle:checked ~ .dropdown { max-height: 660px; margin: 2px 0 14px; }
-  }
-
-  .masthead-brand .logo-img { height: clamp(96px, 14vw, 188px); width: auto; display: block; margin: 0 auto; }
-
-  .footer-brand .footer-logo { height: 60px; width: auto; display: block; margin-bottom: 24px; }
-
-  /* ============================================================
-     V3.9 — Meisterbetrieb-Siegel, CTA-Kästchen, 5★-Badge,
-     ruhigere Hover, keine Eyebrow-Balken
-     ============================================================ */
-  .section-eyebrow .bar { display: none; }
-  .hero-eyebrow .bar { display: none; }
-  /* Meisterbetrieb: Siegel-Optik mit Doppelrahmen */
-  .seal { display: inline-block; border: 1.5px solid var(--taupe); outline: 1px solid var(--taupe); outline-offset: 3px; padding: 10px 20px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--ink); background: transparent; }
-  /* 5-Sterne-Badge im Hero (Startseite) */
-  .hero-badge { display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; border: 1px solid var(--line-strong); background: var(--creme); padding: 13px 22px; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; color: var(--ink); margin-bottom: 36px; }
-  .hero-badge .stars { color: var(--taupe); letter-spacing: 3px; font-size: 12px; }
-  @media (max-width: 1100px) {
-    .hero-badge { margin-top: 34px; letter-spacing: 1.5px; }
-  }
-
-  .masthead-nav li > a { display: block; }
-</style>
+<link rel="stylesheet" href="../assets/hautnah.css">
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="left"><span class="dot"></span> Erstes 5-Sterne-Fachinstitut · Landkreis Waldshut</div>
-  <div class="center">Hauptstraße 3 · 79664 Wehr · +49 (0) 7762 / 80 56 69</div>
-  <div class="right">Mo · Di · Mi · Fr · 10 – 18 Uhr</div>
+<!-- INFOZEILE -->
+<div class="infobar">
+  <span><span class="dot"></span>Erstes 5-Sterne-Fachinstitut &middot; Landkreis Waldshut</span>
+  <span>Hauptstra&szlig;e 3 &middot; 79664 Wehr</span>
+  <span>+49 (0) 7762 / 80 56 69</span>
+  <span>Mo &middot; Di &middot; Mi &middot; Fr &middot; 10&ndash;18 Uhr</span>
 </div>
 
-<!-- MASTHEAD -->
-<header class="masthead">
-  <div class="masthead-top">
-    <div class="masthead-left"><span class="seal">Meisterbetrieb</span></div>
-    <a class="masthead-brand" href="index.html" aria-label="Zur Startseite">
-      <img class="logo-img" src="../assets/logo-original.png" alt="Kosmetikinstitut Hautnah — Sabrina Herosé">
+<!-- KOPFBEREICH -->
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html" aria-label="Zur Startseite">
+      <img src="../assets/logo-original.png" alt="Kosmetikinstitut Hautnah — Sabrina Heros&eacute;">
     </a>
-    <div class="masthead-right"><a href="index.html#kontakt">Zusammenarbeit anfragen</a></div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Men&uuml; umschalten">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
+        <li>Haarkonzept</li>
+        <li class="is-active"><a href="ihre-expertinnen.html">Ihre Expertinnen</a></li>
+        <li><a href="gutscheine.html">Gutscheine</a></li>
+        <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
+        <li>Aktuelles</li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>Kontakt</li>
+      </ul>
+      <a class="nav-cta btn-primary" href="index.html#kontakt">Zusammenarbeit anfragen</a>
+    </nav>
   </div>
 </header>
-
-<nav class="navbar">
-  <a class="nav-brand" href="index.html">Hautnah</a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü umschalten">
-  <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
-  <ul class="masthead-nav">
-    <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
-    <li>Haarkonzept</li>
-    <li class="is-active"><a href="ihre-expertinnen.html">Ihre Expertinnen</a></li>
-    <li><a href="gutscheine.html">Gutscheine</a></li>
-    <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
-    <li>Aktuelles</li>
-    <li><a href="blog.html">Blog</a></li>
-    <li>Kontakt</li>
-    <li class="nav-cta"><a href="index.html#kontakt" class="btn-primary">Zusammenarbeit anfragen</a></li>
-  </ul>
-</nav>
 
 <!-- BREADCRUMB -->
 <nav class="breadcrumb">
@@ -299,7 +51,7 @@
 </nav>
 
 <!-- PROFILE HERO -->
-<section class="p-hero">
+<section data-reveal class="p-hero">
   <div class="p-portrait">
     <div class="ph"><span class="mono">B.W.</span><span class="txt">Portrait folgt</span></div>
   </div>
@@ -314,10 +66,10 @@
 <!-- VITA (Text 1:1 aus Bianka Wittulski.docx) -->
 <div class="p-body">
   <div class="p-prose">
-    <div class="p-block"><p>1997, begann mein beruflicher Weg in der Welt der Schönheit und Ästhetik. Meine Ausbildung führte zur Zusammenarbeit mit renommierten Fotografen sowie international bekannten Modedesignern wie Michael Kämpf und Daniel Rodan und schärfte meinen Blick für Ästhetik, Proportionen und individuelle Schönheit.</p><p>Als freiberufliche Cheftrainerin internationaler Marken war ich in Paris, London, Dubai, Dänemark, der Schweiz, Spanien und Österreich tätig. Bis heute gebe ich mein Fachwissen auf internationalen Modenschauen, Fachmessen und in Berufsschulen weiter.</p><p>Ein bedeutender Meilenstein meiner Laufbahn war die Auszeichnung zur Deutschen Vizemeisterin bei den Meisterschaften in Nürnberg. Durch regelmäßige Elite-Trainings bei Long-Time-Liner&reg; arbeite ich stets mit den modernsten Techniken, innovativsten Behandlungsmethoden und neuesten Farbpigmenten.</p></div>
-    <div class="p-block"><p>Heute arbeite ich eng mit Onkologen, Laserchirurgen, plastischen Chirurgen, Ärzten und Heilpraktikern verschiedenster Fachrichtungen zusammen. Diese interdisziplinäre Zusammenarbeit erfordert höchste Präzision, Vertrauen und fachliche Kompetenz.</p><p>Als eine der wenigen Spezialistinnen in Deutschland wurde ich als Top Elitepartnerin von Long-Time-Liner&reg; ausgezeichnet – eine Anerkennung für höchste Qualitätsstandards und langjährige Expertise im Premium Permanent Make-up.</p><p>Zu den besonderen Stationen meiner Karriere zählen mein eigener Stand als erste Frau Deutschlands, sowie Europäer auf der größten Tattoo-Convention der Welt in Las Vegas sowie meine Tätigkeit hinter den Kulissen der Fashion Week Paris.</p></div>
-    <div class="p-block"><p>Kontinuierliche Weiterbildung ist für mich selbstverständlich. So gehöre ich zu den ersten deutschen Spezialistinnen, die die innovativen Techniken von Lidya Belyachova aus Beirut – darunter moderne Lid-, Augenbrauen- und mehrfarbige Lippenschattierungen – erlernt und perfektioniert haben.</p><p>Zu meinem exklusiven Kundenkreis zählen Persönlichkeiten aus Film, Fernsehen, Politik, Mode und Showbusiness, die höchste Ansprüche an Qualität, Diskretion und Perfektion stellen.</p><p>Jede Behandlung basiert auf meiner Überzeugung, dass wahre Schönheit nicht verändert, sondern auf höchstem Niveau perfektioniert werden sollte. Meine Kunden vertrauen auf internationale Erfahrung, medizinische Zusammenarbeit, künstlerische Präzision und kompromisslosen Qualitätsanspruch – für Menschen, die keine Kompromisse eingehen und exzellente Ergebnisse erwarten.</p></div>
-    <div class="p-block"><p style="font-size:20px; color:var(--taupe-dark); margin-top:4px;">Ich freue mich Sie persönlich kenne zu lernen.</p></div>
+    <div data-reveal class="p-block"><p>1997, begann mein beruflicher Weg in der Welt der Schönheit und Ästhetik. Meine Ausbildung führte zur Zusammenarbeit mit renommierten Fotografen sowie international bekannten Modedesignern wie Michael Kämpf und Daniel Rodan und schärfte meinen Blick für Ästhetik, Proportionen und individuelle Schönheit.</p><p>Als freiberufliche Cheftrainerin internationaler Marken war ich in Paris, London, Dubai, Dänemark, der Schweiz, Spanien und Österreich tätig. Bis heute gebe ich mein Fachwissen auf internationalen Modenschauen, Fachmessen und in Berufsschulen weiter.</p><p>Ein bedeutender Meilenstein meiner Laufbahn war die Auszeichnung zur Deutschen Vizemeisterin bei den Meisterschaften in Nürnberg. Durch regelmäßige Elite-Trainings bei Long-Time-Liner&reg; arbeite ich stets mit den modernsten Techniken, innovativsten Behandlungsmethoden und neuesten Farbpigmenten.</p></div>
+    <div data-reveal class="p-block"><p>Heute arbeite ich eng mit Onkologen, Laserchirurgen, plastischen Chirurgen, Ärzten und Heilpraktikern verschiedenster Fachrichtungen zusammen. Diese interdisziplinäre Zusammenarbeit erfordert höchste Präzision, Vertrauen und fachliche Kompetenz.</p><p>Als eine der wenigen Spezialistinnen in Deutschland wurde ich als Top Elitepartnerin von Long-Time-Liner&reg; ausgezeichnet – eine Anerkennung für höchste Qualitätsstandards und langjährige Expertise im Premium Permanent Make-up.</p><p>Zu den besonderen Stationen meiner Karriere zählen mein eigener Stand als erste Frau Deutschlands, sowie Europäer auf der größten Tattoo-Convention der Welt in Las Vegas sowie meine Tätigkeit hinter den Kulissen der Fashion Week Paris.</p></div>
+    <div data-reveal class="p-block"><p>Kontinuierliche Weiterbildung ist für mich selbstverständlich. So gehöre ich zu den ersten deutschen Spezialistinnen, die die innovativen Techniken von Lidya Belyachova aus Beirut – darunter moderne Lid-, Augenbrauen- und mehrfarbige Lippenschattierungen – erlernt und perfektioniert haben.</p><p>Zu meinem exklusiven Kundenkreis zählen Persönlichkeiten aus Film, Fernsehen, Politik, Mode und Showbusiness, die höchste Ansprüche an Qualität, Diskretion und Perfektion stellen.</p><p>Jede Behandlung basiert auf meiner Überzeugung, dass wahre Schönheit nicht verändert, sondern auf höchstem Niveau perfektioniert werden sollte. Meine Kunden vertrauen auf internationale Erfahrung, medizinische Zusammenarbeit, künstlerische Präzision und kompromisslosen Qualitätsanspruch – für Menschen, die keine Kompromisse eingehen und exzellente Ergebnisse erwarten.</p></div>
+    <div data-reveal class="p-block"><p style="font-size:20px; color:var(--taupe-dark); margin-top:4px;">Ich freue mich Sie persönlich kenne zu lernen.</p></div>
   </div>
 </div>
 
@@ -361,10 +113,11 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 3.14</span>
+    <span>Version 4.14</span>
     <span>Instagram · Facebook · YouTube</span>
   </div>
 </footer>
 
+<script src="../assets/hautnah.js" defer></script>
 </body>
 </html>
