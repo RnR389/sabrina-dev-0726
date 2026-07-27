@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/logo-original.png">
+<title>Zusammenarbeit anfragen — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
+<meta name="description" content="Anfrage für den ersten Haut- und Haarcheck im Kosmetikinstitut Hautnah in Wehr — unverbindlich und persönlich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hautnah.css">
+</head>
+<body>
+
+<!-- INFOZEILE -->
+<div class="infobar">
+  <span><span class="dot"></span>Erstes 5-Sterne-Fachinstitut &middot; Landkreis Waldshut</span>
+  <span>Hauptstra&szlig;e 3 &middot; 79664 Wehr</span>
+  <span>+49 (0) 7762 / 80 56 69</span>
+  <span>Mo &middot; Di &middot; Mi &middot; Fr &middot; 10&ndash;18 Uhr</span>
+</div>
+
+<!-- KOPFBEREICH -->
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html" aria-label="Zur Startseite">
+      <img src="assets/logo-original.png" alt="Kosmetikinstitut Hautnah — Sabrina Heros&eacute;">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Men&uuml; umschalten">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
+        <li>Haarkonzept</li>
+        <li><a href="ihre-expertinnen.html">Ihre Expertinnen</a></li>
+        <li><a href="gutscheine.html">Gutscheine</a></li>
+        <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
+        <li>Aktuelles</li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>Kontakt</li>
+      </ul>
+      <a class="nav-cta btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Start</a><span class="sep">/</span><span class="here">Zusammenarbeit anfragen</span>
+</nav>
+
+<!-- DETAIL HERO -->
+<section data-reveal class="t-hero" style="grid-template-columns:1fr;">
+  <div class="t-hero-text" style="max-width:720px">
+    <div class="kicker"><span class="tag">Check &amp; Start</span></div>
+    <h1>Zusammenarbeit anfragen</h1>
+    <div class="sub">Erz&auml;hlen Sie mir kurz von Ihrer Haut — den Rest besprechen wir pers&ouml;nlich.</div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="t-body">
+  <div class="t-prose">
+    <div data-reveal class="t-block" style="border-top:none;padding-top:0">
+      <div class="form-notice">
+        <strong>Hinweis:</strong> Der Formularversand ist noch nicht freigeschaltet.
+        Bitte melden Sie sich solange direkt — telefonisch oder per WhatsApp unter
+        <a href="tel:+4977628056 69">+49 (0) 7762 / 80 56 69</a>.
+      </div>
+
+      <form class="anfrage" novalidate>
+        <div class="f-row">
+          <label class="f-field">
+            <span class="f-label">Name <em>*</em></span>
+            <input type="text" name="name" autocomplete="name" placeholder="Ihr Vor- und Nachname" disabled>
+          </label>
+        </div>
+        <div class="f-row f-2">
+          <label class="f-field">
+            <span class="f-label">E-Mail <em>*</em></span>
+            <input type="email" name="email" autocomplete="email" placeholder="ihre@adresse.de" disabled>
+          </label>
+          <label class="f-field">
+            <span class="f-label">Telefon <em>*</em></span>
+            <input type="tel" name="telefon" autocomplete="tel" placeholder="Für den Rückruf" disabled>
+          </label>
+        </div>
+        <div class="f-row">
+          <label class="f-field">
+            <span class="f-label">Ihr wichtigstes Hautanliegen <em>*</em></span>
+            <textarea name="anliegen" rows="3" placeholder="Was beschäftigt Sie an Ihrer Haut am meisten?" disabled></textarea>
+          </label>
+        </div>
+        <div class="f-row">
+          <label class="f-field">
+            <span class="f-label">Bisherige Erfahrungen</span>
+            <textarea name="erfahrungen" rows="3" placeholder="Was haben Sie bisher probiert? Was hat geholfen, was nicht?" disabled></textarea>
+          </label>
+        </div>
+        <div class="f-row f-2">
+          <label class="f-field">
+            <span class="f-label">Bevorzugte Kontaktm&ouml;glichkeit <em>*</em></span>
+            <select name="kontaktweg" disabled>
+              <option value="">Bitte w&auml;hlen</option>
+              <option>Telefon</option>
+              <option>WhatsApp</option>
+              <option>E-Mail</option>
+            </select>
+          </label>
+          <label class="f-field">
+            <span class="f-label">Terminwunsch <span class="f-opt">optional</span></span>
+            <input type="text" name="termin" placeholder="z. B. vormittags, oder ein Wunschdatum" disabled>
+          </label>
+        </div>
+        <div class="f-actions">
+          <button type="submit" class="btn-primary" disabled>Anfrage senden</button>
+          <span class="f-hint">Felder mit <em>*</em> bitte ausf&uuml;llen. Ihre Angaben werden ausschlie&szlig;lich
+          zur Bearbeitung Ihrer Anfrage verwendet.</span>
+        </div>
+      </form>
+
+      <!-- Bestätigung: erscheint erst, wenn der Versand freigeschaltet ist.
+           Vorher NICHT anzeigen — sonst wartet jemand auf einen Rückruf,
+           der nie ankommt. -->
+      <div class="f-danke" hidden>
+        <h2>Vielen Dank f&uuml;r Ihre Anfrage.</h2>
+        <p>Wir melden uns pers&ouml;nlich innerhalb von zwei Werktagen, um den ersten
+        Hautcheck mit Ihnen abzustimmen.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="assets/logo-footer.png" alt="Kosmetikinstitut Hautnah — Sabrina Herosé">
+      <p>Kosmetikinstitut Hautnah<br>Hauptstraße 3 · 79664 Wehr<br><br>Telefon &amp; WhatsApp<br>+49 (0) 7762 / 80 56 69<br><br>www.hautnah-wehr.de</p>
+    </div>
+    <div>
+      <h4>Verzeichnis</h4>
+      <ul>
+        <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
+        <li><a href="ihre-expertinnen.html">Ihre Expertinnen</a></li>
+        <li><a href="gutscheine.html">Gutscheine</a></li>
+        <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
+        <li>Haarkonzept</li>
+        <li>Aktuelles</li>
+    <li><a href="blog.html">Blog</a></li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Geschäftszeiten</h4>
+      <ul>
+        <li>Mo · Di · Mi · Fr</li>
+        <li>10 – 18 Uhr</li>
+        <li style="opacity:0.5; margin-top:14px;">Termine nur nach<br>telefonischer Vereinbarung</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="agb.html">AGB</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 · Sabrina Herosé · Wehr</span>
+    <span>Version 4.19</span>
+    <span>Instagram · Facebook · YouTube</span>
+  </div>
+</footer>
+
+<script src="assets/hautnah.js" defer></script>
+</body>
+</html>
