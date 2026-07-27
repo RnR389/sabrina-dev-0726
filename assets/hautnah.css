@@ -76,8 +76,10 @@ p{color:var(--ink-soft)}
 .wrap,.voices-inner,.ba-inner,.vid-inner,.faq-inner,.values-inner,.story-inner,
 .treatments-grid,.footer-grid,.blog-wrap{max-width:var(--maxw);margin-inline:auto}
 section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
+/* Abstand zwischen den Abschnitten. Vorher 130px je Seite = 260px Lücke —
+   das riss die Seite auseinander. Jetzt großzügig, aber zusammenhängend. */
 .voices,.ba,.vid,.faq,.related,.qbreak,.values,.story,.bianca,.treatments,.cta-band{
-  padding-block:clamp(64px,9vw,132px)
+  padding-block:clamp(46px,5.2vw,76px)
 }
 
 /* ==========================================================================
@@ -305,7 +307,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
     width:calc(100% + 180px);margin-left:-90px
   }
 }
-.t-block,.p-block{padding-block:clamp(30px,4vw,52px);border-top:1px solid var(--line)}
+.t-block,.p-block{padding-block:clamp(26px,2.8vw,38px);border-top:1px solid var(--line)}
 .t-block:first-child,.p-block:first-child{border-top:none;padding-top:0}
 .t-block h2,.p-block h2{margin-bottom:22px}
 .t-block p,.p-block p{font-size:16.5px;line-height:1.85;margin-bottom:18px}
@@ -370,7 +372,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
 
 /* ---------- Medien ---------- */
 .ba{background:var(--creme);border-radius:var(--r-xl);margin:0 var(--pad);padding-inline:clamp(22px,4vw,58px)}
-.ba-head,.vid-head,.voices-head,.faq-head,.related-head{text-align:center;margin-bottom:clamp(34px,4vw,54px)}
+.ba-head,.vid-head,.voices-head,.faq-head,.related-head{text-align:center;margin-bottom:clamp(28px,3vw,40px)}
 .ba-head p,.vid-head p{font-size:15.5px;line-height:1.75;max-width:620px;margin-inline:auto}
 .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .ba-item{background:var(--paper);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-s);
@@ -490,7 +492,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}
    FOOTER
    ========================================================================== */
 footer{
-  margin:clamp(48px,7vw,90px) var(--pad) var(--pad);
+  margin:clamp(40px,5vw,64px) var(--pad) var(--pad);
   border-radius:var(--r-xl);overflow:hidden;
   background:linear-gradient(160deg,var(--taupe-dark),var(--ink));color:var(--paper);
   padding:clamp(48px,6vw,84px) clamp(24px,5vw,64px) clamp(24px,3vw,36px)}
