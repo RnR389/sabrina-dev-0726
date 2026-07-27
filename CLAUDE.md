@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.19 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.20 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.19**
+- **Aktuell: V4.20**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -41,7 +41,7 @@ Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liege
 - **Netlify ist tot** (keine Credits) — nicht mehr verwenden.
 
 ## Seitenbestand (21 Seiten)
-Startseite · Ästhetische Konzepte · **10 Behandlungen** · Ihre Expertinnen · Bianka Wittulski · Gutscheine · Zahlungsoptionen · Blog · **Zusammenarbeit anfragen** · **Impressum · Datenschutz · AGB**
+Startseite · Ästhetische Konzepte · **10 Behandlungen** · **Haarkonzept** · Ihre Expertinnen · Bianka Wittulski · Gutscheine · Zahlungsoptionen · Blog · **Zusammenarbeit anfragen** · **Impressum · Datenschutz · AGB** — **22 Seiten**
 
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
@@ -75,8 +75,15 @@ Alle CTA-Buttons zeigen dorthin. Felder: Name · E-Mail · Telefon · wichtigste
 
 **Versand ist noch NICHT aktiv** (Dienst nicht entschieden) → Felder deaktiviert, sichtbarer Hinweis mit Telefonnummer. Die Bestätigung („Wir melden uns innerhalb von zwei Werktagen") liegt fertig im Code, ist aber `hidden` — sie darf **erst** erscheinen, wenn wirklich versendet wird, sonst wartet jemand auf einen Rückruf, der nie kommt. Zum Freischalten: Dienst wählen (z. B. Formspree), Felder aktivieren, Datenschutz ergänzen.
 
-## Meisterbetrieb-Siegel
-Auf der Startseite oben rechts im Hero. Bewusst **kein** Nachbau des blauen Standard-Aufklebers (Glanz, Zackenrand, Häkchen) — das hätte den Premium-Eindruck zerstört. Stattdessen geprägtes Siegel als Inline-SVG in Taupe/Espresso.
+## Meisterbetrieb-Siegel — ENTFERNT (V4.20), nicht wieder einbauen
+Stand V4.18 lag oben rechts im Hero ein geprägtes Rundsiegel als Inline-SVG. **René, 27.07.2026: „Die Startseite sieht mit dem schwarzen Kreis, den du da reingesetzt hast, so richtig scheiße aus."** → HTML und der CSS-Block `.mb-seal` sind vollständig raus, die Startseite ist wieder auf dem Stand vor V4.18.
+
+**Lesson:** Ein Rundsiegel über dem Hero-Foto liest sich als dunkler Fleck — unabhängig davon, wie dezent es gestaltet ist. Sabrinas Meistertitel gehört, wenn er prominenter soll, in eine ruhige Fläche (Trust-Leiste, eigener Abschnitt, Fußzeile) und **nicht** über das Bild. Vor einem neuen Versuch mit René abstimmen.
+
+## Profilseite Bianka Wittulski (V4.20)
+Solange **kein Portraitfoto** vorliegt, darf der Platzhalter nicht die Hauptrolle spielen. Vorher: leeres Feld 620 × 775 px neben 154 px Text — René: „sieht sehr kacke aus". Jetzt: Text führt links, Platzhalter 340 × 425 px rechts, dazu eine Eckdaten-Tabelle (**seit 1997 · Deutsche Vizemeisterin · Top Elitepartnerin**) — **ausschließlich Formulierungen aus Biankas eigenem Text**, nichts hinzugedichtet. Schlusszeile als Signatur, am Ende ein Handlungsaufruf. Sobald das Foto da ist: `<img>` in `.p-portrait` statt `.ph`, Rest bleibt.
+
+**Gilt allgemein:** Ein Platzhalter darf nie größer sein als der Inhalt, den er vertritt.
 
 ## Arbeitsweise mit René — was sich bewährt hat
 - **Erst messen, dann ändern.** „Zu groß" / „zu viel Abstand" immer im Browser nachmessen und die Zahlen nennen (h1 war 5,3× der Fließtext; Abstände waren 259–285 px).
@@ -90,7 +97,8 @@ Auf der Startseite oben rechts im Hero. Bewusst **kein** Nachbau des blauen Stan
 3. **Formularversand** freischalten (siehe oben).
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
-6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen · Haarkonzept/Aktuelles/Kontakt fehlen noch.
+6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen.
+7. **`haarkonzept.html` ist ein leeres Gerüst** (seit V4.20 im Menü verlinkt) — Inhalte von Sabrina fehlen. Ebenso **Aktuelles** und **Kontakt**: beide noch tote Menüpunkte ohne Seite.
 
 ---
 

@@ -426,6 +426,35 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.18 / V4.19 — „Meisterbetrieb-Siegel, Rechtsseiten, Anfrageformular"  📍 teilweise verworfen
+
+- **Dateien:** `current/index.html`, neue Seiten `impressum.html`, `datenschutz.html`, `agb.html`, `zusammenarbeit-anfragen.html`, `assets/hautnah.css`
+- **Geändert:** Meisterbetrieb-Siegel im Hero der Startseite · Hautanalyse-Text auf Haut & Haarcheck · Rechtsseiten als Gerüst (Lücken sichtbar markiert) · Anfrageformular mit 9 Feldern (Versand noch nicht freigeschaltet) · Footer-Öffnungszeiten ohne Hover · Footer-Eintrag „Cookies" entfernt.
+- **Feedback (René, 27.07.2026):** „Die Startseite sieht mit dem schwarzen Kreis, den du da reingesetzt hast, so richtig scheiße aus." → **Siegel in V4.20 wieder entfernt.**
+- **Lesson:** Ein rundes Siegel mitten im Hero funktioniert bei diesem Bild nicht — es liest sich als dunkler Fleck, egal wie dezent es gestaltet ist. Ein Vertrauenszeichen gehört hier in die ruhige Fläche (Trust-Leiste, Fußzeile), nicht über das Foto.
+
+---
+
+## V4.20 — „Siegel raus, Haarkonzept rein, Profilseite repariert"  📍 Feedback ausstehend
+
+- **Dateien:** `current/index.html`, neu `current/haarkonzept.html`, `current/bianka-wittulski.html`, `assets/hautnah.css`, alle 22 Seiten (Menü/Fußzeile)
+- **Geändert:**
+  1. **Meisterbetrieb-Siegel vollständig entfernt** — HTML aus dem Hero, CSS-Block `.mb-seal` aus dem Stylesheet. Startseite ist damit exakt wieder auf dem Stand vor V4.18 (geprüft per Diff gegen `v4.17`).
+  2. **Neue Seite `haarkonzept.html`** — Gerüst mit Platzhalter-Hinweis, Aufbau wie `gutscheine.html`. Der bis dahin tote Menüpunkt „Haarkonzept" ist jetzt auf **allen 22 Seiten** in Menü und Fußzeile verlinkt.
+  3. **Profilseite Bianka Wittulski neu aufgebaut.** Vorher beherrschte ein **leeres Portrait-Feld von 620 × 775 px** die Seite, daneben standen 154 px Text, die Vita begann erst bei 956 px.
+
+     | | vorher | nachher |
+     |---|---|---|
+     | Portrait-Platzhalter | 620 × 775 px | 340 × 425 px |
+     | Kopfbereich gesamt | 775 px | 503 px |
+     | Text/Bild-Verhältnis | 154 px zu 775 px | 382 px zu 425 px |
+
+     Text führt jetzt links, der Platzhalter steht als Nebenrolle rechts. Neu: Eckdaten-Tabelle (**seit 1997 · Deutsche Vizemeisterin · Top Elitepartnerin**) — ausschließlich Formulierungen aus Biankas eigenem Text, nichts hinzugedichtet. Schlusszeile wird zur Signatur, am Ende ein Handlungsaufruf statt eines abrupten Endes. **Vita-Text wortgleich** (per Diff gegen `HEAD` geprüft).
+- **Footer-Version:** alle 22 Seiten → **4.20**. *Hintere Zahl, weil es kein neues Layout ist, sondern Korrekturen innerhalb von V4 — bei einem echten Layoutwechsel ginge es auf 5.x.*
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```

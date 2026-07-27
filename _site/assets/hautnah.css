@@ -582,46 +582,6 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   html{scroll-behavior:auto}
 }
 
-/* ==========================================================================
-   MEISTERBETRIEB-SIEGEL (V4.18)
-   Bewusst KEIN Nachbau des blauen Standard-Aufklebers: kein Glanz, kein
-   Zackenrand, kein Blau. Stattdessen ein geprägtes Siegel in der Markenfarbe —
-   die Aussage bleibt prägnant, der Premium-Eindruck bleibt erhalten.
-   ========================================================================== */
-.mb-seal{
-  position:absolute; z-index:6; right:clamp(18px,3.4vw,52px); top:clamp(24px,4.5vh,58px);
-  width:clamp(112px,11vw,152px); aspect-ratio:1;
-  display:grid; place-items:center; border-radius:50%;
-  background:var(--paper);
-  box-shadow:0 10px 30px -10px rgba(58,50,44,.45), 0 26px 60px -30px rgba(58,50,44,.5);
-  transform:rotate(-8deg);
-  transition:transform .6s var(--ease), box-shadow .6s var(--ease);
-}
-.mb-seal:hover{transform:rotate(0deg) scale(1.04);box-shadow:0 14px 40px -12px rgba(58,50,44,.5)}
-.mb-seal svg{width:100%;height:100%;display:block}
-.mb-ring{fill:none;stroke:var(--taupe);stroke-width:1.6}
-.mb-ring-2{stroke-width:.8;opacity:.7}
-.mb-arc{
-  fill:var(--taupe-dark); font-family:'Outfit',sans-serif; font-size:12.5px;
-  font-weight:600; letter-spacing:.2em; text-anchor:middle;
-}
-.mb-main{
-  fill:var(--ink); font-family:'Outfit',sans-serif; font-size:23px; font-weight:600;
-  letter-spacing:.02em; text-anchor:middle;
-}
-.mb-sub{
-  fill:var(--taupe-dark); font-family:'Outfit',sans-serif; font-size:8.6px;
-  font-weight:600; letter-spacing:.22em; text-anchor:middle;
-}
-.mb-mark path{stroke:var(--taupe);stroke-width:1.4;fill:var(--taupe)}
-.mb-mark path:nth-child(1),.mb-mark path:nth-child(2){fill:none}
-
-@media (max-width:680px){
-  /* Mobil läuft das Siegel im Fluss mit — freigestellt über der Trust-Leiste */
-  .mb-seal{position:relative;left:auto;bottom:auto;margin:-38px auto 0;
-    width:118px;transform:rotate(-6deg);z-index:6}
-}
-
 /* ---------- Kostenlos-Auszeichnung (Haut & Haarcheck) ----------
    „kostenlos." ist Sabrinas stärkstes Einstiegsargument — es soll sofort
    ins Auge fallen, ohne nach Rabattschild auszusehen. */
@@ -664,3 +624,55 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .f-danke{background:var(--creme);border-radius:var(--r-l);padding:38px 34px;text-align:center}
 .f-danke h2{margin-bottom:14px}
 @media (max-width:680px){ .f-row.f-2{grid-template-columns:1fr} }
+
+/* ==========================================================================
+   PROFILSEITE (V4.20) — Bianka Wittulski
+   Problem vorher: ein leeres Portrait-Feld von 620x775px hat die Seite
+   beherrscht, der Text stand als schmaler Streifen daneben und die Vita erst
+   weit unterhalb. Solange kein Foto vorliegt, darf der Platzhalter nicht die
+   Hauptrolle spielen — er wird klein, ruhig und sichtbar als Platzhalter.
+   ========================================================================== */
+.p-hero{
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  padding-block:clamp(14px,2.4vw,30px) clamp(26px,3.6vw,48px);
+  gap:clamp(30px,5vw,72px);
+}
+.p-hero-text{order:0}
+.p-hero h1{font-weight:200;text-wrap:balance;margin-bottom:0}
+.p-role{
+  font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--taupe-dark);font-weight:600;margin:14px 0 20px}
+.p-hero .lead{max-width:33em;margin:0}
+
+/* Eckdaten — ausschließlich Formulierungen aus Biankas eigenem Text */
+.p-creds{list-style:none;margin:clamp(24px,3vw,34px) 0 0;padding:0;border-top:1px solid var(--line)}
+.p-creds li{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 18px;
+  padding:13px 0;border-bottom:1px solid var(--line);
+  font-size:13.5px;line-height:1.5;color:var(--taupe-dark)}
+.p-creds li strong{
+  flex:none;min-width:12em;font-size:14.5px;font-weight:500;color:var(--ink);letter-spacing:.01em}
+
+/* Portrait-Platzhalter: klein, hochkant, ohne Drama */
+.p-portrait{
+  order:1;width:100%;max-width:340px;margin-inline:auto;aspect-ratio:4/5;
+  background:linear-gradient(160deg,var(--creme) 0%,var(--sand) 100%);
+  box-shadow:var(--sh)}
+.p-portrait .ph{gap:14px;color:var(--taupe-dark)}
+.p-portrait .mono{font-size:38px;font-weight:200;letter-spacing:.14em;opacity:.8}
+.p-portrait .txt{font-size:10px;letter-spacing:.26em;opacity:.75}
+
+/* Vita: erster Absatz trägt den Einstieg, Schlusszeile wird zur Signatur */
+.p-block:first-child p:first-child{font-size:18px;line-height:1.78;color:var(--ink)}
+.p-sign{text-align:center}
+.p-sign p{font-size:clamp(18px,1.6vw,21px);font-weight:300;line-height:1.5;color:var(--taupe-dark)}
+.p-sign .who{
+  margin-top:16px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
+
+@media (max-width:900px){
+  /* Name zuerst, Platzhalter danach — ein leeres Feld gehört nicht über die Überschrift */
+  .p-hero{grid-template-columns:1fr;gap:30px}
+  .p-portrait{order:1;max-width:290px}
+  .p-creds li strong{min-width:100%}
+}
