@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.21 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.22 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.21**
+- **Aktuell: V4.22**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -86,6 +86,9 @@ Stand V4.18 lag oben rechts im Hero ein geprägtes Rundsiegel als Inline-SVG. **
 Solange **kein Portraitfoto** vorliegt, darf der Platzhalter nicht die Hauptrolle spielen. Vorher: leeres Feld 620 × 775 px neben 154 px Text — René: „sieht sehr kacke aus". Jetzt: Text führt links, Platzhalter 340 × 425 px rechts, dazu eine Eckdaten-Tabelle (**seit 1997 · Deutsche Vizemeisterin · Top Elitepartnerin**) — **ausschließlich Formulierungen aus Biankas eigenem Text**, nichts hinzugedichtet. Schlusszeile als Signatur, am Ende ein Handlungsaufruf. Sobald das Foto da ist: `<img>` in `.p-portrait` statt `.ph`, Rest bleibt.
 
 **Gilt allgemein:** Ein Platzhalter darf nie größer sein als der Inhalt, den er vertritt.
+
+## Kopfleiste — Falle, die schon zweimal zugeschlagen hat
+Die Menüleiste hat **8 Punkte + CTA-Button** und ist damit an der Breitengrenze. Alle Maße sind seit V4.22 **fluid** (`clamp`), der Hamburger greift **unter 1240 px**. **Wer einen Menüpunkt hinzufügt oder ein Label verlängert, muss zwingend bei 1250 / 1280 / 1366 px nachmessen** — sonst ragt der Button wieder aus der Glasleiste. Messformel: `brand + head-gap + ul.scrollWidth + nav-gap + cta` gegen `head-inner.clientWidth − Polster`.
 
 ## Arbeitsweise mit René — was sich bewährt hat
 - **Erst messen, dann ändern.** „Zu groß" / „zu viel Abstand" immer im Browser nachmessen und die Zahlen nennen (h1 war 5,3× der Fließtext; Abstände waren 259–285 px).

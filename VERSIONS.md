@@ -471,6 +471,29 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.22 — „Button ans Seitenende, Kopfleiste repariert"  📍 Feedback ausstehend
+
+- **Dateien:** alle 10 Behandlungsseiten + `assets/hautnah.css`
+- **Anlass (René):** „Setz den Button direkt nach unten, unter den Q&A-Block" · „Der Button ‚Zusammenarbeit anfragen' ist außerhalb des Bereiches" (mit Screenshot).
+- **Geändert:**
+  1. **CTA-Band hinter die FAQ verschoben** — auf allen 10 Behandlungsseiten. Neue Reihenfolge: Hero → Inhalt → Vorher/Nachher → Kundenstimmen → FAQ → **Button** → Footer. Der Handlungsaufruf ist damit das Letzte vor der Fußzeile.
+  2. **Kopfleiste lief über.** Der Menüblock passte erst ab ~1400 px, der Hamburger kam aber erst unter 1180 px — dazwischen ragte der CTA-Button aus der Glasleiste heraus (bei **1280 px um 60 px**). Behoben, indem Menüschrift, Abstände, Logohöhe und Button-Polster **fluid** wurden (`clamp` statt fester Werte) und der **Hamburger-Breakpoint von 1180 auf 1240 px** wandert.
+
+     | Breite | Platz | Bedarf | Rest |
+     |---|---|---|---|
+     | 1250 px | 1060 | 976 | **+84** |
+     | 1280 px | 1090 | 980 | **+110** |
+     | 1366 px | 1176 | 1038 | **+138** |
+     | 1440 px | 1250 | 1089 | **+161** |
+     | 1920 px | 1258 | 1145 | **+113** |
+
+     Unter 1240 px greift das Hamburger-Menü — geprüft bei 1230 px.
+- **Geprüft:** Wortbestand aller 22 Seiten per Diff gegen `HEAD` identisch (die Verschiebung hat nichts verloren). Abschnittskette auf Forma lückenlos, CTA-Band steht direkt vor dem Footer.
+- **Footer-Version:** alle 22 Seiten → **4.22**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
