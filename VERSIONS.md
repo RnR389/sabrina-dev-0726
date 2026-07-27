@@ -455,6 +455,22 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.21 — „Verwandte Behandlungen raus"  📍 Feedback ausstehend
+
+- **Dateien:** alle 10 Behandlungsseiten + `current/forma.html` + `assets/hautnah.css`
+- **Anlass (René):** „Nimm bitte auf allen Seiten den Block ‚Behandlungen, die dazu passen' komplett raus" · „Individuelle Beratung bei Forma auch komplett raus".
+- **Geändert:**
+  - Abschnitt `.related` („Weitere Konzepte / Behandlungen, die dazu passen" mit je 3 Karten) auf **allen 10 Behandlungsseiten** entfernt.
+  - Damit ungenutztes CSS (`.related`, `.related-grid`, `.related-head`, `.rcard`) mit entfernt — nur die toten Selektoren aus den Sammel-Regeln gestrichen, `.treatment` und `.blog-card` bleiben unangetastet.
+  - `forma.html`: Textblock **„Individuelle Beratung"** entfernt. *Hinweis: das war Sabrinas Originaltext aus `Forma_Text-0726.docx` — auf ausdrücklichen Wunsch von René raus.*
+  - Forma dadurch von ~7500 px auf 6953 px Seitenlänge.
+- **Geprüft:** Fließtext aller 22 Seiten per Diff gegen `HEAD` — es fehlen ausschließlich die beabsichtigten Blöcke, nichts wurde still verschluckt. Abschnittskette ohne Lücken (jede Sektion endet exakt dort, wo die nächste beginnt).
+- **Offen:** Die Behandlungsseiten enden jetzt mit dem FAQ; das CTA-Band steht davor. Falls der Handlungsaufruf ans Seitenende soll, ist das ein separater Schritt.
+- **Footer-Version:** alle 22 Seiten → **4.21**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
