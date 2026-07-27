@@ -366,6 +366,21 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.15 — „Mittige Lesespalte auf den Behandlungsseiten"  📍 Feedback ausstehend
+
+- **Dateien:** `assets/hautnah.css` (wirkt auf alle Behandlungsseiten)
+- **Anlass (René):** „Auf den Behandlungsseiten ist jetzt alles linksbündig. Mach das bitte zentriert, harmonisch fürs Auge. […] Denk immer aus Kundensicht."
+- **Messung vor dem Eingriff:** Die Lesespalte hatte **124 px Luft links, 416 px rechts** — knapp 300 px Unwucht. Der Inhalt klebte links, rechts stand ein totes Feld.
+- **Geändert:**
+  - `.t-prose` / `.p-prose` bekommen `margin-inline:auto` → Lesespalte steht **mittig**.
+  - Breite von 900 auf **730 px** reduziert. Grund: bei 900 px lagen rund **100 Zeichen** in einer Zeile — das Auge verliert beim Zurückspringen die Zeile. Jetzt ~88 Zeichen (für deutsche Langwörter angemessen).
+  - Damit die Seite trotzdem großzügig wirkt, **dürfen die Bild- und Kartenbausteine** (Zonen, Studienzahlen, Fakten-Karten, Icon-Raster, ruhige Listen, Video) **über die Lesespalte hinausragen** — 910 px, auf derselben Mittelachse. Erst ab **1080 px** Fensterbreite, damit auf kleineren Bildschirmen nichts anstößt (bei 1005 px waren es nur 5 px Reserve — zu knapp).
+- **Geprüft:** Forma, Hydrafacial, Crystal Peel, Bianka — überall **Unwucht 0**, kein waagerechtes Scrollen; Übergang bei 1070/1440 px gegengetestet.
+- **Footer-Version:** alle Seiten → **4.15** (hintere Zahl, da Korrektur innerhalb des V4-Layouts — kein neues Layout).
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
