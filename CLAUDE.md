@@ -1,8 +1,96 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell V3 („Sabrina im Zentrum"). Wartet auf Feedback von Sabrina, dann V3.1 oder V4.
+**Status:** Aktuell **V4.19 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
+
+---
+
+# ⚠️ STAND 27.07.2026 — DIESER BLOCK GILT (überschreibt Älteres weiter unten)
+
+Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Block widerspricht, gilt **dieser Block**.
+
+## Versionsregel (René, 27.07.2026)
+- **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
+- **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
+- Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
+- **Aktuell: V4.19**
+
+## Rückfall-Punkte (jederzeit zurückspringen)
+| Marke | Stand |
+|---|---|
+| `v3.14` | letztes **altes** Layout (Zeitungsoptik) — zusätzlich physisch in `archive/v3.14-layout/` |
+| `v4.14` | erstes modernes Layout |
+| `v4.16` | ruhige Größenstaffel |
+| `v4.17` | engere Abstände |
+
+Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liegen auf GitHub.
+
+## Technik — WICHTIG, hat sich geändert
+- **Es gibt EIN gemeinsames Stylesheet: `assets/hautnah.css`** (+ `assets/hautnah.js`). Das früher in jede Seite kopierte CSS ist **weg**. Aussehen ändert man **dort**, nicht pro Seite.
+- Bewegung: `[data-reveal]` (Einblenden beim Scrollen) und `[data-parallax]` (Hero-Bilder). Zwei Fallen, beide bereits behoben — **nicht wieder einbauen**:
+  1. Was beim Laden sichtbar ist, muss **sofort** sichtbar sein (sonst wirkt die Seite leer).
+  2. Parallaxe-Bilder brauchen Überstand (`height:114%`), sonst legt die Verschiebung eine Kante frei.
+- `prefers-reduced-motion` wird respektiert.
+- **Nach jeder CSS-Änderung `assets/hautnah.css` nach `_site/assets/` kopieren**, sonst zeigt die Vorschau Altes.
+
+## Live / Deploy
+- **Live: https://rnr389.github.io/sabrina-dev-0726/** (GitHub Pages)
+- Build: `current/*.html` + `assets/` → `_site/`, dann Pfade `../assets/` → `assets/` umschreiben, `.nojekyll` anlegen.
+- Deploy: `main` pushen, dann `git subtree split --prefix _site` → force-push nach `gh-pages`.
+- **Netlify ist tot** (keine Credits) — nicht mehr verwenden.
+
+## Seitenbestand (21 Seiten)
+Startseite · Ästhetische Konzepte · **10 Behandlungen** · Ihre Expertinnen · Bianka Wittulski · Gutscheine · Zahlungsoptionen · Blog · **Zusammenarbeit anfragen** · **Impressum · Datenschutz · AGB**
+
+## Namens- und Schreibregeln (verbindlich)
+- Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
+- **®** (als `&reg;`) nur bei: Forma, Hydrafacial, Onetec, EMShape X, EMShape X Beckenboden.
+- **„Pharma" gibt es nicht mehr** (Seite gelöscht).
+- Menü heißt **„Ihre Expertinnen"** (Datei `ihre-expertinnen.html`), nicht „Über uns".
+- **Bianka** immer mit K.
+- Noch offen: Dateinamen `hydra-facial`, `hydra-lift`, `ems-shape`, `shape-beckenboden`, `chemical-peeling`, `skin-needling` passen noch nicht zur Schreibweise — René fragen.
+
+## Farben (gültig, ersetzen die alte Tabelle weiter unten)
+`--paper #FAF6EF` · `--creme #E9E3DA` · `--sand #DFD7CD` · **`--taupe #C2B4A9` (FINAL)** · `--taupe-dark #6F655D` · `--ink #3A322C` (Espresso, **nie Schwarz**) · `--silver #C9C9CE`
+
+**Kein Gold. Kein Schwarz. Eine Schrift: Outfit.** Alle dunklen Flächen (Buttons, Footer, CTA-Bänder, Infozeile) sind **Taupe**, nicht Espresso — Espresso nur für Text.
+
+## Texte — die Regel, an der nicht gerüttelt wird
+- Sabrinas Texte werden **wortwörtlich** übernommen. Nicht kürzen, nicht glätten, nicht umstellen.
+- **Immer programmatisch aus der .docx lesen**, nie abtippen. Danach Absatz für Absatz gegenprüfen.
+- **Produktionsnotizen sind KEIN Website-Text:** „Fotos einfügen", „Kundenfeedback Video", „Bilder", „FAQ drunter", „Bild/Video", „Bild Lampe", „Bild Lymph". Sie sagen, **wo** Medien hingehören — niemals abdrucken.
+- Bereits eingebaut: `Forma_Text-0726.docx`, `Hydrafacial_Text-0726.docx`, `Hautanalyse-0726.docx`.
+- Noch offen: `startseite_homepage.docx` ist in **Du**-Form, die Seite in **Sie**-Form → Entscheidung fehlt.
+
+## Medien & Recht
+- **Videos vor dem Deploy neu kodieren.** GitHub blockt >100 MB. Der Onetec-Film kam mit 310 MB → per ffmpeg auf 46 MB (`-crf 28 -preset medium -movflags +faststart`, 1080p). Einbau immer `controls preload="none"` + Poster, **nie** Autoplay.
+- **YouTube nur als Zwei-Klick-Lösung** (Muster auf `forma.html`): lokales Vorschaubild, Laden erst per Klick über `youtube-nocookie.com`. Direktes Einbetten setzt Cookies vor Einwilligung → Abmahnrisiko. Vorschaubilder **lokal** speichern.
+- **Fremdbilder immer kennzeichnen.** Die Forma-Vorher-Nachher-Bilder sind InMode-Klinikbilder fremder Behandler, **nicht** Sabrinas Kundinnen → Credit + Hinweiskasten. Nie als eigene Ergebnisse darstellen.
+- **Testimonials nur echt.** Die Google-Rezensionen (4,8★ / 65) sind wortgetreu zitiert, Nachnamen abgekürzt. Niemals erfinden oder umformulieren.
+- **Rechtsseiten enthalten bewusst KEINE erfundenen Rechtstexte.** Impressum/Datenschutz/AGB sind Gerüste mit klar markierten Lücken („Von Sabrina auszufüllen"). Erfundene AGB oder Datenschutzerklärungen hätten für Sabrina echte rechtliche Folgen.
+
+## Anfrageformular (`zusammenarbeit-anfragen.html`)
+Alle CTA-Buttons zeigen dorthin. Felder: Name · E-Mail · Telefon · wichtigstes Hautanliegen · bisherige Erfahrungen · bevorzugter Kontaktweg · Terminwunsch (optional).
+
+**Versand ist noch NICHT aktiv** (Dienst nicht entschieden) → Felder deaktiviert, sichtbarer Hinweis mit Telefonnummer. Die Bestätigung („Wir melden uns innerhalb von zwei Werktagen") liegt fertig im Code, ist aber `hidden` — sie darf **erst** erscheinen, wenn wirklich versendet wird, sonst wartet jemand auf einen Rückruf, der nie kommt. Zum Freischalten: Dienst wählen (z. B. Formspree), Felder aktivieren, Datenschutz ergänzen.
+
+## Meisterbetrieb-Siegel
+Auf der Startseite oben rechts im Hero. Bewusst **kein** Nachbau des blauen Standard-Aufklebers (Glanz, Zackenrand, Häkchen) — das hätte den Premium-Eindruck zerstört. Stattdessen geprägtes Siegel als Inline-SVG in Taupe/Espresso.
+
+## Arbeitsweise mit René — was sich bewährt hat
+- **Erst messen, dann ändern.** „Zu groß" / „zu viel Abstand" immer im Browser nachmessen und die Zahlen nennen (h1 war 5,3× der Fließtext; Abstände waren 259–285 px).
+- **Nach jedem Umbau gegen git prüfen**, ob Sabrinas Texte unverändert sind — ein Skript hatte schon einmal still Inhalte verschluckt.
+- Ändert man etwas auf einer Seite: **fragen, bevor man es auf alle überträgt.**
+- Nicht überimplementieren, aber **echte Folgeprobleme mitlösen** und benennen.
+
+## Offene Punkte
+1. **Icon-Optik (V3.13) gefällt René „noch nicht ganz"** — beim Wiederaufgreifen nachfragen, was genau stört.
+2. **Blog-Backend**, damit Sabrina selbst Beiträge einstellen kann (Decap CMS / GitHub / manuell).
+3. **Formularversand** freischalten (siehe oben).
+4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
+5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
+6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen · Haarkonzept/Aktuelles/Kontakt fehlen noch.
 
 ---
 
