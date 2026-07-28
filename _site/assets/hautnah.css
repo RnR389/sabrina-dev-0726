@@ -805,3 +805,39 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   .lb-scroll img{width:auto;max-width:none;min-width:920px}
 }
 
+
+/* ==========================================================================
+   VIDEO-KUNDENSTIMMEN (V4.33)
+   Drei Karten im Hochformat (4/5 wie die uebrigen Portraetflaechen der Seite).
+   Solange kein Video vorliegt, traegt die Flaeche einen ruhigen Verlauf mit
+   Abspielzeichen — erkennbar als Platzhalter, ohne billig zu wirken.
+   ========================================================================== */
+.vtest{padding-block:clamp(46px,5.2vw,76px)}
+.vtest-inner{max-width:var(--maxw);margin-inline:auto}
+.vtest-head{text-align:center;margin-bottom:clamp(28px,3vw,40px)}
+.vtest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(16px,2vw,26px)}
+.vt{margin:0}
+.vt-ph{
+  position:relative;aspect-ratio:4/5;border-radius:var(--r-l);overflow:hidden;
+  display:grid;place-items:center;gap:16px;align-content:center;
+  background:linear-gradient(155deg,var(--sand) 0%,var(--taupe) 62%,var(--taupe-dark) 100%);
+  box-shadow:var(--sh);
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.vt:hover .vt-ph{transform:translateY(-5px);box-shadow:var(--sh-l)}
+/* Abspielzeichen: Kreis mit Dreieck, rein aus CSS */
+.vt-play{
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(250,246,239,.18);border:1px solid rgba(250,246,239,.55);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  display:grid;place-items:center;position:relative}
+.vt-play::after{
+  content:'';width:0;height:0;margin-left:4px;
+  border-left:15px solid var(--paper);
+  border-top:9.5px solid transparent;border-bottom:9.5px solid transparent}
+.vt-note{
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+  color:rgba(250,246,239,.85)}
+.vt figcaption{
+  margin-top:14px;text-align:center;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:500;color:var(--taupe-dark)}
