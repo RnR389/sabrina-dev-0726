@@ -571,6 +571,21 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.28 — „Siegel Anlauf 2, Haarbalance-Logo, Aktuelles"  📍 Feedback ausstehend
+
+- **Dateien:** `current/index.html`, `current/haarkonzept.html`, neu `current/aktuelles.html`, neu `assets/haarbalance-logo.png` + `assets/zeitungsartikel-2026.jpg`, `assets/hautnah.css`
+- **1. Meisterbetrieb-Siegel, zweiter Anlauf** (rechts oben im Hero, neben Sabrinas Kopf).
+  **Warum der erste Versuch scheiterte:** V4.18 war eine helle, **undurchsichtige** Scheibe. Gemessen ist der Bereich rechts oben heller warmer Sandstein (Helligkeit 184, nach dem dunklen Verlauf noch ~157) — eine cremefarbene Scheibe mit hartem Schlagschatten liegt dort als Fremdkörper auf dem Foto. Dazu kam eine Drehung um −8°, die es endgültig nach Aufkleber aussehen ließ.
+  **Jetzt:** getöntes Glas mit Unschärfe — dieselbe Sprache, die auf diesem Foto links oben schon existiert (`.hero-badge`, das 5★-Glas-Pill). Feine Doppelkontur, cremefarbene Schrift, weicher Halo statt Schlagschatten, **keine Drehung**. Man sieht die Wand durch das Siegel hindurch, es liegt *im* Bild statt darauf.
+  Mobil auf 80 px verkleinert und eingerückt (`right:36px`) — vorher ragte es 6 px über die abgerundete Bildkante. Kein Überlappen mit Badge oder Überschrift (geprüft bei 375 px).
+- **2. Haarbalance-Logo** auf `haarkonzept.html`: aus `Haarbalance.jpg` freigestellt (weißer Rand abgeschnitten, Weiß auf transparent mit weichem Übergang), als PNG auf 720 px Breite. Steht über der Überschrift — genau dort, wo in der .docx die Notiz „Logo Haarbalance" stand. Der Platzhalter-Hinweis nennt jetzt nur noch das fehlende Bildmaterial.
+- **3. Neue Seite `aktuelles.html`** mit dem Zeitungsartikel der Badischen Zeitung („Ein seltener Meistertitel", 28.03.2026). Klick öffnet eine **scrollbare Großansicht** (reines CSS über eine versteckte Checkbox, wie beim mobilen Menü), zusätzlich „In neuem Tab öffnen" für volles Zoomen. Mit Quellenangabe (Zeitung, Datum, Text und Foto: Annemarie Rösch). Der Menüpunkt „Aktuelles" ist damit kein toter Eintrag mehr — es bleibt nur noch **„Kontakt"**.
+  ⚠️ **Rechtlicher Hinweis, siehe CLAUDE.md:** Ein vollständiger Zeitungsscan ist urheberrechtlich geschützt. Vor dem Livegang auf der Kundendomain braucht Sabrina die Freigabe der Badischen Zeitung.
+- **Footer-Version:** alle 24 Seiten → **4.28**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```

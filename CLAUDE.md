@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.27 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.28 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.27**
+- **Aktuell: V4.28**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -41,7 +41,7 @@ Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liege
 - **Netlify ist tot** (keine Credits) — nicht mehr verwenden.
 
 ## Seitenbestand (21 Seiten)
-Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihre Experten · Bianka Wittulski · **Preise** · Gutscheine · Zahlungsoptionen · Blog · Zusammenarbeit anfragen · Impressum · Datenschutz · AGB — **23 Seiten**
+Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihre Experten · Bianka Wittulski · Preise · Gutscheine · Zahlungsoptionen · **Aktuelles** · Blog · Zusammenarbeit anfragen · Impressum · Datenschutz · AGB — **24 Seiten**
 
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
@@ -77,10 +77,14 @@ Alle CTA-Buttons zeigen dorthin. Felder: Name · E-Mail · Telefon · wichtigste
 
 **Versand ist noch NICHT aktiv** (Dienst nicht entschieden) → Felder deaktiviert, sichtbarer Hinweis mit Telefonnummer. Die Bestätigung („Wir melden uns innerhalb von zwei Werktagen") liegt fertig im Code, ist aber `hidden` — sie darf **erst** erscheinen, wenn wirklich versendet wird, sonst wartet jemand auf einen Rückruf, der nie kommt. Zum Freischalten: Dienst wählen (z. B. Formspree), Felder aktivieren, Datenschutz ergänzen.
 
-## Meisterbetrieb-Siegel — ENTFERNT (V4.20), nicht wieder einbauen
-Stand V4.18 lag oben rechts im Hero ein geprägtes Rundsiegel als Inline-SVG. **René, 27.07.2026: „Die Startseite sieht mit dem schwarzen Kreis, den du da reingesetzt hast, so richtig scheiße aus."** → HTML und der CSS-Block `.mb-seal` sind vollständig raus, die Startseite ist wieder auf dem Stand vor V4.18.
+## Meisterbetrieb-Siegel — zweiter Anlauf steht (V4.28)
+**V4.18 scheiterte:** helle, undurchsichtige Scheibe, hart geschattet, um −8° gedreht → René: „sieht mit dem schwarzen Kreis so richtig scheiße aus." In V4.20 komplett entfernt.
+**V4.28, auf Renés Wunsch neu:** rechts oben im Hero, **getöntes Glas mit Unschärfe** statt heller Scheibe, feine Doppelkontur, cremefarbene Schrift, weicher Halo, **keine Drehung**. Begründung liegt in der Messung: der Bereich rechts oben ist heller Sandstein (Helligkeit 184, nach Verlauf ~157) — eine helle Scheibe wirkt dort als Fremdkörper, ein Glaselement fügt sich ein und wiederholt die Sprache von `.hero-badge` links oben.
 
-**Lesson:** Ein Rundsiegel über dem Hero-Foto liest sich als dunkler Fleck — unabhängig davon, wie dezent es gestaltet ist. Sabrinas Meistertitel gehört, wenn er prominenter soll, in eine ruhige Fläche (Trust-Leiste, eigener Abschnitt, Fußzeile) und **nicht** über das Bild. Vor einem neuen Versuch mit René abstimmen.
+**Regel daraus:** Alles, was auf dem Hero-Foto liegt, muss die **Glas-Sprache** der Seite sprechen (durchscheinend, feine cremefarbene Kontur) — keine deckenden Flächen, keine Drehung, keine harten Schatten. Vorher immer die Helligkeit der Zielstelle messen.
+
+## Presse / Zeitungsartikel — Rechtelage beachten
+`aktuelles.html` zeigt den vollständigen Scan eines Artikels der **Badischen Zeitung** (28.03.2026, Text und Foto: Annemarie Rösch), inklusive Quellenangabe und Großansicht. **Ein kompletter Zeitungsscan ist urheberrechtlich geschützt** — für die öffentliche Kundendomain braucht Sabrina die Freigabe des Verlags. Für den Entwicklungsstand in Ordnung, vor dem Livegang klären. Gleiche Kategorie wie die Rechtsseiten und die InMode-Fremdbilder.
 
 ## Profilseite Bianka Wittulski (V4.20)
 Solange **kein Portraitfoto** vorliegt, darf der Platzhalter nicht die Hauptrolle spielen. Vorher: leeres Feld 620 × 775 px neben 154 px Text — René: „sieht sehr kacke aus". Jetzt: Text führt links, Platzhalter 340 × 425 px rechts, dazu eine Eckdaten-Tabelle (**seit 1997 · Deutsche Vizemeisterin · Top Elitepartnerin**) — **ausschließlich Formulierungen aus Biankas eigenem Text**, nichts hinzugedichtet. Schlusszeile als Signatur, am Ende ein Handlungsaufruf. Sobald das Foto da ist: `<img>` in `.p-portrait` statt `.ph`, Rest bleibt.
@@ -106,7 +110,8 @@ Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Br
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
 6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen.
-7. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). **Haarkonzept:** Seite steht (V4.24), es fehlen noch **Logo „Haarbalance"** und **Bildmaterial**. **Aktuelles** und **Kontakt** sind weiterhin tote Menüpunkte ohne Seite.
+7. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). Auf **Haarkonzept** fehlt nur noch **Bildmaterial** (Logo ist seit V4.28 drin). **„Kontakt"** ist der einzige verbliebene tote Menüpunkt.
+9. **Freigabe der Badischen Zeitung** für den Artikelscan auf `aktuelles.html` einholen.
 8. **WhatsApp-Anamnesebogen:** Der Button schickt eine vorbelegte Nachricht („Haaranalyse"). Ein **automatischer** Versand des Anamnesebogens ginge nur über die WhatsApp Business API mit genehmigter Vorlage — bisher nicht eingerichtet. Bis dahin antwortet Sabrina manuell.
 
 ---
