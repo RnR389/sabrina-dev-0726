@@ -96,7 +96,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .site-head.compact{padding:6px var(--pad)}
 .head-inner{
   max-width:var(--maxw);margin-inline:auto;height:var(--head-h);
-  display:flex;align-items:center;gap:clamp(12px,1.4vw,26px);
+  display:flex;align-items:center;gap:clamp(12px,1.4vw,20px);
   padding:0 clamp(16px,2.4vw,30px);
   background:var(--glass);
   -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);
@@ -112,9 +112,9 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 /* Menuepunkte stehen direkt neben dem Logo, der Button wird nach rechts geschoben */
 .site-nav ul{margin-right:auto}
 .site-nav .nav-cta{flex:none}
-.site-nav ul{list-style:none;display:flex;align-items:center;gap:clamp(9px,.78vw,14px)}
+.site-nav ul{list-style:none;display:flex;align-items:center;gap:clamp(9px,.78vw,12px)}
 .site-nav a,.site-nav li{
-  font-size:clamp(11px,.84vw,12px);letter-spacing:.055em;text-transform:uppercase;font-weight:600;
+  font-size:clamp(10.5px,.78vw,12px);letter-spacing:.045em;text-transform:uppercase;font-weight:600;
   color:var(--ink);white-space:nowrap
 }
 .site-nav ul li{position:relative;padding:8px 0;cursor:pointer;transition:color .3s var(--ease)}
@@ -158,7 +158,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 }
 .btn-ghost:hover{color:var(--taupe-dark);border-color:var(--taupe-dark)}
 .site-nav a.nav-cta,.nav-cta{
-  padding:12px clamp(13px,1.05vw,20px) !important;
+  padding:12px clamp(13px,1.05vw,18px) !important;
   font-size:clamp(9.5px,.7vw,10.5px) !important;letter-spacing:.1em !important;
   color:var(--paper) !important}
 .site-nav a.nav-cta:hover{color:var(--paper) !important}
