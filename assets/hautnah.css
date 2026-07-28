@@ -214,10 +214,15 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .hero-meta .item{max-width:230px}
 .hero-meta .num,.hero-meta .label{display:block}
 .hero-meta .num{font-size:clamp(22px,2.2vw,30px);font-weight:200;color:var(--paper);line-height:1}
-/* Kleine Beiwoerter ("seit", "+", "★") laufen kleiner und ruhiger mit, damit die
-   Zahl die Hauptrolle behaelt und die Zeile trotzdem deutsch lesbar bleibt. */
-.hero-meta .num em{font-style:normal;font-size:.46em;font-weight:500;
-  letter-spacing:.1em;color:var(--sand);vertical-align:.42em;margin-right:.18em}
+/* "seit" laeuft kleiner mit, damit die Jahreszahl die Hauptrolle behaelt —
+   aber in Cremeweiss. In Sand-Taupe (V4.29/4.30) ging es auf dem dunklen Foto
+   unter, ebenso der Stern, der die Regel geerbt hat. */
+.hero-meta .num em.pre{font-style:normal;font-size:.52em;font-weight:500;
+  letter-spacing:.07em;color:rgba(250,246,239,.94);vertical-align:.3em;margin-right:.2em}
+/* Der Stern gehoert optisch zur Zahl: gleiche Farbe, nur leicht kleiner. */
+.hero-meta .num em{font-style:normal;color:var(--paper);font-size:.86em;
+  vertical-align:.04em;margin-left:.06em}
+.hero-meta .num,.hero-meta .label{text-shadow:0 1px 12px rgba(58,50,44,.45)}
 .hero-meta .label{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.7);margin-top:8px;font-weight:500}
 
 /* ---------- Trust: schwebende Pillen ---------- */
@@ -800,23 +805,3 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   .lb-scroll img{width:auto;max-width:none;min-width:920px}
 }
 
-/* ---------- Der 5-Sterne-Stern soll leuchten (V4.30) ----------
-   René: "der Stern darf gerne leuchten und ins Auge fallen, aktuell geht er
-   unter." Kein Gold (Markenregel) — das Leuchten kommt aus einem warmen
-   Creme-/Taupe-Halo, der Stern selbst ist reinweiss. */
-.hero-meta .num em.star{
-  font-size:.72em; vertical-align:.16em; margin-left:.1em; margin-right:0;
-  color:#FFFFFF; letter-spacing:0;
-  text-shadow:
-    0 0 8px rgba(255,255,255,.95),
-    0 0 20px rgba(223,215,205,.85),
-    0 0 38px rgba(194,180,169,.6);
-  animation:starGlow 3.6s var(--ease) infinite;
-}
-@keyframes starGlow{
-  0%,100%{text-shadow:0 0 8px rgba(255,255,255,.9),0 0 20px rgba(223,215,205,.7),0 0 34px rgba(194,180,169,.45)}
-  50%    {text-shadow:0 0 12px rgba(255,255,255,1),0 0 30px rgba(223,215,205,1),0 0 56px rgba(194,180,169,.8)}
-}
-@media (prefers-reduced-motion:reduce){
-  .hero-meta .num em.star{animation:none}
-}
