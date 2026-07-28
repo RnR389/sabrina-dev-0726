@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.23 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.24 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.23**
+- **Aktuell: V4.24**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -60,7 +60,7 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · **Haarkonzept** ·
 - Sabrinas Texte werden **wortwörtlich** übernommen. Nicht kürzen, nicht glätten, nicht umstellen.
 - **Immer programmatisch aus der .docx lesen**, nie abtippen. Danach Absatz für Absatz gegenprüfen.
 - **Produktionsnotizen sind KEIN Website-Text:** „Fotos einfügen", „Kundenfeedback Video", „Bilder", „FAQ drunter", „Bild/Video", „Bild Lampe", „Bild Lymph". Sie sagen, **wo** Medien hingehören — niemals abdrucken.
-- Bereits eingebaut: `Forma_Text-0726.docx`, `Hydrafacial_Text-0726.docx`, `Hautanalyse-0726.docx`.
+- Bereits eingebaut: `Forma_Text-0726.docx`, `Hydrafacial_Text-0726.docx`, `Hautanalyse-0726.docx`, `Haarkonzept.docx` (V4.24).
 - **Ausnahme V4.21:** Der Block „Individuelle Beratung" aus `Forma_Text-0726.docx` ist auf Renés ausdrücklichen Wunsch **entfernt** — nicht versehentlich, nicht wieder einbauen.
 - **Kein „Behandlungen, die dazu passen" mehr.** Der `.related`-Abschnitt ist seit V4.21 von allen 10 Behandlungsseiten entfernt (René), samt CSS. Nicht neu anlegen.
 - Noch offen: `startseite_homepage.docx` ist in **Du**-Form, die Seite in **Sie**-Form → Entscheidung fehlt.
@@ -106,7 +106,8 @@ Die Menüleiste hat **8 Punkte + CTA-Button** und ist damit an der Breitengrenze
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
 6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen.
-7. **`haarkonzept.html` ist ein leeres Gerüst** (seit V4.20 im Menü verlinkt) — Inhalte von Sabrina fehlen. Ebenso **Aktuelles** und **Kontakt**: beide noch tote Menüpunkte ohne Seite.
+7. **Haarkonzept:** Seite steht (V4.24), es fehlen noch **Logo „Haarbalance"** und **Bildmaterial**. **Aktuelles** und **Kontakt** sind weiterhin tote Menüpunkte ohne Seite.
+8. **WhatsApp-Anamnesebogen:** Der Button schickt eine vorbelegte Nachricht („Haaranalyse"). Ein **automatischer** Versand des Anamnesebogens ginge nur über die WhatsApp Business API mit genehmigter Vorlage — bisher nicht eingerichtet. Bis dahin antwortet Sabrina manuell.
 
 ---
 

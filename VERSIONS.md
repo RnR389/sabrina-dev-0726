@@ -517,6 +517,23 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.24 — „Haarkonzept inhaltlich aufgebaut"  📍 Feedback ausstehend
+
+- **Dateien:** `current/haarkonzept.html`, `assets/hautnah.css`
+- **Quelle:** `Haarkonzept.docx` (programmatisch ausgelesen, nicht abgetippt)
+- **Aufbau — identisch zu den Behandlungsseiten:** Breadcrumb → Hero (Kicker, H1, Unterzeile, zwei Handlungsaufrufe, Bildplatzhalter) → mittige Lesespalte mit 5 Textblöcken → Kundenstimmen → CTA-Band → Footer.
+- **Textkontrolle:** alle **15 Absätze wortgleich** übernommen und einzeln gegen die .docx geprüft.
+- **Zwei Zeilen bewusst NICHT abgedruckt** (Produktionsnotizen, keine Website-Texte):
+  - „Logo Haarbalance" → stattdessen ein sichtbarer Platzhalter-Hinweis, dass Logo und Bildmaterial fehlen.
+  - „Whatsapp butten, geht voreingestllt Haaranamnesbogen?" → Renés Frage an mich, siehe unten.
+- **WhatsApp-Button** mit vorbelegtem Stichwort: `wa.me/497762805669?text=Haaranalyse`, daneben der Telefonlink. Der Anamnesebogen kann **nicht** automatisch mitgeschickt werden — dafür bräuchte es die WhatsApp Business API mit genehmigter Vorlage. Sabrina sendet ihn nach Eingang der Nachricht.
+- **Vier Verzichts-Begriffe** (ohne Silikone/Sulfate/Parabene/Mineralöle) als Icon-Raster hinter dem zugehörigen Satz. **Bewusst ohne erklärende Zusatzsätze** — die stünden nicht in Sabrinas Text. (Ein erster Entwurf hatte solche Sätze, sie sind wieder raus.)
+- **Kein FAQ-Abschnitt**, weil die .docx keine Fragen enthält — nicht erfunden.
+- **Footer-Version:** alle 22 Seiten → **4.24**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
