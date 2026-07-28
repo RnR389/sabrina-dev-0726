@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.28 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.29 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.28**
+- **Aktuell: V4.29**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -79,9 +79,11 @@ Alle CTA-Buttons zeigen dorthin. Felder: Name · E-Mail · Telefon · wichtigste
 
 ## Meisterbetrieb-Siegel — zweiter Anlauf steht (V4.28)
 **V4.18 scheiterte:** helle, undurchsichtige Scheibe, hart geschattet, um −8° gedreht → René: „sieht mit dem schwarzen Kreis so richtig scheiße aus." In V4.20 komplett entfernt.
-**V4.28, auf Renés Wunsch neu:** rechts oben im Hero, **getöntes Glas mit Unschärfe** statt heller Scheibe, feine Doppelkontur, cremefarbene Schrift, weicher Halo, **keine Drehung**. Begründung liegt in der Messung: der Bereich rechts oben ist heller Sandstein (Helligkeit 184, nach Verlauf ~157) — eine helle Scheibe wirkt dort als Fremdkörper, ein Glaselement fügt sich ein und wiederholt die Sprache von `.hero-badge` links oben.
+**V4.29 gilt (Stand 28.07.2026):** **weiße** Scheibe, 132–196 px, rechts oben im Hero. René wollte sie ausdrücklich groß und weiß, „sodass sie sich wirklich rund abhebt". Damit eine helle Scheibe auf der hellen Steinwand nicht flach wirkt: **warmer Schlagschatten** (dunkelt die Wand dahinter ab) + **feiner heller Außenring** + **leichter Lichtverlauf** für Volumen. **Keine Drehung, kein Kunststoff-Glanz** — das war der Sticker-Look.
 
-**Regel daraus:** Alles, was auf dem Hero-Foto liegt, muss die **Glas-Sprache** der Seite sprechen (durchscheinend, feine cremefarbene Kontur) — keine deckenden Flächen, keine Drehung, keine harten Schatten. Vorher immer die Helligkeit der Zielstelle messen.
+**Regel daraus:** Nicht die Farbe war das Problem, sondern die fehlende Ablösung vom Untergrund. Ein Element auf dem Hero-Foto braucht entweder die Glas-Sprache (durchscheinend) **oder** eine deutliche Ablösung durch Schatten und Außenring. Vorher immer die Helligkeit der Zielstelle messen.
+
+**Nur belegte Aussagen aufs Siegel.** Ein Entwurf hatte „HANDWERKSKAMMER" als dritte Zeile — wieder raus, weil die Aussage so nicht belegt ist. Drauf steht: Kosmetikmeisterin · MEISTERBETRIEB · Sabrina Herosé · Wehr.
 
 ## Presse / Zeitungsartikel — Rechtelage beachten
 `aktuelles.html` zeigt den vollständigen Scan eines Artikels der **Badischen Zeitung** (28.03.2026, Text und Foto: Annemarie Rösch), inklusive Quellenangabe und Großansicht. **Ein kompletter Zeitungsscan ist urheberrechtlich geschützt** — für die öffentliche Kundendomain braucht Sabrina die Freigabe des Verlags. Für den Entwicklungsstand in Ordnung, vor dem Livegang klären. Gleiche Kategorie wie die Rechtsseiten und die InMode-Fremdbilder.

@@ -586,6 +586,22 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.29 — „Siegel weiß und groß, Kennzahlen korrigiert"  📍 Feedback ausstehend
+
+- **Dateien:** `current/index.html`, `assets/hautnah.css`
+- **Anlass (René):** „Kannst du das Siegel größer machen? Vielleicht auch in Weiß, sodass es sich wirklich rund abhebt." · „20+ Jahre Erfahrung → Sabrina ist seit 2004 Kosmetikerin." · „5 Sterne → erstes Fachinstitut für dermatologische Kosmetik Landkreis Waldshut."
+- **Geändert:**
+  1. **Siegel jetzt weiß und groß.** 132–196 px statt 104–138 px, weiße Scheibe (Verlauf Weiß → Papierton, damit sie Volumen hat). Damit sie sich auf der hellen Steinwand rund abhebt, drei Mittel: warmer Schlagschatten, der die Wand dahinter abdunkelt · feiner heller Außenring als Trennung zum Foto · leichter Lichtverlauf. Weiterhin keine Drehung und kein Kunststoff-Glanz. Bei 1440 px: 194 px groß, 46 px vom rechten Rand, kein Überlappen mit Text oder Badge.
+  2. **„20+ Jahre Erfahrung" → „2004 / Kosmetikerin seit"**.
+  3. **„5★ Erstes Fachinstitut Lk. Waldshut" → „5★ erstes Fachinstitut für dermatologische Kosmetik · Lk. Waldshut"** (nur „Landkreis" abgekürzt, wie gewünscht).
+  4. **Latenter Fehler behoben:** `.num` und `.label` in den Kennzahlen waren `inline`, standen also nebeneinander statt untereinander — das `margin-top:8px` auf dem Label lief ins Leere. Mit dem längeren Text ist die Reihe dadurch umgebrochen. Jetzt gestapelt, beide Kennzahlen stehen wieder nebeneinander.
+  5. **Dritter Kennzahl-Eintrag entfernt.** Er hatte gar keine Zahl (leeres `.num`) und nur „Ästhetische Konzepte" — nach dem Umbruch stand er allein in der zweiten Zeile. Falls dort eine dritte Kennzahl stehen soll, fehlt die Angabe.
+- **Offen:** Die Formulierung „Erstes 5-Sterne-Fachinstitut · Landkreis Waldshut" steht unverändert auch in der **Infozeile (alle 24 Seiten)**, im **Hero-Badge** und in der **Trust-Leiste**. Nicht automatisch mitgezogen — René fragen.
+- **Footer-Version:** alle 24 Seiten → **4.29**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
