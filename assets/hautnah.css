@@ -207,8 +207,12 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .hero-tag{position:absolute;right:clamp(24px,4vw,58px);bottom:clamp(24px,4vw,52px);z-index:3;text-align:right}
 .hero-tag .signature-name{font-size:clamp(18px,1.6vw,23px);font-weight:300;color:var(--paper);line-height:1.1}
 .hero-tag .role{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.72);margin-top:7px;font-weight:500}
-.hero-meta{display:flex;gap:clamp(22px,4vw,54px);flex-wrap:wrap;margin-top:36px;
-  padding-top:28px;border-top:1px solid rgba(250,246,239,.22)}
+.hero-meta{display:flex;gap:clamp(18px,2.6vw,38px);flex-wrap:wrap;align-items:flex-start;
+  margin-top:36px;padding-top:28px;border-top:1px solid rgba(250,246,239,.22)}
+/* Zahl ueber Bezeichnung — die Spans waren inline, dadurch lief alles in eine
+   Zeile und laengere Bezeichnungen haben die Reihe umbrechen lassen. */
+.hero-meta .item{max-width:230px}
+.hero-meta .num,.hero-meta .label{display:block}
 .hero-meta .num{font-size:clamp(22px,2.2vw,30px);font-weight:200;color:var(--paper);line-height:1}
 .hero-meta .label{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.7);margin-top:8px;font-weight:500}
 
@@ -685,44 +689,55 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .wa-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:26px}
 
 /* ==========================================================================
-   MEISTERBETRIEB-SIEGEL (V4.28) — zweiter Anlauf, rechts oben im Hero
-   Messung: der Bereich rechts oben ist heller warmer Sandstein (Helligkeit 184,
-   nach dem dunklen Verlauf noch ~157). Eine helle Scheibe wie in V4.18 wirkt dort
-   als Fremdkoerper. Deshalb getoentes Glas mit Unschaerfe — dieselbe Sprache wie
-   .hero-badge — dazu cremefarbene Schrift mit sicherem Kontrast.
+   MEISTERBETRIEB-SIEGEL (V4.29) — weiss, gross, rechts oben im Hero
+   Wunsch René: "grösser, vielleicht auch in Weiss, sodass es sich wirklich
+   rund abhebt". Damit eine helle Scheibe auf der hellen Steinwand nicht flach
+   wirkt (das war das Problem in V4.18), bekommt sie drei Dinge:
+   1) einen warmen Schlagschatten, der die Wand dahinter abdunkelt,
+   2) einen feinen hellen Aussenring als Trennung zum Foto,
+   3) einen leichten Lichtverlauf, damit die Scheibe Volumen hat.
+   Keine Drehung, kein Kunststoff-Glanz — das waere der Standard-Aufkleber.
    ========================================================================== */
 .mb-seal{
   position:absolute; z-index:4;
-  top:clamp(20px,3.2vh,46px); right:clamp(22px,3.4vw,54px);
-  width:clamp(104px,10vw,138px); aspect-ratio:1; border-radius:50%;
+  top:clamp(20px,3.4vh,50px); right:clamp(20px,3.2vw,52px);
+  width:clamp(132px,13.5vw,196px); aspect-ratio:1; border-radius:50%;
   display:grid; place-items:center;
-  background:radial-gradient(circle at 50% 38%,rgba(58,50,44,.40),rgba(58,50,44,.60));
-  -webkit-backdrop-filter:blur(10px) saturate(125%);
-  backdrop-filter:blur(10px) saturate(125%);
-  border:1px solid rgba(250,246,239,.42);
-  box-shadow:0 12px 44px -14px rgba(58,50,44,.6), inset 0 1px 0 rgba(250,246,239,.22);
+  background:radial-gradient(circle at 36% 28%,#FFFFFF 0%,#FCF9F4 46%,var(--paper) 100%);
+  box-shadow:
+    0 0 0 6px rgba(250,246,239,.22),
+    0 18px 46px -12px rgba(58,50,44,.55),
+    0 44px 90px -40px rgba(58,50,44,.65);
   transition:transform .6s var(--ease), box-shadow .6s var(--ease);
 }
-.mb-seal:hover{transform:scale(1.045);box-shadow:0 16px 52px -14px rgba(58,50,44,.66),
-  inset 0 1px 0 rgba(250,246,239,.3)}
+.mb-seal:hover{
+  transform:scale(1.035);
+  box-shadow:
+    0 0 0 8px rgba(250,246,239,.28),
+    0 22px 56px -12px rgba(58,50,44,.6),
+    0 50px 100px -40px rgba(58,50,44,.7)}
 .mb-seal svg{width:100%;height:100%;display:block}
-.mb-ring{fill:none;stroke:rgba(250,246,239,.5)}
-.mb-ring-1{stroke-width:1;opacity:.55}
-.mb-ring-2{stroke-width:.7;opacity:.9}
-.mb-arc{fill:var(--paper);font-family:'Outfit',sans-serif;font-size:12.4px;
-  font-weight:600;letter-spacing:.15em;text-anchor:middle}
-.mb-arc-b{font-size:9.6px;letter-spacing:.17em;fill:rgba(250,246,239,.8)}
-.mb-main{fill:var(--paper);font-family:'Outfit',sans-serif;font-size:21px;font-weight:300;
-  letter-spacing:.02em;text-anchor:middle}
-.mb-rule path{stroke:rgba(250,246,239,.45);stroke-width:1}
+.mb-ring{fill:none;stroke:var(--taupe)}
+.mb-ring-1{stroke-width:1.1;opacity:.55}
+.mb-ring-2{stroke-width:.7;opacity:.85}
+.mb-arc{
+  fill:var(--taupe-dark); font-family:'Outfit',sans-serif; font-size:11.6px;
+  font-weight:600; letter-spacing:.18em; text-anchor:middle}
+.mb-arc-b{font-size:9.2px;letter-spacing:.19em;fill:var(--taupe-dark);opacity:.85}
+.mb-main{
+  fill:var(--ink); font-family:'Outfit',sans-serif; font-size:23px; font-weight:300;
+  letter-spacing:.01em; text-anchor:middle}
+.mb-star path{fill:var(--taupe);stroke:none}
+.mb-rule path{stroke:var(--taupe);stroke-width:.9;opacity:.75}
 
 @media (max-width:680px){
   /* Auf dem Handy ist das Foto im Hero eingerueckt — das Siegel muss innerhalb
      seiner Kante sitzen, sonst haengt es ueber die abgerundete Ecke hinaus. */
-  .mb-seal{width:80px;top:20px;right:36px}
-  .mb-arc{font-size:12.8px}
-  .mb-main{font-size:22px}
+  .mb-seal{width:106px;top:18px;right:30px}
+  .mb-arc{font-size:12px}
+  .mb-main{font-size:24px}
 }
+
 
 /* ---------- Haarkonzept: Logo der Marke Haarbalance ---------- */
 .hk-logo{display:block;width:auto;height:clamp(64px,6.4vw,92px);
