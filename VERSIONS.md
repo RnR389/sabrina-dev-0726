@@ -652,6 +652,18 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.35 — „Cache-Ursache behoben, Band einzeilig, Logos kleiner"  📍 Feedback ausstehend
+
+- **Die eigentliche Ursache.** René meldete drei Fehler auf einmal: Partnerlogos untereinander statt im Laufband, Footer-Logo unverändert klein, Social-Icons „schwarz und riesig". **Alle drei hatten dieselbe Ursache:** `assets/hautnah.css` wurde ohne Versionsstempel eingebunden. Wer die Seite vorher besucht hatte, bekam **neues HTML mit altem CSS aus dem Browser-Cache** — dadurch waren `.marquee`, `.footer-logo` und `.social` unformatiert. Unformatierte SVGs sind schwarz und nehmen die volle Breite ein, unformatierte `.pl`-Blöcke stapeln sich untereinander. Der Build selbst war korrekt.
+- **Behoben:** CSS und JS hängen jetzt an `?v=<Version>` — auf allen 24 Seiten, bei jeder Version mitzuziehen. Damit kann das nicht wiederkehren.
+- **Zusätzlich geändert:**
+  - Partnerlogos **kleiner**: 104–164 px statt 150–230 px, engere Abstände, Umlauf 52 s.
+  - **Rückfall bei „Bewegung reduzieren" bleibt einzeilig.** Vorher brach das Band dort in mehrere Reihen um — auf einem Rechner mit reduzierter Bewegung hätte es genauso ausgesehen wie der Cache-Fehler. Jetzt: eine Zeile, Duplikate ausgeblendet, seitlich schiebbar.
+- **Live nachgemessen** (nicht lokal): Band **1 Zeile**, Logo 151 px, Animation läuft · Footer-Logo **101 px** und mittig (Versatz 0) · Icons **19 × 19 px** in Creme `rgba(250,246,239,.72)`.
+- **Footer-Version:** alle 24 Seiten → **4.35**.
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```

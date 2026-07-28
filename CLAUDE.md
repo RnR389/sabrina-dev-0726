@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.34 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.35 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.34**
+- **Aktuell: V4.35**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -33,6 +33,7 @@ Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liege
   2. Parallaxe-Bilder brauchen Überstand (`height:114%`), sonst legt die Verschiebung eine Kante frei.
 - `prefers-reduced-motion` wird respektiert.
 - **Nach jeder CSS-Änderung `assets/hautnah.css` nach `_site/assets/` kopieren**, sonst zeigt die Vorschau Altes.
+- **⚠️ CSS und JS werden mit `?v=<Version>` eingebunden — Stempel bei JEDER Version mitziehen** (wie die Footer-Versionsnummer). Bis V4.34 fehlte er: René bekam neues HTML mit altem CSS aus dem Cache und meldete drei Fehler, die es im Build gar nicht gab (Logos untereinander, Footer-Logo klein, Social-Icons schwarz und riesig). **Ergebnisse immer auf der Live-Seite nachmessen, nicht nur lokal.**
 
 ## Live / Deploy
 - **Live: https://rnr389.github.io/sabrina-dev-0726/** (GitHub Pages)
@@ -105,6 +106,8 @@ Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Br
 `display:inline-block` gehört auf den **`<a>`**, niemals auf das **`<li>`**. Ein `footer ul li:has(a){display:inline-block}` (V4.18, für die Hover-Verschiebung gedacht) hat alle Footer-Einträge in eine Zeile gelegt — Impressum/AGB/Datenschutz nebeneinander statt untereinander. In V4.23 korrigiert.
 
 ## Arbeitsweise mit René — was sich bewährt hat
+- **Bei Unklarheit vorher fragen, nicht hinterher korrigieren lassen.** René, 28.07.2026: „Ich hab keinen Bock, immer zu korrigieren. Wenn du Fragen hast, frag vorher."
+- **Bei Fehlermeldungen zuerst die Ursache suchen, nicht das Symptom umgestalten.** „Der Stern geht unter" war ein Farbfehler, kein fehlendes Leuchten. „Die Logos stehen untereinander" war der fehlende Cache-Stempel, kein Layoutfehler.
 - **Erst messen, dann ändern.** „Zu groß" / „zu viel Abstand" immer im Browser nachmessen und die Zahlen nennen (h1 war 5,3× der Fließtext; Abstände waren 259–285 px).
 - **Nach jedem Umbau gegen git prüfen**, ob Sabrinas Texte unverändert sind — ein Skript hatte schon einmal still Inhalte verschluckt.
 - Ändert man etwas auf einer Seite: **fragen, bevor man es auf alle überträgt.**
