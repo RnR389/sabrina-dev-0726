@@ -602,6 +602,18 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.30 — „Logo mittig, Sprache korrigiert, Stern leuchtet"  📍 Feedback ausstehend
+
+- **Dateien:** `current/index.html`, `assets/hautnah.css`
+- **Geändert:**
+  1. **Haarbalance-Logo zentriert** (`haarkonzept.html`) — vorher linksbündig, jetzt exakt mittig in der Spalte (Abweichung 0 px gemessen).
+  2. **„2004 / Kosmetikerin seit" war im Deutschen sinnlos.** Jetzt **„seit 2004" über „Kosmetikerin"** — das „seit" läuft klein, ruhig und hochgestellt mit, damit die Jahreszahl die Hauptrolle behält und die Zeile trotzdem sauber lesbar ist.
+  3. **Der 5-Sterne-Stern ging optisch unter.** Jetzt reinweiß mit warmem Creme-/Taupe-Halo (dreifacher `text-shadow`) und einem ruhigen Pulsieren über 3,6 s. **Kein Gold** — die Markenregel bleibt gewahrt, das Leuchten kommt aus Weiß, Sand und Taupe. `prefers-reduced-motion` schaltet die Animation ab.
+- **Footer-Version:** alle 24 Seiten → **4.30**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
