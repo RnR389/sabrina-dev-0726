@@ -664,6 +664,23 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.36 – V4.39 — „Kontaktleiste, Recht, Schriften"  ⏸ **noch nicht deployt** (René hat Deploys gestoppt)
+
+Alles lokal gebaut und im Browser geprüft. Live steht seit dem Stopp eine neutrale Wartungsseite.
+
+- **V4.36 Kontaktleiste** — WhatsApp, Telefon, Briefumschlag, unten rechts übereinander, auf allen Seiten. WhatsApp öffnet ein kleines Fenster („Sie erreichen mich direkt über WhatsApp …"), Telefon wählt per `tel:`, der Umschlag führt zum Formular. Im Ruhezustand 55 % Deckkraft und entsättigt, beim Scrollen 92 %, bei Mouseover voll.
+  **Zwei echte Fehler dabei gefunden:** (1) Meine Klick-Handler standen in `hautnah.js` *hinter* drei frühen `return`s der Einblende-Logik — auf Seiten, wo beim Laden alles sichtbar ist, wurden sie nie registriert. Das betraf **auch das mobile Menü**, seit Wochen unbemerkt. Handler stehen jetzt vorn. (2) `<button>` bringt einen Standardrahmen mit → schwarzer Saum; jetzt `border:0`.
+- **V4.36 weiter:** Gutscheinseite gelöscht, Menüpunkt führt direkt zu StudioBookr (iFrame technisch ausgeschlossen: `x-frame-options: SAMEORIGIN`) · Kontaktblock mit Anschrift, Parken, Lage unter Zahlungsoptionen · **Google-Maps-Karte als Zwei-Klick-Lösung** · „– Coco Chanel –" · Google-Bewertungen von der Experten-Seite entfernt · Sabrinas Meister-Ergänzung · Biankas Signatur in Taupe-dunkel.
+- **V4.37 Schriften selbst gehostet.** Outfit liegt als variable Schrift unter `assets/fonts/` (47 KB). `fonts.googleapis.com` und `fonts.gstatic.com` sind auf allen 23 Seiten raus. Nachgemessen: **null Fremdverbindungen** beim Seitenaufruf. Das war der größte Datenschutz-Punkt (LG München I, 2022).
+  **Impressum** vollständig neu (§ 5 DDG), mit E-Mail, USt-IdNr., HWK Konstanz, § 36 VSBG. **Der Link auf die EU-OS-Plattform wurde entfernt — die Plattform ist seit 20.07.2025 eingestellt.**
+  **Datenschutzerklärung** neu, 15 Abschnitte, beschreibt nur was real passiert (vorher technisch geprüft: keine Cookies, kein Tracking).
+- **V4.38** FAQ auf Haut & Haarcheck (8 Fragen aus der .docx; ein sinnentstellender Tippfehler korrigiert: „da die Werte sonst stimmen" → „sonst **nicht** stimmen") · Belico im Partnerband (jetzt 6 Logos).
+- **V4.39 Meisterbetrieb-Siegel, dritte Fassung.** Sabrina fand die zweite „zu mädchenhaft". Entfernt: Sternchen, Haarlinien, Schrift im Haarstrich, Lichtverlauf. Jetzt Prägesiegel-Optik: kräftiger Außenring, zwei durchgehende Querbalken, versale Halbfett-Schrift.
+  📌 **René: „lassen wir es mal drin, aber da werden wir nochmal dran müssen."** — bleibt offen.
+- **Cache-Stempel:** CSS und JS hängen an `?v=<Version>`. Beim Entwickeln muss der Stempel bei *jeder* Änderung hoch, sonst zeigt der Browser Altes (hat mich hier mehrfach in die Irre geführt).
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```

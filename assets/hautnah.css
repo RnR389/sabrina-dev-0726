@@ -1,4 +1,32 @@
 /* ==========================================================================
+   SCHRIFT — selbst gehostet (V4.37)
+   Outfit liegt als variable Schrift auf unserem Server. Keine Verbindung zu
+   Google: fonts.googleapis.com und fonts.gstatic.com sind vollstaendig raus.
+   Ein Aufruf dorthin uebertraegt die IP-Adresse des Besuchers in die USA —
+   ohne Einwilligung ist das in Deutschland abmahnbar (LG Muenchen I, 2022).
+   ========================================================================== */
+@font-face{
+  font-family:'Outfit';
+  font-style:normal;
+  font-weight:100 900;          /* eine Datei fuer alle Schnitte */
+  font-display:swap;
+  src:url('fonts/outfit-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,
+    U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,
+    U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Outfit';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('fonts/outfit-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,
+    U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,
+    U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* ==========================================================================
    KOSMETIKINSTITUT HAUTNAH — V4 „Modern Institute"
    Ein gemeinsames Stylesheet für alle Seiten (ersetzt das eingebettete CSS).
    Farben bleiben unverändert (Sabrinas Taupe). Neu sind: Layout, Tiefe,
@@ -484,7 +512,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .story-inner,.bianca-inner,.p-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,76px);align-items:center}
 .story-img,.p-portrait,.bianca-img{position:relative;aspect-ratio:4/5;border-radius:var(--r-l);overflow:hidden;
   box-shadow:var(--sh-l);background:linear-gradient(150deg,var(--sand),var(--taupe))}
-.story-img img,.p-portrait img{width:100%;height:100%;object-fit:cover}
+.story-img img,.p-portrait img,.bianca-img img{width:100%;height:100%;object-fit:cover}
 .story-img-tag{position:absolute;left:22px;bottom:22px;background:var(--glass);
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
   padding:12px 20px;border-radius:100px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
@@ -653,17 +681,22 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
    Hauptrolle spielen — er wird klein, ruhig und sichtbar als Platzhalter.
    ========================================================================== */
 .p-hero{
-  grid-template-columns:1.15fr .85fr;
+  /* Nicht der Spaltenabstand war das Problem, sondern die Textspalte selbst:
+     903 px breit fuer Inhalt, der nur ~480 px braucht — dazwischen 534 px
+     sichtbare Leere. Jetzt ist die Textspalte auf Inhaltsbreite begrenzt,
+     das Bild groesser, und das Paar steht mittig. */
+  grid-template-columns:minmax(0,580px) clamp(320px,34vw,480px);
+  justify-content:center;
   align-items:center;
   padding-block:clamp(14px,2.4vw,30px) clamp(26px,3.6vw,48px);
-  gap:clamp(30px,5vw,72px);
+  gap:clamp(28px,3.6vw,60px);
 }
 .p-hero-text{order:0}
 .p-hero h1{font-weight:200;text-wrap:balance;margin-bottom:0}
 .p-role{
   font-size:11px;letter-spacing:.26em;text-transform:uppercase;
   color:var(--taupe-dark);font-weight:600;margin:14px 0 20px}
-.p-hero .lead{max-width:33em;margin:0}
+.p-hero .lead{max-width:none;margin:0}
 
 /* Eckdaten — ausschließlich Formulierungen aus Biankas eigenem Text */
 .p-creds{list-style:none;margin:clamp(24px,3vw,34px) 0 0;padding:0;border-top:1px solid var(--line)}
@@ -672,11 +705,11 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   padding:13px 0;border-bottom:1px solid var(--line);
   font-size:13.5px;line-height:1.5;color:var(--taupe-dark)}
 .p-creds li strong{
-  flex:none;min-width:12em;font-size:14.5px;font-weight:500;color:var(--ink);letter-spacing:.01em}
+  flex:none;min-width:10.5em;font-size:14.5px;font-weight:500;color:var(--ink);letter-spacing:.01em}
 
 /* Portrait-Platzhalter: klein, hochkant, ohne Drama */
 .p-portrait{
-  order:1;width:100%;max-width:340px;margin-inline:auto;aspect-ratio:4/5;
+  order:1;width:100%;aspect-ratio:4/5;
   background:linear-gradient(160deg,var(--creme) 0%,var(--sand) 100%);
   box-shadow:var(--sh)}
 .p-portrait .ph{gap:14px;color:var(--taupe-dark)}
@@ -688,7 +721,8 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .p-sign{text-align:center}
 .p-sign p{font-size:clamp(18px,1.6vw,21px);font-weight:300;line-height:1.5;color:var(--taupe-dark)}
 .p-sign .who{
-  margin-top:16px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
+  margin-top:16px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;
+  font-weight:600;color:var(--taupe-dark)}
 
 @media (max-width:900px){
   /* Name zuerst, Platzhalter danach — ein leeres Feld gehört nicht über die Überschrift */
@@ -701,53 +735,27 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .wa-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:26px}
 
 /* ==========================================================================
-   MEISTERBETRIEB-SIEGEL (V4.29) — weiss, gross, rechts oben im Hero
-   Wunsch René: "grösser, vielleicht auch in Weiss, sodass es sich wirklich
-   rund abhebt". Damit eine helle Scheibe auf der hellen Steinwand nicht flach
-   wirkt (das war das Problem in V4.18), bekommt sie drei Dinge:
-   1) einen warmen Schlagschatten, der die Wand dahinter abdunkelt,
-   2) einen feinen hellen Aussenring als Trennung zum Foto,
-   3) einen leichten Lichtverlauf, damit die Scheibe Volumen hat.
-   Keine Drehung, kein Kunststoff-Glanz — das waere der Standard-Aufkleber.
+   MEISTERBETRIEB-SIEGEL (V4.41) — fertiges Siegel von Sabrina
+   Die selbst gezeichneten Fassungen (V4.18/4.29/4.39) sind ersetzt. Das
+   gelieferte Siegel ist bereits in Silber/Taupe gehalten und passt damit in
+   die Farbwelt. Rund freigestellt, mit weichem Schatten, gleicher
+   Schattensatz, damit sich beide Siegel sauber vom Foto abheben.
    ========================================================================== */
 .mb-seal{
   position:absolute; z-index:4;
   top:clamp(20px,3.4vh,50px); right:clamp(20px,3.2vw,52px);
-  width:clamp(132px,13.5vw,196px); aspect-ratio:1; border-radius:50%;
-  display:grid; place-items:center;
-  background:radial-gradient(circle at 36% 28%,#FFFFFF 0%,#FCF9F4 46%,var(--paper) 100%);
+  width:clamp(132px,13.5vw,190px); aspect-ratio:1; border-radius:50%;
   box-shadow:
-    0 0 0 6px rgba(250,246,239,.22),
-    0 18px 46px -12px rgba(58,50,44,.55),
-    0 44px 90px -40px rgba(58,50,44,.65);
-  transition:transform .6s var(--ease), box-shadow .6s var(--ease);
+    0 0 0 5px rgba(250,246,239,.20),
+    0 14px 34px -12px rgba(58,50,44,.5),
+    0 34px 70px -34px rgba(58,50,44,.6);
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease);
 }
-.mb-seal:hover{
-  transform:scale(1.035);
-  box-shadow:
-    0 0 0 8px rgba(250,246,239,.28),
-    0 22px 56px -12px rgba(58,50,44,.6),
-    0 50px 100px -40px rgba(58,50,44,.7)}
-.mb-seal svg{width:100%;height:100%;display:block}
-.mb-ring{fill:none;stroke:var(--taupe)}
-.mb-ring-1{stroke-width:1.1;opacity:.55}
-.mb-ring-2{stroke-width:.7;opacity:.85}
-.mb-arc{
-  fill:var(--taupe-dark); font-family:'Outfit',sans-serif; font-size:11.6px;
-  font-weight:600; letter-spacing:.18em; text-anchor:middle}
-.mb-arc-b{font-size:9.2px;letter-spacing:.19em;fill:var(--taupe-dark);opacity:.85}
-.mb-main{
-  fill:var(--ink); font-family:'Outfit',sans-serif; font-size:23px; font-weight:300;
-  letter-spacing:.01em; text-anchor:middle}
-.mb-star path{fill:var(--taupe);stroke:none}
-.mb-rule path{stroke:var(--taupe);stroke-width:.9;opacity:.75}
+.mb-seal:hover{transform:scale(1.03)}
+.mb-seal img{display:block;width:100%;height:auto;border-radius:50%}
 
 @media (max-width:680px){
-  /* Auf dem Handy ist das Foto im Hero eingerueckt — das Siegel muss innerhalb
-     seiner Kante sitzen, sonst haengt es ueber die abgerundete Ecke hinaus. */
   .mb-seal{width:106px;top:18px;right:30px}
-  .mb-arc{font-size:12px}
-  .mb-main{font-size:24px}
 }
 
 
@@ -818,9 +826,12 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .vtest{padding-block:clamp(46px,5.2vw,76px)}
 .vtest-inner{max-width:var(--maxw);margin-inline:auto}
 .vtest-head{text-align:center;margin-bottom:clamp(28px,3vw,40px)}
-.vtest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:clamp(16px,2vw,26px)}
-.vt{margin:0}
+.vtest-grid{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:clamp(16px,2vw,30px)}
+/* Feste, ruhige Kartenbreite statt "so breit wie Platz da ist": bei zwei
+   Videos nahm jedes 643 px und wurde 1143 px hoch — das erschlug die Seite.
+   Hochformat-Videos vom Handy wirken in Telefongroesse am natuerlichsten. */
+.vt{margin:0;width:clamp(210px,19vw,290px)}
 .vt-ph{
   position:relative;aspect-ratio:4/5;border-radius:var(--r-l);overflow:hidden;
   display:grid;place-items:center;gap:16px;align-content:center;
@@ -893,3 +904,192 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .social svg .fill{fill:currentColor;stroke:none}
 .social span{font-size:11.5px;letter-spacing:.1em}
 @media (max-width:680px){ .social{justify-content:center;width:100%} }
+
+/* ==========================================================================
+   KONTAKTLEISTE (V4.36) — rechts, laeuft auf jeder Seite mit
+   Drei Knoepfe in Signalfarben (Renés Entscheidung): WhatsApp gruen,
+   Telefon blau, Nachricht warmes Orangerot. WhatsApp oeffnet ein kleines
+   Fenster, Telefon und Brief wirken sofort. Alles ohne Bibliothek.
+   ========================================================================== */
+.crail{
+  position:fixed;right:clamp(14px,1.6vw,24px);
+  bottom:clamp(16px,3vh,28px);            /* unten rechts, uebereinander */
+  z-index:300;display:flex;flex-direction:column;gap:12px}
+.crail-btn{
+  width:clamp(46px,3.6vw,54px);aspect-ratio:1;border-radius:50%;
+  display:grid;place-items:center;cursor:pointer;position:relative;
+  /* <button> bringt von Haus aus Rahmen und Grauton mit — beides weg,
+     sonst liegt ein dunkler Saum um den Knopf. */
+  border:0;padding:0;margin:0;appearance:none;-webkit-appearance:none;font:inherit;
+  color:#fff;box-shadow:0 6px 18px -6px rgba(58,50,44,.35),0 16px 36px -18px rgba(58,50,44,.4);
+  /* Im Ruhezustand zurueckgenommen: halbtransparent und entsaettigt, damit die
+     Knoepfe die Seite nicht dominieren. Beim Zeigen und beim Scrollen treten
+     sie in die volle Farbe. */
+  opacity:.55;filter:saturate(.55);
+  transition:transform .38s var(--ease),box-shadow .38s var(--ease),
+             opacity .45s var(--ease),filter .45s var(--ease)}
+.crail-btn:focus{outline:none}
+.crail-btn:focus-visible{outline:2px solid var(--taupe-dark);outline-offset:3px;
+  opacity:1;filter:none}
+.crail-btn:hover,.crail-btn:focus-visible{
+  opacity:1;filter:saturate(1.06);transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 24px -6px rgba(58,50,44,.5),0 22px 46px -18px rgba(58,50,44,.55)}
+/* Waehrend gescrollt wird, wird die Leiste kurz kraeftiger — sie meldet sich,
+   ohne sich dauerhaft in den Vordergrund zu draengen. */
+.crail.aktiv .crail-btn{opacity:.92;filter:saturate(.95)}
+/* Bei geoeffnetem Fenster bleibt der WhatsApp-Knopf voll da. */
+.crail-btn.wa[aria-expanded="true"]{opacity:1;filter:none}
+.crail-btn svg{width:52%;height:52%;fill:currentColor;stroke:none;display:block}
+/* Der Briefumschlag ist gezeichnet, nicht gefuellt — sonst ist es ein Quadrat. */
+.crail-btn.mail svg{fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.crail-btn.wa  {background:#25D366}
+.crail-btn.tel {background:#2F7CC4}
+.crail-btn.mail{background:#D2603A}
+/* Beschriftung erscheint links daneben */
+.crail-btn::after{
+  content:attr(data-tip);position:absolute;right:calc(100% + 12px);top:50%;
+  transform:translateY(-50%) translateX(6px);white-space:nowrap;
+  background:var(--ink);color:var(--paper);border-radius:100px;padding:7px 14px;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.crail-btn:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* ---------- kleines WhatsApp-Fenster ---------- */
+.wa-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.wa-panel{
+  position:fixed;z-index:301;
+  right:clamp(14px,1.6vw,24px);
+  bottom:calc(clamp(16px,3vh,28px) + 3*clamp(46px,3.6vw,54px) + 34px);
+  width:min(310px,calc(100vw - 40px));
+  background:var(--ink);color:var(--paper);border-radius:var(--r);
+  padding:18px 20px 20px;box-shadow:0 24px 60px -18px rgba(58,50,44,.6);
+  /* Bewusst display statt opacity/visibility: eindeutig, ohne Uebergangs-Zustaende. */
+  display:none}
+.wa-panel.open{display:block;animation:waIn .3s var(--ease) both}
+@keyframes waIn{
+  from{opacity:0;transform:translateY(10px) scale(.96)}
+  to  {opacity:1;transform:none}}
+.wa-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.wa-mark{width:22px;height:22px;color:#25D366;flex:none}
+.wa-mark svg{width:100%;height:100%;fill:currentColor;display:block}
+.wa-title{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.wa-close{margin-left:auto;cursor:pointer;font-size:20px;line-height:1;
+  color:rgba(250,246,239,.6);transition:color .3s var(--ease)}
+.wa-close:hover{color:var(--paper)}
+.wa-bubble{
+  background:rgba(250,246,239,.1);border-radius:14px 14px 14px 4px;
+  padding:13px 15px;font-size:13.5px;line-height:1.6;color:rgba(250,246,239,.92);
+  margin-bottom:16px}
+.wa-start{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#25D366;color:#fff;border-radius:100px;padding:12px 18px;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  transition:filter .3s var(--ease),transform .3s var(--ease)}
+.wa-start:hover{filter:brightness(1.06);transform:translateY(-2px)}
+.wa-start svg{width:15px;height:15px;fill:currentColor;display:block}
+
+@media (max-width:900px){
+  .crail{gap:10px}
+  .crail-btn::after{display:none}   /* Beschriftung nur am Rechner */
+}
+@media (prefers-reduced-motion:reduce){
+  .crail-btn,.wa-panel,.wa-start{transition:none}
+  /* Ohne Bewegung waere das Auf- und Abblenden nicht wahrnehmbar — dann
+     stehen die Knoepfe dauerhaft gut sichtbar da. */
+  .crail-btn{opacity:.9;filter:none}
+}
+
+/* ==========================================================================
+   KONTAKTBLOCK + KARTE (V4.36) — Zahlungsoptionen
+   ========================================================================== */
+.kontakt-liste{list-style:none;margin:0 0 clamp(24px,3vw,34px);padding:0;
+  border-top:1px solid var(--line)}
+.kontakt-liste li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 20px;
+  padding:13px 0;border-bottom:1px solid var(--line);
+  font-size:15px;line-height:1.7;color:var(--ink-soft)}
+.kontakt-liste li span{flex:none;min-width:9.5em;font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:600;color:var(--taupe-dark)}
+.kontakt-liste a{color:var(--ink);border-bottom:1px solid var(--taupe);
+  transition:color .3s var(--ease),border-color .3s var(--ease)}
+.kontakt-liste a:hover{color:var(--taupe-dark);border-color:var(--taupe-dark)}
+
+/* Karte: laedt erst nach Klick (Google setzt sonst Cookies ohne Einwilligung) */
+.karte{margin:0}
+.karte-ph{
+  width:100%;aspect-ratio:16/9;border:0;border-radius:var(--r-l);cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:linear-gradient(150deg,var(--creme),var(--sand));
+  box-shadow:var(--sh-s);font:inherit;color:var(--taupe-dark);
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.karte-ph:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.karte-pin{width:34px;height:34px;color:var(--taupe-dark)}
+.karte-pin svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round}
+.karte-txt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.karte-hint{font-size:12px;line-height:1.5;max-width:30em;text-align:center;opacity:.8}
+.karte iframe{display:block;width:100%;aspect-ratio:16/9;border:0;
+  border-radius:var(--r-l);box-shadow:var(--sh-s)}
+.karte figcaption{margin-top:12px;text-align:center;font-size:12.5px;color:var(--taupe-dark)}
+.karte figcaption a{color:var(--ink);border-bottom:1px solid var(--taupe)}
+
+.agb-hinweis{
+  background:var(--creme);border-radius:var(--r-s);border-left:3px solid var(--taupe);
+  padding:18px 24px}
+.agb-hinweis p{font-size:15px;line-height:1.75;color:var(--ink);margin:0}
+
+
+/* ==========================================================================
+   ERGEBNISSE + VIDEOS (V4.44)
+   Vorher-Nachher-Aufnahmen und Videos aus dem Institut. Videos laden erst
+   auf Klick (preload="none"), nie Autoplay — sonst zieht die Seite auf dem
+   Handy Datenvolumen, bevor jemand ueberhaupt schauen will.
+   ========================================================================== */
+.ergebnisse,.vidgal{padding-block:clamp(40px,4.6vw,68px)}
+.erg-inner{max-width:var(--maxw);margin-inline:auto}
+.erg-head{text-align:center;margin-bottom:clamp(24px,2.8vw,36px)}
+.erg-head p{font-size:14px;line-height:1.7;color:var(--taupe-dark);
+  max-width:52em;margin:14px auto 0}
+.erg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(14px,1.8vw,22px);
+  /* Die Aufnahmen haben unterschiedliche Formate (quadratisch und hochkant).
+     Ohne align-items:start fuellt die Karte die Zellhoehe und laesst unter
+     quadratischen Bildern eine graue Flaeche stehen. Zuschneiden waere hier
+     falsch — bei Vorher-Nachher darf kein Teil des Vergleichs wegfallen. */
+  align-items:start}
+.erg{margin:0;border-radius:var(--r);overflow:hidden;background:var(--creme);
+  box-shadow:var(--sh-s);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.erg:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.erg img{display:block;width:100%;height:auto}
+
+.vidgal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(14px,1.8vw,24px)}
+.vid-k{margin:0}
+.vid-k video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
+  border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh)}
+.vid-k figcaption{margin-top:12px;text-align:center;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:500;color:var(--taupe-dark)}
+/* Auf der Startseite tragen die Karten schon eine Beschriftung */
+.vt video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
+  border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh)}
+
+/* ---------- Erklaervideo (V4.45) — Text links, Hochkant-Video rechts ----------
+   Ein 9:16-Video allein ueber die volle Breite waere eine schmale Saeule mit
+   viel Leerraum. Neben dem Text gestellt fuellt es die Zeile und erklaert
+   sich zugleich selbst. */
+.erklaer{padding-block:clamp(40px,4.6vw,68px)}
+.erklaer-inner{
+  max-width:var(--maxw);margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(230px,24vw,320px);
+  gap:clamp(28px,4vw,64px);align-items:center;justify-content:center}
+.erklaer-text{max-width:34em}
+.erklaer-text h2{margin-bottom:18px}
+.erklaer-text p{font-size:16px;line-height:1.8;color:var(--ink-soft)}
+.erklaer-vid{margin:0}
+.erklaer-vid video{
+  display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
+  border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh-l)}
+@media (max-width:820px){
+  .erklaer-inner{grid-template-columns:1fr}
+  .erklaer-vid{max-width:300px;margin-inline:auto}
+}

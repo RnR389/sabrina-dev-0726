@@ -37,6 +37,62 @@
   window.addEventListener('resize', onScroll, { passive: true });
   frame();
 
+  /* --- 1b. Mobiles Menü schließt nach Klick auf einen Link ----------------- */
+  var toggle = document.getElementById('nav-toggle');
+  if (toggle) {
+    document.querySelectorAll('.site-nav a').forEach(function (a) {
+      a.addEventListener('click', function () { toggle.checked = false; });
+    });
+  }
+
+  /* --- 1c. WhatsApp-Fenster der Kontaktleiste ------------------------------ */
+  var waPanel = document.querySelector('.wa-panel');
+  var waBtn   = document.querySelector('[data-wa-open]');
+  if (waPanel && waBtn) {
+    var setWa = function (offen) {
+      waPanel.classList.toggle('open', offen);
+      waBtn.setAttribute('aria-expanded', offen ? 'true' : 'false');
+    };
+    waBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setWa(!waPanel.classList.contains('open'));
+    });
+    var waClose = document.querySelector('[data-wa-close]');
+    if (waClose) waClose.addEventListener('click', function () { setWa(false); });
+    document.addEventListener('click', function (e) {
+      if (waPanel.classList.contains('open') && !waPanel.contains(e.target)) setWa(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setWa(false);
+    });
+  }
+
+
+  /* --- 1d. Karte erst nach Klick laden (Datenschutz) ---------------------- */
+  var mapBtn = document.querySelector('[data-map-load]');
+  if (mapBtn) {
+    mapBtn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.google.com/maps?q=Hauptstra%C3%9Fe%203%2C%2079664%20Wehr&output=embed';
+      f.setAttribute('loading', 'lazy');
+      f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      f.setAttribute('title', 'Kosmetikinstitut Hautnah auf Google Maps');
+      mapBtn.replaceWith(f);
+    });
+  }
+
+
+  /* --- 1e. Kontaktleiste meldet sich beim Scrollen ------------------------ */
+  var crail = document.querySelector('.crail');
+  if (crail) {
+    var crailTimer = null;
+    window.addEventListener('scroll', function () {
+      crail.classList.add('aktiv');
+      if (crailTimer) clearTimeout(crailTimer);
+      crailTimer = setTimeout(function () { crail.classList.remove('aktiv'); }, 1400);
+    }, { passive: true });
+  }
+
   /* --- 3. Inhalte blenden beim Hereinscrollen sanft ein ------------------- */
   var targets = [].slice.call(document.querySelectorAll('[data-reveal]'));
   if (!targets.length) return;
@@ -68,11 +124,4 @@
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
   targets.forEach(function (t) { io.observe(t); });
 
-  /* --- 4. Mobiles Menü schließt nach Klick auf einen Link ----------------- */
-  var toggle = document.getElementById('nav-toggle');
-  if (toggle) {
-    document.querySelectorAll('.site-nav a').forEach(function (a) {
-      a.addEventListener('click', function () { toggle.checked = false; });
-    });
-  }
 })();

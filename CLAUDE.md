@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.35 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Lokal **V4.39**, live steht eine Wartungsseite (Deploys von René gestoppt). Zuletzt live war V4.35 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.35**
+- **Aktuell lokal: V4.39** · zuletzt deployt: V4.35
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -114,7 +114,9 @@ Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Br
 - Nicht überimplementieren, aber **echte Folgeprobleme mitlösen** und benennen.
 
 ## Offene Punkte
-1. **Icon-Optik (V3.13) gefällt René „noch nicht ganz"** — beim Wiederaufgreifen nachfragen, was genau stört.
+1. **NiSV-Siegel platzieren.** Datei liegt fertig unter `assets/nisv-siegel.png` (rund freigestellt, 640 px). War kurz im Hero (zu gedrängt neben dem Meisterbetrieb-Siegel) und in der Fußzeile — René: „nimm es erst nochmal raus, packe es auf die noch-erledigen-Liste." **Offene Frage: wo soll es hin?** Denkbar: eigener Vertrauensabschnitt auf der Startseite · auf `aesthetische-konzepte.html` (dort gehören die apparativen Behandlungen hin, für die der Nachweis gilt) · in der Trust-Leiste.
+2. **Meisterbetrieb-Siegel** ist seit V4.41 Sabrinas fertige Datei — erledigt.
+2. **Icon-Optik (V3.13) gefällt René „noch nicht ganz"** — beim Wiederaufgreifen nachfragen, was genau stört.
 2. **Blog-Backend**, damit Sabrina selbst Beiträge einstellen kann (Decap CMS / GitHub / manuell).
 3. **Formularversand** freischalten (siehe oben).
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
