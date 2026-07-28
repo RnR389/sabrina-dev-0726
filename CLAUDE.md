@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.32 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.33 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.32**
+- **Aktuell: V4.33**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -113,7 +113,8 @@ Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Br
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
 6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen.
-7. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). Auf **Haarkonzept** fehlt nur noch **Bildmaterial** (Logo ist seit V4.28 drin). **„Kontakt"** ist der einzige verbliebene tote Menüpunkt.
+7. **Videos für die drei Kundenstimmen-Platzhalter** auf der Startseite (V4.33) — Sabrina reicht sie nach. Einbau: `<video controls preload="none" poster="…">` statt `.vt-ph`, vorher auf <100 MB kodieren.
+8. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). Auf **Haarkonzept** fehlt nur noch **Bildmaterial** (Logo ist seit V4.28 drin). **„Kontakt"** ist der einzige verbliebene tote Menüpunkt.
 9. **Freigabe der Badischen Zeitung** für den Artikelscan auf `aktuelles.html` einholen.
 8. **WhatsApp-Anamnesebogen:** Der Button schickt eine vorbelegte Nachricht („Haaranalyse"). Ein **automatischer** Versand des Anamnesebogens ginge nur über die WhatsApp Business API mit genehmigter Vorlage — bisher nicht eingerichtet. Bis dahin antwortet Sabrina manuell.
 

@@ -626,6 +626,19 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.33 — „Video-Kundenstimmen + kürzere Rezensionsreihe"  📍 Feedback ausstehend
+
+- **Dateien:** `current/index.html`, `assets/hautnah.css`
+- **Geändert:**
+  1. **Drei Video-Platzhalter** zwischen dem Sabrina-Block und den Google-Rezensionen. Karten im **Hochformat 4/5** (dieselbe Proportion wie die übrigen Porträtflächen der Seite), 420 × 525 px bei 1440 px Breite, mit Glas-Abspielzeichen und dem Hinweis „Video folgt". Als Platzhalter erkennbar, ohne billig zu wirken.
+     **Einbau der echten Videos später** wie beim Onetec-Film: `<video controls preload="none" poster="…">` statt der `.vt-ph`-Fläche — **nie Autoplay**, und Videos vorher auf unter 100 MB kodieren (GitHub-Grenze).
+  2. **Google-Rezensionen auf der Startseite von 6 auf 3.** Behalten: **Gudrun F.** (Fachkompetenz, Weiterempfehlung durch eine Ärztin), **Lea M.** (Hautanalyse und abgestimmte Treatments), **Amadeus B.** (Ergebnis nach mehreren Sitzungen). Damit sind Kompetenz, Ablauf und Ergebnis abgedeckt — und es kommen Frauen wie Männer zu Wort, passend zu Sabrinas Text („Ich arbeite mit Frauen und Männern"). Die drei entfernten Stimmen stehen unverändert auf den Behandlungsseiten.
+- **Überschrift des Video-Abschnitts** („Kundenstimmen im Video / Erfahrungen aus erster Hand.") ist von mir gesetzte Platzhalter-Formulierung — jederzeit ersetzbar.
+- **Footer-Version:** alle 24 Seiten → **4.33**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
