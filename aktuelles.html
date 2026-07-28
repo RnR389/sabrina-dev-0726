@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/logo-original.png">
-<title>Preise — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
-<meta name="description" content="Preise des Kosmetikinstituts Hautnah in Wehr.">
+<title>Aktuelles — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
+<meta name="description" content="Aktuelles aus dem Kosmetikinstitut Hautnah in Wehr &ndash; Presse und Neuigkeiten.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,10 +34,10 @@
         <li><a href="aesthetische-konzepte.html">Ästhetische Konzepte</a></li>
         <li><a href="haarkonzept.html">Haarkonzept</a></li>
         <li><a href="ihre-experten.html">Ihre Experten</a></li>
-        <li class="is-active"><a href="preise.html">Preise</a></li>
+        <li><a href="preise.html">Preise</a></li>
         <li><a href="gutscheine.html">Gutscheine</a></li>
         <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
-        <li><a href="aktuelles.html">Aktuelles</a></li>
+        <li class="is-active"><a href="aktuelles.html">Aktuelles</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li>Kontakt</li>
       </ul>
@@ -48,22 +48,59 @@
 
 <!-- BREADCRUMB -->
 <nav class="breadcrumb">
-  <a href="index.html">Start</a><span class="sep">/</span><span class="here">Preise</span>
+  <a href="index.html">Start</a><span class="sep">/</span><span class="here">Aktuelles</span>
 </nav>
 
 <!-- DETAIL HERO -->
 <section data-reveal class="t-hero" style="grid-template-columns:1fr; padding-bottom:30px;">
   <div class="t-hero-text">
-    <h1>Preise</h1>
+    <h1>Aktuelles</h1>
   </div>
 </section>
 
 <!-- CONTENT -->
 <div class="t-body">
   <div class="t-prose">
-    <div data-reveal class="t-block">
-      <div class="placeholder-note" style="max-width:none;margin:0;">Platzhalter &mdash; die Preisliste wird erg&auml;nzt, sobald sie von Sabrina vorliegt.</div>
+
+    <div data-reveal class="t-block" style="border-top:none;padding-top:0">
+      <div class="section-eyebrow"><span class="bar"></span>Presse</div>
+      <h2>&bdquo;Ein seltener Meistertitel&ldquo;</h2>
+      <p>Die Badische Zeitung hat Sabrina Heros&eacute; im M&auml;rz 2026 portr&auml;tiert &mdash; &uuml;ber den
+         Weg zum Meistertitel im Kosmetikerinnenhandwerk und darüber, warum dieser Titel so
+         selten ist. Zum Lesen bitte auf den Artikel klicken.</p>
+
+      <!-- Zeitungsartikel: Klick oeffnet die Grossansicht (reines CSS, ohne Bibliothek) -->
+      <input type="checkbox" id="lb-artikel" class="lb-toggle">
+      <figure class="press">
+        <label for="lb-artikel" class="press-thumb">
+          <img src="assets/zeitungsartikel-2026.jpg"
+               alt="Zeitungsartikel der Badischen Zeitung: &bdquo;Ein seltener Meistertitel&ldquo; &uuml;ber Sabrina Heros&eacute;"
+               width="1123" height="797" loading="lazy">
+          <span class="press-zoom">Artikel gro&szlig; anzeigen</span>
+        </label>
+        <figcaption>Badische Zeitung &middot; Samstag, 28. M&auml;rz 2026 &middot; Wehr / Bad S&auml;ckingen &middot; Text: Annemarie R&ouml;sch &middot; Foto: Annemarie R&ouml;sch</figcaption>
+      </figure>
+
+      <div class="lb">
+        <label for="lb-artikel" class="lb-bg" aria-label="Gro&szlig;ansicht schlie&szlig;en"></label>
+        <div class="lb-inner">
+          <label for="lb-artikel" class="lb-close" aria-label="Schlie&szlig;en">&times;</label>
+          <div class="lb-scroll">
+            <img src="assets/zeitungsartikel-2026.jpg"
+                 alt="Zeitungsartikel der Badischen Zeitung &uuml;ber Sabrina Heros&eacute; &ndash; Gro&szlig;ansicht">
+          </div>
+          <div class="lb-bar">
+            <a href="assets/zeitungsartikel-2026.jpg" target="_blank" rel="noopener">In neuem Tab &ouml;ffnen</a>
+            <label for="lb-artikel">Schlie&szlig;en</label>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div data-reveal class="t-block">
+      <div class="placeholder-note" style="max-width:none;margin:0;">Platzhalter &mdash; weitere Neuigkeiten werden hier erg&auml;nzt.</div>
+    </div>
+
   </div>
 </div>
 
