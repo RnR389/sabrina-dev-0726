@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.33 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.34 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.33**
+- **Aktuell: V4.34**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -65,6 +65,10 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 - **Kein „Behandlungen, die dazu passen" mehr.** Der `.related`-Abschnitt ist seit V4.21 von allen 10 Behandlungsseiten entfernt (René), samt CSS. Nicht neu anlegen.
 - **Du/Sie ist jetzt gemischt (V4.32):** Der Vorstellungsblock auf der Startseite steht in der **Du**-Form (Text von René so geschickt, 1:1 übernommen), Hero und alle anderen Seiten in der **Sie**-Form. Zusätzlich wiederholt der zweite Absatz fast wörtlich die Hero-Zeile darüber. **Entscheidung von René/Sabrina steht aus** — nicht eigenmächtig angleichen.
 - **Helle Schrift auf dem Hero-Foto:** immer Cremeweiß (`--paper`), nie Sand oder Taupe. In V4.29/4.30 standen „seit" und der Stern in Sand-Taupe und gingen auf dem Foto unter (René per Screenshot). In V4.31 behoben.
+
+## Partnerlogos (V4.34)
+Quelle: Ordner `PartnerLogos/`. Aufbereitet nach `assets/partner/` — freigestellt, **einfarbig `--taupe-dark`**, jedes in dieselbe Box 520 × 150 px eingepasst. So wirken alle gleich groß. **Neues Logo ergänzen:** gleich behandeln, sonst fällt es aus der Reihe. Das Band braucht die Reihe **doppelt** im HTML (Animation läuft bis −50 %), sonst reißt der Umlauf.
+*Das Einfärben verändert die Markendarstellung — üblich für Partnerleisten, aber falls ein Hersteller Originalfarben verlangt, umstellen.*
 
 ## Medien & Recht
 - **Videos vor dem Deploy neu kodieren.** GitHub blockt >100 MB. Der Onetec-Film kam mit 310 MB → per ffmpeg auf 46 MB (`-crf 28 -preset medium -movflags +faststart`, 1080p). Einbau immer `controls preload="none"` + Poster, **nie** Autoplay.

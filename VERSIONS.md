@@ -639,6 +639,19 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.34 — „Partner-Logoband + soziale Netzwerke im Footer"  📍 Feedback ausstehend
+
+- **Dateien:** `current/*.html` (alle 24), `assets/hautnah.css`, neu `assets/partner/*.png`
+- **1. Partnerlogos vereinheitlicht.** Aus `PartnerLogos/` verarbeitet: freigestellt (Weiß → transparent), Scanflecken entfernt (das Rike-von-G-Logo war voll davon), zugeschnitten, **einfarbig in `--taupe-dark` gesetzt** und jedes in **dieselbe Box 520 × 150 px** eingepasst. Damit stehen alle fünf optisch gleich groß nebeneinander, statt dass ein breiter Schriftzug die Reihe dominiert.
+  Verwendet: **EMShape X · esthēvital · FORMA One · Hydrafacial · rike von g**. Von FormaOne lagen zwei Varianten vor (farbig und s/w) — nur eine verwendet.
+  *Hinweis: Das Einfärben ist der übliche Weg für eine Partnerleiste, verändert aber die Markendarstellung. Falls ein Hersteller auf Originalfarben besteht, ist das eine Zeile Arbeit — dann wird die Reihe allerdings unruhig (EMShape X hat ein kräftiges Grün).*
+- **2. Endlosband** unter den Google-Rezensionen: Die Logo-Reihe steht **zweimal** im Band, die Animation läuft exakt bis `-50%` und springt zurück — an dieser Stelle steht dasselbe Bild, der Sprung ist unsichtbar. **24 px/s** (bewusst langsam), weiche Kanten links und rechts, **Pause bei Mouseover**, und bei „Bewegung reduzieren" steht das Band still und bricht in eine ruhige Reihe um. Ohne Bibliothek.
+- **3. Footer:** Instagram, Facebook und YouTube haben jetzt **Icons und echte Links** (neuer Tab, `rel="noopener"`) — auf allen 24 Seiten. **Sabrinas Logo von 52 px auf 74–104 px** vergrößert und in seiner Spalte **mittig** gesetzt, der Adressblock zieht mit.
+- **Footer-Version:** alle 24 Seiten → **4.34**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
