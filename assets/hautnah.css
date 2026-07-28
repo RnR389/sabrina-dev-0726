@@ -680,3 +680,6 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   .p-portrait{order:1;max-width:290px}
   .p-creds li strong{min-width:100%}
 }
+
+/* ---------- Aktionszeile (Haarkonzept: WhatsApp + Telefon) ---------- */
+.wa-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:26px}
