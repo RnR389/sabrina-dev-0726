@@ -534,6 +534,22 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.25 / V4.26 — „Reihenfolge Haarkonzept + korrigierte Öffnungszeiten"  📍 Feedback ausstehend
+
+- **V4.25 — Haarkonzept, Reihenfolge getauscht.** Vorher Kundenstimmen → CTA-Band, jetzt **CTA-Band („Wir fangen da an, wo der Friseur aufhört.") → Google-Rezensionen → Footer**. Nur auf `haarkonzept.html`; die 10 Behandlungsseiten behalten bewusst FAQ → CTA am Ende (V4.22). Wortbestand per Diff unverändert.
+- **V4.26 — Öffnungszeiten korrigiert (René, 28.07.2026)**, auf **allen 22 Seiten** in Kopfleiste **und** Fußzeile:
+
+  | | vorher | jetzt |
+  |---|---|---|
+  | Kopfleiste | Mo · Di · Mi · Fr · 10–18 Uhr | **Mo–Mi 10–18 Uhr · Fr 10–13 Uhr** |
+  | Fußzeile | Mo · Di · Mi · Fr / 10 – 18 Uhr | **Mo – Mi 10:00–18:00 · Fr 10:00–13:00 · Do geschlossen** |
+
+  In der Kopfleiste bleibt es bei einer Zeile (Länge praktisch identisch zur alten Angabe, bei 1440 px und 1280 px nachgemessen, kein Umbruch, kein Überlauf). „Do geschlossen" steht in der Fußzeile, weil dort der Platz für die vollständige Angabe ist.
+- **Footer-Version:** alle 22 Seiten → **4.26**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```

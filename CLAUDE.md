@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.24 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.26 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.24**
+- **Aktuell: V4.26**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -252,7 +252,7 @@ Diese Punkte stammen aus stundenlangen Klärungsgesprächen. **Verinnerlichen, n
 - Adresse: Hauptstraße 3, 79664 Wehr
 - Telefon & WhatsApp: +49 (0) 7762 / 80 56 69
 - Web: www.hautnah-wehr.de
-- Geschäftszeiten: Mo, Di, Mi, Fr · 10–18 Uhr
+- Geschäftszeiten (**korrigiert 28.07.2026, gilt**): **Mo–Mi 10:00–18:00 Uhr · Fr 10:00–13:00 Uhr · Do geschlossen**. Steht auf allen 22 Seiten in Kopfleiste und Fußzeile.
 - Aufpreise: ab 19:30 Uhr +50 %, Sonn-/Feiertag +80 %
 - 24h-Stornoregel
 
