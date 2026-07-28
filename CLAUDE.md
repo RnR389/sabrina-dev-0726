@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.30 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.32 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.30**
+- **Aktuell: V4.32**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -54,7 +54,7 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 ## Farben (gültig, ersetzen die alte Tabelle weiter unten)
 `--paper #FAF6EF` · `--creme #E9E3DA` · `--sand #DFD7CD` · **`--taupe #C2B4A9` (FINAL)** · `--taupe-dark #6F655D` · `--ink #3A322C` (Espresso, **nie Schwarz**) · `--silver #C9C9CE`
 
-**Kein Gold. Kein Schwarz. Eine Schrift: Outfit.** *(Ausnahme-Vermerk: der 5-Sterne-Stern im Hero „leuchtet" seit V4.30 — das Leuchten kommt aus Weiß/Sand/Taupe, nicht aus Gold.)* Alle dunklen Flächen (Buttons, Footer, CTA-Bänder, Infozeile) sind **Taupe**, nicht Espresso — Espresso nur für Text.
+**Kein Gold. Kein Schwarz. Eine Schrift: Outfit.**  Alle dunklen Flächen (Buttons, Footer, CTA-Bänder, Infozeile) sind **Taupe**, nicht Espresso — Espresso nur für Text.
 
 ## Texte — die Regel, an der nicht gerüttelt wird
 - Sabrinas Texte werden **wortwörtlich** übernommen. Nicht kürzen, nicht glätten, nicht umstellen.
@@ -63,7 +63,8 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 - Bereits eingebaut: `Forma_Text-0726.docx`, `Hydrafacial_Text-0726.docx`, `Hautanalyse-0726.docx`, `Haarkonzept.docx` (V4.24).
 - **Ausnahme V4.21:** Der Block „Individuelle Beratung" aus `Forma_Text-0726.docx` ist auf Renés ausdrücklichen Wunsch **entfernt** — nicht versehentlich, nicht wieder einbauen.
 - **Kein „Behandlungen, die dazu passen" mehr.** Der `.related`-Abschnitt ist seit V4.21 von allen 10 Behandlungsseiten entfernt (René), samt CSS. Nicht neu anlegen.
-- Noch offen: `startseite_homepage.docx` ist in **Du**-Form, die Seite in **Sie**-Form → Entscheidung fehlt.
+- **Du/Sie ist jetzt gemischt (V4.32):** Der Vorstellungsblock auf der Startseite steht in der **Du**-Form (Text von René so geschickt, 1:1 übernommen), Hero und alle anderen Seiten in der **Sie**-Form. Zusätzlich wiederholt der zweite Absatz fast wörtlich die Hero-Zeile darüber. **Entscheidung von René/Sabrina steht aus** — nicht eigenmächtig angleichen.
+- **Helle Schrift auf dem Hero-Foto:** immer Cremeweiß (`--paper`), nie Sand oder Taupe. In V4.29/4.30 standen „seit" und der Stern in Sand-Taupe und gingen auf dem Foto unter (René per Screenshot). In V4.31 behoben.
 
 ## Medien & Recht
 - **Videos vor dem Deploy neu kodieren.** GitHub blockt >100 MB. Der Onetec-Film kam mit 310 MB → per ffmpeg auf 46 MB (`-crf 28 -preset medium -movflags +faststart`, 1080p). Einbau immer `controls preload="none"` + Poster, **nie** Autoplay.

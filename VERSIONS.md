@@ -614,6 +614,18 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.31 / V4.32 — „Kennzahlen lesbar + Vorstellungsblock auf der Startseite"  📍 Feedback ausstehend
+
+- **V4.31 — Leuchten zurückgenommen, Lesbarkeit repariert.** René: „ich weiß zwar nicht, was weiß leuchtet, aber der Stern ist es nicht" + Screenshot. Das Leuchten (HTML-Klasse und CSS-Block) ist vollständig raus. **Die eigentliche Ursache war die Farbe:** die em-Regel für „seit" (V4.29) setzte Sand-Taupe — und der Stern hat sie geerbt. Beide standen damit in blassem Grau auf dem dunklen Foto. Jetzt **cremeweiß wie die Zahl selbst**, Stern nur leicht kleiner, dazu ein weicher Schatten gegen das Foto.
+- **V4.32 — Vorstellungsblock mit Portrait.** Neuer Abschnitt auf der Startseite: **Portrait links (620 × 775 px), Text rechts (620 × 780 px)** — exakt ausbalanciert. Bild aus `SabrinaBildKI.jpg` → `assets/sabrina-portrait-ki.jpg` (960 × 1280).
+  **Position:** zwischen Trust-Leiste und Kundenstimmen, **nicht** direkt hinter dem Hero. Grund: die Trust-Pillen hängen mit negativem Abstand (`margin-top:-40px`) am Hero — ein Block dazwischen hätte sich mit ihnen überlappt (getestet, 40 px Überlappung).
+  **Text 1:1 wie geschickt**, alle 7 Zeilen einzeln gegengeprüft.
+  ⚠️ **Der Text steht in der Du-Form, die übrige Seite in der Sie-Form.** Bewusst unverändert übernommen. Zusätzlich überschneidet sich der zweite Absatz inhaltlich fast wörtlich mit der Hero-Zeile darüber („Wenn deine/Ihre Haut immer empfindlicher, röter, unreiner …"). Beides ist eine Entscheidung für René/Sabrina.
+- **Footer-Version:** alle 24 Seiten → **4.32**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
