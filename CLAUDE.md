@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Aktuell **V4.26 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Aktuell **V4.27 „Modern Institute“** — live auf GitHub Pages.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -14,7 +14,7 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
-- **Aktuell: V4.26**
+- **Aktuell: V4.27**
 
 ## Rückfall-Punkte (jederzeit zurückspringen)
 | Marke | Stand |
@@ -41,13 +41,13 @@ Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liege
 - **Netlify ist tot** (keine Credits) — nicht mehr verwenden.
 
 ## Seitenbestand (21 Seiten)
-Startseite · Ästhetische Konzepte · **10 Behandlungen** · **Haarkonzept** · Ihre Expertinnen · Bianka Wittulski · Gutscheine · Zahlungsoptionen · Blog · **Zusammenarbeit anfragen** · **Impressum · Datenschutz · AGB** — **22 Seiten**
+Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihre Experten · Bianka Wittulski · **Preise** · Gutscheine · Zahlungsoptionen · Blog · Zusammenarbeit anfragen · Impressum · Datenschutz · AGB — **23 Seiten**
 
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
 - **®** (als `&reg;`) nur bei: Forma, Hydrafacial, Onetec, EMShape X, EMShape X Beckenboden.
 - **„Pharma" gibt es nicht mehr** (Seite gelöscht).
-- Menü heißt **„Ihre Expertinnen"** (Datei `ihre-expertinnen.html`), nicht „Über uns".
+- Menü heißt **„Ihre Experten"** (Datei `ihre-experten.html`) — **Stand 28.07.2026**. Vorher „Ihre Expertinnen" (V3.12–V4.26), davor „Über uns". René hat zurück auf die männliche/neutrale Form gewechselt.
 - **Bianka** immer mit K.
 - Noch offen: Dateinamen `hydra-facial`, `hydra-lift`, `ems-shape`, `shape-beckenboden`, `chemical-peeling`, `skin-needling` passen noch nicht zur Schreibweise — René fragen.
 
@@ -88,7 +88,7 @@ Solange **kein Portraitfoto** vorliegt, darf der Platzhalter nicht die Hauptroll
 **Gilt allgemein:** Ein Platzhalter darf nie größer sein als der Inhalt, den er vertritt.
 
 ## Kopfleiste — Falle, die schon zweimal zugeschlagen hat
-Die Menüleiste hat **8 Punkte + CTA-Button** und ist damit an der Breitengrenze. Alle Maße sind seit V4.22 **fluid** (`clamp`), der Hamburger greift seit V4.23 **unter 1320 px** (vorher 1240 — die größere, lesbarere Menüschrift braucht den Platz). Menü sitzt links am Logo (`.site-nav{flex:1}` + `ul{margin-right:auto}`), Buttonschrift ist explizit `--paper`, weil `.site-nav a` sonst Espresso erzwingt. **Wer einen Menüpunkt hinzufügt oder ein Label verlängert, muss zwingend bei 1250 / 1280 / 1366 px nachmessen** — sonst ragt der Button wieder aus der Glasleiste. Messformel: `brand + head-gap + ul.scrollWidth + nav-gap + cta` gegen `head-inner.clientWidth − Polster`.
+Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Breitengrenze. Alle Maße sind seit V4.22 **fluid** (`clamp`), der Hamburger greift seit V4.23 **unter 1320 px** (vorher 1240 — die größere, lesbarere Menüschrift braucht den Platz). Menü sitzt links am Logo (`.site-nav{flex:1}` + `ul{margin-right:auto}`), Buttonschrift ist explizit `--paper`, weil `.site-nav a` sonst Espresso erzwingt. **Wer einen Menüpunkt hinzufügt oder ein Label verlängert, muss zwingend bei 1250 / 1280 / 1366 px nachmessen** — sonst ragt der Button wieder aus der Glasleiste. Messformel: `brand + head-gap + ul.scrollWidth + nav-gap + cta` gegen `head-inner.clientWidth − Polster`.
 
 ## Footer-Listen — Falle
 `display:inline-block` gehört auf den **`<a>`**, niemals auf das **`<li>`**. Ein `footer ul li:has(a){display:inline-block}` (V4.18, für die Hover-Verschiebung gedacht) hat alle Footer-Einträge in eine Zeile gelegt — Impressum/AGB/Datenschutz nebeneinander statt untereinander. In V4.23 korrigiert.
@@ -106,7 +106,7 @@ Die Menüleiste hat **8 Punkte + CTA-Button** und ist damit an der Breitengrenze
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
 6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen.
-7. **Haarkonzept:** Seite steht (V4.24), es fehlen noch **Logo „Haarbalance"** und **Bildmaterial**. **Aktuelles** und **Kontakt** sind weiterhin tote Menüpunkte ohne Seite.
+7. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). **Haarkonzept:** Seite steht (V4.24), es fehlen noch **Logo „Haarbalance"** und **Bildmaterial**. **Aktuelles** und **Kontakt** sind weiterhin tote Menüpunkte ohne Seite.
 8. **WhatsApp-Anamnesebogen:** Der Button schickt eine vorbelegte Nachricht („Haaranalyse"). Ein **automatischer** Versand des Anamnesebogens ginge nur über die WhatsApp Business API mit genehmigter Vorlage — bisher nicht eingerichtet. Bis dahin antwortet Sabrina manuell.
 
 ---

@@ -550,6 +550,27 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 
 ---
 
+## V4.27 — „Preise + Ihre Experten"  📍 Feedback ausstehend
+
+- **Dateien:** neu `current/preise.html`, umbenannt `ihre-expertinnen.html` → `ihre-experten.html`, alle 23 Seiten, `assets/hautnah.css`
+- **Anlass (René):** „Baue im Menü zwischen ‚Ihre Expert*innen' und ‚Gutscheine' einen weiteren Punkt ‚Preise' ein, erstelle die Seite — die Preisliste kommt nachträglich." · „Ändere Ihre Expertinnen in Ihre Experten."
+- **Geändert:**
+  1. **Menüpunkt „Preise"** an der gewünschten Stelle, auf **allen 23 Seiten** in Navigation **und** Fußzeile. `preise.html` ist ein Gerüst mit sichtbarem Platzhalter („die Preisliste wird ergänzt, sobald sie von Sabrina vorliegt").
+  2. **„Ihre Expertinnen" → „Ihre Experten"** — Beschriftung, Seitentitel, Breadcrumbs **und Dateiname**. Alle Links umgehängt, Linkprüfung über alle 23 Seiten: keine toten Verweise. Die alte URL `/ihre-expertinnen.html` gibt jetzt 404.
+  3. **Kopfleiste trägt jetzt 9 Punkte.** Der neue Punkt hätte die Leiste gesprengt (bei 1330 px waren nur noch 5 px Rest). Angepasst: Menüschrift `clamp(10.5px, .78vw, 12px)`, Laufweite .045em, engere Maximalabstände.
+
+     | Breite | Rest vorher | Rest jetzt |
+     |---|---|---|
+     | 1330 px | 5 | **59** |
+     | 1440 px | — | **101** |
+     | 1920 px | 24 | **37** |
+
+     Schriftgröße bleibt bei 10,5–12 px und damit deutlich über den ursprünglichen 9,2 px.
+- **Footer-Version:** alle 23 Seiten → **4.27**.
+- **Feedback:** ausstehend
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
