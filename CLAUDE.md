@@ -62,16 +62,10 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 - Seit 2016 Spezialisierung auf Medical Beauty und ästhetische Hautkonzepte
 - Hosting: **ALL-INKL.COM – Neue Medien Münnich**, Friedersdorf
 
-**⚠️ Drei verschiedene Startjahre stehen im Raum — vor dem Livegang klären:**
-| Ort | Angabe |
-|---|---|
-| Startseite, Kennzahl im Hero | „seit 2004 · Kosmetikerin" |
-| `ihre-experten.html`, Sabrinas Text | „Seit 2003 bin ich selbstständig in der Beauty-Branche tätig" |
-| Gewerbeanmeldung (jetzt bekannt) | **16.12.2002** |
-
-Nicht eigenmächtig angleichen — Sabrinas Bio-Text ist ihr Originaltext. René entscheidet, welche Jahreszahl nach außen gilt.
-
-**⚠️ Zeitungsartikel vs. eigene Angabe:** Die Badische Zeitung (28.03.2026, auf `aktuelles.html`) nennt den **28. Januar 2025** als Datum der Meisterprüfung. René sagt: Prüfung **2024**, Brief **2025**. Beide Angaben stehen auf derselben Website. Vor dem Livegang abgleichen.
+**✅ ENTSCHIEDEN (René, 29.07.2026) — nicht neu aufrollen:**
+- **Meisterprüfung: 2024.** So steht es in Sabrinas Bio-Text („2024 folgte der Meisterabschluss / Bachelor Professional") und so bleibt es. Dass die Badische Zeitung im Artikel auf `aktuelles.html` den 28. Januar 2025 nennt, ist bekannt und akzeptiert.
+- **Startjahr: 2004 bleibt stehen.** Die Kennzahl im Hero lautet weiter „seit 2004 · Kosmetikerin", obwohl das Gewerbe am 16.12.2002 angemeldet wurde. Nicht auf 2002 ändern.
+- Sabrinas Bio-Text sagt an einer Stelle „Seit 2003 bin ich selbstständig" — das ist ihr Originaltext und bleibt unangetastet.
 
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
