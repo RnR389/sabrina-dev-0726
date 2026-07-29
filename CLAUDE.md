@@ -44,6 +44,35 @@ Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liege
 ## Seitenbestand (21 Seiten)
 Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihre Experten · Bianka Wittulski · Preise · Gutscheine · Zahlungsoptionen · **Aktuelles** · Blog · Zusammenarbeit anfragen · Impressum · Datenschutz · AGB — **24 Seiten**
 
+## Daten & Fakten zu Sabrina Herosé (von René, 29.07.2026 — verbindlich)
+
+| Was | Wann | Quelle |
+|---|---|---|
+| **Gewerbeanmeldung** | **16.12.2002** | René, 29.07.2026 |
+| **Meisterprüfung** | **2024** | René, 29.07.2026 |
+| **Meisterbrief erhalten** | **2025** | René, 29.07.2026 |
+
+**Weitere gesicherte Angaben**
+- Berufsbezeichnungen: Kosmetikmeisterin · Bachelor Professional · pharmazeutisch-technische Assistentin (PTA) · Buchautorin · Fitnesstrainerin
+- Zuständige Kammer: **Handwerkskammer Konstanz** (`www.hwk-konstanz.de`)
+- USt-IdNr.: **DE363582666** · Rechtsform: **Einzelunternehmen**
+- E-Mail: **kontakt@hautnah-wehr.de** — kein E-Mail-Support für Kundenanfragen, Termine nur telefonisch oder per WhatsApp
+- Telefon & WhatsApp: **+49 7762 805669** · Hauptstraße 3, 79664 Wehr
+- Öffnungszeiten: **Mo–Mi 10:00–18:00 · Fr 10:00–13:00 · Do geschlossen**
+- Seit 2016 Spezialisierung auf Medical Beauty und ästhetische Hautkonzepte
+- Hosting: **ALL-INKL.COM – Neue Medien Münnich**, Friedersdorf
+
+**⚠️ Drei verschiedene Startjahre stehen im Raum — vor dem Livegang klären:**
+| Ort | Angabe |
+|---|---|
+| Startseite, Kennzahl im Hero | „seit 2004 · Kosmetikerin" |
+| `ihre-experten.html`, Sabrinas Text | „Seit 2003 bin ich selbstständig in der Beauty-Branche tätig" |
+| Gewerbeanmeldung (jetzt bekannt) | **16.12.2002** |
+
+Nicht eigenmächtig angleichen — Sabrinas Bio-Text ist ihr Originaltext. René entscheidet, welche Jahreszahl nach außen gilt.
+
+**⚠️ Zeitungsartikel vs. eigene Angabe:** Die Badische Zeitung (28.03.2026, auf `aktuelles.html`) nennt den **28. Januar 2025** als Datum der Meisterprüfung. René sagt: Prüfung **2024**, Brief **2025**. Beide Angaben stehen auf derselben Website. Vor dem Livegang abgleichen.
+
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
 - **®** (als `&reg;`) nur bei: Forma, Hydrafacial, Onetec, EMShape X, EMShape X Beckenboden.
