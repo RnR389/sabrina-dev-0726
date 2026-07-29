@@ -1,6 +1,8 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Lokal **V4.39**, live steht eine Wartungsseite (Deploys von René gestoppt). Zuletzt live war V4.35 „Modern Institute“** — live auf GitHub Pages.
+**Status:** Lokal **V4.50**. Live steht **V4.45** auf GitHub Pages. **René hat Deploys gestoppt (30.07.2026): „kein Deploy, bis ich es sage."** Also nur `current/` + `assets/` + `_site/` pflegen, `gh-pages` nicht anfassen.
+
+**Lokale Vorschau:** `_site/` über die Launch-Config `hautnah` auf **Port 8124**. Achtung, es gibt **zwei** `launch.json` — maßgeblich ist die im Projekt-Wurzelordner `sabrina-herose/.claude/`, nicht die in `hautnah-website/.claude/`. Port 8123 ist von einem fremden PHP-Server eines anderen Projekts belegt, darum 8124.
 
 Dieses Dokument ist deine vollständige Briefing-Grundlage. Lies es zuerst, bevor du irgendwas an diesem Projekt machst. Hier steckt alles, was bisher in stundenlanger Vorarbeit geklärt wurde — überspring es nicht, sonst wiederholst du Fehler, die wir schon einmal gemacht haben.
 
@@ -69,7 +71,9 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
-- **®** (als `&reg;`) nur bei: Forma, Hydrafacial, Onetec, EMShape X, EMShape X Beckenboden.
+- **®** (als `&reg;`) nur bei: Forma, Hydrafacial, Onetec, EMShape X, EMShape X Beckenboden. **Hydralift bekommt KEIN ®.**
+- **⚠️ Seit V4.48/4.49 (René, 30.07.2026): das ® steht an JEDEM sichtbaren Vorkommen, auch im Fließtext und in FAQ-Fragen** — nicht mehr nur in Überschriften. „Es muss auch bei den anderen Behandlungen immer im Text auch dabei stehen." Wer neuen Text einbaut, setzt es überall mit. **Nicht** in `alt=`, `title=` oder Meta-Description (dort ist es für Screenreader nur Geräusch) und nicht in Code-Kommentaren.
+- **Offen: zwei Schreibweisen desselben Namens.** Sabrinas Texte enthalten „Hydrafacial" (11×) *und* „HydraFacial" (14×), „ONETEC" (17×) *und* „Onetec" (4×), „FORMA" (9×) *und* „Forma" (13×). **Beim Prüfen immer case-insensitive suchen** — genau daran ist mir in V4.49 das großgeschriebene FORMA entgangen. Diese Regel hier gibt Hydrafacial und Onetec vor. Bewusst **nicht** angeglichen, weil es ihre Originaltexte sind — René fragen.
 - **„Pharma" gibt es nicht mehr** (Seite gelöscht).
 - Menü heißt **„Ihre Experten"** (Datei `ihre-experten.html`) — **Stand 28.07.2026**. Vorher „Ihre Expertinnen" (V3.12–V4.26), davor „Über uns". René hat zurück auf die männliche/neutrale Form gewechselt.
 - **Bianka** immer mit K.
@@ -87,7 +91,7 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 - Bereits eingebaut: `Forma_Text-0726.docx`, `Hydrafacial_Text-0726.docx`, `Hautanalyse-0726.docx`, `Haarkonzept.docx` (V4.24).
 - **Ausnahme V4.21:** Der Block „Individuelle Beratung" aus `Forma_Text-0726.docx` ist auf Renés ausdrücklichen Wunsch **entfernt** — nicht versehentlich, nicht wieder einbauen.
 - **Kein „Behandlungen, die dazu passen" mehr.** Der `.related`-Abschnitt ist seit V4.21 von allen 10 Behandlungsseiten entfernt (René), samt CSS. Nicht neu anlegen.
-- **Du/Sie ist jetzt gemischt (V4.32):** Der Vorstellungsblock auf der Startseite steht in der **Du**-Form (Text von René so geschickt, 1:1 übernommen), Hero und alle anderen Seiten in der **Sie**-Form. Zusätzlich wiederholt der zweite Absatz fast wörtlich die Hero-Zeile darüber. **Entscheidung von René/Sabrina steht aus** — nicht eigenmächtig angleichen.
+- **✅ Du/Sie ist entschieden (René, 30.07.2026): alles in der Sie-Form.** „Es wird niemand mit dem persönlichen du angesprochen." Der Du-Block auf der Startseite ist in V4.46 durch Sabrinas Neufassung ersetzt; über alle 23 Seiten gemessen bleibt **keine** Du-Anrede. **Einzige Ausnahme: das Coco-Chanel-Zitat** („das Gesicht, das du mit 20 hast"). ✅ **Von René entschieden (30.07.2026): bleibt so** — „dadurch, dass es ein Zitat ist, muss es so bleiben." Nicht anfassen, nicht wieder aufrollen.
 - **Helle Schrift auf dem Hero-Foto:** immer Cremeweiß (`--paper`), nie Sand oder Taupe. In V4.29/4.30 standen „seit" und der Stern in Sand-Taupe und gingen auf dem Foto unter (René per Screenshot). In V4.31 behoben.
 
 ## Partnerlogos (V4.34)
@@ -137,14 +141,14 @@ Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Br
 - Nicht überimplementieren, aber **echte Folgeprobleme mitlösen** und benennen.
 
 ## Offene Punkte
-1. **NiSV-Siegel platzieren.** Datei liegt fertig unter `assets/nisv-siegel.png` (rund freigestellt, 640 px). War kurz im Hero (zu gedrängt neben dem Meisterbetrieb-Siegel) und in der Fußzeile — René: „nimm es erst nochmal raus, packe es auf die noch-erledigen-Liste." **Offene Frage: wo soll es hin?** Denkbar: eigener Vertrauensabschnitt auf der Startseite · auf `aesthetische-konzepte.html` (dort gehören die apparativen Behandlungen hin, für die der Nachweis gilt) · in der Trust-Leiste.
+1. **NiSV-Siegel platzieren.** Datei liegt fertig unter `assets/nisv-siegel.png` (rund freigestellt, 640 px). Am 30.07.2026 erneut angeboten (der neue EMShape-Text nennt die NiSV-Fachkunde EMF ausdrücklich, das wäre der natürliche Ort) — **René: „lass es noch liegen."** Also liegen lassen, bis er es von selbst anspricht. Denkbare Orte, wenn es soweit ist: `ems-shape.html` beim Qualifikationsblock · eigener Vertrauensabschnitt auf der Startseite · `aesthetische-konzepte.html`.
 2. **Meisterbetrieb-Siegel** ist seit V4.41 Sabrinas fertige Datei — erledigt.
 2. **Icon-Optik (V3.13) gefällt René „noch nicht ganz"** — beim Wiederaufgreifen nachfragen, was genau stört.
 2. **Blog-Backend**, damit Sabrina selbst Beiträge einstellen kann (Decap CMS / GitHub / manuell).
 3. **Formularversand** freischalten (siehe oben).
 4. **Rechtsseiten** von Sabrina/Anwalt vervollständigen lassen.
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
-6. Homepage-Text Du/Sie entscheiden · Dateinamen angleichen.
+6. Dateinamen angleichen. *(Du/Sie ist erledigt — siehe die Textregeln oben, alles Sie-Form, Chanel-Zitat ausgenommen.)*
 7. **Videos für die drei Kundenstimmen-Platzhalter** auf der Startseite (V4.33) — Sabrina reicht sie nach. Einbau: `<video controls preload="none" poster="…">` statt `.vt-ph`, vorher auf <100 MB kodieren.
 8. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). Auf **Haarkonzept** fehlt nur noch **Bildmaterial** (Logo ist seit V4.28 drin). **„Kontakt"** ist der einzige verbliebene tote Menüpunkt.
 9. **Freigabe der Badischen Zeitung** für den Artikelscan auf `aktuelles.html` einholen.

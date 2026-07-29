@@ -254,19 +254,26 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .hero-meta .label{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.7);margin-top:8px;font-weight:500}
 
 /* ---------- Trust: schwebende Pillen ---------- */
+/* Vier Kaestchen seit V4.46. Bewusst ein Raster mit fester Spaltenzahl statt
+   flex-wrap mit 260-px-Basis: bei flex haengt der Umbruch am Zusammenspiel von
+   --pad und --maxw, und genau dadurch fiel das vierte Kaestchen bei 1200 px
+   allein in eine 1080 px breite Zeile. Die Spaltenzahl ist jetzt eindeutig. */
 .trust{
-  display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
   max-width:var(--maxw);margin:clamp(-40px,-4vw,-30px) auto 0;position:relative;z-index:5;
   padding-block:0
 }
+@media (max-width:1180px){.trust{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:619px){.trust{grid-template-columns:minmax(0,1fr)}}
 .trust .item{
-  flex:1 1 260px;background:var(--paper);border-radius:var(--r);padding:26px 28px;
+  background:var(--paper);border-radius:var(--r);padding:26px 28px;
   box-shadow:var(--sh);border:1px solid rgba(255,255,255,.7);text-align:center;
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)
 }
 .trust .item:hover{transform:translateY(-5px);box-shadow:var(--sh-l)}
 .trust .item .num{display:none}
-.trust .item .text{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink);line-height:1.6}/* ==========================================================================
+.trust .item .text{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink);line-height:1.6}
+/* ==========================================================================
    KACHELN (Behandlungen, Blog) — Bildzoom + Karte hebt sich
    ========================================================================== */
 .treatments-grid,.blog-grid{
@@ -507,6 +514,10 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .faq .answer p,.faq .answer li{font-size:15.5px;line-height:1.8;color:var(--ink-soft)}
 .faq .answer ul{margin-left:20px}
 .faq .answer li{margin-bottom:7px}
+/* Schlusszeile unter einem FAQ (V4.46). Auf der Beckenbodenseite stand dieser
+   Satz als Akkordeon mit leerer Antwort — er ist keine Frage, sondern ein Fazit. */
+.faq-schluss{margin:clamp(22px,2.4vw,32px) auto 0;max-width:760px;text-align:center;
+  font-size:17px;line-height:1.7;color:var(--taupe-dark)}
 
 /* ---------- Story / Profil ---------- */
 .story-inner,.bianca-inner,.p-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,76px);align-items:center}
@@ -665,6 +676,20 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   outline:none;border-color:var(--taupe-dark);box-shadow:0 0 0 4px rgba(194,180,169,.28)}
 .anfrage input:disabled,.anfrage textarea:disabled,.anfrage select:disabled{
   background:rgba(233,227,218,.5);color:var(--taupe-dark);cursor:not-allowed}
+/* Pflicht-Einwilligung (V4.46). Die allgemeine Regel `.anfrage input` setzt
+   width:100% und 15px Polster — auf einer Checkbox waere das ein Riesenkasten,
+   darum hier eigene Masse. Kasten in Creme, damit die Zeile als eigener Schritt
+   vor dem Absenden gelesen wird und nicht als weiteres Eingabefeld. */
+.f-consent{display:flex;align-items:flex-start;gap:13px;cursor:pointer;
+  background:var(--creme);border-radius:var(--r-s);padding:18px 20px}
+.f-consent input[type=checkbox]{
+  width:19px;height:19px;flex:none;margin:3px 0 0;padding:0;border-radius:5px;
+  accent-color:var(--taupe-dark);cursor:pointer}
+.f-consent input[type=checkbox]:disabled{cursor:not-allowed}
+.f-consent:has(input:disabled){cursor:not-allowed;opacity:.72}
+.f-consent span{font-size:13.5px;line-height:1.7;color:var(--ink-soft)}
+.f-consent em{font-style:normal;color:var(--taupe)}
+.f-consent a{color:var(--taupe-dark);text-decoration:underline;text-underline-offset:3px}
 .f-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:8px}
 .f-actions .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
 .f-hint{font-size:12.5px;line-height:1.6;color:var(--taupe-dark);max-width:420px}
@@ -1062,9 +1087,16 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .erg:hover{transform:translateY(-4px);box-shadow:var(--sh)}
 .erg img{display:block;width:100%;height:auto}
 
-.vidgal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:clamp(14px,1.8vw,24px)}
-.vid-k{margin:0}
+/* Videogalerie (V4.46) — jetzt wie die Kundenstimmen auf der Startseite:
+   feste, gedeckelte Kartenbreite statt 1fr-Spalten.
+   Vorher stand hier repeat(auto-fit,minmax(240px,1fr)). Das teilt die volle
+   Breite unter den vorhandenen Karten auf — gemessen bei 1440px Fenster:
+   644x1145 px bei zwei Videos (Skin Needling), 1312x2332 px bei einem
+   (Forma, Hydrafacial, Chemische Peelings). Ein 9:16-Video wurde dadurch zur
+   Riesensaeule. Flex + clamp deckelt die Karte und zentriert die Reihe. */
+.vidgal-grid{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:clamp(16px,2vw,30px)}
+.vid-k{margin:0;width:clamp(210px,19vw,290px)}
 .vid-k video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
   border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh)}
 .vid-k figcaption{margin-top:12px;text-align:center;font-size:11px;letter-spacing:.16em;

@@ -681,6 +681,75 @@ Alles lokal gebaut und im Browser geprüft. Live steht seit dem Stopp eine neutr
 
 ---
 
+## V4.40 – V4.45 — „Sabrinas eigene Medien"  ✅ deployt (Stand 29.07.2026 live)
+
+Nachträglich eingetragen — diese sechs Schritte liefen in einer Sitzung durch und sind hier zunächst nicht dokumentiert worden.
+
+- **V4.40 / V4.41** Meisterbetrieb-Siegel durch **Sabrinas eigene Datei** ersetzt (`assets/meisterbetrieb-siegel.png`). Der selbst gezeichnete dritte Entwurf ist damit vom Tisch.
+- **V4.42** Behandlungs-Galerie (`assets/ergebnisse/`) auf `aesthetische-konzepte.html` · Biankas Foto auf Experten- und Profilseite · NiSV-Siegel eingebaut und auf Renés Wunsch **wieder entfernt** (liegt fertig, Platzierung offen).
+- **V4.43** Auf allen Behandlungsseiten geprüft: **erst FAQ, dann Rezensionen.**
+- **V4.44** Vorher-Nachher-Bilder und Kundenvideos aus Sabrinas zwei neuen Ordnern eingebaut, Videos vorher auf 1080p kodiert.
+- **V4.45** Hydrafacial-Erklärvideo (182 MB 4K → 6,8 MB) · Startseiten-Videos von 643 px auf 274 px Kartenbreite verkleinert.
+
+---
+
+## V4.46 — „Neues Portrait von Sabrina"  ⏸ **nicht deployt** (René: „kein Deploy, bis ich es sage")
+
+- Auf `ihre-experten.html` steht statt `story.jpg` jetzt **`assets/sabrina-herose.jpg`** — Sabrinas neues Foto (960 × 1280, 71 KB).
+- **Warum das besser passt:** Der Rahmen ist `aspect-ratio:4/5`. Das alte `story.jpg` war Querformat (1600 × 839) und wurde darin auf ein Drittel seiner Breite beschnitten. Das neue Bild ist 3:4 — nachgemessen bleiben nur **24 px oben und 24 px unten** (6,3 % gesamt), der Kopf liegt vollständig im Bild.
+- `story.jpg` bleibt liegen, nichts überschrieben. Es wird jetzt von **keiner** Seite mehr benutzt.
+- Cache-Stempel und Fußzeilenversion auf allen 23 Seiten auf 4.46.
+
+**Weiter in V4.46 (alles lokal, kein Deploy — René: „kein Deploy, bis ich es sage"):**
+- **Zahlungsoptionen:** Platzhalter ersetzt durch den echten Finanzierungslink **medkred.de**. Sabrinas Fließtext nennt den Partner „Medkredit", die Domain lautet `medkred.de` — Text unangetastet, Button zeigt die Domain.
+- **Startseite:** Vorstellungstext durch Sabrinas Neufassung ersetzt (3 statt 6 Absätze). Damit ist der **Du/Sie-Bruch weg** — die alte Fassung war die einzige Du-Stelle der Seite. Kennzahl „seit 2004" → **„Erfahrung seit 2004"**. Rollenzeile am Bild bekommt hinten ein zweites „—". **Viertes Trust-Kästchen „1. Meister in der Region".**
+- **Trust-Leiste von flex auf Raster.** Mit vier Kästchen fiel das vierte bei 1200 px allein in eine 1080 px breite Zeile (gemessen), weil der Umbruch bei `flex-wrap` am Zusammenspiel von `--pad` und `--maxw` hing. Jetzt feste Spaltenzahl: 4 · 2×2 ab 1180 px · gestapelt ab 620 px. Nachgemessen bei 1440/1200/1000/900/375.
+- **Videogalerie auf vier Seiten korrigiert.** `.vidgal-grid` war `auto-fit minmax(240px,1fr)` — gemessen 644×1145 px bei zwei Videos (Skin Needling), **1312×2332 px bei einem** (Forma, Hydrafacial, Chemische Peelings). Jetzt wie die Kundenstimmen auf der Startseite: Flex mit gedeckelter Kartenbreite → **274×486 px**.
+- **Skin Needling:** neuer Block „Wirkstoffe & Technik" (Exosome, PDRN, Faltentechniken), 2 Absätze zeichengenau geprüft.
+- **Chemische Peelings:** neuer Block „Anwendungsgebiete Chemisches Peeling", 10 Stichworte als zweispaltige Punktliste.
+- **EMShape X:** war fast leer. Neu: Körperregionen, „Qualifikation & Kompetenz" (NiSV-Fachkunde EMF + Fitnesstrainer C-Lizenz), Hinweis-Kasten und **13 FAQ** — der FAQ-Platzhalter ist damit weg. Alle 51 Text­einheiten gegen die Vorlage geprüft.
+- **EMShape X Beckenboden:** neuer Einstiegsblock „Warum ist ein gesunder Beckenboden so wichtig?" (18 Zeilen, 1:1). **Zwei kaputte FAQ-Einträge repariert:** Frage und Antwort waren beim Import verrutscht („Ist der Beckenbodenstuhl in Wehr anstrengendNein. Sie sitzen…"), die nächste Frage stand in der Antwort — jetzt zwei saubere Einträge. Außerdem drei `👉`-Reste aus der .docx entfernt und den Werbesatz, der als Akkordeon **mit leerer Antwort** im FAQ stand, zur zentrierten Schlusszeile gemacht (`.faq-schluss`).
+- **Datenschutz:** Kundenkontakt nur noch telefonisch oder per WhatsApp, E-Mail gestrichen. Die Adresse beim Verantwortlichen bleibt — die ist nach Art. 13 DSGVO / § 5 DDG vorgeschrieben.
+- **Impressum:** hinter der E-Mail steht jetzt „(nur Rechnungs-E-Mail-Adresse)".
+- **Anfrageformular:** E-Mail-Feld entfernt, „E-Mail" als Kontaktweg raus, **Pflicht-Einwilligung als Checkbox** ergänzt (nennt die Hautangaben ausdrücklich — Art. 9 DSGVO, verlinkt Datenschutz und AGB). Zwei Altlasten mitgenommen: der Telefonlink in der Hinweiszeile hatte ein Leerzeichen mitten in der Nummer (`tel:+4977628056 69`), und die mit `*` markierten Felder trugen gar kein `required`.
+- **Ganze Seite auf Sie-Form geprüft:** über alle 23 Seiten bleibt **keine** Du-Anrede — außer im Coco-Chanel-Zitat, das als Zitat mit Quellenangabe steht und deshalb nicht angetastet wurde.
+
+---
+
+## V4.47 — „Renés Entscheidungen zu V4.46"  ⏸ **nicht deployt**
+
+Vier offene Fragen aus V4.46 von René beantwortet, alles umgesetzt:
+
+- **Startseite:** „ich bin Sabrina Herosé" → **„Ich"** groß. (Der Kleinbuchstabe stand so in Renés Nachricht; er hat die Korrektur ausdrücklich angeordnet — das ist die *einzige* erlaubte Abweichung von seinem Text.)
+- **Coco-Chanel-Zitat bleibt in der Du-Form.** René: „dadurch, dass es ein Zitat ist, muss es so bleiben." **Nicht wieder aufrollen.**
+- **EMShape X: Schreibweise angeglichen.** Renés Vorlage schrieb durchgehend „EM Shape X"; auf seinen Wunsch überall auf die etablierte Schreibweise **„EMShape X"** umgestellt (20 Stellen, nachgemessen: 0 Treffer mit Lücke im Seitentext, 18 im sichtbaren Text ohne). Das **®** trägt weiter nur die Überschrift, nicht der Fließtext.
+- **Chemische Peelings: die beiden Blöcke sind zusammengeführt.** „Anwendungsgebiete Chemisches Peeling" enthält jetzt erst die 10 Indikationen als Liste, dann die zwei Absätze über die Körperregionen. Die doppelte Überschrift „Anwendungsbereiche" ist weg.
+- **NiSV-Siegel bleibt liegen** — René: „lass es noch liegen." Datei unter `assets/nisv-siegel.png`, weiter unbenutzt.
+- **„Infos zu Sabrinas Ablauf" ist gestrichen.** Der Text kam nie an, René: „keine Ahnung was da war." Stand ohnehin in keiner Doku — nur im Gesprächsverlauf. **Nicht nachfragen.**
+
+---
+
+## V4.48 – V4.50 — „® jetzt auch im Fließtext"  ⏸ **nicht deployt**
+
+**Regeländerung, René am 30.07.2026:** „bei EMShape X muss das R im Kreis dabei stehen" · „es muss auch bei den anderen Behandlungen immer im Text auch dabei stehen."
+
+Bis dahin hielt die Seite es wie in der Markenpraxis üblich: ® nur an 3–4 prominenten Stellen (Titel, H1, Kachel), im Fließtext nicht. Gemessen war das auf `forma.html` 3 mit / 12 ohne und auf `hydra-facial.html` 4 mit / 11 ohne. **Das gilt nicht mehr — ® steht jetzt an jedem sichtbaren Vorkommen.**
+
+- **V4.48** EMShape X: 29 Stellen (`ems-shape.html` 23, `shape-beckenboden.html` 6).
+- **V4.49** Forma 13 · Hydrafacial 11 · HydraFacial 14 · ONETEC 17 = **55 Stellen** auf vier Seiten.
+- **Nur in Textknoten gesetzt**, nicht in `alt=`, `title=` oder der Meta-Description — ein ® im Alt-Text ist für Screenreader nur Geräusch. Auch nicht in Code-Kommentaren.
+- **Hydralift bleibt ohne ®** (11 Stellen), es steht nicht auf der Liste in `CLAUDE.md`.
+- **V4.50 Nachtrag:** René fand „Termin für FORMA in Wehr vereinbaren" ohne ®. **Ursache: mein Prüflauf war groß-/kleinschreibungsempfindlich** und hat nur nach „Forma" gesucht — die 9 Stellen in **Großbuchstaben („FORMA")** sind ihm dadurch entgangen, 8 im FAQ und 1 in der Terminüberschrift. Nachgesetzt. Danach **case-insensitive** über alle Seiten und alle fünf Namen geprüft: 0 offen.
+  📌 **Lehre:** Sabrinas Texte schreiben Markennamen in mehreren Schreibweisen (FORMA/Forma, ONETEC/Onetec, HydraFacial/Hydrafacial). Wer hier etwas prüft, **muss `re.I` benutzen** — sonst bleiben Varianten liegen.
+- Gegengeprüft: 0 verbleibende Stellen ohne ®, **0 doppelte ®**, und kein Fehlgriff in „Information", „Format" oder „Hydralift" — dafür sorgt die Wortgrenze hinter dem Namen.
+
+**Dabei aufgefallen, absichtlich NICHT geändert (Sabrinas Originalschreibweisen):**
+- **„Hydrafacial" 11× und „HydraFacial" 14×** auf denselben Seiten — zwei Großschreibungen desselben Namens. `CLAUDE.md` gibt „Hydrafacial" vor.
+- **„ONETEC" 17× und „Onetec" 4×.** `CLAUDE.md` gibt „Onetec" vor.
+Beides kommt aus ihren .docx-Texten und wurde nicht angeglichen — Entscheidung liegt bei René.
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
