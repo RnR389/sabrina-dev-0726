@@ -750,6 +750,21 @@ Beides kommt aus ihren .docx-Texten und wurde nicht angeglichen — Entscheidung
 
 ---
 
+## V4.51 – V4.53 — „Kontaktseite, Gruppenbild, Handynummer-Prüfung"  ⏸ **nicht deployt**
+
+- **Handynummer-Prüfung im Anfrageformular (V4.51).** Eine Festnetznummer kann kein WhatsApp empfangen — wer sie trotzdem als bevorzugten Weg wählt, wartet auf eine Nachricht, die nie kommt. `hautnah.js` Abschnitt **1f** erkennt jetzt Mobil- und Festnetznummern (DE 015x/016x/017x · CH 074–079 · AT 06xx) und sperrt WhatsApp bei Festnetz. War WhatsApp schon gewählt, wird die Auswahl zurückgesetzt.
+  **Grundsatz: nur sperren, wenn wir sicher sind.** Unbekannte Vorwahl, zu kurz oder noch im Tippen → WhatsApp bleibt wählbar.
+  📌 **Grenzfall Wehr, beim Testen gefunden:** „079 123 45 67" ohne Ländervorwahl ist zweideutig — Schweizer **Mobil**nummer *oder* deutsche **Festnetz**nummer aus genau dieser Ecke (Wehr = 07762, Lörrach = 07621). Der erste Entwurf hat stillschweigend „deutsch" angenommen und damit Schweizer Kunden ausgesperrt. Jetzt über die Länge unterschieden (CH national = immer 10 Ziffern). **13 Nummern durchgetestet, alle richtig.**
+  Der Code steht bewusst **vor** der Einblende-Logik — dahinter liegen drei frühe `return`, die hier schon einmal Handler verschluckt haben.
+- **Neue Seite `kontakt.html` (V4.52).** Damit ist der **letzte tote Menüpunkt** weg: „Kontakt" stand auf 24 Seiten je zweimal ohne Link (Menü und Fußzeile), 48 Stellen. Inhalt: Kontaktbild, Anschrift, Telefon, WhatsApp, E-Mail (als Rechnungsadresse gekennzeichnet), Öffnungszeiten mit Aufschlagregel, Anfahrt und Parken, Karte, Verweis aufs Formular.
+- **Karte auf OpenStreetMap statt Google.** Getragen von der OpenStreetMap Foundation, keine Werbe-Cookies, kein Profil. Trotzdem als Zwei-Klick-Lösung: **gemessen 0 Fremdanfragen vor dem Klick.** Die Kartenquelle steht jetzt am Knopf (`data-map-src`), damit Seiten verschiedene Anbieter nutzen können.
+  📌 **Koordinaten nicht geschätzt.** Mein erster Ansatz lag rund 300 m daneben. Die verwendeten **47.6256233, 7.9045907** stammen aus dem OSM-Geocoder für „Hauptstraße 3, 79664 Wehr".
+- **Gruppenbild auf „Ihre Experten".** Die Seite hatte **gar keine `<h1>`** — sie startete direkt mit dem Story-Block. Jetzt Kopfbereich mit Bild, Überschrift und Brotkrümelnavigation. Querformat 4:3 im passenden Rahmen, **0 % Beschnitt**.
+- **Mikrokamera auf „Haut & Haarcheck" (V4.53).** Freigestelltes Produktfoto auf Weiß, deshalb eigene Variante `.ist-produkt`: `object-fit:contain`, weiße Fläche, kein Parallaxen-Überstand — mit dem normalen `cover` hätte der Rahmen die Objektive unten abgeschnitten. **Zweiter Platzhalter entfernt**, der genau dieses Bild anforderte und jetzt ein Widerspruch gewesen wäre. Die Seite ist damit platzhalterfrei.
+- Bildnachweis für die Herstelleraufnahme im Impressum ergänzt.
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```

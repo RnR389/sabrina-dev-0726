@@ -232,26 +232,55 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
   color:var(--paper);margin-bottom:28px
 }
 .hero-badge .stars{color:var(--sand);letter-spacing:.14em}
+/* NiSV-Siegel im Hero (V4.94) — steht dort, wo bis V4.93 die Kennzahlen
+   standen. Trennlinie darueber wie zuvor bei den Kennzahlen, damit der Hero
+   seinen Rhythmus behaelt. Heller Ring und Schatten, weil ein helles Siegel
+   sonst auf dem hellen Foto untergeht — dieselbe Regel wie beim
+   Meisterbetrieb-Siegel. */
+.hero-siegel{margin-top:34px;padding-top:26px;
+  border-top:1px solid rgba(250,246,239,.22);
+  display:flex;justify-content:center}     /* mittig in der Textspalte */
+.hero-siegel img{display:block;width:clamp(112px,10.5vw,148px);height:auto;
+  border-radius:50%;
+  box-shadow:0 0 0 4px rgba(250,246,239,.85),
+             0 14px 34px -14px rgba(58,50,44,.45)}
+
 .hero-tag{position:absolute;right:clamp(24px,4vw,58px);bottom:clamp(24px,4vw,52px);z-index:3;text-align:right}
 .hero-tag .signature-name{font-size:clamp(18px,1.6vw,23px);font-weight:300;color:var(--paper);line-height:1.1}
 .hero-tag .role{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.72);margin-top:7px;font-weight:500}
-.hero-meta{display:flex;gap:clamp(18px,2.6vw,38px);flex-wrap:wrap;align-items:flex-start;
-  margin-top:36px;padding-top:28px;border-top:1px solid rgba(250,246,239,.22)}
-/* Zahl ueber Bezeichnung — die Spans waren inline, dadurch lief alles in eine
-   Zeile und laengere Bezeichnungen haben die Reihe umbrechen lassen. */
-.hero-meta .item{max-width:230px}
-.hero-meta .num,.hero-meta .label{display:block}
-.hero-meta .num{font-size:clamp(22px,2.2vw,30px);font-weight:200;color:var(--paper);line-height:1}
-/* "seit" laeuft kleiner mit, damit die Jahreszahl die Hauptrolle behaelt —
-   aber in Cremeweiss. In Sand-Taupe (V4.29/4.30) ging es auf dem dunklen Foto
-   unter, ebenso der Stern, der die Regel geerbt hat. */
-.hero-meta .num em.pre{font-style:normal;font-size:.52em;font-weight:500;
-  letter-spacing:.07em;color:rgba(250,246,239,.94);vertical-align:.3em;margin-right:.2em}
-/* Der Stern gehoert optisch zur Zahl: gleiche Farbe, nur leicht kleiner. */
-.hero-meta .num em{font-style:normal;color:var(--paper);font-size:.86em;
-  vertical-align:.04em;margin-left:.06em}
-.hero-meta .num,.hero-meta .label{text-shadow:0 1px 12px rgba(58,50,44,.45)}
-.hero-meta .label{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.7);margin-top:8px;font-weight:500}
+/* Kennzahlen als Kaesten (V4.107) — Glasoptik wie die Kachel darueber, damit
+   sie auf dem Foto lesbar bleiben, ohne es zuzudecken. Beide Kaesten sind
+   gleich hoch, weil die Umbrueche fest im HTML stehen: automatischer Umbruch
+   haette je nach Fensterbreite mal zwei, mal drei Zeilen ergeben. */
+.hero-meta{display:flex;gap:clamp(12px,1.4vw,18px);flex-wrap:wrap;
+  align-items:stretch;margin-top:36px;padding-top:28px;
+  border-top:1px solid rgba(250,246,239,.22)}
+.hero-tag{position:absolute;right:clamp(24px,4vw,58px);bottom:clamp(24px,4vw,52px);z-index:3;text-align:right}
+.hero-tag .signature-name{font-size:clamp(18px,1.6vw,23px);font-weight:300;color:var(--paper);line-height:1.1}
+.hero-tag .role{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.72);margin-top:7px;font-weight:500}
+/* Kennzahlen als Kaesten (V4.107) — Glasoptik wie die Kachel darueber, damit
+   sie auf dem Foto lesbar bleiben, ohne es zuzudecken. Beide Kaesten sind
+   gleich hoch, weil die Umbrueche fest im HTML stehen: automatischer Umbruch
+   haette je nach Fensterbreite mal zwei, mal drei Zeilen ergeben. */
+.hero-meta{display:flex;gap:clamp(12px,1.4vw,18px);flex-wrap:wrap;
+  align-items:stretch;margin-top:36px;padding-top:28px;
+  border-top:1px solid rgba(250,246,239,.22)}
+/* Gleiche Bauart wie die Kaestchen der Trust-Leiste darunter: weisse Karte,
+   zentrierte Versalien, gleicher Radius und Schatten. Beide Kaesten teilen
+   sich die Breite (flex:1), damit sie gleich gross sind. */
+.hm-box{flex:1 1 0;min-width:0;
+  background:var(--paper);border-radius:var(--r);padding:22px 20px;
+  box-shadow:var(--sh);border:1px solid rgba(255,255,255,.7);
+  display:grid;place-items:center;text-align:center}
+.hm-box .text{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;color:var(--ink);line-height:1.6}
+
+.hero-tag{position:absolute;right:clamp(24px,4vw,58px);bottom:clamp(24px,4vw,52px);z-index:3;text-align:right}
+.hero-tag .signature-name{font-size:clamp(18px,1.6vw,23px);font-weight:300;color:var(--paper);line-height:1.1}
+.hero-tag .role{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.72);margin-top:7px;font-weight:500}
+/* V4.107: Der alte Kennzahlen-Block (Zahl ueber Bezeichnung) stand hier und
+   hat den neuen Kasten-Block weiter oben ueberschrieben, weil er spaeter in
+   der Datei kam. Entfernt. */
 
 /* ---------- Trust: schwebende Pillen ---------- */
 /* Vier Kaestchen seit V4.46. Bewusst ein Raster mit fester Spaltenzahl statt
@@ -259,20 +288,24 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
    --pad und --maxw, und genau dadurch fiel das vierte Kaestchen bei 1200 px
    allein in eine 1080 px breite Zeile. Die Spaltenzahl ist jetzt eindeutig. */
 .trust{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
+  /* Seit V4.109 FUENF Kaestchen — die beiden Aussagen aus dem Hero sind
+     hierher gewandert. */
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;
   max-width:var(--maxw);margin:clamp(-40px,-4vw,-30px) auto 0;position:relative;z-index:5;
   padding-block:0
 }
-@media (max-width:1180px){.trust{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:619px){.trust{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1240px){.trust{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){.trust{grid-template-columns:minmax(0,1fr)}}
 .trust .item{
-  background:var(--paper);border-radius:var(--r);padding:26px 28px;
+  /* Knapperes Polster fuer fuenf Spalten: die Kaestchen sind dann nur noch
+     rund 227 px breit und der laengste Text muss trotzdem zweizeilig bleiben. */
+  background:var(--paper);border-radius:var(--r);padding:22px 16px;
   box-shadow:var(--sh);border:1px solid rgba(255,255,255,.7);text-align:center;
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)
 }
 .trust .item:hover{transform:translateY(-5px);box-shadow:var(--sh-l)}
 .trust .item .num{display:none}
-.trust .item .text{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink);line-height:1.6}
+.trust .item .text{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;color:var(--ink);line-height:1.6}
 /* ==========================================================================
    KACHELN (Behandlungen, Blog) — Bildzoom + Karte hebt sich
    ========================================================================== */
@@ -340,6 +373,56 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 /* Überstand oben/unten, damit die Parallaxe keine Kante freilegt */
 .t-hero-img img{position:absolute;top:-7%;left:0;width:100%;height:114%;
   object-fit:cover;will-change:transform}
+/* Querformat-Variante (V4.51). Der Standardrahmen ist 6/5.5, also fast
+   quadratisch — ein 4:3-Bild wuerde darin links und rechts beschnitten. */
+.t-hero-quer .t-hero-img{aspect-ratio:4/3}
+
+/* Titelbild (V4.54) — nur Bild, keine Textspalte.
+   Die Maße muessen EXAKT denen von .story-inner darunter entsprechen: gleiches
+   max-width, gleiches padding-inline ueber die Section. Deshalb hier bewusst
+   kein eigenes Maß erfinden, sondern dieselben Variablen benutzen.
+   width:100% + height:auto statt object-fit: so bleibt das Seitenverhaeltnis
+   des Bildes unveraendert, nichts wird beschnitten oder gestaucht. */
+.titelbild{padding-block:0;margin-top:clamp(6px,1vw,14px)}
+.titelbild-inner{max-width:var(--maxw);margin-inline:auto}
+.titelbild-inner img{display:block;width:100%;height:auto;
+  border-radius:var(--r-l);box-shadow:var(--sh-l)}
+/* Hochformat-Variante fuer das Kontaktbild (3:4). */
+.t-hero-hoch .t-hero-img{aspect-ratio:4/5}
+/* Produktbild statt Raumfoto (V4.52), fuer die Mikrokamera auf Haut & Haarcheck.
+   Ein freigestelltes Geraet auf Weiss vertraegt kein object-fit:cover — der
+   Rahmen wuerde die Objektive unten abschneiden. Also contain, weisse Flaeche
+   und Innenabstand. Das Bild traegt hier kein data-parallax, deshalb braucht
+   es auch den Ueberstand von 114 % nicht. */
+/* Nachweis Originalgeraet (V4.61). Logo links, Aussage rechts, auf schmalen
+   Schirmen gestapelt und zentriert. Das Logo ist ein PNG in fester Box
+   520x150 (wie in der Partnerleiste) — deshalb ueber die Hoehe steuern und
+   width:auto, sonst verzerrt es. */
+.original-band{padding-block:0;margin-block:clamp(4px,1.2vw,16px)}
+.original-inner{max-width:var(--maxw);margin-inline:auto;
+  display:flex;align-items:center;gap:clamp(20px,3vw,46px);flex-wrap:wrap;
+  background:var(--creme);border-radius:var(--r-l);
+  padding:clamp(20px,2.6vw,30px) clamp(24px,3.2vw,42px)}
+.original-inner img{height:clamp(30px,3vw,42px);width:auto;flex:none;display:block}
+.original-text{flex:1 1 320px;min-width:0}
+.original-lab{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;color:var(--taupe-dark);margin-bottom:7px}
+.original-text p{font-size:15.5px;line-height:1.7;color:var(--ink);margin:0}
+@media (max-width:640px){
+  .original-inner{flex-direction:column;text-align:center}
+  .original-text{flex:1 1 auto}
+}
+
+/* Quadratische Variante (V4.55), fuer die Vorher-Nachher-Collage auf
+   Haarkonzept. Rahmen 1:1 wie das Bild, damit gar nichts beschnitten wird —
+   bei einer 2x2-Collage saehe jeder Anschnitt nach Fehler aus. Ohne den
+   Parallaxen-Ueberstand, das Bild traegt hier kein data-parallax. */
+.t-hero-quadrat{aspect-ratio:1/1}
+.t-hero-quadrat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.t-hero-img.ist-produkt{background:#fff;aspect-ratio:4/5}
+.t-hero-img.ist-produkt img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;padding:clamp(20px,2.6vw,38px)}
 .t-hero-img .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
   justify-content:center;gap:12px;color:rgba(250,246,239,.6)}
 .t-hero-img .ph .ico,.t-hero-img .ph .txt{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
@@ -613,25 +696,60 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   .nav-toggle:checked ~ .nav-burger span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
   .infobar span:nth-child(2){display:none}
 }
+/* ==========================================================================
+   MOBILE ANSICHT (ueberarbeitet V4.86)
+   Gemessen bei 375 px, danach gezielt geaendert. Die Befunde standen alle im
+   Weg, wenn die Seite hochwertig wirken soll:
+     - Die Infozeile lief ueber ZWEI Zeilen und ihr erster Eintrag
+       ("Erstes 5-Sterne-Fachinstitut") stand woertlich noch einmal als Kachel
+       im Hero direkt darunter. Doppelt gesagt wirkt nie edel.
+     - Die Kachel selbst brauchte DREI Zeilen (267x67 px) — ein Textklumpen.
+     - Das Hero-Bild war nur 270 px hoch bei 62vw: ein breiter Streifen, in dem
+       Sabrina klein und angeschnitten wirkte.
+     - Die Kontaktleiste lag mit voller Deckkraft ueber dem Flie&szlig;text.
+   ========================================================================== */
 @media (max-width:680px){
   body{font-size:15.5px}
-  .hero{min-height:auto;margin-inline:12px}
-  .hero-image{position:relative;inset:auto;order:-1;height:62vw;min-height:270px;max-height:340px}
-  .hero-image img{position:absolute;top:0;height:100%;transform:none !important}
-  .hero-text{padding:24px 20px 28px;background:var(--ink);max-width:none}
-  .hero-text h1{text-shadow:none;font-size:clamp(28px,7.6vw,36px)}
-  .hero-text .lead{font-size:15px;margin:18px 0 24px}
-  .hero-badge{margin-bottom:20px;padding:9px 16px;font-size:9.5px;letter-spacing:.1em}
-  /* Die Kennzahlen stehen direkt darunter in der Trust-Leiste — mobil doppelt */
+
+  /* Infozeile: nur noch die Oeffnungszeiten, EINE Zeile. Die Auszeichnung
+     steht als Kachel im Hero, die Rufnummer in der Kontaktleiste, die
+     Anschrift in der Fusszeile — hier waere alles davon Wiederholung. */
+  .infobar{font-size:9.5px;letter-spacing:.09em;padding-block:9px}
+  .infobar span:nth-child(1),
+  .infobar span:nth-child(2),
+  .infobar span:nth-child(3){display:none}
+
+  /* Hero als eine Karte: Bild oben, dunkler Textblock darunter, gemeinsame
+     Rundung. Das Bild deutlich hoeher (4:3 statt flacher Streifen), damit
+     Sabrina gross und ruhig steht statt angeschnitten. */
+  .hero{min-height:auto;margin-inline:12px;border-radius:var(--r-l)}
+  .hero-image{position:relative;inset:auto;order:-1;
+    height:min(96vw,420px);min-height:320px}
+  .hero-image img{position:absolute;top:0;height:100%;transform:none !important;
+    object-position:center 22%}      /* Gesicht ins obere Drittel holen */
+  .hero-text{padding:26px 22px 30px;background:var(--ink);max-width:none}
+
+  /* Kachel: engere Sperrung und weniger Polster -> zwei statt drei Zeilen. */
+  .hero-badge{margin-bottom:22px;padding:8px 15px;font-size:9px;letter-spacing:.07em;
+    line-height:1.5}
+  .hero-badge .stars{letter-spacing:.05em}
+
+  .hero-text h1{text-shadow:none;font-size:clamp(26px,7.2vw,32px);line-height:1.14;
+    letter-spacing:-.01em}
+  .hero-text .lead{font-size:14.5px;line-height:1.75;margin:18px 0 26px}
+
+  /* Die Kennzahlen stehen seit V4.94 als Kaestchen in der Trust-Leiste. */
   .hero-meta{display:none}
-  .hero-cta-row .btn-primary{width:100%}
-  .hero-tag{position:static;text-align:left;padding:0 20px 22px;background:var(--ink)}
+  .hero-siegel{margin-top:26px;padding-top:22px}
+  .hero-siegel img{width:clamp(96px,27vw,116px)}
+  .hero-cta-row{gap:12px}
+  .hero-cta-row .btn-primary,.hero-cta-row .btn-ghost{width:100%;text-align:center}
+  .hero-tag{position:static;text-align:left;padding:0 22px 24px;background:var(--ink)}
+
   .trust{margin-top:16px}
   .footer-grid{grid-template-columns:1fr}
   .clean-list,.zones,.stats{grid-template-columns:1fr}
   .icon-grid{grid-template-columns:repeat(2,1fr)}
-  .infobar{font-size:9.5px;letter-spacing:.1em}
-  .infobar span:nth-child(3){display:none}
 }
 
 /* Rücksicht auf Nutzer, die Bewegung reduzieren wollen */
@@ -676,6 +794,18 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   outline:none;border-color:var(--taupe-dark);box-shadow:0 0 0 4px rgba(194,180,169,.28)}
 .anfrage input:disabled,.anfrage textarea:disabled,.anfrage select:disabled{
   background:rgba(233,227,218,.5);color:var(--taupe-dark);cursor:not-allowed}
+/* Rueckmeldung zur Rufnummer (V4.51). Steht unter "Bevorzugte Kontaktmoeglichkeit",
+   weil dort die Folge sichtbar wird. Gesperrte <option> grau, damit im
+   aufgeklappten Menue erkennbar ist, warum WhatsApp nicht geht. */
+.f-tel-hinweis{margin:9px 0 0;font-size:12.5px;line-height:1.55;color:var(--taupe-dark)}
+.f-tel-hinweis.ist-festnetz{color:var(--ink-soft)}
+.f-tel-hinweis.ist-festnetz::before,
+.f-tel-hinweis.ist-mobil::before{content:'';display:inline-block;width:7px;height:7px;
+  border-radius:50%;margin-right:8px;vertical-align:1px}
+.f-tel-hinweis.ist-festnetz::before{background:var(--taupe)}
+.f-tel-hinweis.ist-mobil::before{background:#25D366}
+.anfrage select option:disabled{color:var(--taupe)}
+
 /* Pflicht-Einwilligung (V4.46). Die allgemeine Regel `.anfrage input` setzt
    width:100% und 15px Polster — auf einer Checkbox waere das ein Riesenkasten,
    darum hier eigene Masse. Kasten in Creme, damit die Zeile als eigener Schritt
@@ -779,8 +909,17 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .mb-seal:hover{transform:scale(1.03)}
 .mb-seal img{display:block;width:100%;height:auto;border-radius:50%}
 
+/* ⚠️ Mobil GEHOERT DAS SIEGEL NACH LINKS. Auf dem Handy wird das Hero-Foto
+   quer beschnitten, dabei rutscht Sabrina an den rechten Bildrand — das Siegel
+   lag dann bei 80 % Breite und 26 % Hoehe, also direkt auf ihrem Gesicht
+   (gemessen bei 375 px). Links liegt die Steinwand, dort stoert es nicht.
+   Wer den Bildausschnitt aendert: vorher nachmessen, wo der Kopf liegt. */
 @media (max-width:680px){
-  .mb-seal{width:106px;top:18px;right:30px}
+  /* left MUSS die Innenabstaende der Hero-Section einrechnen: sie traegt
+     padding-inline:var(--pad) (mobil 22 px), das Bild beginnt also erst dort.
+     Mit left:14px ragte das Siegel 8 px ueber die gerundete Bildkante hinaus. */
+  .mb-seal{width:clamp(84px,24vw,104px);top:14px;right:auto;
+    left:calc(var(--pad) + 12px)}
 }
 
 
@@ -1015,7 +1154,12 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .wa-start svg{width:15px;height:15px;fill:currentColor;display:block}
 
 @media (max-width:900px){
-  .crail{gap:10px}
+  /* Kleiner und ruhiger: die Leiste lag mit voller Deckkraft ueber dem
+     Flie&szlig;text und zog alle Aufmerksamkeit auf sich. Sie soll erreichbar
+     sein, nicht dominieren. */
+  .crail{gap:9px;right:12px;bottom:14px}
+  .crail-btn{width:42px}
+  .crail-btn svg{width:19px;height:19px}
   .crail-btn::after{display:none}   /* Beschriftung nur am Rechner */
 }
 @media (prefers-reduced-motion:reduce){
@@ -1075,17 +1219,29 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .erg-head{text-align:center;margin-bottom:clamp(24px,2.8vw,36px)}
 .erg-head p{font-size:14px;line-height:1.7;color:var(--taupe-dark);
   max-width:52em;margin:14px auto 0}
-.erg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:clamp(14px,1.8vw,22px);
-  /* Die Aufnahmen haben unterschiedliche Formate (quadratisch und hochkant).
-     Ohne align-items:start fuellt die Karte die Zellhoehe und laesst unter
-     quadratischen Bildern eine graue Flaeche stehen. Zuschneiden waere hier
-     falsch — bei Vorher-Nachher darf kein Teil des Vergleichs wegfallen. */
-  align-items:start}
+.erg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,300px));
+  justify-content:center;gap:clamp(14px,1.8vw,22px);align-items:start}
+/* ⚠️ V4.67 — Vorher-Nachher-Karten. Zwei Fehler auf einmal behoben:
+   1. `repeat(auto-fit,minmax(260px,1fr))` gab EINEM Bild die volle Breite:
+      auf Hydralift und Onetec war die Karte 1312 px breit, auf Forma mit vier
+      Bildern nur 311 px. Gleiche Bauart, voellig verschiedene Groessen.
+      Jetzt `minmax(220px,300px)`: die Karte ist NIE breiter als 300 px, egal
+      wie viele auf der Seite sind. Die Reihe wird zentriert.
+   2. `height:auto` liess jede Karte anders hoch werden — die Quellbilder haben
+      Seitenverhaeltnisse von 0,56 bis 3,30. Jetzt feste 1:1-Karte.
+      `object-fit:contain` statt cover, WEIL bei Vorher-Nachher-Bildern jeder
+      Beschnitt den Vergleich zerstoert. Schmale Hochformate bekommen dadurch
+      seitlich Creme-Raender — das ist gewollt und sieht ruhiger aus als
+      unterschiedlich hohe Karten. */
 .erg{margin:0;border-radius:var(--r);overflow:hidden;background:var(--creme);
+  aspect-ratio:1/1;position:relative;
   box-shadow:var(--sh-s);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .erg:hover{transform:translateY(-4px);box-shadow:var(--sh)}
-.erg img{display:block;width:100%;height:auto}
+/* absolut positioniert, NICHT ueber `display:grid; place-items:center` —
+   dabei bleibt die Zeilenhoehe automatisch, `height:100%` laeuft ins Leere und
+   Hochformate ragten 533 px hoch aus der 300-px-Karte heraus (und wurden von
+   overflow:hidden beschnitten, genau was hier nicht passieren darf). */
+.erg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 
 /* Videogalerie (V4.46) — jetzt wie die Kundenstimmen auf der Startseite:
    feste, gedeckelte Kartenbreite statt 1fr-Spalten.
@@ -1096,6 +1252,84 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
    Riesensaeule. Flex + clamp deckelt die Karte und zentriert die Reihe. */
 .vidgal-grid{display:flex;flex-wrap:wrap;justify-content:center;
   gap:clamp(16px,2vw,30px)}
+
+/* ---------- Kontaktseite (V4.72) ----------
+   Aufbau nach Renés Vorgabe: Kontaktdaten links neben dem Bild, darunter
+   Oeffnungszeiten links und Anfahrt rechts, dann die Karte ueber die volle
+   Breite. Alle drei Baender liegen in derselben Spalte (--maxw), damit die
+   Kanten uebereinanderliegen und kein Bruch entsteht. */
+.kontakt-kopf{
+  max-width:var(--maxw);margin:clamp(20px,3vw,40px) auto clamp(30px,4vw,52px);
+  padding-inline:var(--pad);
+  /* Textspalte GEDECKELT statt 1fr. Mit 1fr war sie 707 px breit, der Text
+     braucht aber nur 561 px — dazwischen klafften 211 px Luft zum Bild.
+     Derselbe Fehler wie beim Erklaervideo. Feste Spuren + justify-content
+     zentrieren das Paar, statt es auseinanderzuziehen. */
+  display:grid;grid-template-columns:minmax(0,580px) clamp(320px,36vw,480px);
+  justify-content:center;
+  gap:clamp(28px,4.5vw,68px);align-items:center}
+.kontakt-kopf h1{font-weight:200;margin-bottom:26px;text-wrap:balance}
+.kontakt-kopf .kicker{margin-bottom:18px}
+.kontakt-kopf .kicker .tag{color:var(--taupe-dark)}
+.kontakt-hinweis{font-size:15.5px;line-height:1.75;color:var(--ink-soft);
+  margin:22px 0 26px;max-width:52ch}
+/* Das Bild behaelt sein Seitenverhaeltnis (height:auto statt fester Rahmen),
+   damit nichts beschnitten wird — es sind zwei Personen drauf. */
+.kontakt-kopf-bild img{display:block;width:100%;height:auto;
+  border-radius:var(--r-l);box-shadow:var(--sh-l)}
+
+.kontakt-paar{
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad);
+  padding-block:clamp(30px,3.6vw,50px);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(28px,4.5vw,68px);align-items:start;
+  border-top:1px solid var(--line)}
+.kp-spalte h2{margin-bottom:22px}
+.kp-spalte p{font-size:16px;line-height:1.8;color:var(--ink-soft);margin-top:20px}
+
+.kontakt-karte{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad);
+  padding-block:clamp(30px,3.6vw,50px);border-top:1px solid var(--line)}
+.kk-kopf{margin-bottom:clamp(20px,2.4vw,30px)}
+.kk-kopf h2{margin-top:12px}
+/* ueber die volle Breite statt in der Lesespalte, wie von Rene gewuenscht */
+.karte-breit .karte-ph,.karte-breit iframe{aspect-ratio:21/9}
+.karte-breit figcaption{margin-top:14px;font-size:13px;color:var(--taupe-dark)}
+
+@media (max-width:860px){
+  .kontakt-kopf{grid-template-columns:1fr;gap:30px}
+  .kontakt-kopf-bild{max-width:360px;margin-inline:auto}
+  .kontakt-paar{grid-template-columns:1fr;gap:34px}
+  .karte-breit .karte-ph,.karte-breit iframe{aspect-ratio:4/3}
+}
+
+/* Bild im Textfluss (V4.70). Liegt in der Lesespalte, also genauso breit wie
+   der Text darum herum — kein Bruch. height:auto, kein object-fit: das
+   Seitenverhaeltnis bleibt unangetastet. */
+.t-bild{margin:clamp(24px,3vw,36px) 0 0}
+.t-bild img{display:block;width:100%;height:auto;
+  border-radius:var(--r-l);box-shadow:var(--sh)}
+.t-bild figcaption{margin-top:11px;font-size:12.5px;line-height:1.55;
+  color:var(--taupe-dark)}
+
+/* Vorher-Nachher + Video derselben Kundin nebeneinander (V4.69).
+   Gleiche Masse wie .erklaer-inner, damit der Block sich nicht vom Rest der
+   Seite loest: Lesespalte 730 px, breites Bild links, Hochkant-Video rechts.
+   Das Bild behaelt sein Seitenverhaeltnis (height:auto, kein object-fit) —
+   bei Vorher-Nachher darf nichts weggeschnitten werden. */
+.vidgal-paar{max-width:730px;margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(190px,20vw,250px);
+  gap:clamp(22px,2.6vw,38px);align-items:center}
+.vp-bild{margin:0}
+.vp-bild img{display:block;width:100%;height:auto;
+  border-radius:var(--r-l);box-shadow:var(--sh)}
+.vp-bild figcaption,.vidgal-paar .vid-k figcaption{
+  margin-top:12px;text-align:center;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:500;color:var(--taupe-dark)}
+.vidgal-paar .vid-k{width:auto}
+@media (max-width:640px){
+  .vidgal-paar{grid-template-columns:1fr;gap:26px}
+  .vidgal-paar .vid-k{max-width:260px;margin-inline:auto}
+}
 .vid-k{margin:0;width:clamp(210px,19vw,290px)}
 .vid-k video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
   border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh)}
@@ -1110,11 +1344,22 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
    viel Leerraum. Neben dem Text gestellt fuellt es die Zeile und erklaert
    sich zugleich selbst. */
 .erklaer{padding-block:clamp(40px,4.6vw,68px)}
+/* ⚠️ V4.63 — Abstand zwischen Text und Video. Vorher klaffte hier eine Luecke
+   von 464 px (gemessen bei 1440 px Fenster). ZWEI Ursachen zugleich:
+   1. `max-width:var(--maxw)` = 1320 px. Der Block war damit doppelt so breit
+      wie die Lesespalte darueber (.t-prose = 730 px) — der Text rutschte ganz
+      nach links, das Video ganz nach rechts.
+   2. `.erklaer-text{max-width:34em}` = 544 px. Der Text konnte seine 934 px
+      breite Spur gar nicht fuellen und klebte am linken Rand.
+   `justify-content:center` half nichts: `1fr` frisst den gesamten freien Platz,
+   es gibt nichts mehr zu zentrieren.
+   Jetzt liegt der Block in DERSELBEN Spalte wie der Text darueber (730 px) und
+   der Text fuellt seine Spur — dadurch entsteht der durchgehende Lesefluss. */
 .erklaer-inner{
-  max-width:var(--maxw);margin-inline:auto;
-  display:grid;grid-template-columns:minmax(0,1fr) clamp(230px,24vw,320px);
-  gap:clamp(28px,4vw,64px);align-items:center;justify-content:center}
-.erklaer-text{max-width:34em}
+  max-width:730px;margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(190px,20vw,250px);
+  gap:clamp(22px,2.6vw,38px);align-items:center}
+.erklaer-text{max-width:none}
 .erklaer-text h2{margin-bottom:18px}
 .erklaer-text p{font-size:16px;line-height:1.8;color:var(--ink-soft)}
 .erklaer-vid{margin:0}
@@ -1124,4 +1369,102 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 @media (max-width:820px){
   .erklaer-inner{grid-template-columns:1fr}
   .erklaer-vid{max-width:300px;margin-inline:auto}
+}
+
+/* ==========================================================================
+   EINWILLIGUNG FUER EXTERNE MEDIEN (V4.79)
+   Banner unten, damit er den Seiteneinstieg nicht zustellt. Kein Abdunkeln
+   der Seite, kein Zwang — die Seite bleibt ohne Entscheidung voll lesbar,
+   nur die drei externen Einbettungen sind gesperrt.
+   WICHTIG: Beide Knoepfe sind gleich gross und gleich auffaellig. Eine
+   versteckte oder kleiner gesetzte Ablehnung waere keine wirksame
+   Einwilligung — die muss genauso leicht sein wie die Zustimmung.
+   ========================================================================== */
+/* ⚠️ Der Ruhezustand ist SICHTBAR, das Hereinfahren ist nur Verzierung.
+   Vorher war es umgekehrt (.cb versteckt, .cb.offen sichtbar) — laeuft die
+   Animation nicht, blieb der Banner unsichtbar unten stehen. Genau das ist
+   passiert. Ein Einwilligungsbanner, der nicht erscheint, waere schlimmer als
+   keiner: die Seite haette gesperrte Bereiche ohne Weg zur Freigabe.
+   Jetzt kann die Animation ausfallen, ohne dass etwas kaputtgeht. */
+.cb{position:fixed;left:0;right:0;bottom:0;z-index:400;
+  padding:clamp(12px,1.6vw,20px)}
+/* BEWUSST OHNE Animation und ohne transform. Zwei Anlaeufe sind hier
+   gescheitert: erst .cb versteckt + .cb.offen sichtbar (Uebergang lief nicht
+   -> Banner blieb unten), dann eine Animation mit fill-mode:both (eingefroren
+   auf dem Startbild -> ebenfalls unsichtbar). Ein Einwilligungsbanner muss
+   auch dann erscheinen, wenn keine einzige Animation laeuft — sonst haette
+   die Seite gesperrte Bereiche ohne Weg zur Freigabe. Er ist einfach da. */
+.cb-inner{max-width:1120px;margin-inline:auto;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(18px,2.6vw,38px);align-items:center;
+  background:var(--paper);border:1px solid var(--line-strong);
+  border-radius:var(--r-l);box-shadow:0 18px 50px rgba(58,50,44,.22);
+  padding:clamp(20px,2.4vw,28px) clamp(22px,2.8vw,34px)}
+.cb-text h2{font-size:clamp(17px,1.5vw,20px);font-weight:400;margin-bottom:10px}
+.cb-text p{font-size:13.5px;line-height:1.7;color:var(--ink-soft);margin:0}
+.cb-links{margin-top:12px!important;display:flex;gap:10px;align-items:center;
+  font-size:12.5px;color:var(--taupe-dark)}
+.cb-links a{color:var(--taupe-dark);text-decoration:underline;text-underline-offset:3px}
+.cb-btns{display:flex;gap:12px;flex-wrap:wrap}
+/* gleiche Groesse fuer beide — nur die Flaeche unterscheidet sie */
+/* Beide Knoepfe exakt gleich breit — nicht nur "aehnlich". Vorher waren es
+   210 gegen 254 px, weil "Externe Medien erlauben" laenger ist als "Nur
+   notwendige". Eine kleinere Ablehnung ist ein Dark Pattern und macht die
+   Einwilligung angreifbar. */
+.cb-btn{font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;cursor:pointer;white-space:nowrap;
+  padding:15px 20px;width:250px;border-radius:var(--r-s);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease)}
+.cb-btn-nein{background:transparent;border:1px solid var(--taupe-dark);color:var(--taupe-dark)}
+.cb-btn-nein:hover{background:var(--creme)}
+.cb-btn-ja{background:var(--taupe-dark);border:1px solid var(--taupe-dark);color:var(--paper)}
+.cb-btn-ja:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.cb-btn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(194,180,169,.45)}
+@media (max-width:820px){
+  .cb-inner{grid-template-columns:1fr;gap:16px}
+  .cb-btns{flex-direction:column}
+  .cb-btn{width:100%}
+}
+/* Auf dem Handy nahm der Banner den halben Bildschirm ein (gemessen bei
+   375 px: ueber 900 px hoch). Kuerzere Zeilen, engere Abstaende, und wenn es
+   trotzdem zu viel wird, scrollt der Textteil in sich statt die Seite
+   zuzustellen. */
+@media (max-width:560px){
+  .cb{padding:10px}
+  .cb-inner{padding:18px 18px 20px;border-radius:var(--r);gap:14px;
+    max-height:78vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .cb-text h2{font-size:16px;margin-bottom:8px}
+  .cb-text p{font-size:12.5px;line-height:1.6}
+  .cb-hinweis{font-size:12px!important;margin-top:8px!important}
+  .cb-links{margin-top:10px!important;font-size:12px}
+  .cb-btn{padding:14px 16px;font-size:11.5px}
+}
+
+/* Gesperrter Bereich anstelle von Karte oder Video */
+.cb-block{background:var(--creme);border-radius:var(--r-l);
+  padding:clamp(26px,3.4vw,42px) clamp(22px,3vw,38px);text-align:center}
+.cb-block-lab{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;color:var(--taupe-dark);margin-bottom:12px}
+.cb-block p{font-size:14.5px;line-height:1.7;color:var(--ink-soft);
+  max-width:46em;margin:0 auto 20px}
+.cb-block .cb-btn{width:auto;padding-inline:28px}
+.cb-block-fuss{font-size:12px!important;color:var(--taupe)!important;margin:16px auto 0!important}
+
+/* Knopf in der Fusszeile, um die Entscheidung zu aendern */
+.cb-fuss{background:none;border:0;padding:0;font:inherit;cursor:pointer;
+  color:inherit;text-align:left}
+.cb-hinweis{margin-top:10px!important;font-size:12.5px!important;line-height:1.65!important;
+  color:var(--taupe-dark)!important}
+
+/* ==========================================================================
+   NiSV-SIEGEL IM STORY-BLOCK (V4.105)
+   Steht zentriert ueber Sabrinas Text — dort, wo die Person beschrieben wird,
+   deren Fachkunde es belegt. Der fruehere eigene Abschnitt unter der
+   Trust-Leiste ist entfallen.
+   ========================================================================== */
+.story-siegel{display:block;width:clamp(150px,14vw,200px);height:auto;
+  margin:0 auto clamp(24px,2.6vw,34px);border-radius:50%}
+@media (max-width:680px){
+  .story-siegel{width:clamp(130px,36vw,164px);margin-bottom:24px}
+}
 }

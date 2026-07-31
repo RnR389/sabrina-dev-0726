@@ -7,7 +7,7 @@
 <title>Blog — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
 <meta name="description" content="Blog des Kosmetikinstituts Hautnah in Wehr — Wissenswertes rund um Haut, Behandlungen und Pflege von Sabrina Herosé.">
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/hautnah.css?v=4.50">
+<link rel="stylesheet" href="../assets/hautnah.css?v=4.109">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
         <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
         <li class="is-active"><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
       <a class="nav-cta btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a>
     </nav>
@@ -57,42 +57,35 @@
   </div>
 </section>
 
-<!-- BEITRÄGE -->
-<div data-reveal class="blog-wrap">
-  <div class="blog-grid" id="blog-list">
-    <!-- BLOG-BEITRÄGE: Jede Karte ist ein Beitrag. Neue Beiträge werden hier eingefügt. -->
-    <article class="blog-card">
-      <div class="cover"><span class="label">Beitrag folgt</span></div>
-      <div class="body">
-        <div class="meta"><span class="cat">Hautpflege</span><span class="date">In Kürze</span></div>
-        <h3>Erste Beiträge folgen in Kürze</h3>
-        <p>Hier teilt Sabrina künftig Wissen und Neuigkeiten rund um Haut, Behandlungen und Pflege.</p>
-        <span class="more">Weiterlesen</span>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="cover"><span class="label">Beitrag folgt</span></div>
-      <div class="body">
-        <div class="meta"><span class="cat">Behandlungen</span><span class="date">In Kürze</span></div>
-        <h3>Platzhalter-Beitrag</h3>
-        <p>Sobald das Blog-System eingerichtet ist, erscheinen die echten Beiträge an dieser Stelle.</p>
-        <span class="more">Weiterlesen</span>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="cover"><span class="label">Beitrag folgt</span></div>
-      <div class="body">
-        <div class="meta"><span class="cat">Pflege-Tipps</span><span class="date">In Kürze</span></div>
-        <h3>Platzhalter-Beitrag</h3>
-        <p>Die Struktur steht — die Beitragsverwaltung für Sabrina wird als Nächstes eingerichtet.</p>
-        <span class="more">Weiterlesen</span>
-      </div>
-    </article>
+<!-- BEITRAEGE (V4.76)
+     Die drei Platzhalter-Karten und der Systemhinweis sind raus (Rene):
+     Karten mit "Platzhalter-Beitrag" sehen nach unfertiger Seite aus, und der
+     Hinweis auf das noch fehlende Redaktionssystem ist eine interne Notiz,
+     die den Kunden nichts angeht.
+     Stattdessen ein Ausblick, der die Themen nennt, die Sabrina und Bianka
+     tatsaechlich abdecken. Sobald echte Beitraege da sind, kommt hier wieder
+     ein .blog-grid mit .blog-card hinein — das CSS dafuer bleibt bestehen. -->
+<div class="t-body">
+  <div class="t-prose">
+    <div data-reveal class="t-block" style="border-top:none;padding-top:0">
+      <div class="section-eyebrow"><span class="bar"></span>In Vorbereitung</div>
+      <h2>Hier entsteht etwas, das Ihnen wirklich <em>weiterhilft.</em></h2>
+      <p>Zwanzig Jahre Erfahrung mit anspruchsvollen Hautbildern lassen sich schwer in
+         einen Behandlungstermin packen. Genau dafür entsteht dieser Bereich: Sabrina
+         Heros&eacute; und Bianka Wittulski schreiben hier künftig über die Themen, die
+         ihnen im Institut täglich begegnen &mdash; Akne und Rosacea, Hautalterung und
+         Neurodermitis, Haarausfall und Kopfhautprobleme, apparative Verfahren wie
+         Hydrafacial&reg;, Forma&reg; oder Microneedling, dazu Permanent Make-up und
+         die Frage, welche Pflege zu Hause wirklich etwas bringt.</p>
+      <p>Kein Werbetext, sondern das, was eine Kosmetikmeisterin und eine
+         Permanent-Make-up-Spezialistin aus der Praxis wissen &mdash; damit Sie Ihre
+         Haut besser verstehen und die Entscheidungen treffen können, die zu Ihnen
+         passen. Die ersten Beiträge folgen in Kürze.</p>
+      <p style="margin-top:26px">Bis dahin beraten wir Sie gerne pers&ouml;nlich.</p>
+      <p style="margin-top:18px"><a class="btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a></p>
+    </div>
   </div>
-  <div class="placeholder-note" style="max-width:none;margin:40px 0 0;">Hinweis: Die Blog-Struktur ist angelegt. Die Möglichkeit für Sabrina, eigenständig Beiträge zu erstellen, wird eingerichtet, sobald das gewünschte Redaktions-System festgelegt ist.</div>
 </div>
-
-
 
 <!-- FOOTER -->
 <footer>
@@ -112,7 +105,7 @@
         <li><a href="haarkonzept.html">Haarkonzept</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
     <li class="is-active"><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
@@ -130,12 +123,16 @@
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="agb.html">AGB</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <!-- V4.79: oeffnet den Einwilligungsbanner erneut. Pflicht, wenn man
+             eine Einwilligung einholt: sie muss genauso leicht widerrufbar
+             sein, wie sie erteilt wurde (Art. 7 Abs. 3 DSGVO). -->
+        <li><button type="button" class="cb-fuss" data-cb-oeffnen>Externe Medien</button></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 4.50</span>
+    <span>Version 4.109</span>
     <div class="social">
       <a href="https://www.instagram.com/kosmetikinstituthautnahwehr/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="dot" cx="17.1" cy="6.9" r="1.15"/></svg>
@@ -184,6 +181,6 @@
   </a>
 </div>
 
-<script src="../assets/hautnah.js?v=4.50" defer></script>
+<script src="../assets/hautnah.js?v=4.109" defer></script>
 </body>
 </html>

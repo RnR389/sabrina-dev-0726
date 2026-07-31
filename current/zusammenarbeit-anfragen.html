@@ -7,7 +7,7 @@
 <title>Zusammenarbeit anfragen — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
 <meta name="description" content="Anfrage für den ersten Haut- und Haarcheck im Kosmetikinstitut Hautnah in Wehr — unverbindlich und persönlich.">
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/hautnah.css?v=4.50">
+<link rel="stylesheet" href="../assets/hautnah.css?v=4.109">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
         <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
       <a class="nav-cta btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a>
     </nav>
@@ -81,7 +81,8 @@
         <div class="f-row">
           <label class="f-field">
             <span class="f-label">Telefon <em>*</em></span>
-            <input type="tel" name="telefon" autocomplete="tel" placeholder="Für den Rückruf oder WhatsApp" required disabled>
+            <input type="tel" name="telefon" autocomplete="tel" inputmode="tel"
+                   placeholder="Für den Rückruf oder WhatsApp" required disabled data-tel>
           </label>
         </div>
         <div class="f-row">
@@ -99,11 +100,16 @@
         <div class="f-row f-2">
           <label class="f-field">
             <span class="f-label">Bevorzugte Kontaktm&ouml;glichkeit <em>*</em></span>
-            <select name="kontaktweg" required disabled>
+            <!-- WhatsApp wird von hautnah.js (Abschnitt 1f) gesperrt, sobald die
+                 eingegebene Rufnummer als Festnetznummer erkannt wird. Die Sperre
+                 sitzt bewusst auf der <option>, nicht auf dem <select> — so bleibt
+                 "Telefon" waehlbar. -->
+            <select name="kontaktweg" required disabled data-kontaktweg>
               <option value="">Bitte w&auml;hlen</option>
               <option>Telefon</option>
               <option>WhatsApp</option>
             </select>
+            <p class="f-tel-hinweis" data-tel-hinweis aria-live="polite" hidden></p>
           </label>
           <label class="f-field">
             <span class="f-label">Terminwunsch <span class="f-opt">optional</span></span>
@@ -168,7 +174,7 @@
         <li><a href="haarkonzept.html">Haarkonzept</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
     <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
@@ -186,12 +192,16 @@
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="agb.html">AGB</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <!-- V4.79: oeffnet den Einwilligungsbanner erneut. Pflicht, wenn man
+             eine Einwilligung einholt: sie muss genauso leicht widerrufbar
+             sein, wie sie erteilt wurde (Art. 7 Abs. 3 DSGVO). -->
+        <li><button type="button" class="cb-fuss" data-cb-oeffnen>Externe Medien</button></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 4.50</span>
+    <span>Version 4.109</span>
     <div class="social">
       <a href="https://www.instagram.com/kosmetikinstituthautnahwehr/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="dot" cx="17.1" cy="6.9" r="1.15"/></svg>
@@ -240,6 +250,6 @@
   </a>
 </div>
 
-<script src="../assets/hautnah.js?v=4.50" defer></script>
+<script src="../assets/hautnah.js?v=4.109" defer></script>
 </body>
 </html>

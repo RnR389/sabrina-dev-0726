@@ -1,6 +1,6 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Lokal **V4.50**. Live steht **V4.45** auf GitHub Pages. **René hat Deploys gestoppt (30.07.2026): „kein Deploy, bis ich es sage."** Also nur `current/` + `assets/` + `_site/` pflegen, `gh-pages` nicht anfassen.
+**Status:** Lokal **V4.84**. Live steht **V4.45** auf GitHub Pages. **René hat Deploys gestoppt (30.07.2026): „kein Deploy, bis ich es sage."** Also nur `current/` + `assets/` + `_site/` pflegen, `gh-pages` nicht anfassen.
 
 **Lokale Vorschau:** `_site/` über die Launch-Config `hautnah` auf **Port 8124**. Achtung, es gibt **zwei** `launch.json` — maßgeblich ist die im Projekt-Wurzelordner `sabrina-herose/.claude/`, nicht die in `hautnah-website/.claude/`. Port 8123 ist von einem fremden PHP-Server eines anderen Projekts belegt, darum 8124.
 
@@ -15,6 +15,11 @@ Alles unterhalb dieser Linie ist die **Historie von V1–V3**. Wo sie diesem Blo
 ## Versionsregel (René, 27.07.2026)
 - **Layout geändert → vordere Zahl hoch:** 3.14 → **4.14**
 - **Inhalt geändert → hintere Zahl hoch:** 4.14 → 4.15 → 4.16 …
+- ⚠️ **Die hintere Zahl ist ein ZÄHLER, keine Nachkommastelle.** Nach 4.99 kommt
+  **4.100**, dann 4.101 — *nicht* 5.00. Genau diesen Fehler habe ich am
+  31.07.2026 gemacht; René: „V5 existiert nur dann, wenn wir ein weiteres
+  Layout implementieren." **Die vordere Zahl erhöht NUR René, und nur bei einer
+  neuen Designsprache.** Niemals von selbst hochzählen.
 - Footer-Version auf **allen** Seiten mitziehen + Eintrag in `VERSIONS.md`.
 - **Aktuell lokal: V4.39** · zuletzt deployt: V4.35
 
@@ -43,7 +48,7 @@ Zurück: `git checkout v3.14 -- current/`, danach `_site/` neu bauen. Tags liege
 - Deploy: `main` pushen, dann `git subtree split --prefix _site` → force-push nach `gh-pages`.
 - **Netlify ist tot** (keine Credits) — nicht mehr verwenden.
 
-## Seitenbestand (21 Seiten)
+## Seitenbestand (24 Seiten)
 Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihre Experten · Bianka Wittulski · Preise · Gutscheine · Zahlungsoptionen · **Aktuelles** · Blog · Zusammenarbeit anfragen · Impressum · Datenschutz · AGB — **24 Seiten**
 
 ## Daten & Fakten zu Sabrina Herosé (von René, 29.07.2026 — verbindlich)
@@ -66,14 +71,14 @@ Startseite · Ästhetische Konzepte · **10 Behandlungen** · Haarkonzept · Ihr
 
 **✅ ENTSCHIEDEN (René, 29.07.2026) — nicht neu aufrollen:**
 - **Meisterprüfung: 2024.** So steht es in Sabrinas Bio-Text („2024 folgte der Meisterabschluss / Bachelor Professional") und so bleibt es. Dass die Badische Zeitung im Artikel auf `aktuelles.html` den 28. Januar 2025 nennt, ist bekannt und akzeptiert.
-- **Startjahr: 2004 bleibt stehen.** Die Kennzahl im Hero lautet weiter „seit 2004 · Kosmetikerin", obwohl das Gewerbe am 16.12.2002 angemeldet wurde. Nicht auf 2002 ändern.
-- Sabrinas Bio-Text sagt an einer Stelle „Seit 2003 bin ich selbstständig" — das ist ihr Originaltext und bleibt unangetastet.
+- **Startjahr: 2003.** Die Kennzahl im Hero lautet „Erfahrung seit 2003 · Kosmetikerin". *(Geändert von René am 31.07.2026, vorher 2004.)* Damit deckt sie sich jetzt mit Sabrinas Bio-Text „Seit 2003 bin ich selbstständig". Das Gewerbe wurde am 16.12.2002 angemeldet — **nicht** auf 2002 ändern.
+- Sabrinas Bio-Text sagt „Seit 2003 bin ich selbstständig" — Originaltext, bleibt unangetastet. Seit 31.07.2026 stimmt der Hero damit überein.
 
 ## Namens- und Schreibregeln (verbindlich)
 - Reihenfolge: **Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden**
 - **®** (als `&reg;`) nur bei: Forma, Hydrafacial, Onetec, EMShape X, EMShape X Beckenboden. **Hydralift bekommt KEIN ®.**
 - **⚠️ Seit V4.48/4.49 (René, 30.07.2026): das ® steht an JEDEM sichtbaren Vorkommen, auch im Fließtext und in FAQ-Fragen** — nicht mehr nur in Überschriften. „Es muss auch bei den anderen Behandlungen immer im Text auch dabei stehen." Wer neuen Text einbaut, setzt es überall mit. **Nicht** in `alt=`, `title=` oder Meta-Description (dort ist es für Screenreader nur Geräusch) und nicht in Code-Kommentaren.
-- **Offen: zwei Schreibweisen desselben Namens.** Sabrinas Texte enthalten „Hydrafacial" (11×) *und* „HydraFacial" (14×), „ONETEC" (17×) *und* „Onetec" (4×), „FORMA" (9×) *und* „Forma" (13×). **Beim Prüfen immer case-insensitive suchen** — genau daran ist mir in V4.49 das großgeschriebene FORMA entgangen. Diese Regel hier gibt Hydrafacial und Onetec vor. Bewusst **nicht** angeglichen, weil es ihre Originaltexte sind — René fragen.
+- **Offen: zwei Schreibweisen desselben Namens.** ✅ **Hydrafacial ist entschieden (René, 31.07.2026): ausschließlich „Hydrafacial®"** — nie „HydraFacial", nie „Hydra Facial". 15 Stellen korrigiert. Offen bleiben „ONETEC" (17×) neben „Onetec" (4×) und „FORMA" (9×) neben „Forma" (13×). **Beim Prüfen immer case-insensitive suchen** — genau daran ist mir in V4.49 das großgeschriebene FORMA entgangen. Diese Regel hier gibt Hydrafacial und Onetec vor. Bewusst **nicht** angeglichen, weil es ihre Originaltexte sind — René fragen.
 - **„Pharma" gibt es nicht mehr** (Seite gelöscht).
 - Menü heißt **„Ihre Experten"** (Datei `ihre-experten.html`) — **Stand 28.07.2026**. Vorher „Ihre Expertinnen" (V3.12–V4.26), davor „Über uns". René hat zurück auf die männliche/neutrale Form gewechselt.
 - **Bianka** immer mit K.
@@ -129,6 +134,25 @@ Solange **kein Portraitfoto** vorliegt, darf der Platzhalter nicht die Hauptroll
 ## Kopfleiste — Falle, die schon zweimal zugeschlagen hat
 Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Breitengrenze. Alle Maße sind seit V4.22 **fluid** (`clamp`), der Hamburger greift seit V4.23 **unter 1320 px** (vorher 1240 — die größere, lesbarere Menüschrift braucht den Platz). Menü sitzt links am Logo (`.site-nav{flex:1}` + `ul{margin-right:auto}`), Buttonschrift ist explizit `--paper`, weil `.site-nav a` sonst Espresso erzwingt. **Wer einen Menüpunkt hinzufügt oder ein Label verlängert, muss zwingend bei 1250 / 1280 / 1366 px nachmessen** — sonst ragt der Button wieder aus der Glasleiste. Messformel: `brand + head-gap + ul.scrollWidth + nav-gap + cta` gegen `head-inner.clientWidth − Polster`.
 
+## ⚠️ Zweispalter: Loch in der Mitte — DIESER FEHLER IST MIR ZWEIMAL PASSIERT
+
+René, 31.07.2026: „Ich bin es langsam auch leid, dir das immer wieder neu zu sagen. Genau dieses Thema hatten wir gestern oder vorgestern schon auf irgendeiner anderen Seite."
+
+**Der Fehler:** Ein Grid `1fr | feste Breite`, bei dem der Inhalt der `1fr`-Spalte viel schmaler ist als die Spur. Der Text klebt links, das Bild/Video rechts, dazwischen klafft ein Loch.
+
+| Wo | Gemessene Lücke |
+|---|---|
+| `.p-hero` (Bianka), V4.45 | 534 px |
+| `.erklaer-inner` (Erklärvideo), V4.63 | 464 px |
+
+**Zwei Ursachen, die zusammenwirken:**
+1. Der Block ist auf `--maxw` (1320 px) gesetzt, obwohl der Text darüber in der Lesespalte `.t-prose` (730 px) steht. Schon dadurch reißt es auseinander.
+2. Das Textkind hat ein eigenes `max-width` (z. B. `34em`) und kann seine Spur gar nicht füllen.
+
+**`justify-content:center` hilft NICHT** — `1fr` frisst den gesamten freien Platz, es bleibt nichts zu zentrieren.
+
+**Regel:** Ein zweispaltiger Block muss dieselbe Breite haben wie der Inhalt darüber und darunter, sonst entsteht ein Bruch im Lesefluss. Also `max-width` auf die Lesespalte setzen (730 px) und dem Textkind `max-width:none` geben, damit es seine Spur füllt. **Danach nachmessen:** Kanten des Blocks gegen `.t-prose` — sie müssen identisch sein.
+
 ## Footer-Listen — Falle
 `display:inline-block` gehört auf den **`<a>`**, niemals auf das **`<li>`**. Ein `footer ul li:has(a){display:inline-block}` (V4.18, für die Hover-Verschiebung gedacht) hat alle Footer-Einträge in eine Zeile gelegt — Impressum/AGB/Datenschutz nebeneinander statt untereinander. In V4.23 korrigiert.
 
@@ -150,7 +174,7 @@ Die Menüleiste hat seit V4.27 **9 Punkte + CTA-Button** und ist damit an der Br
 5. **Echte Fotos:** Bianka-Portrait, Haut & Haarcheck (Mikrokamera), Studio ohne Personen.
 6. Dateinamen angleichen. *(Du/Sie ist erledigt — siehe die Textregeln oben, alles Sie-Form, Chanel-Zitat ausgenommen.)*
 7. **Videos für die drei Kundenstimmen-Platzhalter** auf der Startseite (V4.33) — Sabrina reicht sie nach. Einbau: `<video controls preload="none" poster="…">` statt `.vt-ph`, vorher auf <100 MB kodieren.
-8. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). Auf **Haarkonzept** fehlt nur noch **Bildmaterial** (Logo ist seit V4.28 drin). **„Kontakt"** ist der einzige verbliebene tote Menüpunkt.
+8. **Preisliste** für `preise.html` fehlt noch (Gerüst steht seit V4.27). Auf **Haarkonzept** fehlt nur noch **Bildmaterial** (Logo ist seit V4.28 drin). *(„Kontakt" ist seit V4.52 eine echte Seite — kein toter Menüpunkt mehr.)*
 9. **Freigabe der Badischen Zeitung** für den Artikelscan auf `aktuelles.html` einholen.
 8. **WhatsApp-Anamnesebogen:** Der Button schickt eine vorbelegte Nachricht („Haaranalyse"). Ein **automatischer** Versand des Anamnesebogens ginge nur über die WhatsApp Business API mit genehmigter Vorlage — bisher nicht eingerichtet. Bis dahin antwortet Sabrina manuell.
 

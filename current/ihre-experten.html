@@ -7,7 +7,7 @@
 <title>Ihre Experten — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
 <meta name="description" content="Ihre Experten — Sabrina Herosé und Bianka Wittulski. Das Team des Kosmetikinstituts Hautnah in Wehr.">
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/hautnah.css?v=4.50">
+<link rel="stylesheet" href="../assets/hautnah.css?v=4.109">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
         <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
       <a class="nav-cta btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a>
     </nav>
@@ -51,6 +51,28 @@
 
 
 
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Start</a><span class="sep">/</span><span class="here">Ihre Experten</span>
+</nav>
+
+<!-- TITELBILD (V4.54) — Gruppenbild von Sabrina und Bianka.
+     Bewusst KEIN t-hero mit Textspalte, sondern ein reines Titelbild:
+     - genauso breit wie .story-inner darunter (gleiches max-width, gleiches
+       padding-inline der Section) — gemessen 1312 px bei 1440 px Fenster
+     - width:100% + height:auto, also KEIN object-fit und kein fester Rahmen.
+       Damit bleibt das Seitenverhaeltnis 4:3 exakt erhalten, nichts wird
+       beschnitten oder gestaucht.
+     - kein data-parallax: die Verschiebung braucht Ueberstand und wuerde
+       wieder beschneiden. -->
+<section data-reveal class="titelbild">
+  <div class="titelbild-inner">
+    <img src="../assets/sabrina-bianka-gruppenbild.jpg"
+         alt="Sabrina Heros&eacute; und Bianka Wittulski im Kosmetikinstitut Hautnah in Wehr"
+         width="1280" height="960">
+  </div>
+</section>
 
 <!-- STORY -->
 <section data-reveal class="story" id="story">
@@ -118,7 +140,7 @@
         <li><a href="haarkonzept.html">Haarkonzept</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
     <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
@@ -136,12 +158,16 @@
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="agb.html">AGB</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <!-- V4.79: oeffnet den Einwilligungsbanner erneut. Pflicht, wenn man
+             eine Einwilligung einholt: sie muss genauso leicht widerrufbar
+             sein, wie sie erteilt wurde (Art. 7 Abs. 3 DSGVO). -->
+        <li><button type="button" class="cb-fuss" data-cb-oeffnen>Externe Medien</button></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 4.50</span>
+    <span>Version 4.109</span>
     <div class="social">
       <a href="https://www.instagram.com/kosmetikinstituthautnahwehr/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="dot" cx="17.1" cy="6.9" r="1.15"/></svg>
@@ -190,6 +216,6 @@
   </a>
 </div>
 
-<script src="../assets/hautnah.js?v=4.50" defer></script>
+<script src="../assets/hautnah.js?v=4.109" defer></script>
 </body>
 </html>

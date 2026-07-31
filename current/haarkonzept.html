@@ -7,7 +7,7 @@
 <title>Haarkonzept — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
 <meta name="description" content="Haarkonzept im Kosmetikinstitut Hautnah in Wehr &ndash; individuelle Wirkstoffpflege f&uuml;r Haar und Kopfhaut, mit pers&ouml;nlicher Haaranalyse.">
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/hautnah.css?v=4.50">
+<link rel="stylesheet" href="../assets/hautnah.css?v=4.109">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
         <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
       <a class="nav-cta btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a>
     </nav>
@@ -66,8 +66,16 @@
     </div>
   </div>
   <div class="t-hero-media">
-    <div class="t-hero-img">
-      <div class="ph"><span class="txt">Bildmaterial folgt</span></div>
+    <!-- Vorher-Nachher (V4.57, ueberarbeitete Fassung von Rene aus
+         "Daten zu Behandlungen/haarkonzept"). Weiterhin exakt 1:1 und aus zwei
+         Einzelaufnahmen zusammengesetzt — jeder Beschnitt wuerde durch die
+         Einzelbilder schneiden. Deshalb .t-hero-quadrat (Rahmen ebenfalls 1:1)
+         und KEIN data-parallax: dessen Ueberstand von 114 % wuerde oben und
+         unten je 7 % abschneiden. -->
+    <div class="t-hero-img t-hero-quadrat">
+      <img src="../assets/haarkonzept-hero.jpg"
+           alt="Haarkonzept &ndash; Ansatz und Haardichte vorher und nachher im Vergleich"
+           width="720" height="720">
     </div>
   </div>
 </section>
@@ -108,9 +116,9 @@
       </div>
     </div>
 
-    <div data-reveal class="t-block">
-      <div class="placeholder-note" style="max-width:none;margin:0;">Platzhalter &mdash; Bildmaterial zum Haarkonzept fehlt noch.</div>
-    </div>
+    <!-- V4.55: Hier stand "Platzhalter — Bildmaterial zum Haarkonzept fehlt noch."
+         Das stimmt nicht mehr: die Seite hat jetzt die Collage im Kopfbereich und
+         drei Vorher-Nachher-Aufnahmen im Ergebnisse-Block. Entfernt. -->
 
   </div>
 </div>
@@ -119,14 +127,24 @@
 <section data-reveal class="ergebnisse">
   <div class="erg-inner">
     <div class="erg-head">
-      <div class="section-eyebrow"><span class="bar"></span>Vorher &ndash; Nachher</div>
-      <h2>Ergebnisse aus <em>dem Institut.</em></h2>
-      <p>Aufnahmen von Kundinnen und Kunden des Kosmetikinstituts Hautnah. Ergebnisse sind individuell und k&ouml;nnen abweichen.</p>
+      <div class="section-eyebrow"><span class="bar"></span>Analyse &amp; Ergebnisse</div>
+      <h2>Aufnahmen aus <em>dem Institut.</em></h2>
+      <p>Vorher-Nachher-Vergleiche sowie Aufnahmen der Mikrokamera aus der Haar- und
+         Kopfhautanalyse. Alle Bilder stammen von Kunden des Kosmetikinstituts Hautnah.
+         Ergebnisse sind individuell und k&ouml;nnen abweichen.</p>
     </div>
     <div class="erg-grid">
       <figure class="erg"><img src="../assets/ergebnisse/haarkonzept-1.jpg" alt="Haarkonzept &ndash; Vorher-Nachher, Beispiel 1" loading="lazy"></figure>
       <figure class="erg"><img src="../assets/ergebnisse/haarkonzept-2.jpg" alt="Haarkonzept &ndash; Vorher-Nachher, Beispiel 2" loading="lazy"></figure>
       <figure class="erg"><img src="../assets/ergebnisse/haarkonzept-3.jpg" alt="Haarkonzept &ndash; Vorher-Nachher, Beispiel 3" loading="lazy"></figure>
+      <!-- V4.77: Einzelaufnahme, kein Vorher-Nachher-Paar wie die drei davor —
+           sie zeigt neuen Haarwuchs an der Kopfhaut. Alt-Text deshalb anders. -->
+      <figure class="erg"><img src="../assets/ergebnisse/haarkonzept-4.jpg" alt="Haarkonzept &ndash; nachgewachsenes Haar an der Kopfhaut" loading="lazy"></figure>
+      <!-- V4.78: Aufnahmen vom Bildschirm der Mikrokamera aus der Haaranalyse —
+           keine Vorher-Nachher-Paare. Deshalb heisst der Bereich jetzt
+           "Analyse & Ergebnisse" statt nur "Vorher – Nachher". -->
+      <figure class="erg"><img src="../assets/ergebnisse/haarkonzept-5.jpg" alt="Haaranalyse unter der Mikrokamera &ndash; Haarstruktur stark vergr&ouml;&szlig;ert" loading="lazy"></figure>
+      <figure class="erg"><img src="../assets/ergebnisse/haarkonzept-6.jpg" alt="Kopfhautanalyse unter der Mikrokamera &ndash; Haarwurzeln und Kopfhaut" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -145,23 +163,23 @@
   <div class="voices-inner">
     <div class="voices-head">
       <div class="section-eyebrow"><span class="bar"></span>Kundenstimmen</div>
-      <h2>Was Kundinnen und Kunden <em>sagen.</em></h2>
+      <h2>Was Kunden <em>sagen.</em></h2>
       <div class="voices-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,8 von 5 &middot; 65 Google-Rezensionen</div>
     </div>
     <div class="voices-grid">
       <div class="voice">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&bdquo;Sie hat sich viel Zeit genommen, um mir alles verst&auml;ndlich und sehr kompetent zu erkl&auml;ren. Die Analyse war super aufschlussreich und ihre Produktempfehlungen passen perfekt zu meinem Hauttyp.&ldquo;</blockquote>
+        <div class="stars">★★★★★</div>
+        <blockquote>„Sie hat sich viel Zeit genommen, um mir alles verständlich und sehr kompetent zu erklären. Die Analyse war super aufschlussreich und ihre Produktempfehlungen passen perfekt zu meinem Hauttyp."</blockquote>
         <div class="who">Mark K.<span class="src">Google-Rezension</span></div>
       </div>
       <div class="voice">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&bdquo;Man kommt rein und man wird mit einem freundlichen L&auml;cheln begr&uuml;&szlig;t. &hellip; Bei Sabrina bekommt man eine kompetente und personalisierte Beratung. Top Studio. Sehr zu empfehlen&ldquo;</blockquote>
+        <div class="stars">★★★★★</div>
+        <blockquote>„Man kommt rein und man wird mit einem freundlichen Lächeln begrüßt. … Bei Sabrina bekommt man eine kompetente und personalisierte Beratung. Top Studio. Sehr zu empfehlen"</blockquote>
         <div class="who">Gordana G.<span class="src">Google-Rezension</span></div>
       </div>
       <div class="voice">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&bdquo;Ich bewundere die Fachkompetenz, mit der sie jede Gesichtsbehandlung ausf&uuml;hrlich erkl&auml;rt, ihr umfassendes Wissen, das &uuml;ber das einer Kosmetikerin weit hinausreicht, ihre freundliche, zuvorkommende Art.&ldquo;</blockquote>
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich bewundere die Fachkompetenz, mit der sie jede Gesichtsbehandlung ausführlich erklärt, ihr umfassendes Wissen, das über das einer Kosmetikerin weit hinausreicht, ihre freundliche, zuvorkommende Art. … Ich empfehle sie gerne auch meinen Patienten und Patientinnen mit Hautproblemen im Gesicht weiter."</blockquote>
         <div class="who">Gudrun F.<span class="src">Google-Rezension</span></div>
       </div>
     </div>
@@ -188,7 +206,7 @@
         <li><a href="haarkonzept.html">Haarkonzept</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
     <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
@@ -206,12 +224,16 @@
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="agb.html">AGB</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <!-- V4.79: oeffnet den Einwilligungsbanner erneut. Pflicht, wenn man
+             eine Einwilligung einholt: sie muss genauso leicht widerrufbar
+             sein, wie sie erteilt wurde (Art. 7 Abs. 3 DSGVO). -->
+        <li><button type="button" class="cb-fuss" data-cb-oeffnen>Externe Medien</button></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 4.50</span>
+    <span>Version 4.109</span>
     <div class="social">
       <a href="https://www.instagram.com/kosmetikinstituthautnahwehr/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="dot" cx="17.1" cy="6.9" r="1.15"/></svg>
@@ -260,6 +282,6 @@
   </a>
 </div>
 
-<script src="../assets/hautnah.js?v=4.50" defer></script>
+<script src="../assets/hautnah.js?v=4.109" defer></script>
 </body>
 </html>

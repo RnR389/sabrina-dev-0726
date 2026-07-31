@@ -7,7 +7,7 @@
 <title>Haut &amp; Haarcheck — Kosmetikinstitut Hautnah · Sabrina Herosé</title>
 <meta name="description" content="Haut &amp; Haarcheck im Kosmetikinstitut Hautnah in Wehr — die genaue Analyse von Haut und Haar als Basis Ihres individuellen Behandlungsplans.">
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/hautnah.css?v=4.50">
+<link rel="stylesheet" href="../assets/hautnah.css?v=4.109">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
         <li><a href="zahlungsoptionen.html">Zahlungsoptionen</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
       <a class="nav-cta btn-primary" href="zusammenarbeit-anfragen.html">Zusammenarbeit anfragen</a>
     </nav>
@@ -60,8 +60,14 @@
     </div>
   </div>
   <div class="t-hero-media">
-    <div class="t-hero-img">
-      <div class="ph"><span class="txt">Bildmaterial folgt</span></div>
+    <!-- Mikrokamera (V4.52). Bewusst OHNE data-parallax und mit .ist-produkt:
+         das ist ein freigestelltes Produktfoto auf Weiss, kein Raumfoto. Mit dem
+         normalen object-fit:cover und dem Parallaxen-Ueberstand (height:114%)
+         wuerde der Rahmen die Objektive unten abschneiden. -->
+    <div class="t-hero-img ist-produkt">
+      <img src="../assets/haut-haarcheck-mikrokamera.jpg"
+           alt="Mikrokamera zur Haut- und Haaranalyse im Kosmetikinstitut Hautnah"
+           width="1772" height="2376">
     </div>
   </div>
 </section>
@@ -73,13 +79,37 @@
       <div class="free-badge"><span class="free-word">kostenlos.</span><span class="free-note">Ihr Einstieg in die Zusammenarbeit</span></div>
       <p class="hf-lead">In einer Expertenberatung erfassen wir mit modernster Mikrokamera den aktuellen Zustand Ihrer Haut, Kopfhaut und Haare und zeigen auf, wie wir gezielt mit individuell abgestimmten Behandlungs- und Pflegekonzepten unterstützen können.</p>
     </div>
-    <div data-reveal class="t-block">
-      <div class="ph-media"><span>Bildmaterial Mikrokamera &middot; folgt</span></div>
-    </div>
-  
+    <!-- V4.53: Hier stand ein zweiter Platzhalter "Bildmaterial Mikrokamera folgt".
+         Das Bild ist seit V4.52 im Kopfbereich, der Platzhalter waere ein
+         Widerspruch direkt darunter gewesen. Entfernt. -->
   </div>
 </div>
 
+
+<!-- AUFNAHMEN DER MIKROKAMERA (V4.78)
+     Bewusst NICHT "Vorher – Nachher" ueberschrieben: das sind Analysebilder,
+     keine Behandlungsergebnisse. Sie zeigen, was der Haut- und Haarcheck
+     sichtbar macht — genau das ist das Argument dieser Seite.
+     Gleiche Kartenbauart wie auf allen anderen Seiten (.erg, 300x300, contain),
+     damit nichts aus der Reihe faellt. -->
+<section data-reveal class="ergebnisse">
+  <div class="erg-inner">
+    <div class="erg-head">
+      <div class="section-eyebrow"><span class="bar"></span>Unter der Mikrokamera</div>
+      <h2>Was die Analyse <em>sichtbar macht.</em></h2>
+      <p>Aufnahmen aus dem Haut- und Haarcheck im Kosmetikinstitut Hautnah &mdash;
+         Kopfhaut, Haarstruktur und Hautoberfl&auml;che in starker Vergr&ouml;&szlig;erung,
+         teils unter Speziallicht. Auf dieser Grundlage entsteht Ihr Behandlungsplan.</p>
+    </div>
+    <div class="erg-grid">
+      <figure class="erg"><img src="../assets/ergebnisse/haut-haarcheck-1.jpg" alt="Kopfhaut und Haare unter Speziallicht der Mikrokamera" loading="lazy"></figure>
+      <figure class="erg"><img src="../assets/ergebnisse/haut-haarcheck-2.jpg" alt="Haarstruktur in starker Vergr&ouml;&szlig;erung auf dem Bildschirm der Mikrokamera" loading="lazy"></figure>
+      <figure class="erg"><img src="../assets/ergebnisse/haut-haarcheck-3.jpg" alt="Hautoberfl&auml;che in starker Vergr&ouml;&szlig;erung &ndash; Durchblutung und Hautstruktur" loading="lazy"></figure>
+      <figure class="erg"><img src="../assets/ergebnisse/haut-haarcheck-4.jpg" alt="Hautoberfl&auml;che in starker Vergr&ouml;&szlig;erung &ndash; Poren und Verhornung" loading="lazy"></figure>
+      <figure class="erg"><img src="../assets/ergebnisse/haut-haarcheck-5.jpg" alt="Hautanalyse unter Speziallicht &ndash; Feuchtigkeit und Talgverteilung" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ -->
 <section data-reveal class="faq" id="faq">
@@ -128,7 +158,7 @@
   <div class="voices-inner">
     <div class="voices-head">
       <div class="section-eyebrow"><span class="bar"></span>Kundenstimmen</div>
-      <h2>Was Kundinnen und Kunden <em>sagen.</em></h2>
+      <h2>Was Kunden <em>sagen.</em></h2>
       <div class="voices-rating"><span class="stars">★★★★★</span> 4,8 von 5 · 65 Google-Rezensionen</div>
     </div>
     <div class="voices-grid">
@@ -178,7 +208,7 @@
         <li><a href="haarkonzept.html">Haarkonzept</a></li>
         <li><a href="aktuelles.html">Aktuelles</a></li>
     <li><a href="blog.html">Blog</a></li>
-        <li>Kontakt</li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
@@ -196,12 +226,16 @@
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="agb.html">AGB</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <!-- V4.79: oeffnet den Einwilligungsbanner erneut. Pflicht, wenn man
+             eine Einwilligung einholt: sie muss genauso leicht widerrufbar
+             sein, wie sie erteilt wurde (Art. 7 Abs. 3 DSGVO). -->
+        <li><button type="button" class="cb-fuss" data-cb-oeffnen>Externe Medien</button></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 4.50</span>
+    <span>Version 4.109</span>
     <div class="social">
       <a href="https://www.instagram.com/kosmetikinstituthautnahwehr/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="dot" cx="17.1" cy="6.9" r="1.15"/></svg>
@@ -250,6 +284,6 @@
   </a>
 </div>
 
-<script src="../assets/hautnah.js?v=4.50" defer></script>
+<script src="../assets/hautnah.js?v=4.109" defer></script>
 </body>
 </html>
