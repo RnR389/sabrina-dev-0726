@@ -7,13 +7,13 @@
 <title>Kosmetikinstitut Hautnah — Sabrina Herosé</title>
 <meta name="description" content="Premium Medical Aesthetic Institute in Wehr — pharmazeutisch fundierte Hautbehandlung, individuelle Konzepte, sichtbare Hautveränderung.">
 <link rel="preload" href="../assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/hautnah.css?v=4.109">
+<link rel="stylesheet" href="../assets/hautnah.css?v=4.110">
 </head>
 <body>
 
 <!-- INFOZEILE -->
 <div class="infobar">
-  <span><span class="dot"></span>Erstes 5-Sterne-Fachinstitut &middot; Landkreis Waldshut</span>
+  <span><span class="dot"></span>Erster Kosmetikmeister in der Region</span>
   <span>Hauptstra&szlig;e 3 &middot; 79664 Wehr</span>
   <span>+49 (0) 7762 / 80 56 69</span>
   <span>Mo&ndash;Mi 10&ndash;18 Uhr &middot; Fr 10&ndash;13 Uhr</span>
@@ -47,12 +47,19 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-badge"><span class="stars">★★★★★</span>Erstes 5-Sterne-Fachinstitut · Landkreis Waldshut</div>
+    <!-- V4.110: Der alte Badge („Erstes 5-Sterne-Fachinstitut · Landkreis
+         Waldshut") stand wortgleich im Kaestchen darunter — doppelt (René).
+         Wortlaut von René gewaehlt: behaelt den Ortsbezug, kommt sonst nirgends
+         auf der Startseite vor und wiederholt weder „Meister" noch „5 Sterne".
+         Die fuenf Sterne sind mit raus, sie waren der zweite Teil der
+         Dopplung; an ihrer Stelle steht die feine Haarlinie wie bei den
+         Abschnitts-Eyebrows. -->
+    <div class="hero-badge"><span class="bar" aria-hidden="true"></span>Medical Beauty im S&uuml;dschwarzwald</div>
     <h1>Echte Haut&shy;veränderung entsteht in der <em>Zusammenarbeit</em>, nicht im Termin.</h1>
     <p class="lead">Wenn Ihre Haut empfindlicher, röter, unreiner oder schlaffer wird — obwohl Sie schon alles ausprobiert haben — begleite ich Sie mit pharmazeutisch-ganzheitlicher Expertise zurück zu klarer, gestraffter Haut, in der Sie sich wieder wohlfühlen.</p>
     <div class="hero-cta-row">
       <a href="zusammenarbeit-anfragen.html" class="btn-primary">Zusammenarbeit anfragen</a>
-      <a href="aesthetische-konzepte.html" class="btn-ghost">Konzepte ansehen</a>
+      <a href="aesthetische-konzepte.html" class="btn-outline">Konzepte ansehen</a>
     </div>
     <!-- Kennzahlen (V4.105) — von Rene zurueck in den Kopfbereich geholt.
          Wortlaut bewusst "ausgezeichnet als": Sabrina hat sich das Praedikat
@@ -83,13 +90,65 @@
   <!-- Fuenf Kaestchen (V4.109). Die Umbrueche stehen fest im HTML, damit jedes
        garantiert ZWEI Zeilen hat — automatischer Umbruch ergaebe je nach
        Fensterbreite mal zwei, mal drei. -->
-  <div class="item"><div class="text">Erfahrung<br>seit 2003</div></div>
-  <div class="item"><div class="text">Pharmazeutisch<br>fundiert</div></div>
-  <div class="item"><div class="text">Maßgeschneiderte<br>Konzepte</div></div>
+  <!-- Icons seit V4.110. Eine einheitliche Strichsprache: 24er-Raster, Strich 1.3,
+       runde Enden, keine Flaechen, keine Pfeile, Farbe --taupe-dark. Sie sind rein
+       schmueckend, darum aria-hidden — der Text sagt bereits alles. -->
+  <div class="item">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <!-- Sanduhr: vergangene Zeit, also Erfahrung -->
+      <path d="M7 3h10M7 21h10"/>
+      <path d="M8 3v3.2c0 2 1.4 3.6 4 5.8 2.6-2.2 4-3.8 4-5.8V3"/>
+      <path d="M8 21v-3.2c0-2 1.4-3.6 4-5.8 2.6 2.2 4 3.8 4 5.8V21"/>
+    </svg>
+    <div class="text">Erfahrung<br>seit 2003</div>
+  </div>
+  <div class="item">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <!-- Laborkolben: die pharmazeutische Ausbildung (PTA) -->
+      <path d="M9.6 3v6.3l-4.9 8.4a1.9 1.9 0 0 0 1.7 2.9h11.2a1.9 1.9 0 0 0 1.7-2.9l-4.9-8.4V3"/>
+      <path d="M8.3 3h7.4"/>
+      <path d="M7.5 14.4h9"/>
+    </svg>
+    <div class="text">Pharmazeutisch<br>fundiert</div>
+  </div>
+  <div class="item">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <!-- Fingerabdruck: individuell wie die Haut selbst -->
+      <path d="M12 20.6c-.9-2.1-1.4-4.3-1.4-6.6v-2.2a1.4 1.4 0 0 1 2.8 0V14c0 1.2.1 2.4.4 3.5"/>
+      <path d="M8.2 19.7c.6-1.8.9-3.7.9-5.7v-2.2a2.9 2.9 0 0 1 5.8 0V14c0 1.7.2 3.3.7 4.8"/>
+      <path d="M5.6 16.7c.3-1.4.5-2.9.5-4.3v-.6a5.9 5.9 0 0 1 11.8 0v.6c0 1.4.2 2.9.5 4.3"/>
+      <path d="M3.6 12.5v-.7a8.4 8.4 0 0 1 4.3-7.3"/>
+      <path d="M20.4 12.5v-.7a8.4 8.4 0 0 0-4.3-7.3"/>
+    </svg>
+    <div class="text">Maßgeschneiderte<br>Konzepte</div>
+  </div>
   <!-- 4. Kaestchen (V4.46), Wortlaut von Rene. Deckt sich mit Sabrinas Bio-Text
        ("erster und einziger Meister im suedbadischen Raum"). -->
-  <div class="item"><div class="text">Ausgezeichnet als erstes 5&#9733;<br>Fachinstitut &middot; Lk. Waldshut</div></div>
-  <div class="item"><div class="text">1. Meister<br>in der Region</div></div>
+  <div class="item">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <!-- Medaille mit Band: die Auszeichnung. Bewusst OHNE Stern im Icon,
+           der Stern steht schon im Text daneben. -->
+      <circle cx="12" cy="9.2" r="5.6"/>
+      <circle cx="12" cy="9.2" r="2.4"/>
+      <path d="M8.5 14 7 21.2l5-2.7 5 2.7L15.5 14"/>
+    </svg>
+    <div class="text">Ausgezeichnet als erstes 5&#9733;<br>Fachinstitut &middot; Lk. Waldshut</div>
+  </div>
+  <div class="item">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <!-- Doktorhut: der Meistertitel. Ausdruecklich so von Rene gewuenscht. -->
+      <path d="M12 3.6 2.9 8.1 12 12.6l9.1-4.5z"/>
+      <path d="M6.5 10.3v4.8c0 1.9 2.5 3.4 5.5 3.4s5.5-1.5 5.5-3.4v-4.8"/>
+      <path d="M21.1 8.1v5.5"/>
+      <circle cx="21.1" cy="14.4" r=".8"/>
+    </svg>
+    <div class="text">1. Meister<br>in der Region</div>
+  </div>
 </div>
 
 <!-- V4.105: Der Auszeichnungsblock stand hier. Seine beiden Aussagen sind
@@ -135,14 +194,14 @@
     </div>
     <div class="vtest-grid">
       <figure class="vt">
-        <video controls preload="none" poster="../assets/videos/startseite-1.jpg" playsinline>
+        <video controls preload="none" poster="../assets/videos/startseite-1.jpg" playsinline width="464" height="848" style="aspect-ratio:29/53">
           <source src="../assets/videos/startseite-1.mp4" type="video/mp4">
         </video>
         <figcaption>Kundenstimme</figcaption>
       </figure>
 
       <figure class="vt">
-        <video controls preload="none" poster="../assets/videos/startseite-2.jpg" playsinline>
+        <video controls preload="none" poster="../assets/videos/startseite-2.jpg" playsinline width="592" height="848" style="aspect-ratio:37/53">
           <source src="../assets/videos/startseite-2.mp4" type="video/mp4">
         </video>
         <figcaption>Kundenstimme</figcaption>
@@ -260,7 +319,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 · Sabrina Herosé · Wehr</span>
-    <span>Version 4.109</span>
+    <span>Version 4.110</span>
     <div class="social">
       <a href="https://www.instagram.com/kosmetikinstituthautnahwehr/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="dot" cx="17.1" cy="6.9" r="1.15"/></svg>
@@ -309,6 +368,6 @@
   </a>
 </div>
 
-<script src="../assets/hautnah.js?v=4.109" defer></script>
+<script src="../assets/hautnah.js?v=4.110" defer></script>
 </body>
 </html>

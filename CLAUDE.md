@@ -1,6 +1,8 @@
 # Kosmetikinstitut Hautnah — Website-Projekt
 
-**Status:** Lokal **V4.84**. Live steht **V4.45** auf GitHub Pages. **René hat Deploys gestoppt (30.07.2026): „kein Deploy, bis ich es sage."** Also nur `current/` + `assets/` + `_site/` pflegen, `gh-pages` nicht anfassen.
+**Status:** **V4.110 lokal** · live steht **V4.109** auf https://rnr389.github.io/sabrina-dev-0726/ (deployt am 31.07.2026 auf Renés Wort).
+
+⚠️ **Deploys nur auf ausdrückliche Ansage von René.** Er hat sie am 30.07.2026 gestoppt („kein Deploy, bis ich es sage") und seither zweimal einzeln freigegeben. Ohne sein „deploy" nur `current/` + `assets/` + `_site/` pflegen, `gh-pages` nicht anfassen.
 
 **Lokale Vorschau:** `_site/` über die Launch-Config `hautnah` auf **Port 8124**. Achtung, es gibt **zwei** `launch.json` — maßgeblich ist die im Projekt-Wurzelordner `sabrina-herose/.claude/`, nicht die in `hautnah-website/.claude/`. Port 8123 ist von einem fremden PHP-Server eines anderen Projekts belegt, darum 8124.
 
@@ -152,6 +154,35 @@ René, 31.07.2026: „Ich bin es langsam auch leid, dir das immer wieder neu zu 
 **`justify-content:center` hilft NICHT** — `1fr` frisst den gesamten freien Platz, es bleibt nichts zu zentrieren.
 
 **Regel:** Ein zweispaltiger Block muss dieselbe Breite haben wie der Inhalt darüber und darunter, sonst entsteht ein Bruch im Lesefluss. Also `max-width` auf die Lesespalte setzen (730 px) und dem Textkind `max-width:none` geben, damit es seine Spur füllt. **Danach nachmessen:** Kanten des Blocks gegen `.t-prose` — sie müssen identisch sein.
+
+## ⚠️ `hidden` griff nicht — die Klassenregel schlug die Browserregel
+
+Die Grundregel des Browsers ist nur `[hidden]{display:none}` — **eine einzige
+Klassenregel mit `display` schlägt sie.** Genau das war der Fall bei
+`.yt-start{display:block}` und `.karte-ph{display:flex}`: Das JS setzte den
+Platzhalter nach dem Klick brav auf `hidden`, sichtbar blieb er trotzdem, und
+das geladene Video schob sich *darüber*. René: „Es darf sich nicht nach oben
+aufklappen, sondern ich muss in exakt diesem Fenster das Video spielen."
+
+Seit V4.110 steht `[hidden]{display:none !important}` weit oben im Stylesheet.
+**Nicht entfernen** — sonst kommt der Fehler an drei Stellen gleichzeitig zurück
+(YouTube auf Forma, Karte auf Kontakt und Zahlungsoptionen).
+
+## ⚠️ Videos haben KEIN einheitliches Seitenverhältnis
+
+`aspect-ratio:9/16` + `object-fit:cover` auf `.vid-k video` sah lange richtig aus,
+weil die meisten Videos hochkant sind. Gemessen sind es aber sieben verschiedene
+Formate zwischen 0,55 und 1,78 — beim Chemical-Peel-Feedback (720 × 848) fehlte
+seitlich rund ein Drittel. René: „Die Videos sind alle in einem unterschiedlichen
+Format, sodass du das nicht einheitlich auf alle anwenden kannst. Das musst du
+wirklich Video für Video individuell betrachten."
+
+**Regel:** Jedes `<video>` bekommt `width`, `height` und sein echtes
+`style="aspect-ratio:B/H"`; im CSS `height:auto` und `object-fit:contain`.
+Die width/height-Attribute sind **Pflicht** — mit `preload="none"` kennt der
+Browser die Maße sonst nicht und die Box fällt vor dem Laden auf 0 px zusammen.
+Maße mit `ffprobe -select_streams v:0 -show_entries stream=width,height` holen,
+nie schätzen.
 
 ## Footer-Listen — Falle
 `display:inline-block` gehört auf den **`<a>`**, niemals auf das **`<li>`**. Ein `footer ul li:has(a){display:inline-block}` (V4.18, für die Hover-Verschiebung gedacht) hat alle Footer-Einträge in eine Zeile gelegt — Impressum/AGB/Datenschutz nebeneinander statt untereinander. In V4.23 korrigiert.
@@ -322,7 +353,7 @@ Diese Punkte stammen aus stundenlangen Klärungsgesprächen. **Verinnerlichen, n
 - Telefon & WhatsApp: +49 (0) 7762 / 80 56 69
 - Web: www.hautnah-wehr.de
 - Geschäftszeiten (**korrigiert 28.07.2026, gilt**): **Mo–Mi 10:00–18:00 Uhr · Fr 10:00–13:00 Uhr · Do geschlossen**. Steht auf allen 22 Seiten in Kopfleiste und Fußzeile.
-- Aufpreise: ab 19:30 Uhr +50 %, Sonn-/Feiertag +80 %
+- Aufpreise: ab 19:30 Uhr +50 %, Sonn-/Feiertag +80 % — ⚠️ **seit V4.110 nicht mehr auf der Website**, René hat den Absatz auf der Kontaktseite streichen lassen. Nicht von selbst wieder einbauen.
 - 24h-Stornoregel
 
 ---

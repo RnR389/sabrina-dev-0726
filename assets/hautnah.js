@@ -85,7 +85,10 @@
         if (g.hinweis && g.hinweis.parentNode) g.hinweis.parentNode.removeChild(g.hinweis);
         g.el.hidden = false;
       } else {
-        g.el.hidden = false;                 /* erst zeigen, damit hidden sicher greift */
+        /* Frueher stand hier ein Umweg (erst false, dann true), weil hidden
+           nicht griff. Die Ursache lag im CSS: .yt-start{display:block} schlug
+           die Browserregel [hidden]{display:none}. Seit V4.110 steht dort
+           [hidden]{display:none !important} — der Umweg ist damit erledigt. */
         g.el.hidden = true;
         if (!g.hinweis) g.hinweis = bereichAufbauen(g.el);
         if (!g.hinweis.parentNode) g.el.parentNode.insertBefore(g.hinweis, g.el);

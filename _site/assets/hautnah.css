@@ -100,6 +100,16 @@ p{color:var(--ink-soft)}
 .section-eyebrow::before{content:'';width:22px;height:1px;background:var(--taupe);flex:none}
 .section-eyebrow .bar{display:none}
 
+/* ⚠️ hidden muss hidden bleiben (V4.110).
+   Die Browser-Grundregel ist nur [hidden]{display:none} — eine einzige
+   Klassenregel wie .yt-start{display:block} schlaegt sie. Genau das ist auf der
+   Forma-Seite passiert: nach dem Klick wurde der Startknopf zwar auf hidden
+   gesetzt, blieb aber stehen, und das geladene Video schob sich DARUEBER —
+   René: "es darf sich nicht nach oben aufklappen". Dasselbe galt fuer den
+   Kartenplatzhalter (.karte-ph{display:flex}) auf der Kontaktseite.
+   Diese Regel schliesst die Luecke ein fuer alle Mal. */
+[hidden]{display:none !important}
+
 /* ---------- Rhythmus ---------- */
 .wrap,.voices-inner,.ba-inner,.vid-inner,.faq-inner,.values-inner,.story-inner,
 .treatments-grid,.footer-grid,.blog-wrap{max-width:var(--maxw);margin-inline:auto}
@@ -179,12 +189,26 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 }
 .btn-primary:hover,.cs-cta:hover,.masthead-right a:hover{transform:translateY(-2px);box-shadow:var(--sh)}
 .btn-primary:hover::before,.cs-cta:hover::before,.masthead-right a:hover::before{transform:translateY(0)}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:9px;padding:15px 0;
-  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ink);
-  border-bottom:1.5px solid var(--taupe);transition:color .35s var(--ease),border-color .35s var(--ease)
+/* .btn-ghost (nur unterstrichener Text) ist in V4.110 vollstaendig durch
+   .btn-outline ersetzt worden — 17 Stellen. Grund: René hat auf der
+   Kontaktseite gemeldet, dass der zweite Knopf nicht als Knopf erkennbar war.
+   Die Klasse ist bewusst geloescht statt liegengelassen, damit sie nicht
+   versehentlich wieder auftaucht. */
+/* Zweiter Knopf (V4.110). Auf der Kontaktseite stand „Per WhatsApp schreiben"
+   als .btn-ghost neben „Jetzt anrufen" — also nur unterstrichener Text und
+   damit nicht als Knopf erkennbar (René). Gleiche Pillenform und gleiche
+   Masse wie .btn-primary, aber offen statt gefuellt: sichtbar ein Knopf,
+   ohne dem Hauptweg (Anrufen) die Aufmerksamkeit zu nehmen. */
+.btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 30px;border-radius:100px;border:1px solid var(--taupe-dark);
+  background:transparent;color:var(--ink);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+  cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),
+              transform .45s var(--ease),box-shadow .45s var(--ease)
 }
-.btn-ghost:hover{color:var(--taupe-dark);border-color:var(--taupe-dark)}
+.btn-outline:hover{background:var(--taupe-dark);color:var(--paper);
+  transform:translateY(-2px);box-shadow:var(--sh)}
 .site-nav a.nav-cta,.nav-cta{
   padding:12px clamp(13px,1.05vw,18px) !important;
   font-size:clamp(9.5px,.7vw,10.5px) !important;letter-spacing:.1em !important;
@@ -220,8 +244,10 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .hero-cta-row{display:flex;gap:16px 26px;align-items:center;flex-wrap:wrap}
 .hero-cta-row .btn-primary{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 .hero-cta-row .btn-primary::before{background:var(--taupe)}
-.hero-cta-row .btn-ghost{color:var(--paper);border-color:rgba(250,246,239,.5)}
-.hero-cta-row .btn-ghost:hover{color:var(--paper);border-color:var(--paper)}
+/* Im Hero steht der Knopf auf dem dunklen Foto: heller Rand, helle Schrift,
+   beim Hover fuellt er sich hell und die Schrift wird dunkel. */
+.hero-cta-row .btn-outline{color:var(--paper);border-color:rgba(250,246,239,.55);background:transparent}
+.hero-cta-row .btn-outline:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 /* Glas-Badge */
 .hero-badge{
   display:inline-flex;align-items:center;gap:12px;align-self:flex-start;
@@ -232,6 +258,9 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
   color:var(--paper);margin-bottom:28px
 }
 .hero-badge .stars{color:var(--sand);letter-spacing:.14em}
+/* V4.110: Haarlinie statt der fuenf Sterne — dieselbe Geste wie bei
+   .section-eyebrow, damit der Badge zur uebrigen Bildsprache gehoert. */
+.hero-badge .bar{display:block;width:20px;height:1px;background:var(--sand);flex:none;opacity:.85}
 /* NiSV-Siegel im Hero (V4.94) — steht dort, wo bis V4.93 die Kennzahlen
    standen. Trennlinie darueber wie zuvor bei den Kennzahlen, damit der Hero
    seinen Rhythmus behaelt. Heller Ring und Schatten, weil ein helles Siegel
@@ -299,12 +328,23 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .trust .item{
   /* Knapperes Polster fuer fuenf Spalten: die Kaestchen sind dann nur noch
      rund 227 px breit und der laengste Text muss trotzdem zweizeilig bleiben. */
-  background:var(--paper);border-radius:var(--r);padding:22px 16px;
+  /* Polster seit V4.110 von 22px auf 17px gekuerzt: die Icons bringen 34px
+     Hoehe mit, so waechst das Kaestchen unterm Strich nur um rund 24px statt 44. */
+  background:var(--paper);border-radius:var(--r);padding:17px 16px 19px;
   box-shadow:var(--sh);border:1px solid rgba(255,255,255,.7);text-align:center;
   transition:transform .5s var(--ease),box-shadow .5s var(--ease)
 }
 .trust .item:hover{transform:translateY(-5px);box-shadow:var(--sh-l)}
 .trust .item .num{display:none}
+/* Icons (V4.110). Feine Strichzeichnung in Taupe — dieselbe Sprache wie die
+   Haarlinien im Rest der Seite, keine gefuellten Flaechen. Beim Hover zieht das
+   Icon minimal mit an, damit die Karte als eine Einheit reagiert. */
+.trust .item .ico{
+  display:block;width:26px;height:26px;margin:0 auto 11px;
+  color:var(--taupe-dark);opacity:.85;
+  transition:opacity .5s var(--ease),transform .5s var(--ease)
+}
+.trust .item:hover .ico{opacity:1;transform:scale(1.06)}
 .trust .item .text{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;color:var(--ink);line-height:1.6}
 /* ==========================================================================
    KACHELN (Behandlungen, Blog) — Bildzoom + Karte hebt sich
@@ -389,7 +429,7 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
   border-radius:var(--r-l);box-shadow:var(--sh-l)}
 /* Hochformat-Variante fuer das Kontaktbild (3:4). */
 .t-hero-hoch .t-hero-img{aspect-ratio:4/5}
-/* Produktbild statt Raumfoto (V4.52), fuer die Mikrokamera auf Haut & Haarcheck.
+/* Produktbild statt Raumfoto (V4.52), fuer die Microkamera auf Haut & Haarcheck.
    Ein freigestelltes Geraet auf Weiss vertraegt kein object-fit:cover — der
    Rahmen wuerde die Objektive unten abschneiden. Also contain, weisse Flaeche
    und Innenabstand. Das Bild traegt hier kein data-parallax, deshalb braucht
@@ -423,6 +463,15 @@ section,.trust,.t-body,.p-body,.blog-wrap{padding-inline:var(--pad)}/* Abstand z
 .t-hero-img.ist-produkt{background:#fff;aspect-ratio:4/5}
 .t-hero-img.ist-produkt img{position:absolute;inset:0;width:100%;height:100%;
   object-fit:contain;padding:clamp(20px,2.6vw,38px)}
+/* Querformat-Variante (V4.110) fuer das EMChair-X-Motiv auf der
+   Beckenboden-Seite: 1568 x 1254, also 5:4. Im Standardrahmen (6/5.5) hat
+   `object-fit:cover` seitlich 23,5 %, oben 3,6 % und unten 8,7 % abgeschnitten —
+   der Frau fehlten Kopf und Fuesse (gemessen, René). Rahmen und Bild haben jetzt
+   dasselbe Verhaeltnis, mit `contain` bleibt nichts uebrig, was beschnitten
+   werden koennte. Kein `data-parallax` am Bild: der Ueberstand von 114 % waere
+   genau der Schnitt oben und unten. */
+.t-hero-img.ist-produkt.ist-quer{aspect-ratio:5/4}
+.t-hero-img.ist-produkt.ist-quer img{padding:clamp(8px,1.2vw,18px)}
 .t-hero-img .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
   justify-content:center;gap:12px;color:rgba(250,246,239,.6)}
 .t-hero-img .ph .ico,.t-hero-img .ph .txt{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
@@ -743,7 +792,11 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   .hero-siegel{margin-top:26px;padding-top:22px}
   .hero-siegel img{width:clamp(96px,27vw,116px)}
   .hero-cta-row{gap:12px}
-  .hero-cta-row .btn-primary,.hero-cta-row .btn-ghost{width:100%;text-align:center}
+  /* Beide volle Breite. Polster und Sperrung leicht reduziert, damit
+     „Zusammenarbeit anfragen" bei 375 px in EINE Zeile passt — sonst war der
+     eine Knopf 70 px hoch und der andere 52 px, was als Paar schief aussah. */
+  .hero-cta-row .btn-primary,.hero-cta-row .btn-outline{
+    width:100%;text-align:center;padding-inline:16px;letter-spacing:.11em}
   .hero-tag{position:static;text-align:left;padding:0 22px 24px;background:var(--ink)}
 
   .trust{margin-top:16px}
@@ -1250,7 +1303,12 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
    644x1145 px bei zwei Videos (Skin Needling), 1312x2332 px bei einem
    (Forma, Hydrafacial, Chemische Peelings). Ein 9:16-Video wurde dadurch zur
    Riesensaeule. Flex + clamp deckelt die Karte und zentriert die Reihe. */
-.vidgal-grid{display:flex;flex-wrap:wrap;justify-content:center;
+/* align-items:center seit V4.110: Auf der Beckenboden-Seite stehen ein
+   Hochkant- und ein Querformatvideo nebeneinander (483 gegen 306 px hoch).
+   Oben ausgerichtet haengt die Beschriftung des flachen Films mitten in der
+   Luft; zentriert liegt das Paar ruhig. Wo alle Videos hochkant sind, aendert
+   die Regel nichts. */
+.vidgal-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
   gap:clamp(16px,2vw,30px)}
 
 /* ---------- Kontaktseite (V4.72) ----------
@@ -1316,8 +1374,13 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
    Seite loest: Lesespalte 730 px, breites Bild links, Hochkant-Video rechts.
    Das Bild behaelt sein Seitenverhaeltnis (height:auto, kein object-fit) —
    bei Vorher-Nachher darf nichts weggeschnitten werden. */
+/* V4.110: Die Videospalte war auf ein 9:16-Hochkantvideo zugeschnitten
+   (190–250 px). Das Chemical-Peel-Video ist mit 720x848 aber deutlich breiter —
+   in seinem echten Format wurde es dadurch nur 294 px hoch und wirkte klein
+   (René). Die Spalte ist jetzt breiter, damit das Video wieder Gewicht bekommt.
+   Nur diese Seite nutzt .vidgal-paar, andere Seiten sind nicht betroffen. */
 .vidgal-paar{max-width:730px;margin-inline:auto;
-  display:grid;grid-template-columns:minmax(0,1fr) clamp(190px,20vw,250px);
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,32vw,340px);
   gap:clamp(22px,2.6vw,38px);align-items:center}
 .vp-bild{margin:0}
 .vp-bild img{display:block;width:100%;height:auto;
@@ -1331,12 +1394,33 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
   .vidgal-paar .vid-k{max-width:260px;margin-inline:auto}
 }
 .vid-k{margin:0;width:clamp(210px,19vw,290px)}
-.vid-k video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
+/* Querformat-Karte (V4.110). Die Standardbreite ist auf Hochkantvideos
+   zugeschnitten — ein 16:9-Film waere darin nur rund 160 px hoch und damit
+   unlesbar. Breite so gewaehlt, dass die Hoehe ungefaehr der eines
+   Hochkantvideos daneben entspricht. */
+.vid-k.ist-quer{width:clamp(300px,44vw,560px)}
+/* ⚠️ V4.110 — KEIN erzwungenes Seitenverhaeltnis mehr.
+   Vorher stand hier `aspect-ratio:9/16;object-fit:cover`. Das presst JEDES
+   Video ins Hochformat und schneidet alles ab, was nicht 9:16 ist. Gemessen:
+   das Chemical-Peel-Feedback ist 720x848 (0,85) — davon blieben seitlich rund
+   ein Drittel auf der Strecke. René: "Die Videos sind alle in einem
+   unterschiedlichen Format, das musst du Video fuer Video individuell
+   betrachten."
+   Jetzt steht das echte Format als `style="aspect-ratio:B/H"` plus width/height
+   am jeweiligen <video>. Die Attribute sind Pflicht: mit `preload="none"` kennt
+   der Browser die Masse sonst nicht und die Box faellt vor dem Laden auf 0 px
+   zusammen. Die Breite bleibt einheitlich, die Hoehe folgt dem Video. */
+.vid-k video{display:block;width:100%;height:auto;object-fit:contain;
   border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh)}
+/* Ein Foto darf in derselben Reihe stehen wie ein Video (V4.110, Bianka-Seite).
+   height:auto statt fester Hoehe — das Bild behaelt sein Seitenverhaeltnis,
+   genau wie die Videos daneben. */
+.vid-k img{display:block;width:100%;height:auto;
+  border-radius:var(--r-l);box-shadow:var(--sh)}
 .vid-k figcaption{margin-top:12px;text-align:center;font-size:11px;letter-spacing:.16em;
   text-transform:uppercase;font-weight:500;color:var(--taupe-dark)}
 /* Auf der Startseite tragen die Karten schon eine Beschriftung */
-.vt video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
+.vt video{display:block;width:100%;height:auto;object-fit:contain;
   border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh)}
 
 /* ---------- Erklaervideo (V4.45) — Text links, Hochkant-Video rechts ----------
@@ -1364,7 +1448,8 @@ footer ul li a:hover{color:var(--paper);transform:translateX(3px)}
 .erklaer-text p{font-size:16px;line-height:1.8;color:var(--ink-soft)}
 .erklaer-vid{margin:0}
 .erklaer-vid video{
-  display:block;width:100%;aspect-ratio:9/16;object-fit:cover;
+  /* V4.110: echtes Format statt erzwungener 9:16 — siehe Anmerkung bei .vid-k */
+  display:block;width:100%;height:auto;object-fit:contain;
   border-radius:var(--r-l);background:var(--taupe-dark);box-shadow:var(--sh-l)}
 @media (max-width:820px){
   .erklaer-inner{grid-template-columns:1fr}

@@ -283,7 +283,70 @@ Diese Datei dokumentiert alle Iterationen des Hautnah-Website-Designs.
 - **Geändert gegenüber V3.11:**
   - **Finaler Taupe-Ton von Sabrina:** `--taupe` von `#8A7F77` (provisorisch) auf **`#C2B4A9`** — auf allen Seiten.
   - **Behandlungen neu sortiert + Schreibweisen korrigiert** auf der Übersicht (`aesthetische-konzepte.html`) und in Titel/Breadcrumb/H1 der Detailseiten. Neue Reihenfolge: Haut & Haarcheck · Forma® · Hydrafacial® · Hydralift · Medical Beauty Spezial Skin Needling · Chemische Peelings · Crystal Peel · Onetec® · EMShape X® · EMShape X® Beckenboden · Pharma.
-  - **®-Zeichen (Markenschutz)** ergänzt bei: **Forma®, Hydrafacial®, Onetec®, EMShape X®** und **EMShape X® Beckenboden** (auf Renés Bestätigung auch dort). Umgesetzt als `&reg;` in Übersichts-Kacheln, H1, Breadcrumb, `<title>` und den „Weitere Konzepte"-Karten aller Detailseiten.
+  - **®-Zeichen (Markenschutz)** ergänzt bei: **Forma®, Hydrafacial®, Onetec®, EMShape X®** und **Neue Videos und Bilder (René, 01.08.2026)**
+- **EMShape X®:** neues Institutsvideo statt der bisherigen Kundenstimme
+  (`emshape-x-feedback.mp4` samt Poster gelöscht). Beschriftung „EMShape X® im Institut",
+  weil der Film das Institut zeigt und keine Kundenaussage ist.
+- **EMShape X® Beckenboden:** neuer Videoabschnitt mit **zwei** Filmen.
+  Hochkant 30 s = eigene Aufnahme mit einer Kundin. Querformat 56 s = Film des
+  Geräteherstellers (AweneX GmbH, emshape.ch) mit dessen Logo und Webadresse —
+  deshalb als **„Film des Geräteherstellers"** beschriftet, damit er nicht als
+  eigene Aufnahme gelesen wird. Gleiche Regel wie bei den InMode-Bildern.
+- Neue Klasse `.vid-k.ist-quer` für Querformat-Videos: die Standardkarte ist auf
+  Hochkant zugeschnitten, ein 16:9-Film wäre darin nur ~160 px hoch gewesen.
+  `.vidgal-grid` bekommt `align-items:center`, damit das ungleiche Paar ruhig liegt.
+- **Alle drei Videos neu kodiert** (crf 25, faststart): 11,9 → 6,2 MB · 5,9 → 2,9 MB ·
+  6,0 → 1,6 MB. Qualität geprüft: **PSNR 38,8 dB**, mittlerer Fehler 2,9 von 255 —
+  im Bildvergleich kein Unterschied erkennbar. Zusammen rund **13 MB gespart**.
+- **Haarkonzept:** neues Vorher-Nachher-Paar (Haarkonzept12, 960 × 960) als zweite
+  Kachel in der Galerie.
+
+**Knöpfe vereinheitlicht (ganze Seite)**
+- `.btn-ghost` (nur unterstrichener Text) war als zweiter Knopf nicht als Knopf
+  erkennbar — gemeldet auf der Kontaktseite („Per WhatsApp schreiben"). Neue Klasse
+  **`.btn-outline`**: gleiche Pillenform und gleiche Maße wie `.btn-primary`, aber
+  offen statt gefüllt, beim Hover füllt sie sich. **17 Stellen umgestellt**,
+  `.btn-ghost` ist aus dem Stylesheet entfernt, damit sie nicht zurückkommt.
+- Eigene Fassung für den Hero: heller Rand und helle Schrift auf dem dunklen Foto.
+- Mobil waren die beiden Hero-Knöpfe 70 und 52 px hoch, weil der längere Text
+  umbrach. Polster und Sperrung bei ≤680 px leicht reduziert — jetzt **beide 52 px**.
+
+**Preise**
+- Kernaussage geändert (René): **keine Preise je Behandlung, ausschließlich
+  Kurkonzepte**, individuell auf die Haut abgestimmt. Die Ankündigung „Preisliste
+  kommt in Kürze" aus V4.80 ist damit hinfällig und entfernt.
+- Mitgezogen, weil es sonst widersprochen hätte: das Kontaktband („Ob eine einzelne
+  Behandlung **oder** eine Kur…" → „Welches Kurkonzept…") auf `preise.html`,
+  `aktuelles.html` und `zahlungsoptionen.html`, dazu die Meta-Beschreibung.
+
+**Kontakt**
+- Der Absatz „Termine außerhalb dieser Zeiten sind nach Absprache möglich. Ab 19:30 Uhr
+  berechnen wir einen Aufschlag von 50 %, an Sonn- und Feiertagen 80 %" ist auf Renés
+  Anweisung **komplett entfernt**. Er stand nur an dieser einen Stelle, nicht im Footer.
+
+**Startseite · Hero-Badge**
+- Der Badge sagte wortgleich dasselbe wie das Kästchen darunter („Erstes
+  5-Sterne-Fachinstitut · Landkreis Waldshut") — samt fünf Sternen doppelt.
+  Neuer Wortlaut, von René aus vier Vorschlägen gewählt:
+  **„Medical Beauty im Südschwarzwald"**. Kommt sonst nirgends auf der Startseite
+  vor, behält den Ortsbezug, wiederholt weder „Meister" noch „5 Sterne".
+  Statt der Sterne jetzt die feine Haarlinie wie bei den Abschnitts-Eyebrows.
+
+**Bianka Wittulski**
+- **Erstes echtes Bild- und Filmmaterial.** Neuer Abschnitt „Bianka bei der Arbeit"
+  zwischen Vita und CTA: Foto (788 × 1024) und Video (480 × 592, 30 s, 2,6 MB)
+  nebeneinander. Beide behalten ihr Format — gemessen 274 × 356 und 274 × 337,
+  also nahezu gleich hoch. Video ohne Autoplay, Poster aus Sekunde 1,2 gezogen.
+- `.vid-k img` neu, damit ein Foto in derselben Reihe stehen kann wie ein Video.
+
+**Haarkonzept**
+- Erstes Bild bei „Aufnahmen aus dem Institut" gegen die Fassung **ohne die
+  braunen Balken** getauscht — dieselbe Datei wie das Titelbild oben rechts.
+  Bewusst unter neuem Namen (`haarkonzept-vorher-nachher-1.jpg`) statt
+  überschrieben, sonst hätte der Browsercache die alte Fassung weiter gezeigt.
+  Alte Datei gelöscht.
+
+**EMShape X® Beckenboden** (auf Renés Bestätigung auch dort). Umgesetzt als `&reg;` in Übersichts-Kacheln, H1, Breadcrumb, `<title>` und den „Weitere Konzepte"-Karten aller Detailseiten.
   - **Umbenennungen:** Hydra Facial → Hydrafacial®, Hydra Lift → Hydralift, Chemical Peeling → Chemische Peelings, EMS Shape → EMShape X®, Shape Beckenboden → EMShape X® Beckenboden, One Take → Onetec®, FORMA → Forma®, Skin Needling → Medical Beauty Spezial Skin Needling. Crystal Peel und Pharma unverändert.
   - **Neue Seite `haut-haarcheck.html`** als Platzhalter (Diagnostik & Analyse), Struktur wie Pharma-Platzhalter, Bild = „Bildmaterial folgt".
   - **Kachelzahl-Text** „Zehn" → „Elf" (11 Kacheln, da Pharma zusätzlich bestehen bleibt) — anschließend auf Renés Wunsch der komplette **Kopfbereich über den Kacheln entfernt** (Eyebrow „Ästhetische Konzepte" + Überschrift „…Behandlungskonzepte." + Intro-Absatz). Kacheln starten jetzt direkt unter der Navigation.
@@ -765,6 +828,44 @@ Beides kommt aus ihren .docx-Texten und wurde nicht angeglichen — Entscheidung
 
 ---
 
+## V4.51 – V4.109 — „Kontaktseite, Einwilligung, Schreibweisen, Mobil"  ✅ deployt 31.07.2026
+
+**Neue Seite**
+- **`kontakt.html`** — Kontaktdaten links neben dem Bild, Öffnungszeiten und Anfahrt zweispaltig, Karte über die volle Breite. Damit ist der **letzte tote Menüpunkt** weg: „Kontakt" stand auf 24 Seiten je zweimal ohne Link.
+
+**Einwilligung für externe Medien (V4.79–4.83)**
+- Echter Banner, keine Attrappe: die iframes werden **erst im Moment der Zustimmung erzeugt**. Gemessen: **0 Fremdanfragen** ohne Einwilligung, 0 iframes.
+- Betrifft OpenStreetMap (Kontakt), Google Maps (Zahlungsoptionen), YouTube (Forma). **Widerruf entfernt bereits geladene iframes** — im ersten Anlauf blieb die Karte stehen und funkte weiter.
+- Ablehnen-Knopf **exakt gleich groß** wie Zustimmen (250 × 52 px). Fußzeilen-Knopf auf allen Seiten (Art. 7 Abs. 3 DSGVO).
+- 📌 **Der Banner darf nie von einer Animation abhängen.** Zwei Anläufe scheiterten (Übergang, dann `fill-mode:both`) — beide froren ein, der Banner blieb unsichtbar. Jetzt ohne Animation.
+- Der YouTube-Lader lag als eigenes Skript in `forma.html` und **lief an der Prüfung vorbei** — jetzt zentral in `hautnah.js`.
+- Datenschutzseite: echter Abschnitt statt Platzhalter, alle drei Anbieter mit Anschrift und Rechtsgrundlage.
+
+**Schreibweisen und Dateinamen**
+- `hydra-facial` → `hydrafacial`, `hydra-lift` → `hydralift`, `ems-shape` → `emshape-x`, `shape-beckenboden` → `emshape-x-beckenboden` — Seiten **und** Assets, mit Weiterleitung (`canonical` + `noindex`) für jede alte Adresse.
+- **® an jedem sichtbaren Vorkommen** von Forma, Hydrafacial, Onetec, EMShape X — 93 Stellen. Nicht in `alt=`/`title=`/Meta.
+- „Mikroneedling" → „Microneedling" (12 Stellen). Sie-Form auf allen Seiten, kein Gendern mehr.
+- 📌 **Beim Prüfen case-insensitive suchen** — daran ist mir „FORMA" in Großbuchstaben entgangen, 9 Stellen, die ich als „0 offen" gemeldet hatte.
+
+**Startseite**
+- Kennzahlen als fünf Kästchen, alle zweizeilig. NiSV-Siegel über Sabrinas Text (200 px). „Erfahrung seit 2003". Rollenzeile „Kosmetikmeisterin · PTA".
+- **Mobil:** Meisterbetrieb-Siegel nach links — es lag bei 80 %/26 % **auf Sabrinas Gesicht**. Infozeile einzeilig statt zweizeilig, Hero-Bild 270 → 360 px, Kontaktleiste kleiner.
+
+**Bilder und Videos**
+- Neue Aufnahmen auf Kontakt, Ihre Experten, Haut & Haarcheck, Haarkonzept, Crystal Peel, Hydrafacial, EMShape X, Chemische Peelings. Ein PNG mit 23,6 MB auf 183 KB gebracht.
+- **Vorher-Nachher-Karten überall 300 × 300** statt bis zu 1312 px. Videogalerie gedeckelt: war **1312 × 2332 px** bei einem einzelnen Video.
+- Beim Beckenbodenbild die Leinwand erweitert statt beschnitten — der Kopf saß bei 2,2 % und wäre abgeschnitten worden.
+
+**Korrekturen an eigenen Fehlern**
+- **Navigation auf `kontakt.html` wiederhergestellt**: mein Umbauskript ankerte auf `<!-- KOPFBEREICH`, und so heißt auch der Kommentar über der Navigation — der Seitenkopf wurde mitersetzt. Seither nach jedem Umbau Kopf, Navigation und Fußzeile gegenprüfen.
+- **Erklärvideo-Block:** 464 px Loch zwischen Text und Video geschlossen. Siehe die Warnung zu Zweispaltern in `CLAUDE.md`.
+- **Rezensionen verteilt:** Gudrun F. stand auf 10 von 13 Seiten, jetzt höchstens 5.
+- **Beckenboden-FAQ:** zwei Einträge hatten Frage und Antwort vertauscht, dazu drei Emoji-Reste aus der .docx und ein Werbesatz als leeres Akkordeon.
+- **Formular:** E-Mail-Feld raus, Pflicht-Einwilligung rein, Telefonnummern-Prüfung (WhatsApp nur bei Mobilnummer, Grenzfall Schweiz berücksichtigt), kaputter Telefonlink repariert.
+- **Versionsnummer:** nach 4.99 hatte ich auf 5.00 hochgezählt. Rückwirkend auf 4.100/4.101 korrigiert. **Die hintere Zahl ist ein Zähler.**
+
+---
+
 ## Vorlage für nächsten Eintrag
 
 ```
@@ -779,6 +880,79 @@ Beides kommt aus ihren .docx-Texten und wurde nicht angeglichen — Entscheidung
 - **Feedback:** [Sabrinas / Renés Rückmeldung]
 - **Lesson:** [Was haben wir aus dieser Iteration gelernt]
 ```
+
+---
+
+## V4.110 — „Icons, freigestelltes Siegel, echte Videoformate"  ⏸ **nicht deployt**
+
+**Startseite**
+- Die fünf Trust-Kästchen haben Icons bekommen (Strichzeichnung, 24er-Raster,
+  Strich 1.3, Taupe): Sanduhr · Laborkolben · Fingerabdruck · Medaille ·
+  **Doktorhut** für „1. Meister in der Region" (ausdrücklich von René so gewünscht).
+  Polster von 22 px auf 17 px gekürzt, damit die Kästchen nur von 94 auf **110 px**
+  wachsen statt auf 134. Gemessen: alle fünf 229 × 110 px, alle zweizeilig.
+- **NiSV-Siegel freigestellt.** Kein Schwellwert, sondern Un-Multiply gegen Weiß —
+  Antialiasing, Haarlinien und Serifen bleiben erhalten. Gemessen: 90,4 % voll
+  transparent, Mittelpixel Alpha 0, Abweichung gegen das Original auf weißem Grund
+  max. 7/255 (Mittel 0,99). Rauschsperre bei 14/255, weil das Papierweiß der Vorlage
+  um ein paar Einheiten streut und sonst ein grauer Schleier in Kreisform stehen bliebe.
+- Infozeile im Kopf: „Erstes 5-Sterne-Fachinstitut · Landkreis Waldshut" →
+  **„Erster Kosmetikmeister in der Region"** auf allen 24 Seiten. Passt bis 1080 px
+  Fensterbreite einzeilig (vorher brauchte die Zeile mehr Platz).
+
+**⚠️ Zwei echte Fehler behoben**
+- **`hidden` griff nicht.** Die Browserregel ist nur `[hidden]{display:none}` — eine
+  Klassenregel wie `.yt-start{display:block}` schlägt sie. Folge: nach dem Klick auf
+  das Forma-Video blieb der Startknopf stehen und das geladene Video schob sich
+  darüber. René: „Es darf sich nicht nach oben aufklappen." Dasselbe galt unbemerkt
+  für den Kartenplatzhalter auf der Kontaktseite. Jetzt steht
+  `[hidden]{display:none !important}` im CSS; der Umweg im JS („erst false, dann true")
+  ist entfallen. Nachgemessen: Video 910 × 512 an exakt derselben Stelle wie der
+  Platzhalter, Knopf `display:none`, genau ein iframe.
+- **Videos wurden beschnitten.** `.vid-k video` erzwang `aspect-ratio:9/16` mit
+  `object-fit:cover`. Das Chemical-Peel-Feedback ist aber 720 × 848 (0,85) — davon
+  fehlte seitlich rund ein Drittel. René: „Die Videos sind alle in einem
+  unterschiedlichen Format, das musst du Video für Video individuell betrachten."
+  Jedes `<video>` trägt jetzt `width`/`height` und sein echtes
+  `style="aspect-ratio:B/H"`. Die Attribute sind Pflicht: mit `preload="none"` kennt
+  der Browser die Maße sonst nicht und die Box fällt vor dem Laden auf 0 px zusammen.
+  Betroffen waren alle zehn Videos, drei davon sichtbar (Chemical Peel 0,85 ·
+  Startseite-2 0,70 · Microneedling 0,79).
+
+**Forma**
+- `i-face` und `i-body` sind jetzt **Silhouetten** (Kopf im Profil, stehende Person)
+  statt Smiley und Strichmännchen — auch auf `hydralift.html` und `skin-needling.html`,
+  weil dort dieselben beiden Icons dieselbe Bedeutung tragen.
+- Der Hinweiskasten unter den Klinikbildern ist raus (René). Die Bildunterschriften
+  nennen weiterhin die behandelnden Ärzte.
+
+**EMShape X® Beckenboden**
+- **Titelbild zeigt die Person wieder vollständig.** Der Standardrahmen (6/5.5) mit
+  `object-fit:cover` plus Parallaxen-Überstand schnitt gemessen **23,5 % seitlich,
+  3,6 % oben und 8,7 % unten** weg — Kopf und Füße fehlten. Neuer Modifikator
+  `.ist-produkt.ist-quer`: Rahmen 5/4 wie das Bild, `contain`, kein `data-parallax`.
+  Nachgemessen: Rahmen 1,250 = Bild 1,250, **0 px Beschnitt**.
+- **Vorbehalt in die vorhandenen Sätze eingewoben** (René: „nicht als separaten
+  zusätzlichen Text oder Hinweis"). Drei Stellen: „…ist von Mensch zu Mensch
+  verschieden", „…wie deutlich er ausfällt, lässt sich nicht zusichern",
+  „…da jeder Körper anders reagiert, ist das kein garantiertes Ergebnis."
+  ⚠️ Damit sind erstmals **Sätze aus Sabrinas Vorlage verändert** — auf Renés
+  ausdrückliche Anweisung. Nur ergänzende Nebensätze, keine Streichungen.
+
+**Sonstiges**
+- „Mikrokamera" → **„Microkamera"** auf allen Seiten, inklusive alt-Texten und dem
+  Dateinamen `haut-haarcheck-microkamera.jpg`. *(Anmerkung: „Mikrokamera" ist die
+  korrekte deutsche Schreibweise — die Änderung ist Renés Entscheidung, analog zu
+  „Microneedling".)*
+- **Rezensionen von Gordana G. entfernt** (6 Seiten). Ersetzt durch andere echte
+  Stimmen aus dem geprüften Bestand — nichts erfunden. Der Bestand umfasst genau
+  **10 verifizierte Google-Rezensionen**; für wirklich neue Stimmen braucht es
+  Nachschub von Sabrina.
+- **Lesson:** Ein `.*?` über mehrere gleichartige Blöcke hinweg ist keine sichere
+  Ersetzung — beim Rezensionstausch hat es die davorliegenden Karten mitgefressen.
+  Erst in Karten zerlegen, dann tauschen, danach zählen (jede Seite genau 3 Stimmen,
+  keine doppelt).
+
 
 ---
 
